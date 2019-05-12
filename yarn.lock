@@ -1019,6 +1019,11 @@
   resolved "https://registry.npm.alibaba-inc.com/@types/normalize-package-data/download/@types/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha1-5IbQ2XOW15vu3QpuM/RTT/a0lz4=
 
+"@types/seedrandom@^2.4.28":
+  version "2.4.28"
+  resolved "https://registry.npm.alibaba-inc.com/@types/seedrandom/download/@types/seedrandom-2.4.28.tgz#9ce8fa048c1e8c85cb71d7fe4d704e000226036f"
+  integrity sha1-nOj6BIwejIXLcdf+TXBOAAImA28=
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.npm.alibaba-inc.com/@types/stack-utils/download/@types/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
@@ -4572,6 +4577,11 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.npm.alibaba-inc.com/sax/download/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
+
+seedrandom@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npm.alibaba-inc.com/seedrandom/download/seedrandom-3.0.1.tgz#eb3dde015bcf55df05a233514e5df44ef9dce083"
+  integrity sha1-6z3eAVvPVd8FojNRTl30Tvnc4IM=
 
 semver-compare@^1.0.0:
   version "1.0.0"

@@ -40,5 +40,9 @@
       "**/lib/**/*.js",
       "**/build/**/*.js"
     ]
+  },
+  "dependencies": {
+    "@types/seedrandom": "^2.4.28",
+    "seedrandom": "^3.0.1"
   }
 }

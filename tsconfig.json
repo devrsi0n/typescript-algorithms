@@ -1,0 +1,23 @@
+
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    // "incremental": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "pretty": true,
+    "skipLibCheck": true,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "target": "ES5",
+    "strictNullChecks": false,
+    "types": [
+      "jest"
+    ]
+  },
+  "noEmitOnError": true
+}
