@@ -1,23 +1,18 @@
-
 {
   "compileOnSave": true,
   "compilerOptions": {
     // "incremental": true,
+    // "importHelpers": true,
     "esModuleInterop": true,
     "declaration": true,
     "pretty": true,
     "skipLibCheck": true,
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "experimentalDecorators": true,
     "sourceMap": true,
-    "target": "ES5",
-    "strictNullChecks": false,
-    "types": [
-      "jest"
-    ]
+    "target": "es5",
+    "strict": true,
+    "types": ["jest"]
   },
   "noEmitOnError": true
 }
