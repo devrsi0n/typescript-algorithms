@@ -3,7 +3,7 @@
  * @param p
  * @param q
  */
-export default function gcb(p: number, q: number) {
+export default function gcb(p: number, q: number): number {
   if (p < 0 || q < 0) {
     throw new Error('Input params must be nonnegative integer');
   }

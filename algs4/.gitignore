@@ -1,0 +1,13 @@
+node_modules
+dist
+lib
+
+.vscode
+.idea
+*.DS_Store
+.nyc_output
+
+coverage/
+.coverage/
+
+*.log

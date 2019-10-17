@@ -1,27 +1,12 @@
 {
-  "name": "algorithms",
-  "version": "0.0.1",
-  "description": "The book Algorithms's source code",
+  "name": "Algorithms",
+  "version": "0.1.0",
+  "description": "Algorithms 4th version",
   "main": "index.js",
   "repository": "git@github.com:devrsi0n/Algorithms.git",
-  "author": "devrsi0n@gmail.com",
+  "author": "devrsi0n <devrsi0n@gmail.com>",
   "license": "MIT",
   "private": true,
-  "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-typescript": "^7.6.0",
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "@types/jest": "^24.0.19",
-    "babel-jest": "^24.9.0",
-    "husky": "^3.0.9",
-    "jest": "^24.9.0",
-    "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2",
-    "typescript": "^3.6.4"
-  },
   "scripts": {
     "prettier": "prettier --write src/"
   },
@@ -37,8 +22,15 @@
       "git add"
     ]
   },
-  "dependencies": {
-    "@types/seedrandom": "^2.4.28",
-    "seedrandom": "^3.0.1"
-  }
+  "devDependencies": {
+    "husky": "^3.0.9",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2"
+  },
+  "workspaces": [
+    "algs4",
+    "example"
+  ]
 }

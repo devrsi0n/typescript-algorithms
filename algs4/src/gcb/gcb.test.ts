@@ -1,7 +1,7 @@
 import gcb from './index';
 
 test('unexpected param type', () => {
-  const params =[[-1, 2], [1, -2], [-3, -5]];
+  const params = [[-1, 2], [1, -2], [-3, -5]];
   for (const [first, second] of params) {
     expect(() => {
       gcb(first, second);
