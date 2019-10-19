@@ -388,4 +388,3 @@ export default class StdDraw {
     );
   }
 }
-6;

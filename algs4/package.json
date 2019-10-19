@@ -11,8 +11,9 @@
   "author": "devrsi0n@gmail.com",
   "license": "MIT",
   "scripts": {
+    "test": "jest",
     "build": "tsc",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "yarn run build && yarn test"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -22,6 +23,8 @@
     "@types/jest": "^24.0.19",
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
+    "jest-canvas-mock": "^2.1.2",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
   },
   "dependencies": {
