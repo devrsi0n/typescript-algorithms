@@ -7,9 +7,6 @@
   "author": "devrsi0n <devrsi0n@gmail.com>",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "prettier": "prettier --write src/"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -26,11 +23,10 @@
     "husky": "^3.0.9",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2"
+    "lint-staged": "^9.4.2"
   },
   "workspaces": [
     "algs4",
-    "example"
+    "demo"
   ]
 }

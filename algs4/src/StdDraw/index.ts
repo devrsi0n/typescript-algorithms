@@ -358,8 +358,8 @@ export default class StdDraw {
     if (!_canvas) {
       _canvas = document.createElement('canvas') as HTMLCanvasElement;
       _canvas.id = 'StdCanvas';
-      _canvas.width = 300;
-      _canvas.height = 300;
+      _canvas.width = 600;
+      _canvas.height = 600;
       _canvas.style.background = '#fff';
 
       const canvasContainer = document.getElementById('CanvasContainer');

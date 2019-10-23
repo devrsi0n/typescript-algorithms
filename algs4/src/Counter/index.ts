@@ -5,7 +5,7 @@
  *  see <a href="https://algs4.cs.princeton.edu/12oop">Section 1.2</a> of
  *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  */
-export class Counter {
+export default class Counter {
   private readonly name: string;
   private count: number;
 
