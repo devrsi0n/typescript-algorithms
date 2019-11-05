@@ -1,7 +1,9 @@
 node_modules
 dist
 lib
+public
 
+.cache
 .vscode
 .idea
 *.DS_Store

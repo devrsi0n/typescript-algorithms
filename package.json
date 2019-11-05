@@ -1,5 +1,5 @@
 {
-  "name": "Algorithms",
+  "name": "algorithms",
   "version": "0.1.0",
   "description": "Algorithms 4th version",
   "main": "index.js",
@@ -7,6 +7,12 @@
   "author": "devrsi0n <devrsi0n@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "release": "lerna version --conventional-commits",
+    "publish": "lerna publish from-git",
+    "build": "lerna run --stream --toposort build",
+    "lint": "eslint --fix packages/"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -20,13 +26,15 @@
     ]
   },
   "devDependencies": {
-    "husky": "^3.0.9",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettify-ts-react": "^0.1.3",
+    "husky": "^3.0.9",
+    "lerna": "^3.18.3",
     "lint-staged": "^9.4.2"
   },
   "workspaces": [
-    "algs4",
-    "demo"
+    "packages/*"
   ]
 }

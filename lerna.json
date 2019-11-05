@@ -1,0 +1,10 @@
+{
+  "packages": ["packages/*"],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "publish": {
+    "ignoreChanges": ["*.md"],
+    "message": "chore: publish"
+  },
+  "version": "0.2.1"
+}

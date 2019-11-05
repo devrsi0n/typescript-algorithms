@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const contentAuthors = 'content/authors';
 const contentPosts = 'content/posts';
 

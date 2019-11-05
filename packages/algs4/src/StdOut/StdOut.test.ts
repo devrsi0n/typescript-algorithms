@@ -4,7 +4,6 @@ let originalLog: any;
 let originalWarn: any;
 let originalError: any;
 
-beforeEach;
 beforeAll(() => {
   originalLog = global.console.log;
   originalWarn = global.console.warn;

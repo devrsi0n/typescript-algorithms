@@ -1,4 +1,3 @@
-
 const canvasContainer = document.createElement('div');
 canvasContainer.id = 'CanvasContainer';
 

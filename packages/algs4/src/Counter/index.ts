@@ -1,5 +1,5 @@
 /**
- *  The {@code Counter} class is a mutable data type to encapsulate a counter.
+ *  The Counter class is a mutable data type to encapsulate a counter.
  *  <p>
  *  For additional documentation,
  *  see <a href="https://algs4.cs.princeton.edu/12oop">Section 1.2</a> of
@@ -36,6 +36,6 @@ export default class Counter {
    * @return a string representation of this counter
    */
   toString() {
-    return this.count + ' ' + this.name;
+    return `${this.count} ${this.name}`;
   }
 }
