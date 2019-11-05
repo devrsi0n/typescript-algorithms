@@ -32,7 +32,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       year,
       month,
       day,
-      slug,
+      slug
     };
 
     const permalink = articlePermalinkFormat.replace(/(:[a-z_]+)/g, match => {
@@ -62,7 +62,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
     const fieldData = {
       ...node,
       authorsPage: themeOptions.authorsPage || false,
-      slug: generateSlug(basePath, 'authors', slug),
+      slug: generateSlug(basePath, 'authors', slug)
     };
 
     createNode({
@@ -78,8 +78,8 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
           .update(JSON.stringify(fieldData))
           .digest(`hex`),
         content: JSON.stringify(fieldData),
-        description: `Author`,
-      },
+        description: `Author`
+      }
     });
 
     createParentChildLink({ parent: fileNode, child: node });
@@ -92,7 +92,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       node,
       getNode,
       basePath: `content`,
-      trailingSlash: false,
+      trailingSlash: false
     });
     const fieldData = {
       author: node.frontmatter.author,
@@ -101,13 +101,10 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       secret: node.frontmatter.secret || false,
       slug: generateSlug(
         `${basePath}articles/`,
-        generateArticlePermalink(
-          slugify(filePath.slice(filePath.lastIndexOf('/'))),
-          node.frontmatter.date
-        )
+        generateArticlePermalink(filePath, node.frontmatter.date)
       ),
       title: node.frontmatter.title,
-      subscription: node.frontmatter.subscription !== false,
+      subscription: node.frontmatter.subscription !== false
     };
 
     createNode({
@@ -123,8 +120,8 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
           .update(JSON.stringify(fieldData))
           .digest(`hex`),
         content: JSON.stringify(fieldData),
-        description: `Article Posts`,
-      },
+        description: `Article Posts`
+      }
     });
 
     createParentChildLink({ parent: fileNode, child: node });
@@ -134,13 +131,13 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
     createNodeField({
       node,
       name: `slug`,
-      value: generateSlug(basePath, 'authors', slugify(node.name)),
+      value: generateSlug(basePath, 'authors', slugify(node.name))
     });
 
     createNodeField({
       node,
       name: `authorsPage`,
-      value: themeOptions.authorsPage || false,
+      value: themeOptions.authorsPage || false
     });
   }
 };

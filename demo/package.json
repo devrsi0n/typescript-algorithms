@@ -18,6 +18,7 @@
   "scripts": {
     "prestart": "gatsby clean",
     "start": "gatsby develop -o",
+    "dev": "gatsby develop -o",
     "clean": "gatsby clean",
     "build": "npm run clean && gatsby build",
     "serve": "gatsby serve",

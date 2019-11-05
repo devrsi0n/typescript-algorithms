@@ -1,6 +1,11 @@
 import assert from '../utils/assert';
 
 export default class StdDraw {
+  static scaleX = 1;
+  static scaleY = -1;
+  static readonly DEFAULT_WIDTH = 512;
+  static readonly DEFAULT_HEIGHT = 512;
+
   static canvas = StdDraw._createCanvas();
   static ctx = StdDraw._createContext();
 
@@ -25,6 +30,18 @@ export default class StdDraw {
     StdDraw._assertXYSafeInt(x, y);
     const { ctx } = StdDraw;
     ctx.fillRect(x, y, 1, 1);
+
+    // const { ctx, canvas } = StdDraw;
+    // const { width } = canvas;
+    // const canvasData = ctx.getImageData(0, 0, width, canvas.height);
+    // const index = (x + y * width) * 4;
+
+    // // rgba
+    // canvasData.data[index + 0] = 0;
+    // canvasData.data[index + 1] = 0;
+    // canvasData.data[index + 2] = 0;
+    // canvasData.data[index + 3] = 0;
+    // ctx.putImageData(canvasData, 0, 0);
   }
 
   /**
@@ -249,9 +266,19 @@ export default class StdDraw {
     ctx.fill();
   }
 
-  static setXscale(x0: number, x1: number) {}
+  static setScale(x: number, y: number) {
+    const { ctx } = StdDraw;
+    StdDraw.scaleX = x;
+    StdDraw.scaleY = -y;
+    // Canvas has reverse y-coordinate
+    ctx.scale(x, -y);
+  }
 
-  static setYscale(x0: number, x1: number) {}
+  static setTranslate(x: number, y: number) {
+    StdDraw._assertXYSafeInt(x, y);
+    const { ctx } = StdDraw;
+    ctx.translate(x, y);
+  }
 
   /**
    * Sets the pen size to the default size (0.002).
@@ -300,9 +327,12 @@ export default class StdDraw {
    * of a program.
    */
   static setCanvasSize(width: number, height: number) {
+    StdDraw._assertXYSafeInt(width, height);
+    assert(width > 0, 'width must greater than 0');
+    assert(height > 0, 'width must greater than 0');
     const { canvas } = StdDraw;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
+    canvas.width = width;
+    canvas.height = height;
   }
 
   /**
@@ -353,18 +383,170 @@ export default class StdDraw {
     ctx.ellipse(x, y, semiMajorAxis, semiMinorAxis, 0, 0, 2 * Math.PI, true);
   }
 
-  static _createCanvas() {
-    let _canvas = document.getElementById('StdCanvas') as HTMLCanvasElement;
+  static getRad(degree: number) {
+    return (degree / 180) * Math.PI;
+  }
+
+  static drawAxis() {
+    const { ctx } = StdDraw;
+    ctx.strokeStyle = 'black';
+    ctx.fillStyle = 'black';
+    // Translate to cartesian coordinate system
+    const offset = 20; // Offset for coordinate axis
+
+    ctx.save();
+    ctx.translate(0 + offset, StdDraw.DEFAULT_HEIGHT - offset);
+    ctx.rotate(StdDraw.getRad(180));
+    ctx.scale(-1, 1);
+
+    StdDraw.drawAxisX();
+    StdDraw.drawAxisY();
+  }
+
+  static drawAxisX() {
+    const { ctx } = StdDraw;
+    ctx.save();
+
+    ctx.lineWidth = 0.5;
+    ctx.strokeStyle = 'navy';
+    ctx.fillStyle = 'navy';
+
+    const width = StdDraw.DEFAULT_WIDTH - 40;
+    // Draw axis
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(width, 0);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(
+      width - Math.cos(StdDraw.getRad(15)) * 10,
+      Math.sin(StdDraw.getRad(15)) * 10
+    );
+    ctx.lineTo(width, 0);
+    ctx.lineTo(
+      width - Math.cos(StdDraw.getRad(15)) * 10,
+      -Math.sin(StdDraw.getRad(15)) * 10
+    );
+    ctx.stroke();
+    ctx.closePath();
+
+    // Draw coordinates calibration
+    let x;
+    let y = 5;
+    for (x = 50; x < width; x += 50) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, y);
+
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    // Draw coordinates numbers
+    for (x = 0; x < width; x += 50) {
+      ctx.save();
+      ctx.scale(1, -1);
+      ctx.fillText(x.toString(), x - 8, y + 10);
+      ctx.restore();
+    }
+
+    ctx.restore();
+  }
+
+  static drawAxisY() {
+    const { ctx } = StdDraw;
+    ctx.save();
+
+    ctx.lineWidth = 0.5;
+    ctx.strokeStyle = 'navy';
+    ctx.fillStyle = 'navy';
+
+    const height = StdDraw.DEFAULT_HEIGHT - 62;
+
+    // Draw axis
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, height);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(
+      Math.sin(StdDraw.getRad(15)) * 10,
+      height - Math.cos(StdDraw.getRad(15)) * 10
+    );
+    ctx.lineTo(0, height);
+    ctx.lineTo(
+      -Math.sin(StdDraw.getRad(15)) * 10,
+      height - Math.cos(StdDraw.getRad(15)) * 10
+    );
+    ctx.stroke();
+    ctx.closePath();
+
+    // Draw coordinates calibration
+    let y;
+    let x = 5;
+    for (y = 50; y < height; y += 50) {
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(0, y);
+
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    // Draw coordinates numbers
+    x = -19;
+    for (y = 50; y < height; y += 50) {
+      ctx.save();
+
+      ctx.scale(1, -1);
+      ctx.translate(0, -height);
+
+      ctx.fillText((height - y).toString(), x, y);
+      ctx.restore();
+    }
+
+    ctx.restore();
+  }
+
+  /**
+   * Create new canvas, container element must exist
+   * @param containerId Canvas container id
+   * @param canvasId new canvas id
+   */
+  static createNewCanvas(containerId: string, canvasId: string) {
+    if (document.getElementById(canvasId)) {
+      throw new Error(`Canvas(${canvasId}) already exist`);
+    }
+    if (!document.getElementById(containerId)) {
+      throw new Error(`Canvas container(${containerId}) must exist`);
+    }
+    StdDraw.canvas = StdDraw._createCanvas(containerId, canvasId);
+    StdDraw.ctx = StdDraw._createContext();
+    StdDraw.drawAxis();
+  }
+
+  static _createCanvas(
+    containerId = 'CanvasContainer',
+    canvasId = 'StdCanvas'
+  ) {
+    let _canvas = window.document.getElementById(canvasId) as HTMLCanvasElement;
     if (!_canvas) {
       _canvas = document.createElement('canvas') as HTMLCanvasElement;
-      _canvas.id = 'StdCanvas';
-      _canvas.width = 600;
-      _canvas.height = 600;
+      _canvas.id = canvasId;
+      _canvas.width = StdDraw.DEFAULT_WIDTH;
+      _canvas.height = StdDraw.DEFAULT_HEIGHT;
+      // _canvas.width = 440;
+      // _canvas.height = 240;
       _canvas.style.background = '#fff';
+      _canvas.style.border = '1px solid #eee';
 
-      const canvasContainer = document.getElementById('CanvasContainer');
+      const canvasContainer = document.getElementById(containerId);
       if (!canvasContainer) {
-        throw new Error('CanvasContainer element not found');
+        throw new Error(`${containerId} element not found`);
       }
       canvasContainer.appendChild(_canvas);
     }
@@ -376,8 +558,10 @@ export default class StdDraw {
     if (!_ctx) {
       throw new Error('Canvas element not found');
     }
+    // _ctx.scale(StdDraw.scaleX, StdDraw.scaleY);
     _ctx.fillStyle = '#000';
     _ctx.strokeStyle = '#000';
+    _ctx.save();
     return _ctx;
   }
 
@@ -388,3 +572,5 @@ export default class StdDraw {
     );
   }
 }
+
+StdDraw.drawAxis();
