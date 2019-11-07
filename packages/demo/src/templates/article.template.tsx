@@ -79,7 +79,7 @@ function Article({ pageContext, location }) {
     window.addEventListener('resize', calculateBodySize);
 
     return () => window.removeEventListener('resize', calculateBodySize);
-  }, []);
+  }, [hasCalculated]);
 
   const editOnGitHubUrl = `${repoUrl}/edit/master/content/posts${article.slug}/index.mdx`.replace(
     '//',

@@ -111,12 +111,12 @@ module.exports = {
         showSpinner: false,
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-108341680-2',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-analytics',
+    //   options: {
+    //     trackingId: 'UA-108341680-2',
+    //   },
+    // },
     // {
     //   resolve: 'gatsby-plugin-eslint',
     //   options: {

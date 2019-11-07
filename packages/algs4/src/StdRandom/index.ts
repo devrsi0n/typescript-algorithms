@@ -39,11 +39,11 @@ export default class StdRandom {
 
     if (typeof a === 'number' && typeof b === 'number') {
       return a + StdRandom.random() * (b - a);
-    } else if (typeof a === 'number') {
-      return StdRandom.random() * a;
-    } else {
-      return StdRandom.random();
     }
+    if (typeof a === 'number') {
+      return StdRandom.random() * a;
+    }
+    return StdRandom.random();
   }
 
   /**
@@ -99,22 +99,22 @@ export default class StdRandom {
     for (let i = 0; i < probabilities.length; i++) {
       if (!(probabilities[i] >= 0.0))
         throw new Error(
-          'array entry ' + i + ' must be nonnegative: ' + probabilities[i]
+          `array entry ${i} must be nonnegative: ${probabilities[i]}`
         );
       sum += probabilities[i];
     }
     if (sum > 1.0 + EPSILON || sum < 1.0 - EPSILON)
       throw new Error(
-        'sum of array entries does not approximately equal 1.0: ' + sum
+        `sum of array entries does not approximately equal 1.0: ${sum}`
       );
 
     // the for loop may not return a value when both r is (nearly) 1.0 and when the
     // cumulative sum is less than 1.0 (as a result of floating-point roundoff error)
     while (true) {
-      let r = StdRandom.uniform();
+      const r = StdRandom.uniform();
       sum = 0.0;
       for (let i = 0; i < probabilities.length; i++) {
-        sum = sum + probabilities[i];
+        sum += probabilities[i];
         if (sum > r) return i;
       }
     }

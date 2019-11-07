@@ -13,3 +13,5 @@ coverage/
 .coverage/
 
 *.log
+
+yarn.lock

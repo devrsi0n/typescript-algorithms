@@ -9,6 +9,11 @@ export default class StdDraw {
   static canvas = StdDraw._createCanvas();
   static ctx = StdDraw._createContext();
 
+  /** @see https://www.colorhexa.com/ */
+
+  static DARK_GRAY = '#a9a9a9';
+  static RED = '#ff0000';
+
   static line(x0: number, y0: number, x1: number, y1: number) {
     const { ctx } = StdDraw;
     ctx.beginPath();
@@ -31,17 +36,13 @@ export default class StdDraw {
     const { ctx } = StdDraw;
     ctx.fillRect(x, y, 1, 1);
 
-    // const { ctx, canvas } = StdDraw;
-    // const { width } = canvas;
-    // const canvasData = ctx.getImageData(0, 0, width, canvas.height);
-    // const index = (x + y * width) * 4;
-
-    // // rgba
-    // canvasData.data[index + 0] = 0;
-    // canvasData.data[index + 1] = 0;
-    // canvasData.data[index + 2] = 0;
-    // canvasData.data[index + 3] = 0;
-    // ctx.putImageData(canvasData, 0, 0);
+    // const id = ctx.createImageData(1, 1);
+    // const d = id.data;
+    // d[0] = 100;
+    // d[1] = 100;
+    // d[2] = 100;
+    // d[3] = 0.5;
+    // ctx.putImageData(id, x, y);
   }
 
   /**
@@ -434,7 +435,7 @@ export default class StdDraw {
 
     // Draw coordinates calibration
     let x;
-    let y = 5;
+    const y = 5;
     for (x = 50; x < width; x += 50) {
       ctx.beginPath();
       ctx.moveTo(x, 0);
@@ -554,7 +555,7 @@ export default class StdDraw {
   }
 
   static _createContext() {
-    let _ctx = StdDraw.canvas.getContext('2d');
+    const _ctx = StdDraw.canvas.getContext('2d');
     if (!_ctx) {
       throw new Error('Canvas element not found');
     }

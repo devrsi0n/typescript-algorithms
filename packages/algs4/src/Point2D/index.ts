@@ -71,6 +71,6 @@ export default class Point2D {
    * @return a string representation of this point in the format (x, y)
    */
   toString() {
-    return '(' + this._x + ', ' + this._y + ')';
+    return `(${this._x}, ${this._y})`;
   }
 }

@@ -55,7 +55,7 @@ function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
     return result;
   }, []);
 
-  useEffect(() => getGridLayout(), []);
+  useEffect(() => getGridLayout(), [getGridLayout]);
 
   return (
     <ArticlesListContainer

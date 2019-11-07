@@ -3,10 +3,17 @@ import styled from '@emotion/styled';
 // import { Interval2D, Interval1D, Counter, StdRandom, Point2D } from 'algs4';
 
 async function testCase(times) {
-  const { Interval2D, Interval1D, Counter, StdRandom, Point2D, StdDraw } = await import('algs4');
-  StdDraw.setCanvasSize(600, 600);
-  const xinterval = new Interval1D(150, 450);
-  const yinterval = new Interval1D(150, 450);
+  const {
+    Interval2D,
+    Interval1D,
+    Counter,
+    StdRandom,
+    Point2D,
+    // StdDraw
+  } = await import('algs4');
+  // StdDraw.setCanvasSize(600, 600);
+  const xinterval = new Interval1D(100, 400);
+  const yinterval = new Interval1D(100, 400);
   const box = new Interval2D(xinterval, yinterval);
   box.draw();
 

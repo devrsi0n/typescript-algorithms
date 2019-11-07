@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from '@emotion/styled';
 
 class StdDrawCase {
-  module = typeof window !== `undefined` ? require("algs4") : null;
+  module = typeof window !== `undefined` ? require('algs4') : null;
 
   functionValue(n: number): void {
     const { StdDraw } = this.module;
@@ -32,7 +32,7 @@ class StdDrawCase {
     }
     for (let i = 1; i <= n; i++) {
       const x = i * 10; // (1.0 * i) / n
-      const y = a[i - 1] * 400 / 2; // a[i] / 2.0
+      const y = (a[i - 1] * 400) / 2; // a[i] / 2.0
       const rw = 2; // 0.5 / n
       const rh = y - 5; // a[i] / 2.0
       StdDraw.filledRectangle(x, y, rw, rh);
@@ -56,7 +56,7 @@ class StdDrawCase {
     a.sort();
     for (let i = 1; i <= n; i++) {
       const x = i * 10; // (1.0 * i) / n
-      const y = a[i - 1] * 400 / 2; // a[i] / 2.0
+      const y = (a[i - 1] * 400) / 2; // a[i] / 2.0
       const rw = 2; // 0.5 / n
       const rh = y - 5; // a[i] / 2.0
       StdDraw.filledRectangle(x, y, rw, rh);
