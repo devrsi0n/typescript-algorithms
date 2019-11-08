@@ -4,8 +4,8 @@
   "useWorkspaces": true,
   "command": {
     "version": {
-      "message": "chore(release): publish %s"
+      "message": "chore: publish %s"
     }
   },
-  "version": "0.2.0"
+  "version": "0.2.1"
 }
