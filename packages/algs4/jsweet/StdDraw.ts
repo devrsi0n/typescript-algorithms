@@ -779,8 +779,8 @@ export class StdDraw
    * Ordinarly, this method is called once, at the very beginning
    * of a program.
    *
-   * @param  {number} canvasWidth the width as a number of pixels
-   * @param  {number} canvasHeight the height as a number of pixels
+   * @param   canvasWidth the width as a number of pixels
+   * @param   canvasHeight the height as a number of pixels
    * @throws IllegalArgumentException unless both {@code canvasWidth} and
    * {@code canvasHeight} are positive
    */
@@ -871,8 +871,8 @@ export class StdDraw
 
   /**
    * User and screen coordinate systems.
-   * @param {number} x
-   * @param {string} name
+   * @param  x
+   * @param  name
    * @private
    */
   static validate(x: number, name: string) {
@@ -920,8 +920,8 @@ export class StdDraw
   /**
    * Sets the <em>x</em>-scale to the specified range.
    *
-   * @param  {number} min the minimum value of the <em>x</em>-scale
-   * @param  {number} max the maximum value of the <em>x</em>-scale
+   * @param   min the minimum value of the <em>x</em>-scale
+   * @param   max the maximum value of the <em>x</em>-scale
    * @throws IllegalArgumentException if {@code (max == min)}
    * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
    */
@@ -952,8 +952,8 @@ export class StdDraw
   /**
    * Sets the <em>y</em>-scale to the specified range.
    *
-   * @param  {number} min the minimum value of the <em>y</em>-scale
-   * @param  {number} max the maximum value of the <em>y</em>-scale
+   * @param   min the minimum value of the <em>y</em>-scale
+   * @param   max the maximum value of the <em>y</em>-scale
    * @throws IllegalArgumentException if {@code (max == min)}
    * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
    */
@@ -986,8 +986,8 @@ export class StdDraw
   /**
    * Sets both the <em>x</em>-scale and <em>y</em>-scale to the (same) specified range.
    *
-   * @param  {number} min the minimum value of the <em>x</em>- and <em>y</em>-scales
-   * @param  {number} max the maximum value of the <em>x</em>- and <em>y</em>-scales
+   * @param   min the minimum value of the <em>x</em>- and <em>y</em>-scales
+   * @param   max the maximum value of the <em>x</em>- and <em>y</em>-scales
    * @throws IllegalArgumentException if {@code (max == min)}
    * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
    */
@@ -1113,7 +1113,7 @@ export class StdDraw
    * pen radius and draw a point, you get a circle of the specified radius.
    * The pen radius is not affected by coordinate scaling.
    *
-   * @param  {number} radius the radius of the pen
+   * @param   radius the radius of the pen
    * @throws IllegalArgumentException if {@code radius} is negative, NaN, or infinite
    */
   public static setPenRadius(radius?: any): any {
@@ -1161,9 +1161,9 @@ export class StdDraw
   /**
    * Sets the pen color to the specified RGB color.
    *
-   * @param  {number} red the amount of red (between 0 and 255)
-   * @param  {number} green the amount of green (between 0 and 255)
-   * @param  {number} blue the amount of blue (between 0 and 255)
+   * @param   red the amount of red (between 0 and 255)
+   * @param   green the amount of green (between 0 and 255)
+   * @param   blue the amount of blue (between 0 and 255)
    * @throws IllegalArgumentException if {@code red}, {@code green},
    * or {@code blue} is outside its prescribed range
    */
@@ -1226,10 +1226,10 @@ export class StdDraw
    * Draws a line segment between (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>) and
    * (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>).
    *
-   * @param  {number} x0 the <em>x</em>-coordinate of one endpoint
-   * @param  {number} y0 the <em>y</em>-coordinate of one endpoint
-   * @param  {number} x1 the <em>x</em>-coordinate of the other endpoint
-   * @param  {number} y1 the <em>y</em>-coordinate of the other endpoint
+   * @param   x0 the <em>x</em>-coordinate of one endpoint
+   * @param   y0 the <em>y</em>-coordinate of one endpoint
+   * @param   x1 the <em>x</em>-coordinate of the other endpoint
+   * @param   y1 the <em>y</em>-coordinate of the other endpoint
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
    */
   public static line(x0: number, y0: number, x1: number, y1: number) {
@@ -1253,8 +1253,8 @@ export class StdDraw
    * This method is private because pixels depend on the display.
    * To achieve the same effect, set the pen radius to 0 and call {@code point()}.
    *
-   * @param  {number} x the <em>x</em>-coordinate of the pixel
-   * @param  {number} y the <em>y</em>-coordinate of the pixel
+   * @param   x the <em>x</em>-coordinate of the pixel
+   * @param   y the <em>y</em>-coordinate of the pixel
    * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
    * @private
    */
@@ -1274,8 +1274,8 @@ export class StdDraw
    * The point is a filled circle whose radius is equal to the pen radius.
    * To draw a single-pixel point, first set the pen radius to 0.
    *
-   * @param {number} x the <em>x</em>-coordinate of the point
-   * @param {number} y the <em>y</em>-coordinate of the point
+   * @param  x the <em>x</em>-coordinate of the point
+   * @param  y the <em>y</em>-coordinate of the point
    * @throws IllegalArgumentException if either {@code x} or {@code y} is either NaN or infinite
    */
   public static point(x: number, y: number) {
@@ -1303,9 +1303,9 @@ export class StdDraw
   /**
    * Draws a circle of the specified radius, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the circle
-   * @param  {number} y the <em>y</em>-coordinate of the center of the circle
-   * @param  {number} radius the radius of the circle
+   * @param   x the <em>x</em>-coordinate of the center of the circle
+   * @param   y the <em>y</em>-coordinate of the center of the circle
+   * @param   radius the radius of the circle
    * @throws IllegalArgumentException if {@code radius} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1329,9 +1329,9 @@ export class StdDraw
   /**
    * Draws a filled circle of the specified radius, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the circle
-   * @param  {number} y the <em>y</em>-coordinate of the center of the circle
-   * @param  {number} radius the radius of the circle
+   * @param   x the <em>x</em>-coordinate of the center of the circle
+   * @param   y the <em>y</em>-coordinate of the center of the circle
+   * @param   radius the radius of the circle
    * @throws IllegalArgumentException if {@code radius} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1356,10 +1356,10 @@ export class StdDraw
    * Draws an ellipse with the specified semimajor and semiminor axes,
    * centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the ellipse
-   * @param  {number} y the <em>y</em>-coordinate of the center of the ellipse
-   * @param  {number} semiMajorAxis is the semimajor axis of the ellipse
-   * @param  {number} semiMinorAxis is the semiminor axis of the ellipse
+   * @param   x the <em>x</em>-coordinate of the center of the ellipse
+   * @param   y the <em>y</em>-coordinate of the center of the ellipse
+   * @param   semiMajorAxis is the semimajor axis of the ellipse
+   * @param   semiMinorAxis is the semiminor axis of the ellipse
    * @throws IllegalArgumentException if either {@code semiMajorAxis}
    * or {@code semiMinorAxis} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
@@ -1392,10 +1392,10 @@ export class StdDraw
    * Draws a filled ellipse with the specified semimajor and semiminor axes,
    * centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the ellipse
-   * @param  {number} y the <em>y</em>-coordinate of the center of the ellipse
-   * @param  {number} semiMajorAxis is the semimajor axis of the ellipse
-   * @param  {number} semiMinorAxis is the semiminor axis of the ellipse
+   * @param   x the <em>x</em>-coordinate of the center of the ellipse
+   * @param   y the <em>y</em>-coordinate of the center of the ellipse
+   * @param   semiMajorAxis is the semimajor axis of the ellipse
+   * @param   semiMinorAxis is the semiminor axis of the ellipse
    * @throws IllegalArgumentException if either {@code semiMajorAxis}
    * or {@code semiMinorAxis} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
@@ -1428,11 +1428,11 @@ export class StdDraw
    * Draws a circular arc of the specified radius,
    * centered at (<em>x</em>, <em>y</em>), from angle1 to angle2 (in degrees).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the circle
-   * @param  {number} y the <em>y</em>-coordinate of the center of the circle
-   * @param  {number} radius the radius of the circle
-   * @param  {number} angle1 the starting angle. 0 would mean an arc beginning at 3 o'clock.
-   * @param  {number} angle2 the angle at the end of the arc. For example, if
+   * @param   x the <em>x</em>-coordinate of the center of the circle
+   * @param   y the <em>y</em>-coordinate of the center of the circle
+   * @param   radius the radius of the circle
+   * @param   angle1 the starting angle. 0 would mean an arc beginning at 3 o'clock.
+   * @param   angle2 the angle at the end of the arc. For example, if
    * you want a 90 degree arc, then angle2 should be angle1 + 90.
    * @throws IllegalArgumentException if {@code radius} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
@@ -1476,9 +1476,9 @@ export class StdDraw
   /**
    * Draws a square of the specified size, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the square
-   * @param  {number} y the <em>y</em>-coordinate of the center of the square
-   * @param  {number} halfLength one half the length of any side of the square
+   * @param   x the <em>x</em>-coordinate of the center of the square
+   * @param   y the <em>y</em>-coordinate of the center of the square
+   * @param   halfLength one half the length of any side of the square
    * @throws IllegalArgumentException if {@code halfLength} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1502,9 +1502,9 @@ export class StdDraw
   /**
    * Draws a filled square of the specified size, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the square
-   * @param  {number} y the <em>y</em>-coordinate of the center of the square
-   * @param  {number} halfLength one half the length of any side of the square
+   * @param   x the <em>x</em>-coordinate of the center of the square
+   * @param   y the <em>y</em>-coordinate of the center of the square
+   * @param   halfLength one half the length of any side of the square
    * @throws IllegalArgumentException if {@code halfLength} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1528,10 +1528,10 @@ export class StdDraw
   /**
    * Draws a rectangle of the specified size, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the rectangle
-   * @param  {number} y the <em>y</em>-coordinate of the center of the rectangle
-   * @param  {number} halfWidth one half the width of the rectangle
-   * @param  {number} halfHeight one half the height of the rectangle
+   * @param   x the <em>x</em>-coordinate of the center of the rectangle
+   * @param   y the <em>y</em>-coordinate of the center of the rectangle
+   * @param   halfWidth one half the width of the rectangle
+   * @param   halfHeight one half the height of the rectangle
    * @throws IllegalArgumentException if either {@code halfWidth} or {@code halfHeight} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1562,10 +1562,10 @@ export class StdDraw
   /**
    * Draws a filled rectangle of the specified size, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the rectangle
-   * @param  {number} y the <em>y</em>-coordinate of the center of the rectangle
-   * @param  {number} halfWidth one half the width of the rectangle
-   * @param  {number} halfHeight one half the height of the rectangle
+   * @param   x the <em>x</em>-coordinate of the center of the rectangle
+   * @param   y the <em>y</em>-coordinate of the center of the rectangle
+   * @param   halfWidth one half the width of the rectangle
+   * @param   halfHeight one half the height of the rectangle
    * @throws IllegalArgumentException if either {@code halfWidth} or {@code halfHeight} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1599,8 +1599,8 @@ export class StdDraw
    * (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>), ...,
    * (<em>x</em><sub><em>n</em>�C1</sub>, <em>y</em><sub><em>n</em>�C1</sub>).
    *
-   * @param  {Array} x an array of all the <em>x</em>-coordinates of the polygon
-   * @param  {Array} y an array of all the <em>y</em>-coordinates of the polygon
+   * @param   x an array of all the <em>x</em>-coordinates of the polygon
+   * @param   y an array of all the <em>y</em>-coordinates of the polygon
    * @throws IllegalArgumentException unless {@code x[]} and {@code y[]}
    * are of the same length
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
@@ -1642,8 +1642,8 @@ export class StdDraw
    * (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>), ...,
    * (<em>x</em><sub><em>n</em>�C1</sub>, <em>y</em><sub><em>n</em>�C1</sub>).
    *
-   * @param  {Array} x an array of all the <em>x</em>-coordinates of the polygon
-   * @param  {Array} y an array of all the <em>y</em>-coordinates of the polygon
+   * @param   x an array of all the <em>x</em>-coordinates of the polygon
+   * @param   y an array of all the <em>y</em>-coordinates of the polygon
    * @throws IllegalArgumentException unless {@code x[]} and {@code y[]}
    * are of the same length
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
@@ -1681,7 +1681,7 @@ export class StdDraw
 
   /**
    * Drawing images.
-   * @param {string} filename
+   * @param  filename
    * @return {Image}
    * @private
    */
@@ -1847,12 +1847,12 @@ export class StdDraw
    * given number of degrees, and rescaled to the specified bounding box.
    * The supported image formats are JPEG, PNG, and GIF.
    *
-   * @param  {number} x the center <em>x</em>-coordinate of the image
-   * @param  {number} y the center <em>y</em>-coordinate of the image
-   * @param  {string} filename the name of the image/picture, e.g., "ball.gif"
-   * @param  {number} scaledWidth the width of the scaled image (in screen coordinates)
-   * @param  {number} scaledHeight the height of the scaled image (in screen coordinates)
-   * @param  {number} degrees is the number of degrees to rotate counterclockwise
+   * @param   x the center <em>x</em>-coordinate of the image
+   * @param   y the center <em>y</em>-coordinate of the image
+   * @param   filename the name of the image/picture, e.g., "ball.gif"
+   * @param   scaledWidth the width of the scaled image (in screen coordinates)
+   * @param   scaledHeight the height of the scaled image (in screen coordinates)
+   * @param   degrees is the number of degrees to rotate counterclockwise
    * @throws IllegalArgumentException if either {@code scaledWidth}
    * or {@code scaledHeight} is negative
    * @throws IllegalArgumentException if the image filename is invalid
@@ -1984,10 +1984,10 @@ export class StdDraw
   /**
    * Writes the given text string in the current font, centered at (<em>x</em>, <em>y</em>) and
    * rotated by the specified number of degrees.
-   * @param  {number} x the center <em>x</em>-coordinate of the text
-   * @param  {number} y the center <em>y</em>-coordinate of the text
-   * @param  {string} text the text to write
-   * @param  {number} degrees is the number of degrees to rotate counterclockwise
+   * @param   x the center <em>x</em>-coordinate of the text
+   * @param   y the center <em>y</em>-coordinate of the text
+   * @param   text the text to write
+   * @param   degrees is the number of degrees to rotate counterclockwise
    * @throws IllegalArgumentException if {@code text} is {@code null}
    * @throws IllegalArgumentException if {@code x}, {@code y}, or {@code degrees} is either NaN or infinite
    */
@@ -2015,9 +2015,9 @@ export class StdDraw
 
   /**
    * Writes the given text string in the current font, left-aligned at (<em>x</em>, <em>y</em>).
-   * @param  {number} x the <em>x</em>-coordinate of the text
-   * @param  {number} y the <em>y</em>-coordinate of the text
-   * @param  {string} text the text
+   * @param   x the <em>x</em>-coordinate of the text
+   * @param   y the <em>y</em>-coordinate of the text
+   * @param   text the text
    * @throws IllegalArgumentException if {@code text} is {@code null}
    * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
    */
@@ -2041,9 +2041,9 @@ export class StdDraw
   /**
    * Writes the given text string in the current font, right-aligned at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the text
-   * @param  {number} y the <em>y</em>-coordinate of the text
-   * @param  {string} text the text to write
+   * @param   x the <em>x</em>-coordinate of the text
+   * @param   y the <em>y</em>-coordinate of the text
+   * @param   text the text to write
    * @throws IllegalArgumentException if {@code text} is {@code null}
    * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
    */
@@ -2075,7 +2075,7 @@ export class StdDraw
   /**
    * Copies the offscreen buffer to the onscreen buffer, pauses for t milliseconds
    * and enables double buffering.
-   * @param {number} t number of milliseconds
+   * @param  t number of milliseconds
    * @deprecated replaced by {@link #enableDoubleBuffering()}, {@link #show()}, and {@link #pause(int t)}
    */
   public static show(t?: any): any {
@@ -2090,7 +2090,7 @@ export class StdDraw
 
   /**
    * Pauses for t milliseconds. This method is intended to support computer animations.
-   * @param {number} t number of milliseconds
+   * @param  t number of milliseconds
    */
   public static pause(t: number) {
     StdDraw.validateNonnegative(t, 't');
@@ -2140,7 +2140,7 @@ export class StdDraw
    * The supported image formats are JPEG and PNG;
    * the filename suffix must be {@code .jpg} or {@code .png}.
    *
-   * @param  {string} filename the name of the file with one of the required suffixes
+   * @param   filename the name of the file with one of the required suffixes
    * @throws IllegalArgumentException if {@code filename} is {@code null}
    */
   public static save(filename: string) {
@@ -2371,7 +2371,7 @@ export class StdDraw
    * (such as F1 and arrow keys) and modifier keys (such as shift and control).
    * See {@link KeyEvent} for a description of key codes.
    *
-   * @param  {number} keycode the key to check if it is being pressed
+   * @param   keycode the key to check if it is being pressed
    * @return  {@code true} if {@code keycode} is currently being pressed;
    * {@code false} otherwise
    */
@@ -2414,7 +2414,7 @@ export class StdDraw
   /**
    * Test client.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     StdDraw.square(0.2, 0.8, 0.1);

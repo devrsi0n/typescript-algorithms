@@ -54,7 +54,7 @@ export class Queue<Item> implements Iterable<Item> {
   /**
    * Adds the item to this queue.
    *
-   * @param  {*} item the item to add
+   * @param   item the item to add
    */
   public enqueue(item: Item) {
     const oldlast: Queue.Node<Item> = this.last;
@@ -110,7 +110,7 @@ export class Queue<Item> implements Iterable<Item> {
   /**
    * Unit tests the {@code Queue} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const queue: Queue<string> = <any>new Queue<string>();

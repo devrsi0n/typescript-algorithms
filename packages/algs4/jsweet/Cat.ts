@@ -20,7 +20,7 @@ export class Cat {
    * arguments, concatenates them, and writes the results to the file
    * specified as the last command-line argument.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const out: Out = new Out(args[args.length - 1]);

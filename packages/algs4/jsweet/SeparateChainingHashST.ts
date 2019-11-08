@@ -5,7 +5,7 @@ import { StdOut } from './StdOut';
 
 /**
  * Initializes an empty symbol table with {@code m} chains.
- * @param {number} m the initial number of chains
+ * @param  m the initial number of chains
  * @class
  * @author Robert Sedgewick
  */
@@ -125,7 +125,7 @@ export class SeparateChainingHashST<Key, Value> {
   /**
    * Returns true if this symbol table contains the specified key.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  {@code true} if this symbol table contains {@code key};
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -138,7 +138,7 @@ export class SeparateChainingHashST<Key, Value> {
   /**
    * Returns the value associated with the specified key in this symbol table.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the value associated with {@code key} in the symbol table;
    * {@code null} if no such value
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -155,8 +155,8 @@ export class SeparateChainingHashST<Key, Value> {
    * Deletes the specified key (and its associated value) from this symbol table
    * if the specified value is {@code null}.
    *
-   * @param  {*} key the key
-   * @param  {*} val the value
+   * @param   key the key
+   * @param   val the value
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public put(key: Key, val: Value) {
@@ -175,7 +175,7 @@ export class SeparateChainingHashST<Key, Value> {
    * Removes the specified key and its associated value from this symbol table
    * (if the key is in this symbol table).
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public delete(key: Key) {
@@ -207,7 +207,7 @@ export class SeparateChainingHashST<Key, Value> {
   /**
    * Unit tests the {@code SeparateChainingHashST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: SeparateChainingHashST<string, number> = <any>(

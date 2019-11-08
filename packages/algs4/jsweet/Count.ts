@@ -24,7 +24,7 @@ export class Count {
    * commmand-line argument; and prints the frequencies to standard
    * output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const alphabet: Alphabet = new Alphabet(args[0]);

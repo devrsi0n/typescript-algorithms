@@ -57,7 +57,7 @@ export class StdRandom {
    * number for each execution of the program.
    * Ordinarily, you should call this method at most once per program.
    *
-   * @param {number} s the seed
+   * @param  s the seed
    */
   public static setSeed(s: number) {
     StdRandom.seed = s;
@@ -101,7 +101,7 @@ export class StdRandom {
   /**
    * Returns a random real number uniformly in [0, 1).
    *
-   * @return     {number} a random real number uniformly in [0, 1)
+   * @return      a random real number uniformly in [0, 1)
    * @deprecated Replaced by {@link #uniform()}.
    */
   public static random(): number {
@@ -122,8 +122,8 @@ export class StdRandom {
   /**
    * Returns a random integer uniformly in [a, b).
    *
-   * @param  {number} a the left endpoint
-   * @param  {number} b the right endpoint
+   * @param   a the left endpoint
+   * @param   b the right endpoint
    * @return  a random integer uniformly in [a, b)
    * @throws IllegalArgumentException if {@code b <= a}
    * @throws IllegalArgumentException if {@code b - a >= Integer.MAX_VALUE}
@@ -170,7 +170,7 @@ export class StdRandom {
    * Returns a random boolean from a Bernoulli distribution with success
    * probability <em>p</em>.
    *
-   * @param  {number} p the probability of returning {@code true}
+   * @param   p the probability of returning {@code true}
    * @return  {@code true} with probability {@code p} and
    * {@code false} with probability {@code 1 - p}
    * @throws IllegalArgumentException unless {@code 0} &le; {@code p} &le; {@code 1.0}
@@ -211,8 +211,8 @@ export class StdRandom {
    * Returns a random real number from a Gaussian distribution with mean &mu;
    * and standard deviation &sigma;.
    *
-   * @param  {number} mu the mean
-   * @param  {number} sigma the standard deviation
+   * @param   mu the mean
+   * @param   sigma the standard deviation
    * @return  a real number distributed according to the Gaussian distribution
    * with mean {@code mu} and standard deviation {@code sigma}
    */
@@ -235,7 +235,7 @@ export class StdRandom {
    * The integer represents the number of independent trials
    * before the first success.
    *
-   * @param  {number} p the parameter of the geometric distribution
+   * @param   p the parameter of the geometric distribution
    * @return  a random integer from a geometric distribution with success
    * probability {@code p}; or {@code Integer.MAX_VALUE} if
    * {@code p} is (nearly) equal to {@code 1.0}.
@@ -256,7 +256,7 @@ export class StdRandom {
   /**
    * Returns a random integer from a Poisson distribution with mean &lambda;.
    *
-   * @param  {number} lambda the mean of the Poisson distribution
+   * @param   lambda the mean of the Poisson distribution
    * @return  a random integer from a Poisson distribution with mean {@code lambda}
    * @throws IllegalArgumentException unless {@code lambda > 0.0} and not infinite
    */
@@ -293,7 +293,7 @@ export class StdRandom {
    * Returns a random real number from a Pareto distribution with
    * shape parameter &alpha;.
    *
-   * @param  {number} alpha shape parameter
+   * @param   alpha shape parameter
    * @return  a random real number from a Pareto distribution with shape
    * parameter {@code alpha}
    * @throws IllegalArgumentException unless {@code alpha > 0.0}
@@ -351,7 +351,7 @@ export class StdRandom {
   /**
    * Returns a random integer from the specified discrete distribution.
    *
-   * @param  {Array} probabilities the probability of occurrence of each integer
+   * @param   probabilities the probability of occurrence of each integer
    * @return  a random integer from a discrete distribution:
    * {@code i} with probability {@code probabilities[i]}
    * @throws IllegalArgumentException if {@code probabilities} is {@code null}
@@ -412,7 +412,7 @@ export class StdRandom {
    * Returns a random real number from an exponential distribution
    * with rate &lambda;.
    *
-   * @param  {number} lambda the rate of the exponential distribution
+   * @param   lambda the rate of the exponential distribution
    * @return  a random real number from an exponential distribution with
    * rate {@code lambda}
    * @throws IllegalArgumentException unless {@code lambda > 0.0}
@@ -494,9 +494,9 @@ export class StdRandom {
   /**
    * Rearranges the elements of the specified subarray in uniformly random order.
    *
-   * @param  {Array} a the array to shuffle
-   * @param  {number} lo the left endpoint (inclusive)
-   * @param  {number} hi the right endpoint (exclusive)
+   * @param   a the array to shuffle
+   * @param   lo the left endpoint (inclusive)
+   * @param   hi the right endpoint (exclusive)
    * @throws IllegalArgumentException if {@code a} is {@code null}
    * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
    *
@@ -642,8 +642,8 @@ export class StdRandom {
   /**
    * Returns a uniformly random permutation of <em>k</em> of <em>n</em> elements.
    *
-   * @param  {number} n number of elements
-   * @param  {number} k number of elements to select
+   * @param   n number of elements
+   * @param   k number of elements to select
    * @throws IllegalArgumentException if {@code n} is negative
    * @throws IllegalArgumentException unless {@code 0 <= k <= n}
    * @return  an array of length {@code k} that is a uniformly random permutation
@@ -681,7 +681,7 @@ export class StdRandom {
   /**
    * Unit tests the methods in this class.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);

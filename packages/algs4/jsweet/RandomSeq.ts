@@ -19,7 +19,7 @@ export class RandomSeq {
    * Reads in two command-line arguments lo and hi and prints n uniformly
    * random real numbers in [lo, hi) to standard output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);

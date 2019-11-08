@@ -35,7 +35,7 @@ export class FFT {
   /**
    * Returns the FFT of the specified complex array.
    *
-   * @param  {Array} x the complex array
+   * @param   x the complex array
    * @return  the FFT of the complex array {@code x}
    * @throws IllegalArgumentException if the length of {@code x} is not a power of 2
    */
@@ -86,7 +86,7 @@ export class FFT {
   /**
    * Returns the inverse FFT of the specified complex array.
    *
-   * @param  {Array} x the complex array
+   * @param   x the complex array
    * @return  the inverse FFT of the complex array {@code x}
    * @throws IllegalArgumentException if the length of {@code x} is not a power of 2
    */
@@ -119,8 +119,8 @@ export class FFT {
   /**
    * Returns the circular convolution of the two specified complex arrays.
    *
-   * @param  {Array} x one complex array
-   * @param  {Array} y the other complex array
+   * @param   x one complex array
+   * @param   y the other complex array
    * @return  the circular convolution of {@code x} and {@code y}
    * @throws IllegalArgumentException if the length of {@code x} does not equal
    * the length of {@code y} or if the length is not a power of 2
@@ -148,8 +148,8 @@ export class FFT {
   /**
    * Returns the linear convolution of the two specified complex arrays.
    *
-   * @param  {Array} x one complex array
-   * @param  {Array} y the other complex array
+   * @param   x one complex array
+   * @param   y the other complex array
    * @return  the linear convolution of {@code x} and {@code y}
    * @throws IllegalArgumentException if the length of {@code x} does not equal
    * the length of {@code y} or if the length is not a power of 2
@@ -194,7 +194,7 @@ export class FFT {
   /**
    * Unit tests the {@code FFT} class.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);

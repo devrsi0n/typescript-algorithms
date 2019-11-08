@@ -26,8 +26,8 @@ export class TransitiveClosure {
 
   /**
    * Is there a directed path from vertex {@code v} to vertex {@code w} in the digraph?
-   * @param  {number} v the source vertex
-   * @param  {number} w the target vertex
+   * @param   v the source vertex
+   * @param   w the target vertex
    * @return  {@code true} if there is a directed path from {@code v} to {@code w},
    * {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -48,7 +48,7 @@ export class TransitiveClosure {
   /**
    * Unit tests the {@code TransitiveClosure} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

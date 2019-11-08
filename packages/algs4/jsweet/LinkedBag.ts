@@ -36,7 +36,7 @@ export class LinkedBag<Item> implements Iterable<Item> {
 
   /**
    * Adds the item to this bag.
-   * @param {*} item the item to add to this bag
+   * @param  item the item to add to this bag
    */
   public add(item: Item) {
     const oldfirst: LinkedBag.Node = this.first;
@@ -57,7 +57,7 @@ export class LinkedBag<Item> implements Iterable<Item> {
   /**
    * Unit tests the {@code LinkedBag} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const bag: LinkedBag<string> = <any>new LinkedBag<string>();

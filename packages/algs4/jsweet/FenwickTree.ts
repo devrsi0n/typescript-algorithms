@@ -28,7 +28,7 @@ import { StdOut } from './StdOut';
  * Memory usage:  O(n)
  *
  * @author Ricardo Pacheco
- * @param {number} size
+ * @param  size
  * @class
  */
 export class FenwickTree {
@@ -65,8 +65,8 @@ export class FenwickTree {
    * <p>
    * Time-Complexity:    O(log(n))
    *
-   * @param  {number} a left index
-   * @param  {number} b right index
+   * @param   a left index
+   * @param   b right index
    * @return  sum
    */
   public rsq(a?: any, b?: any): any {
@@ -88,8 +88,8 @@ export class FenwickTree {
    * <p>
    * Time-Complexity:    O(log(n))
    *
-   * @param  {number} ind   index
-   * @param  {number} value value
+   * @param   ind   index
+   * @param   value value
    */
   public update(ind: number, value: number) {
     while (ind < this.array.length) {
@@ -122,7 +122,7 @@ export class FenwickTree {
    * input up 1 3
    * [3,2,3,4,5,6]
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let ft: FenwickTree = null;

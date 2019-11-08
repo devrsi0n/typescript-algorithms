@@ -22,7 +22,7 @@ export class DoublingRatio {
   /**
    * Returns the amount of time to call {@code ThreeSum.count()} with <em>n</em>
    * random 6-digit integers.
-   * @param {number} n the number of integers
+   * @param  n the number of integers
    * @return  amount of time (in seconds) to call {@code ThreeSum.count()}
    * with <em>n</em> random 6-digit integers
    */
@@ -50,7 +50,7 @@ export class DoublingRatio {
    * for arrays of size 250, 500, 1000, 2000, and so forth, along
    * with ratios of running times between successive array sizes.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let prev: number = DoublingRatio.timeTrial(125);

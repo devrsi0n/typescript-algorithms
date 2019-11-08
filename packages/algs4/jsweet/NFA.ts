@@ -7,7 +7,7 @@ import { StdOut } from './StdOut';
 /**
  * Initializes the NFA from the specified regular expression.
  *
- * @param  {string} regexp the regular expression
+ * @param   regexp the regular expression
  * @class
  * @author Robert Sedgewick
  */
@@ -89,7 +89,7 @@ export class NFA {
   /**
    * Returns true if the text is matched by the regular expression.
    *
-   * @param  {string} txt the text
+   * @param   txt the text
    * @return  {@code true} if the text is matched by the regular expression,
    * {@code false} otherwise
    */
@@ -153,7 +153,7 @@ export class NFA {
   /**
    * Unit tests the {@code NFA} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const regexp = `(${args[0]})`;

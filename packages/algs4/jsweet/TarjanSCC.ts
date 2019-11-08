@@ -91,8 +91,8 @@ export class TarjanSCC {
 
   /**
    * Are vertices {@code v} and {@code w} in the same strong component?
-   * @param  {number} v one vertex
-   * @param  {number} w the other vertex
+   * @param   v one vertex
+   * @param   w the other vertex
    * @return  {@code true} if vertices {@code v} and {@code w} are in the same
    * strong component, and {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -106,7 +106,7 @@ export class TarjanSCC {
 
   /**
    * Returns the component id of the strong component containing vertex {@code v}.
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the component id of the strong component containing vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -142,7 +142,7 @@ export class TarjanSCC {
   /**
    * Unit tests the {@code TarjanSCC} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

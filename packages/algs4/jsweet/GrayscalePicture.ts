@@ -5,8 +5,8 @@ import { StdIn } from './StdIn';
  * Creates a {@code width}-by-{@code height} picture, with {@code width} columns
  * and {@code height} rows, where each pixel is black.
  *
- * @param {number} width the width of the picture
- * @param {number} height the height of the picture
+ * @param  width the width of the picture
+ * @param  height the height of the picture
  * @throws IllegalArgumentException if {@code width} is negative
  * @throws IllegalArgumentException if {@code height} is negative
  * @class
@@ -251,8 +251,8 @@ export class GrayscalePicture implements ActionListener {
   /**
    * Returns the grayscale value of pixel ({@code col}, {@code row}) as a {@link java.awt.Color}.
    *
-   * @param {number} col the column index
-   * @param {number} row the row index
+   * @param  col the column index
+   * @param  row the row index
    * @return {Color} the grayscale value of pixel ({@code col}, {@code row})
    * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
    */
@@ -269,8 +269,8 @@ export class GrayscalePicture implements ActionListener {
    * Using this method can be more efficient than {@link #get(int, int)} because
    * it does not create a {@code Color} object.
    *
-   * @param {number} col the column index
-   * @param {number} row the row index
+   * @param  col the column index
+   * @param  row the row index
    * @return  the 8-bit integer representation of the grayscale value of pixel ({@code col}, {@code row})
    * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
    */
@@ -284,8 +284,8 @@ export class GrayscalePicture implements ActionListener {
   /**
    * Sets the color of pixel ({@code col}, {@code row}) to the given grayscale value.
    *
-   * @param {number} col the column index
-   * @param {number} row the row index
+   * @param  col the column index
+   * @param  row the row index
    * @param {Color} color the color (converts to grayscale if color is not a shade of gray)
    * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
    * @throws IllegalArgumentException if {@code color} is {@code null}
@@ -302,9 +302,9 @@ export class GrayscalePicture implements ActionListener {
    * Sets the color of pixel ({@code col}, {@code row}) to the given grayscale value
    * between 0 and 255.
    *
-   * @param {number} col the column index
-   * @param {number} row the row index
-   * @param {number} gray the 8-bit integer representation of the grayscale value
+   * @param  col the column index
+   * @param  row the row index
+   * @param  gray the 8-bit integer representation of the grayscale value
    * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
    */
   public setGrayscale(col: number, row: number, gray: number) {
@@ -319,7 +319,7 @@ export class GrayscalePicture implements ActionListener {
   /**
    * Returns true if this picture is equal to the argument picture.
    *
-   * @param {*} other the other picture
+   * @param  other the other picture
    * @return  {@code true} if this picture is the same dimension as {@code other}
    * and if all pixels have the same color; {@code false} otherwise
    */
@@ -390,7 +390,7 @@ export class GrayscalePicture implements ActionListener {
    * Saves the picture to a file in either PNG or JPEG format.
    * The filetype extension must be either .png or .jpg.
    *
-   * @param {string} name the name of the file
+   * @param  name the name of the file
    * @throws IllegalArgumentException if {@code name} is {@code null}
    */
   public save(name?: any): any {
@@ -455,7 +455,7 @@ export class GrayscalePicture implements ActionListener {
    * Reads a picture specified by the command-line argument,
    * and shows it in a window on the screen.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const picture: GrayscalePicture = new GrayscalePicture(args[0]);

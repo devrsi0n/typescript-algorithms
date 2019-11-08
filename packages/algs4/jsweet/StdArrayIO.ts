@@ -52,7 +52,7 @@ export class StdArrayIO {
   /**
    * Prints an array of doubles to standard output.
    *
-   * @param {Array} a the 1D array of doubles
+   * @param  a the 1D array of doubles
    */
   public static print(a?: any): any {
     if (
@@ -320,7 +320,7 @@ export class StdArrayIO {
   /**
    * Unit tests {@code StdArrayIO}.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: number[] = StdArrayIO.readDouble1D();

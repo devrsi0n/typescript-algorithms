@@ -50,7 +50,7 @@ export class ResizingArrayStack<Item> implements Iterable<Item> {
 
   /**
    * Adds the item to this stack.
-   * @param {*} item the item to add
+   * @param  item the item to add
    */
   public push(item: Item) {
     if (this.n === this.a.length) this.resize(2 * this.a.length);
@@ -93,7 +93,7 @@ export class ResizingArrayStack<Item> implements Iterable<Item> {
   /**
    * Unit tests the {@code Stack} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const stack: ResizingArrayStack<string> = <any>(

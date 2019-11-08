@@ -26,7 +26,7 @@ export class TST<Value> {
 
   /**
    * Does this symbol table contain the given key?
-   * @param {string} key the key
+   * @param  key the key
    * @return  {@code true} if this symbol table contains {@code key} and
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -174,7 +174,7 @@ export class TST<Value> {
   /**
    * Returns the string in the symbol table that is the longest prefix of {@code query},
    * or {@code null}, if no such string.
-   * @param {string} query the query string
+   * @param  query the query string
    * @return  the string in the symbol table that is the longest prefix of {@code query},
    * or {@code null} if no such string
    * @throws IllegalArgumentException if {@code query} is {@code null}
@@ -228,7 +228,7 @@ export class TST<Value> {
 
   /**
    * Returns all of the keys in the set that start with {@code prefix}.
-   * @param {string} prefix the prefix
+   * @param  prefix the prefix
    * @return  all of the keys in the set that start with {@code prefix},
    * as an iterable
    * @throws IllegalArgumentException if {@code prefix} is {@code null}
@@ -283,7 +283,7 @@ export class TST<Value> {
   /**
    * Returns all of the keys in the symbol table that match {@code pattern},
    * where . symbol is treated as a wildcard character.
-   * @param {string} pattern the pattern
+   * @param  pattern the pattern
    * @return  all of the keys in the symbol table that match {@code pattern},
    * as an iterable, where . is treated as a wildcard character.
    */
@@ -402,7 +402,7 @@ export class TST<Value> {
   /**
    * Unit tests the {@code TST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: TST<number> = <any>new TST<number>();

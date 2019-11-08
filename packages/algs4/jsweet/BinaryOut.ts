@@ -75,7 +75,7 @@ export class BinaryOut {
 
   /**
    * Writes the specified bit to the binary output stream.
-   * @param {boolean} x the bit
+   * @param  x the bit
    * @private
    */
   private writeBit(x: boolean) {
@@ -87,7 +87,7 @@ export class BinaryOut {
 
   /**
    * Writes the 8-bit byte to the binary output stream.
-   * @param {number} x the byte
+   * @param  x the byte
    * @private
    */
   private writeByte(x: number) {
@@ -238,8 +238,8 @@ export class BinaryOut {
 
   /**
    * Writes the string of r-bit characters to the binary output stream.
-   * @param  {string} s the {@code String} to write
-   * @param  {number} r the number of relevants bits in each character
+   * @param   s the {@code String} to write
+   * @param   r the number of relevants bits in each character
    * @throws IllegalArgumentException unless r is between 1 and 16
    * @throws IllegalArgumentException if any character in the string is not
    * between 0 and 2<sup>r</sup> - 1
@@ -285,7 +285,7 @@ export class BinaryOut {
    * Test client. Read bits from standard input and write to the file
    * specified on command line.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const filename: string = args[0];

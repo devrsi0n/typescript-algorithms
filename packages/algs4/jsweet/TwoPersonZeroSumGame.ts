@@ -6,7 +6,7 @@ import { StdRandom } from './StdRandom';
  * Determines an optimal solution to the two-sum zero-sum game
  * with the specified payoff matrix.
  *
- * @param  {Array} payoff the <em>m</em>-by-<em>n</em> payoff matrix
+ * @param   payoff the <em>m</em>-by-<em>n</em> payoff matrix
  * @class
  * @author Robert Sedgewick
  */
@@ -301,7 +301,7 @@ export class TwoPersonZeroSumGame {
   /**
    * Unit tests the {@code ZeroSumGameToLP} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     TwoPersonZeroSumGame.test1();

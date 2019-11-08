@@ -7,7 +7,7 @@ import { StdOut } from './StdOut';
  * Computes the vertices in digraph {@code G} that are
  * reachable from the source vertex {@code s}.
  * @param {Digraph} G the digraph
- * @param {number} s the source vertex
+ * @param  s the source vertex
  * @throws IllegalArgumentException unless {@code 0 <= s < V}
  * @class
  * @author Robert Sedgewick
@@ -84,7 +84,7 @@ export class DirectedDFS {
   /**
    * Is there a directed path from the source vertex (or any
    * of the source vertices) and vertex {@code v}?
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  {@code true} if there is a directed path, {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -127,7 +127,7 @@ export class DirectedDFS {
   /**
    * Unit tests the {@code DirectedDFS} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

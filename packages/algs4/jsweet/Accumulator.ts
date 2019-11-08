@@ -17,7 +17,7 @@ export class Accumulator {
 
   /**
    * Adds the specified data value to the accumulator.
-   * @param  {number} x the data value
+   * @param   x the data value
    */
   public addDataValue(x: number) {
     this.n++;
@@ -74,7 +74,7 @@ export class Accumulator {
    * sample standard deviation, and sample variance to standard
    * output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const stats: Accumulator = new Accumulator();

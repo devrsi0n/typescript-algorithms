@@ -60,7 +60,7 @@ export class ResizingArrayQueue<Item> implements Iterable<Item> {
 
   /**
    * Adds the item to this queue.
-   * @param {*} item the item to add
+   * @param  item the item to add
    */
   public enqueue(item: Item) {
     if (this.n === this.q.length) this.resize(2 * this.q.length);
@@ -107,7 +107,7 @@ export class ResizingArrayQueue<Item> implements Iterable<Item> {
   /**
    * Unit tests the {@code ResizingArrayQueue} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const queue: ResizingArrayQueue<string> = <any>(

@@ -26,7 +26,7 @@ export class Knuth {
    * Rearranges an array of objects in uniformly random order
    * (under the assumption that {@code Math.random()} generates independent
    * and uniformly distributed numbers between 0 and 1).
-   * @param {Array} a the array to be shuffled
+   * @param  a the array to be shuffled
    */
   public static shuffle(a: any[]) {
     const n: number = a.length;
@@ -44,7 +44,7 @@ export class Knuth {
    * Rearranges an array of objects in uniformly random order
    * (under the assumption that {@code Math.random()} generates independent
    * and uniformly distributed numbers between 0 and 1).
-   * @param {Array} a the array to be shuffled
+   * @param  a the array to be shuffled
    */
   public static shuffleAlternate(a: any[]) {
     const n: number = a.length;
@@ -62,7 +62,7 @@ export class Knuth {
    * Reads in a sequence of strings from standard input, shuffles
    * them, and prints out the results.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

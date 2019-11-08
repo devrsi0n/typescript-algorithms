@@ -106,8 +106,8 @@ export class Quick {
    * {@code a[0]} through {@code a[k-1]} are less than (or equal to) {@code a[k]}; and
    * {@code a[k+1]} through {@code a[n-1]} are greater than (or equal to) {@code a[k]}.
    *
-   * @param  {Array} a the array
-   * @param  {number} k the rank of the key
+   * @param   a the array
+   * @param   k the rank of the key
    * @return  the key of rank {@code k}
    * @throws IllegalArgumentException unless {@code 0 <= k < a.length}
    */
@@ -134,8 +134,8 @@ export class Quick {
 
   /**
    * Helper sorting functions.
-   * @param {*} v
-   * @param {*} w
+   * @param  v
+   * @param  w
    * @return
    * @private
    */
@@ -224,7 +224,7 @@ export class Quick {
    * Shuffles the array and then prints the strings again to
    * standard output, but this time, using the select method.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

@@ -4,9 +4,9 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a new transaction from the given arguments.
  *
- * @param  {string} who the person involved in this transaction
+ * @param   who the person involved in this transaction
  * @param  {Date} when the date of this transaction
- * @param  {number} amount the amount of this transaction
+ * @param   amount the amount of this transaction
  * @throws IllegalArgumentException if {@code amount}
  * is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY},
  * or {@code Double.NEGATIVE_INFINITY}
@@ -130,7 +130,7 @@ export class Transaction implements java.lang.Comparable<Transaction> {
   /**
    * Compares this transaction to the specified object.
    *
-   * @param  {*} other the other transaction
+   * @param   other the other transaction
    * @return  true if this transaction is equal to {@code other}; false otherwise
    */
   public equals(other: any): boolean {
@@ -201,7 +201,7 @@ export class Transaction implements java.lang.Comparable<Transaction> {
   /**
    * Unit tests the {@code Transaction} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: Transaction[] = [null, null, null, null];

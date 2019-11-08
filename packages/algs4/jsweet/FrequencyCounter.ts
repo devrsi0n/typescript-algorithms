@@ -25,7 +25,7 @@ export class FrequencyCounter {
    * It also prints out the number of words whose length exceeds
    * the threshold and the number of distinct such words.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let distinct = 0;

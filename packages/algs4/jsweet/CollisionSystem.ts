@@ -7,7 +7,7 @@ import { StdIn } from './StdIn';
  * Initializes a system with the specified collection of particles.
  * The individual particles will be mutated during the simulation.
  *
- * @param  {Array} particles the array of particles
+ * @param   particles the array of particles
  * @class
  * @author Robert Sedgewick
  */
@@ -73,7 +73,7 @@ export class CollisionSystem {
   /**
    * Simulates the system of particles for the specified amount of time.
    *
-   * @param  {number} limit the amount of time
+   * @param   limit the amount of time
    */
   public simulate(limit: number) {
     this.pq = <any>new MinPQ<CollisionSystem.Event>();
@@ -109,7 +109,7 @@ export class CollisionSystem {
    * (or generates {@code N} random particles if a command-line integer
    * is specified); simulates the system.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     StdDraw.setCanvasSize$int$int(600, 600);
@@ -164,7 +164,7 @@ export namespace CollisionSystem {
    * -  a null, b not null:     collision with vertical wall
    * -  a not null, b null:     collision with horizontal wall
    * -  a and b both not null:  binary collision between a and b
-   * @param {number} t
+   * @param  t
    * @param {Particle} a
    * @param {Particle} b
    * @class

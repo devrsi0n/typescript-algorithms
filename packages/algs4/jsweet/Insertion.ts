@@ -124,10 +124,10 @@ export class Insertion {
 
   /**
    * Rearranges the subarray a[lo..hi) in ascending order, using a comparator.
-   * @param {Array} a the array
-   * @param {number} lo left endpoint (inclusive)
-   * @param {number} hi right endpoint (exclusive)
-   * @param {*} comparator the comparator specifying the order
+   * @param  a the array
+   * @param  lo left endpoint (inclusive)
+   * @param  hi right endpoint (exclusive)
+   * @param  comparator the comparator specifying the order
    */
   public static sort(a?: any, lo?: any, hi?: any, comparator?: any): any {
     if (
@@ -203,7 +203,7 @@ export class Insertion {
 
   /**
    * Returns a permutation that gives the elements in the array in ascending order.
-   * @param {Array} a the array
+   * @param  a the array
    * @return  a permutation {@code p[]} such that {@code a[p[0]]}, {@code a[p[1]]},
    * ..., {@code a[p[n-1]]} are in ascending order
    */
@@ -466,7 +466,7 @@ export class Insertion {
    * Reads in a sequence of strings from standard input; insertion sorts them;
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

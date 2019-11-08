@@ -3,9 +3,9 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a directed edge from vertex {@code v} to vertex {@code w} with
  * the given {@code weight}.
- * @param {number} v the tail vertex
- * @param {number} w the head vertex
- * @param {number} weight the weight of the directed edge
+ * @param  v the tail vertex
+ * @param  w the head vertex
+ * @param  weight the weight of the directed edge
  * @throws IllegalArgumentException if either {@code v} or {@code w}
  * is a negative integer
  * @throws IllegalArgumentException if {@code weight} is {@code NaN}
@@ -69,7 +69,7 @@ export class DirectedEdge {
   /**
    * Unit tests the {@code DirectedEdge} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const e: DirectedEdge = new DirectedEdge(12, 34, 5.67);

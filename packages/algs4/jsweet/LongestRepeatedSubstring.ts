@@ -24,7 +24,7 @@ export class LongestRepeatedSubstring {
   /**
    * Returns the longest repeated substring of the specified string.
    *
-   * @param  {string} text the string
+   * @param   text the string
    * @return  the longest repeated substring that appears in {@code text};
    * the empty string if no such string
    */
@@ -46,7 +46,7 @@ export class LongestRepeatedSubstring {
   /**
    * Unit tests the {@code lrs()} method.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const text: string = /* replaceAll */ StdIn.readAll().replace(

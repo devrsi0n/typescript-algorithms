@@ -32,7 +32,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
   /**
    * Adds the key to this set (if it is not already present).
    *
-   * @param  {*} key the key to add
+   * @param   key the key to add
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public add(key: Key) {
@@ -43,7 +43,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
   /**
    * Returns true if this set contains the given key.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  {@code true} if this set contains {@code key};
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -56,7 +56,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
   /**
    * Removes the specified key from this set (if the set contains the specified key).
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public delete(key: Key) {
@@ -121,7 +121,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
   /**
    * Returns the smallest key in this set greater than or equal to {@code key}.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the smallest key in this set greater than or equal to {@code key}
    * @throws IllegalArgumentException if {@code key} is {@code null}
    * @throws Error if there is no such key
@@ -137,7 +137,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
   /**
    * Returns the largest key in this set less than or equal to {@code key}.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the largest key in this set table less than or equal to {@code key}
    * @throws IllegalArgumentException if {@code key} is {@code null}
    * @throws Error if there is no such key
@@ -213,7 +213,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
    * This is consistent with the behavior of {@code equals()}
    * within Java's Collections framework.
    *
-   * @param  {*} other the other set
+   * @param   other the other set
    * @return  {@code true} if this set equals {@code other};
    * {@code false} otherwise
    */
@@ -251,7 +251,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
   /**
    * Unit tests the {@code SET} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const set: SET<string> = <any>new SET<string>();

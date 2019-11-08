@@ -1,8 +1,8 @@
 /**
  * Initializes a priority queue with given keys using the given Comparator
  * Worst case is O(n*log(n))
- * @param {*} C a comparator over the keys
- * @param {Array} a an array of keys
+ * @param  C a comparator over the keys
+ * @param  a an array of keys
  * @class
  * @author Tristan Claverie
  */
@@ -118,7 +118,7 @@ export class BinomialMinPQ<Key> implements Iterable<Key> {
   /**
    * Puts a Key in the heap
    * Worst case is O(log(n))
-   * @param {*} key a Key
+   * @param  key a Key
    */
   public insert(key: Key) {
     const x: BinomialMinPQ.Node = new BinomialMinPQ.Node(this);
@@ -226,8 +226,8 @@ export class BinomialMinPQ<Key> implements Iterable<Key> {
 
   /**
    * General helper functions
-   * @param {*} n
-   * @param {*} m
+   * @param  n
+   * @param  m
    * @return
    * @private
    */
@@ -365,8 +365,8 @@ export namespace BinomialMinPQ {
     public __parent: any;
     /**
      *
-     * @param {*} key1
-     * @param {*} key2
+     * @param  key1
+     * @param  key2
      * @return
      */
     public compare(key1: any, key2: any): number {

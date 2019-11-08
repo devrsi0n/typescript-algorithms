@@ -66,7 +66,7 @@ export class GlobalMincut {
    * vertices of the minimum cut; or {@code false} if the vertex {@code v} is
    * on the second subset.
    *
-   * @param {number} v the vertex to check
+   * @param  v the vertex to check
    * @return  {@code true} if the vertex {@code v} is on the first subset of
    * vertices of the minimum cut; or {@code false} if the vertex
    * {@code v} is on the second subset.
@@ -84,7 +84,7 @@ export class GlobalMincut {
    * vertex {@code t} belong to the first subset. Other vertices not connected
    * to {@code t} belong to the second subset.
    *
-   * @param {number} t the vertex {@code t}
+   * @param  t the vertex {@code t}
    * @param {UF} uf the union-find data type
    * @private
    */
@@ -102,7 +102,7 @@ export class GlobalMincut {
    * cut.
    *
    * @param {EdgeWeightedGraph} G the edge-weighted graph
-   * @param {number} a the starting vertex
+   * @param  a the starting vertex
    * @private
    */
   minCut(G: EdgeWeightedGraph, a: number) {
@@ -139,7 +139,7 @@ export class GlobalMincut {
    * <em>maximum adjacency search</em> or <em>maximum cardinality search</em>.
    *
    * @param {EdgeWeightedGraph} G the edge-weighted graph
-   * @param {Array} marked the array of contracted vertices, where {@code marked[v]}
+   * @param  marked the array of contracted vertices, where {@code marked[v]}
    * is {@code true} if the vertex {@code v} was already
    * contracted; or {@code false} otherwise
    * @param {GlobalMincut.CutPhase} cp the previous cut-of-the-phase
@@ -187,8 +187,8 @@ export class GlobalMincut {
    * the given edge-weighted graph.
    *
    * @param {EdgeWeightedGraph} G the edge-weighted graph
-   * @param {number} s the vertex {@code s}
-   * @param {number} t the vertex {@code t}
+   * @param  s the vertex {@code s}
+   * @param  t the vertex {@code t}
    * @return {EdgeWeightedGraph} a new edge-weighted graph for which the edges incidents on the
    * vertices {@code s} and {@code t} were contracted
    * @private
@@ -256,7 +256,7 @@ export class GlobalMincut {
   /**
    * Unit tests the {@code GlobalMincut} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);
@@ -280,9 +280,9 @@ export namespace GlobalMincut {
    * cut-of-the-phase is a <em>minimum s-t-cut</em> in the current graph,
    * where {@code s} and {@code t} are the two vertices added last in the
    * phase.
-   * @param {number} weight
-   * @param {number} s
-   * @param {number} t
+   * @param  weight
+   * @param  s
+   * @param  t
    * @class
    */
   export class CutPhase {

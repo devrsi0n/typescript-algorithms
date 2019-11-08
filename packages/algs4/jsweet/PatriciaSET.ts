@@ -23,7 +23,7 @@ export class PatriciaSET implements Iterable<string> {
 
   /**
    * Adds the key to the set if it is not already present.
-   * @param {string} key the key to add
+   * @param  key the key to add
    * @throws IllegalArgumentException if {@code key} is {@code null}
    * @throws IllegalArgumentException if {@code key} is the empty string.
    */
@@ -70,7 +70,7 @@ export class PatriciaSET implements Iterable<string> {
 
   /**
    * Does the set contain the given key?
-   * @param {string} key the key
+   * @param  key the key
    * @return  {@code true} if the set contains {@code key} and
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -98,7 +98,7 @@ export class PatriciaSET implements Iterable<string> {
 
   /**
    * Removes the key from the set if the key is present.
-   * @param {string} key the key
+   * @param  key the key
    * @throws IllegalArgumentException if {@code key} is {@code null}
    * @throws IllegalArgumentException if {@code key} is the empty string.
    */
@@ -249,7 +249,7 @@ export class PatriciaSET implements Iterable<string> {
    * controls the number of passes (a new random dataset becomes generated at
    * the start of each pass).
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const set: PatriciaSET = new PatriciaSET();

@@ -134,8 +134,8 @@ export class FloydWarshall {
 
   /**
    * Is there a path from the vertex {@code s} to vertex {@code t}?
-   * @param  {number} s the source vertex
-   * @param  {number} t the destination vertex
+   * @param   s the source vertex
+   * @param   t the destination vertex
    * @return  {@code true} if there is a path from vertex {@code s}
    * to vertex {@code t}, and {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= s < V}
@@ -149,8 +149,8 @@ export class FloydWarshall {
 
   /**
    * Returns the length of a shortest path from vertex {@code s} to vertex {@code t}.
-   * @param  {number} s the source vertex
-   * @param  {number} t the destination vertex
+   * @param   s the source vertex
+   * @param   t the destination vertex
    * @return  the length of a shortest path from vertex {@code s} to vertex {@code t};
    * {@code Double.POSITIVE_INFINITY} if no such path
    * @throws UnsupportedOperationException if there is a negative cost cycle
@@ -168,8 +168,8 @@ export class FloydWarshall {
 
   /**
    * Returns a shortest path from vertex {@code s} to vertex {@code t}.
-   * @param  {number} s the source vertex
-   * @param  {number} t the destination vertex
+   * @param   s the source vertex
+   * @param   t the destination vertex
    * @return  a shortest path from vertex {@code s} to vertex {@code t}
    * as an iterable of edges, and {@code null} if no such path
    * @throws UnsupportedOperationException if there is a negative cost cycle
@@ -229,7 +229,7 @@ export class FloydWarshall {
   /**
    * Unit tests the {@code FloydWarshall} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V: number = parseInt(args[0]);

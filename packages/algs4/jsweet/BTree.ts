@@ -48,7 +48,7 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Returns the value associated with the given key.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the value associated with the given key if the key is in the symbol table
    * and {@code null} if the key is not in the symbol table
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -83,8 +83,8 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
    * with the new value if the key is already in the symbol table.
    * If the value is {@code null}, this effectively deletes the key from the symbol table.
    *
-   * @param  {*} key the key
-   * @param  {*} val the value
+   * @param   key the key
+   * @param   val the value
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public put(key: Key, val: Value) {
@@ -213,7 +213,7 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Unit tests the {@code BTree} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: BTree<string, string> = <any>new BTree<string, string>();

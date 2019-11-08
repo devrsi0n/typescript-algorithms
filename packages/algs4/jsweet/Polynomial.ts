@@ -2,8 +2,8 @@ import { StdOut } from './StdOut';
 
 /**
  * Initializes a new polynomial a x^b
- * @param {number} a the leading coefficient
- * @param {number} b the exponent
+ * @param  a the leading coefficient
+ * @param  b the exponent
  * @throws IllegalArgumentException if {@code b} is negative
  * @class
  * @author Robert Sedgewick
@@ -134,7 +134,7 @@ export class Polynomial {
    *
    * Compares this polynomial to the specified polynomial.
    *
-   * @param  {*} other the other polynoimal
+   * @param   other the other polynoimal
    * @return  {@code true} if this polynomial equals {@code other};
    * {@code false} otherwise
    */
@@ -168,7 +168,7 @@ export class Polynomial {
   /**
    * Returns the result of evaluating this polynomial at the point x.
    *
-   * @param  {number} x the point at which to evaluate the polynomial
+   * @param   x the point at which to evaluate the polynomial
    * @return  the integer whose value is {@code (this(x))}
    */
   public evaluate(x: number): number {
@@ -226,7 +226,7 @@ export class Polynomial {
   /**
    * Unit tests the polynomial data type.
    *
-   * @param {Array} args the command-line arguments (none)
+   * @param  args the command-line arguments (none)
    */
   public static main(args: string[]) {
     const zero: Polynomial = new Polynomial(0, 0);

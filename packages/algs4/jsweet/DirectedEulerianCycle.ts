@@ -140,7 +140,7 @@ export class DirectedEulerianCycle {
   /**
    * Unit tests the {@code DirectedEulerianCycle} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V: number = parseInt(args[0]);

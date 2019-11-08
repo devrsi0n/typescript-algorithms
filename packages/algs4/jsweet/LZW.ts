@@ -87,7 +87,7 @@ export class LZW {
    * Sample client that calls {@code compress()} if the command-line
    * argument is "-" an {@code expand()} if it is "+".
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     if (/* equals */ <any>((o1: any, o2: any) => {

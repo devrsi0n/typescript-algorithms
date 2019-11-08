@@ -127,7 +127,7 @@ export class BinaryStdIn {
   /**
    * Reads the next r bits from standard input and return as an r-bit character.
    *
-   * @param  {number} r number of bits to read.
+   * @param   r number of bits to read.
    * @return  the next r bits of data from standard input as a {@code char}
    * @throws Error if there are fewer than {@code r} bits available on standard input
    * @throws IllegalArgumentException unless {@code 1 <= r <= 16}
@@ -209,7 +209,7 @@ export class BinaryStdIn {
   /**
    * Reads the next r bits from standard input and return as an r-bit int.
    *
-   * @param  {number} r number of bits to read.
+   * @param   r number of bits to read.
    * @return  the next r bits of data from standard input as a {@code int}
    * @throws Error if there are fewer than {@code r} bits available on standard input
    * @throws IllegalArgumentException unless {@code 1 <= r <= 32}
@@ -283,7 +283,7 @@ export class BinaryStdIn {
    * Test client. Reads in a binary input file from standard input and writes
    * it to standard output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     while (!BinaryStdIn.isEmpty()) {

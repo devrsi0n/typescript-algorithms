@@ -26,8 +26,8 @@ export class PatriciaST<Value> {
    * contains the specified key, then its associated value becomes updated.
    * If the value provided is {@code null}, then the key becomes removed
    * from the symbol table.
-   * @param {string} key the key
-   * @param {*} val the value
+   * @param  key the key
+   * @param  val the value
    * @throws IllegalArgumentException if {@code key} is {@code null}
    * @throws IllegalArgumentException if {@code key} is the empty string.
    */
@@ -75,7 +75,7 @@ export class PatriciaST<Value> {
 
   /**
    * Retrieves the value associated with the given key.
-   * @param {string} key the key
+   * @param  key the key
    * @return  the value associated with the given key if the key is in the
    * symbol table and {@code null} if the key is not in the symbol table
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -105,7 +105,7 @@ export class PatriciaST<Value> {
   /**
    * Removes a key and its associated value from the symbol table, if it
    * exists.
-   * @param {string} key the key
+   * @param  key the key
    * @throws IllegalArgumentException if {@code key} is {@code null}
    * @throws IllegalArgumentException if {@code key} is the empty string.
    */
@@ -163,7 +163,7 @@ export class PatriciaST<Value> {
   /**
    * Returns {@code true} if the key-value pair, specified by the given
    * key, exists within the symbol table.
-   * @param {string} key the key
+   * @param  key the key
    * @return  {@code true} if this symbol table contains the given
    * {@code key} and {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -290,7 +290,7 @@ export class PatriciaST<Value> {
    * controls the number of passes (a new random dataset becomes generated at
    * the start of each pass).
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: PatriciaST<number> = <any>new PatriciaST<number>();

@@ -4,8 +4,8 @@ import { StdOut } from './StdOut';
 
 /**
  * Initializes a random edge-weighted digraph with {@code V} vertices and <em>E</em> edges.
- * @param {number} V the number of vertices
- * @param {number} E the number of edges
+ * @param  V the number of vertices
+ * @param  E the number of edges
  * @throws IllegalArgumentException if {@code V < 0}
  * @throws IllegalArgumentException if {@code E < 0}
  * @class
@@ -136,7 +136,7 @@ export class AdjMatrixEdgeWeightedDigraph {
 
   /**
    * Returns the directed edges incident from vertex {@code v}.
-   * @param {number} v the vertex
+   * @param  v the vertex
    * @return  the directed edges incident from vertex {@code v} as an Iterable
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -179,7 +179,7 @@ export class AdjMatrixEdgeWeightedDigraph {
   /**
    * Unit tests the {@code AdjMatrixEdgeWeightedDigraph} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V: number = parseInt(args[0]);

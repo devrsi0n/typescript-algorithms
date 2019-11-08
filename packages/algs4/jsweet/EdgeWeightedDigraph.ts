@@ -8,8 +8,8 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a random edge-weighted digraph with {@code V} vertices and <em>E</em> edges.
  *
- * @param  {number} V the number of vertices
- * @param  {number} E the number of edges
+ * @param   V the number of vertices
+ * @param   E the number of edges
  * @throws IllegalArgumentException if {@code V < 0}
  * @throws IllegalArgumentException if {@code E < 0}
  * @class
@@ -276,7 +276,7 @@ export class EdgeWeightedDigraph {
   /**
    * Returns the directed edges incident from vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the directed edges incident from vertex {@code v} as an Iterable
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -289,7 +289,7 @@ export class EdgeWeightedDigraph {
    * Returns the number of directed edges incident from vertex {@code v}.
    * This is known as the <em>outdegree</em> of vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the outdegree of vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -302,7 +302,7 @@ export class EdgeWeightedDigraph {
    * Returns the number of directed edges incident to vertex {@code v}.
    * This is known as the <em>indegree</em> of vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the indegree of vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -360,7 +360,7 @@ export class EdgeWeightedDigraph {
   /**
    * Unit tests the {@code EdgeWeightedDigraph} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

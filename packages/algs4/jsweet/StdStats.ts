@@ -51,9 +51,9 @@ export class StdStats {
   /**
    * Returns the maximum value in the specified subarray.
    *
-   * @param  {Array} a the array
-   * @param  {number} lo the left endpoint of the subarray (inclusive)
-   * @param  {number} hi the right endpoint of the subarray (exclusive)
+   * @param   a the array
+   * @param   lo the left endpoint of the subarray (inclusive)
+   * @param   hi the right endpoint of the subarray (exclusive)
    * @return  the maximum value in the subarray {@code a[lo..hi)};
    * {@code Double.NEGATIVE_INFINITY} if no such value
    * @throws IllegalArgumentException if {@code a} is {@code null}
@@ -136,9 +136,9 @@ export class StdStats {
   /**
    * Returns the minimum value in the specified subarray.
    *
-   * @param  {Array} a the array
-   * @param  {number} lo the left endpoint of the subarray (inclusive)
-   * @param  {number} hi the right endpoint of the subarray (exclusive)
+   * @param   a the array
+   * @param   lo the left endpoint of the subarray (inclusive)
+   * @param   hi the right endpoint of the subarray (exclusive)
    * @return  the maximum value in the subarray {@code a[lo..hi)};
    * {@code Double.POSITIVE_INFINITY} if no such value
    * @throws IllegalArgumentException if {@code a} is {@code null}
@@ -212,9 +212,9 @@ export class StdStats {
   /**
    * Returns the average value in the specified subarray.
    *
-   * @param {Array} a the array
-   * @param {number} lo the left endpoint of the subarray (inclusive)
-   * @param {number} hi the right endpoint of the subarray (exclusive)
+   * @param  a the array
+   * @param  lo the left endpoint of the subarray (inclusive)
+   * @param  hi the right endpoint of the subarray (exclusive)
    * @return  the average value in the subarray {@code a[lo..hi)};
    * {@code Double.NaN} if no such value
    * @throws IllegalArgumentException if {@code a} is {@code null}
@@ -296,9 +296,9 @@ export class StdStats {
   /**
    * Returns the sample variance in the specified subarray.
    *
-   * @param  {Array} a the array
-   * @param {number} lo the left endpoint of the subarray (inclusive)
-   * @param {number} hi the right endpoint of the subarray (exclusive)
+   * @param   a the array
+   * @param  lo the left endpoint of the subarray (inclusive)
+   * @param  hi the right endpoint of the subarray (exclusive)
    * @return  the sample variance in the subarray {@code a[lo..hi)};
    * {@code Double.NaN} if no such value
    * @throws IllegalArgumentException if {@code a} is {@code null}
@@ -386,9 +386,9 @@ export class StdStats {
   /**
    * Returns the population variance in the specified subarray.
    *
-   * @param  {Array} a the array
-   * @param {number} lo the left endpoint of the subarray (inclusive)
-   * @param {number} hi the right endpoint of the subarray (exclusive)
+   * @param   a the array
+   * @param  lo the left endpoint of the subarray (inclusive)
+   * @param  hi the right endpoint of the subarray (exclusive)
    * @return  the population variance in the subarray {@code a[lo..hi)};
    * {@code Double.NaN} if no such value
    * @throws IllegalArgumentException if {@code a} is {@code null}
@@ -441,9 +441,9 @@ export class StdStats {
   /**
    * Returns the sample standard deviation in the specified subarray.
    *
-   * @param  {Array} a the array
-   * @param {number} lo the left endpoint of the subarray (inclusive)
-   * @param {number} hi the right endpoint of the subarray (exclusive)
+   * @param   a the array
+   * @param  lo the left endpoint of the subarray (inclusive)
+   * @param  hi the right endpoint of the subarray (exclusive)
    * @return  the sample standard deviation in the subarray {@code a[lo..hi)};
    * {@code Double.NaN} if no such value
    * @throws IllegalArgumentException if {@code a} is {@code null}
@@ -501,9 +501,9 @@ export class StdStats {
   /**
    * Returns the population standard deviation in the specified subarray.
    *
-   * @param  {Array} a the array
-   * @param {number} lo the left endpoint of the subarray (inclusive)
-   * @param {number} hi the right endpoint of the subarray (exclusive)
+   * @param   a the array
+   * @param  lo the left endpoint of the subarray (inclusive)
+   * @param  hi the right endpoint of the subarray (exclusive)
    * @return  the population standard deviation in the subarray {@code a[lo..hi)};
    * {@code Double.NaN} if no such value
    * @throws IllegalArgumentException if {@code a} is {@code null}
@@ -563,9 +563,9 @@ export class StdStats {
   /**
    * Returns the sum of all values in the specified subarray.
    *
-   * @param  {Array} a the array
-   * @param {number} lo the left endpoint of the subarray (inclusive)
-   * @param {number} hi the right endpoint of the subarray (exclusive)
+   * @param   a the array
+   * @param  lo the left endpoint of the subarray (inclusive)
+   * @param  hi the right endpoint of the subarray (exclusive)
    * @return  the sum of all values in the subarray {@code a[lo..hi)};
    * {@code 0.0} if no such value
    * @throws IllegalArgumentException if {@code a} is {@code null}
@@ -621,7 +621,7 @@ export class StdStats {
    * Plots the points (0, <em>a</em><sub>0</sub>), (1, <em>a</em><sub>1</sub>), ...,
    * (<em>n</em>-1, <em>a</em><sub><em>n</em>-1</sub>) to standard draw.
    *
-   * @param {Array} a the array of values
+   * @param  a the array of values
    */
   public static plotPoints(a: number[]) {
     StdStats.validateNotNull(a);
@@ -641,7 +641,7 @@ export class StdStats {
    * (<em>i</em>+1, <em>a</em><sub><em>i</em>+1</sub>) for
    * each <em>i</em> to standard draw.
    *
-   * @param {Array} a the array of values
+   * @param  a the array of values
    */
   public static plotLines(a: number[]) {
     StdStats.validateNotNull(a);
@@ -660,7 +660,7 @@ export class StdStats {
    * (<em>a</em><sub><em>i</em></sub>) for each <em>i</em>
    * to standard draw.
    *
-   * @param {Array} a the array of values
+   * @param  a the array of values
    */
   public static plotBars(a: number[]) {
     StdStats.validateNotNull(a);
@@ -690,7 +690,7 @@ export class StdStats {
    * Unit tests {@code StdStats}.
    * Convert command-line arguments to array of doubles and call various methods.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: number[] = StdArrayIO.readDouble1D();

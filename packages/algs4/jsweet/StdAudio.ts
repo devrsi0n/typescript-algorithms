@@ -170,7 +170,7 @@ export class StdAudio {
    * Writes the array of samples (between -1.0 and +1.0) to standard audio.
    * If a sample is outside the range, it will be clipped.
    *
-   * @param  {Array} samples the array of samples to play
+   * @param   samples the array of samples to play
    * @throws IllegalArgumentException if any sample is {@code Double.NaN}
    * @throws IllegalArgumentException if {@code samples} is {@code null}
    */
@@ -200,7 +200,7 @@ export class StdAudio {
    * The audio file must be 16-bit with a sampling rate of 44,100.
    * It can be mono or stereo.
    *
-   * @param  {string} filename the name of the audio file
+   * @param   filename the name of the audio file
    * @return  the array of samples
    */
   public static read(filename: string): number[] {
@@ -292,8 +292,8 @@ export class StdAudio {
   /**
    * Saves the double array as an audio file (using .wav or .au format).
    *
-   * @param  {string} filename the name of the audio file
-   * @param  {Array} samples the array of samples
+   * @param   filename the name of the audio file
+   * @param   samples the array of samples
    * @throws IllegalArgumentException if unable to save {@code filename}
    * @throws IllegalArgumentException if {@code samples} is {@code null}
    * @throws IllegalArgumentException if {@code filename} is {@code null}
@@ -420,7 +420,7 @@ export class StdAudio {
   /**
    * Loops an audio file (in .wav, .mid, or .au format) in a background thread.
    *
-   * @param {string} filename the name of the audio file
+   * @param  filename the name of the audio file
    * @throws IllegalArgumentException if {@code filename} is {@code null}
    */
   public static loop(filename: string) {
@@ -457,9 +457,9 @@ export class StdAudio {
 
   /**
    * Unit tests {@code StdAudio}.
-   * @param {number} hz
-   * @param {number} duration
-   * @param {number} amplitude
+   * @param  hz
+   * @param  duration
+   * @param  amplitude
    * @return
    * @private
    */
@@ -484,7 +484,7 @@ export class StdAudio {
   /**
    * Test client - play an A major scale to standard audio.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const freq = 440.0;

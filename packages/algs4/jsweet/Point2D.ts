@@ -3,8 +3,8 @@ import { StdRandom } from './StdRandom';
 
 /**
  * Initializes a new point (x, y).
- * @param {number} x the x-coordinate
- * @param {number} y the y-coordinate
+ * @param  x the x-coordinate
+ * @param  y the y-coordinate
  * @throws IllegalArgumentException if either {@code x} or {@code y}
  * is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
  * {@code Double.NEGATIVE_INFINITY}
@@ -223,7 +223,7 @@ export class Point2D implements java.lang.Comparable<Point2D> {
    *
    * Compares this point to the specified point.
    *
-   * @param  {*} other the other point
+   * @param   other the other point
    * @return  {@code true} if this point equals {@code other};
    * {@code false} otherwise
    */
@@ -295,7 +295,7 @@ export class Point2D implements java.lang.Comparable<Point2D> {
   /**
    * Unit tests the point data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const x0: number = parseInt(args[0]);

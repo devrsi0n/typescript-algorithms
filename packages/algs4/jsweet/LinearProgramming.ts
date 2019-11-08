@@ -6,9 +6,9 @@ import { StdRandom } from './StdRandom';
  * { max cx : Ax &le; b, x &ge; 0 }, where A is a m-by-n
  * matrix, b is an m-length vector, and c is an n-length vector.
  *
- * @param  {Array} A the <em>m</em>-by-<em>b</em> matrix
- * @param  {Array} b the <em>m</em>-length RHS vector
- * @param  {Array} c the <em>n</em>-length cost vector
+ * @param   A the <em>m</em>-by-<em>b</em> matrix
+ * @param   b the <em>m</em>-length RHS vector
+ * @param   c the <em>n</em>-length cost vector
  * @throws IllegalArgumentException unless {@code b[i] >= 0} for each {@code i}
  * @throws ArithmeticException if the linear program is unbounded
  * @class
@@ -351,7 +351,7 @@ export class LinearProgramming {
   /**
    * Unit tests the {@code LinearProgramming} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     StdOut.println$java_lang_Object('----- test 1 --------------------');

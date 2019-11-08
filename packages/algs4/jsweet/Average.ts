@@ -19,7 +19,7 @@ export class Average {
    * Reads in a sequence of real numbers from standard input and prints
    * out their average to standard output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let count = 0;

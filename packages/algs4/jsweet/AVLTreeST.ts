@@ -87,7 +87,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * {@code null} if no such key.
    *
    * @param {AVLTreeST.Node} x the subtree
-   * @param {*} key the key
+   * @param  key the key
    * @return {AVLTreeST.Node} value associated with the given key in the subtree or
    * {@code null} if no such key
    * @private
@@ -113,7 +113,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   /**
    * Checks if the symbol table contains the given key.
    *
-   * @param {*} key the key
+   * @param  key the key
    * @return  {@code true} if the symbol table contains {@code key}
    * and {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -166,8 +166,8 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * table if the specified value is {@code null}.
    *
    * @param {AVLTreeST.Node} x the subtree
-   * @param {*} key the key
-   * @param {*} val the value
+   * @param  key the key
+   * @param  val the value
    * @return {AVLTreeST.Node} the subtree
    * @private
    */
@@ -340,7 +340,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * subtree.
    *
    * @param {AVLTreeST.Node} x the subtree
-   * @param {*} key the key
+   * @param  key the key
    * @return {AVLTreeST.Node} the updated subtree
    * @private
    */
@@ -537,7 +537,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * to the given key.
    *
    * @param {AVLTreeST.Node} x the subtree
-   * @param {*} key the key
+   * @param  key the key
    * @return {AVLTreeST.Node} the node in the subtree with the largest key less than or equal
    * to the given key
    * @private
@@ -589,7 +589,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * equal to the given key.
    *
    * @param {AVLTreeST.Node} x the subtree
-   * @param {*} key the key
+   * @param  key the key
    * @return {AVLTreeST.Node} the node in the subtree with the smallest key greater than or
    * equal to the given key
    * @private
@@ -642,7 +642,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * Returns the node with key the kth smallest key in the subtree.
    *
    * @param {AVLTreeST.Node} x the subtree
-   * @param {number} k the kth smallest key in the subtree
+   * @param  k the kth smallest key in the subtree
    * @return {AVLTreeST.Node} the node with key the kth smallest key in the subtree
    * @private
    */
@@ -683,7 +683,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   /**
    * Returns the number of keys in the subtree less than key.
    *
-   * @param {*} key the key
+   * @param  key the key
    * @param {AVLTreeST.Node} x the subtree
    * @return  the number of keys in the subtree less than key
    * @private
@@ -817,8 +817,8 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    *
    * @param {AVLTreeST.Node} x the subtree
    * @param {Queue} queue the queue
-   * @param {*} lo the lowest key
-   * @param {*} hi the highest key
+   * @param  lo the lowest key
+   * @param  hi the highest key
    * @private
    */
   public keys(x?: any, queue?: any, lo?: any, hi?: any): any {
@@ -870,8 +870,8 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   /**
    * Returns the number of keys in the symbol table in the given range.
    *
-   * @param {*} lo minimum endpoint
-   * @param {*} hi maximum endpoint
+   * @param  lo minimum endpoint
+   * @param  hi maximum endpoint
    * @return  the number of keys in the symbol table between {@code lo}
    * (inclusive) and {@code hi} (exclusive)
    * @throws IllegalArgumentException if either {@code lo} or {@code hi}
@@ -970,8 +970,8 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * Bob Dondero's elegant solution
    *
    * @param {AVLTreeST.Node} x the subtree
-   * @param {*} min the minimum key in subtree
-   * @param {*} max the maximum key in subtree
+   * @param  min the minimum key in subtree
+   * @param  max the maximum key in subtree
    * @return  {@code true} if if the symmetric order is consistent
    * @private
    */
@@ -1057,7 +1057,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   /**
    * Unit tests the {@code AVLTreeST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: AVLTreeST<string, number> = <any>new AVLTreeST<string, number>();
@@ -1079,10 +1079,10 @@ AVLTreeST.__class = 'edu.princeton.cs.algs4.AVLTreeST';
 export namespace AVLTreeST {
   /**
    * This class represents an inner node of the AVL tree.
-   * @param {*} key
-   * @param {*} val
-   * @param {number} height
-   * @param {number} size
+   * @param  key
+   * @param  val
+   * @param  height
+   * @param  size
    * @class
    */
   export class Node {

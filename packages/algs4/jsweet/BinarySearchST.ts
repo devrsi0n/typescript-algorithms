@@ -4,7 +4,7 @@ import { StdOut } from './StdOut';
 
 /**
  * Initializes an empty symbol table with the specified initial capacity.
- * @param {number} capacity the maximum capacity
+ * @param  capacity the maximum capacity
  * @class
  */
 export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
@@ -100,7 +100,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Does this symbol table contain the given key?
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  {@code true} if this symbol table contains {@code key} and
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -113,7 +113,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Returns the value associated with the given key in this symbol table.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the value associated with the given key if the key is in the symbol table
    * and {@code null} if the key is not in the symbol table
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -129,7 +129,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Returns the number of keys in this symbol table strictly less than {@code key}.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the number of keys in the symbol table strictly less than {@code key}
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
@@ -155,8 +155,8 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * Deletes the specified key (and its associated value) from this symbol table
    * if the specified value is {@code null}.
    *
-   * @param  {*} key the key
-   * @param  {*} val the value
+   * @param   key the key
+   * @param   val the value
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public put(key: Key, val: Value) {
@@ -186,7 +186,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * Removes the specified key and associated value from this symbol table
    * (if the key is in the symbol table).
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public delete(key: Key) {
@@ -258,7 +258,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Return the kth smallest key in this symbol table.
    *
-   * @param  {number} k the order statistic
+   * @param   k the order statistic
    * @return  the {@code k}th smallest key in this symbol table
    * @throws IllegalArgumentException unless {@code k} is between 0 and
    * <em>n</em>�C1
@@ -273,7 +273,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Returns the largest key in this symbol table less than or equal to {@code key}.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the largest key in this symbol table less than or equal to {@code key}
    * @throws Error if there is no such key
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -290,7 +290,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Returns the smallest key in this symbol table greater than or equal to {@code key}.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the smallest key in this symbol table greater than or equal to {@code key}
    * @throws Error if there is no such key
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -316,8 +316,8 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Returns the number of keys in this symbol table in the specified range.
    *
-   * @param {*} lo minimum endpoint
-   * @param {*} hi maximum endpoint
+   * @param  lo minimum endpoint
+   * @param  hi maximum endpoint
    * @return  the number of keys in this symbol table between {@code lo}
    * (inclusive) and {@code hi} (inclusive)
    * @throws IllegalArgumentException if either {@code lo} or {@code hi}
@@ -356,8 +356,8 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * Returns all keys in this symbol table in the given range,
    * as an {@code Iterable}.
    *
-   * @param {*} lo minimum endpoint
-   * @param {*} hi maximum endpoint
+   * @param  lo minimum endpoint
+   * @param  hi maximum endpoint
    * @return  all keys in this symbol table between {@code lo}
    * (inclusive) and {@code hi} (inclusive)
    * @throws IllegalArgumentException if either {@code lo} or {@code hi}
@@ -405,7 +405,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Unit tests the {@code BinarySearchST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: BinarySearchST<string, number> = <any>(

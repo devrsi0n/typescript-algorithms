@@ -35,7 +35,7 @@ export class CPM {
    * Reads the precedence constraints from standard input
    * and prints a feasible schedule to standard output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = StdIn.readInt();

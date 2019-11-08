@@ -10,7 +10,7 @@ import { In } from './In';
  * Computes a shortest paths tree from {@code s} to every other vertex in
  * the edge-weighted digraph {@code G}.
  * @param {EdgeWeightedDigraph} G the acyclic digraph
- * @param {number} s the source vertex
+ * @param  s the source vertex
  * @throws IllegalArgumentException unless {@code 0 <= s < V}
  * @class
  * @author Robert Sedgewick
@@ -120,7 +120,7 @@ export class BellmanFordSP {
 
   /**
    * Returns the length of a shortest path from the source vertex {@code s} to vertex {@code v}.
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  the length of a shortest path from the source vertex {@code s} to vertex {@code v};
    * {@code Double.POSITIVE_INFINITY} if no such path
    * @throws UnsupportedOperationException if there is a negative cost cycle reachable
@@ -138,7 +138,7 @@ export class BellmanFordSP {
 
   /**
    * Is there a path from the source {@code s} to vertex {@code v}?
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  {@code true} if there is a path from the source vertex
    * {@code s} to vertex {@code v}, and {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -150,7 +150,7 @@ export class BellmanFordSP {
 
   /**
    * Returns a shortest path from the source {@code s} to vertex {@code v}.
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  a shortest path from the source {@code s} to vertex {@code v}
    * as an iterable of edges, and {@code null} if no such path
    * @throws UnsupportedOperationException if there is a negative cost cycle reachable
@@ -253,7 +253,7 @@ export class BellmanFordSP {
   /**
    * Unit tests the {@code BellmanFordSP} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

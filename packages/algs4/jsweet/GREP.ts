@@ -24,7 +24,7 @@ export class GREP {
    * those lines that contain a substring matching the regular
    * expression.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const regexp = `(.*${args[0]}.*)`;

@@ -6,7 +6,7 @@ import { StdOut } from './StdOut';
 /**
  * Initializes an empty digraph with <em>V</em> vertices.
  *
- * @param  {number} V the number of vertices
+ * @param   V the number of vertices
  * @throws IllegalArgumentException if {@code V < 0}
  * @class
  * @author Robert Sedgewick
@@ -201,8 +201,8 @@ export class Digraph {
   /**
    * Adds the directed edge v��w to this digraph.
    *
-   * @param  {number} v the tail vertex
-   * @param  {number} w the head vertex
+   * @param   v the tail vertex
+   * @param   w the head vertex
    * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
    */
   public addEdge(v: number, w: number) {
@@ -216,7 +216,7 @@ export class Digraph {
   /**
    * Returns the vertices adjacent from vertex {@code v} in this digraph.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the vertices adjacent from vertex {@code v} in this digraph, as an iterable
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -229,7 +229,7 @@ export class Digraph {
    * Returns the number of directed edges incident from vertex {@code v}.
    * This is known as the <em>outdegree</em> of vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the outdegree of vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -242,7 +242,7 @@ export class Digraph {
    * Returns the number of directed edges incident to vertex {@code v}.
    * This is known as the <em>indegree</em> of vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the indegree of vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -300,7 +300,7 @@ export class Digraph {
   /**
    * Unit tests the {@code Digraph} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

@@ -7,7 +7,7 @@ import { StdOut } from './StdOut';
  * Initializes an empty graph with {@code V} vertices and 0 edges.
  * param V the number of vertices
  *
- * @param  {number} V number of vertices
+ * @param   V number of vertices
  * @throws IllegalArgumentException if {@code V < 0}
  * @class
  * @author Robert Sedgewick
@@ -169,8 +169,8 @@ export class Graph {
   /**
    * Adds the undirected edge v-w to this graph.
    *
-   * @param  {number} v one vertex in the edge
-   * @param  {number} w the other vertex in the edge
+   * @param   v one vertex in the edge
+   * @param   w the other vertex in the edge
    * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
    */
   public addEdge(v: number, w: number) {
@@ -184,7 +184,7 @@ export class Graph {
   /**
    * Returns the vertices adjacent to vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the vertices adjacent to vertex {@code v}, as an iterable
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -196,7 +196,7 @@ export class Graph {
   /**
    * Returns the degree of vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the degree of vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -232,7 +232,7 @@ export class Graph {
   /**
    * Unit tests the {@code Graph} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

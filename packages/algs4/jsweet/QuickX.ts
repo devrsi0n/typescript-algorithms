@@ -137,8 +137,8 @@ export class QuickX {
 
   /**
    * Helper sorting functions.
-   * @param {*} v
-   * @param {*} w
+   * @param  v
+   * @param  w
    * @return
    * @private
    */
@@ -157,7 +157,7 @@ export class QuickX {
 
   /**
    * Check if array is sorted - useful for debugging.
-   * @param {Array} a
+   * @param  a
    * @return
    * @private
    */
@@ -181,7 +181,7 @@ export class QuickX {
    * (using an optimized version of 2-way quicksort);
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

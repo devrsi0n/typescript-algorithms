@@ -43,8 +43,8 @@ export class DigraphGenerator {
 
   /**
    * Returns a random simple digraph containing {@code V} vertices and {@code E} edges.
-   * @param {number} V the number of vertices
-   * @param {number} E the number of vertices
+   * @param  V the number of vertices
+   * @param  E the number of vertices
    * @return {Digraph} a random simple digraph on {@code V} vertices, containing a total
    * of {@code E} edges
    * @throws IllegalArgumentException if no such simple digraph exists
@@ -81,7 +81,7 @@ export class DigraphGenerator {
    * Returns the complete digraph on {@code V} vertices.
    * In a complete digraph, every pair of distinct vertices is connected
    * by two antiparallel edges. There are {@code V*(V-1)} edges.
-   * @param {number} V the number of vertices
+   * @param  V the number of vertices
    * @return {Digraph} the complete digraph on {@code V} vertices
    */
   public static complete(V: number): Digraph {
@@ -97,8 +97,8 @@ export class DigraphGenerator {
   /**
    * Returns a random simple DAG containing {@code V} vertices and {@code E} edges.
    * Note: it is not uniformly selected at random among all such DAGs.
-   * @param {number} V the number of vertices
-   * @param {number} E the number of vertices
+   * @param  V the number of vertices
+   * @param  E the number of vertices
    * @return {Digraph} a random simple DAG on {@code V} vertices, containing a total
    * of {@code E} edges
    * @throws IllegalArgumentException if no such simple DAG exists
@@ -143,7 +143,7 @@ export class DigraphGenerator {
    * Returns a random tournament digraph on {@code V} vertices. A tournament digraph
    * is a digraph in which, for every pair of vertices, there is one and only one
    * directed edge connecting them. A tournament is an oriented complete graph.
-   * @param {number} V the number of vertices
+   * @param  V the number of vertices
    * @return {Digraph} a random tournament digraph on {@code V} vertices
    */
   public static tournament(V: number): Digraph {
@@ -166,7 +166,7 @@ export class DigraphGenerator {
    * A rooted in-tree is a DAG in which there is a single vertex
    * reachable from every other vertex. A complete rooted in-DAG
    * has V*(V-1)/2 edges.
-   * @param {number} V the number of vertices
+   * @param  V the number of vertices
    * @return {Digraph} a complete rooted-in DAG on {@code V} vertices
    */
   public static completeRootedInDAG(V: number): Digraph {
@@ -193,8 +193,8 @@ export class DigraphGenerator {
    * A rooted in-tree is a DAG in which there is a single vertex
    * reachable from every other vertex.
    * The DAG returned is not chosen uniformly at random among all such DAGs.
-   * @param {number} V the number of vertices
-   * @param {number} E the number of edges
+   * @param  V the number of vertices
+   * @param  E the number of edges
    * @return {Digraph} a random rooted-in DAG on {@code V} vertices and {@code E} edges
    */
   public static rootedInDAG(V: number, E: number): Digraph {
@@ -245,7 +245,7 @@ export class DigraphGenerator {
    * Returns a complete rooted-out DAG on {@code V} vertices.
    * A rooted out-tree is a DAG in which every vertex is reachable
    * from a single vertex. A complete rooted in-DAG has V*(V-1)/2 edges.
-   * @param {number} V the number of vertices
+   * @param  V the number of vertices
    * @return {Digraph} a complete rooted-out DAG on {@code V} vertices
    */
   public static completeRootedOutDAG(V: number): Digraph {
@@ -272,8 +272,8 @@ export class DigraphGenerator {
    * A rooted out-tree is a DAG in which every vertex is reachable from a
    * single vertex.
    * The DAG returned is not chosen uniformly at random among all such DAGs.
-   * @param {number} V the number of vertices
-   * @param {number} E the number of edges
+   * @param  V the number of vertices
+   * @param  E the number of edges
    * @return {Digraph} a random rooted-out DAG on {@code V} vertices and {@code E} edges
    */
   public static rootedOutDAG(V: number, E: number): Digraph {
@@ -325,7 +325,7 @@ export class DigraphGenerator {
    * A rooted in-tree is an oriented tree in which there is a single vertex
    * reachable from every other vertex.
    * The tree returned is not chosen uniformly at random among all such trees.
-   * @param {number} V the number of vertices
+   * @param  V the number of vertices
    * @return {Digraph} a random rooted-in tree on {@code V} vertices
    */
   public static rootedInTree(V: number): Digraph {
@@ -337,7 +337,7 @@ export class DigraphGenerator {
    * is an oriented tree in which each vertex is reachable from a single vertex.
    * It is also known as a <em>arborescence</em> or <em>branching</em>.
    * The tree returned is not chosen uniformly at random among all such trees.
-   * @param {number} V the number of vertices
+   * @param  V the number of vertices
    * @return {Digraph} a random rooted-out tree on {@code V} vertices
    */
   public static rootedOutTree(V: number): Digraph {
@@ -346,7 +346,7 @@ export class DigraphGenerator {
 
   /**
    * Returns a path digraph on {@code V} vertices.
-   * @param {number} V the number of vertices in the path
+   * @param  V the number of vertices in the path
    * @return {Digraph} a digraph that is a directed path on {@code V} vertices
    */
   public static path(V: number): Digraph {
@@ -370,7 +370,7 @@ export class DigraphGenerator {
 
   /**
    * Returns a complete binary tree digraph on {@code V} vertices.
-   * @param {number} V the number of vertices in the binary tree
+   * @param  V the number of vertices in the binary tree
    * @return {Digraph} a digraph that is a complete binary tree on {@code V} vertices
    */
   public static binaryTree(V: number): Digraph {
@@ -394,7 +394,7 @@ export class DigraphGenerator {
 
   /**
    * Returns a cycle digraph on {@code V} vertices.
-   * @param {number} V the number of vertices in the cycle
+   * @param  V the number of vertices in the cycle
    * @return {Digraph} a digraph that is a directed cycle on {@code V} vertices
    */
   public static cycle(V: number): Digraph {
@@ -420,8 +420,8 @@ export class DigraphGenerator {
   /**
    * Returns an Eulerian cycle digraph on {@code V} vertices.
    *
-   * @param  {number} V the number of vertices in the cycle
-   * @param  {number} E the number of edges in the cycle
+   * @param   V the number of vertices in the cycle
+   * @param   E the number of edges in the cycle
    * @return {Digraph} a digraph that is a directed Eulerian cycle on {@code V} vertices
    * and {@code E} edges
    * @throws IllegalArgumentException if either {@code V <= 0} or {@code E <= 0}
@@ -452,8 +452,8 @@ export class DigraphGenerator {
   /**
    * Returns an Eulerian path digraph on {@code V} vertices.
    *
-   * @param  {number} V the number of vertices in the path
-   * @param  {number} E the number of edges in the path
+   * @param   V the number of vertices in the path
+   * @param   E the number of edges in the path
    * @return {Digraph} a digraph that is a directed Eulerian path on {@code V} vertices
    * and {@code E} edges
    * @throws IllegalArgumentException if either {@code V <= 0} or {@code E < 0}
@@ -489,9 +489,9 @@ export class DigraphGenerator {
    * larger label). The number of components will be equal to the number of
    * distinct labels that are assigned to vertices.
    *
-   * @param {number} V the number of vertices
-   * @param {number} E the number of edges
-   * @param {number} c the (maximum) number of strong components
+   * @param  V the number of vertices
+   * @param  E the number of edges
+   * @param  c the (maximum) number of strong components
    * @return {Digraph} a random simple digraph on {@code V} vertices and
    * {@code E} edges, with (at most) {@code c} strong components
    * @throws IllegalArgumentException if {@code c} is larger than {@code V}
@@ -575,7 +575,7 @@ export class DigraphGenerator {
   /**
    * Unit tests the {@code DigraphGenerator} library.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V: number = parseInt(args[0]);

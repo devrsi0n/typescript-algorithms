@@ -403,7 +403,7 @@ export class AmericanFlag {
    * American flag sorts them;
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments: "int" to read input as non-negative integers
+   * @param  args the command-line arguments: "int" to read input as non-negative integers
    */
   public static main(args: string[]) {
     if (args.length > 0 && /* equals */ <any>((o1: any, o2: any) => {

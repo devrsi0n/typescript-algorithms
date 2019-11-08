@@ -3,10 +3,10 @@ import { StdOut } from './StdOut';
 /**
  * Initializes an edge from vertex {@code v} to vertex {@code w} with
  * the given {@code capacity} and {@code flow}.
- * @param {number} v the tail vertex
- * @param {number} w the head vertex
- * @param {number} capacity the capacity of the edge
- * @param {number} flow the flow on the edge
+ * @param  v the tail vertex
+ * @param  w the head vertex
+ * @param  capacity the capacity of the edge
+ * @param  flow the flow on the edge
  * @throws IllegalArgumentException if either {@code v} or {@code w}
  * is a negative integer
  * @throws IllegalArgumentException if {@code capacity} is negative
@@ -143,7 +143,7 @@ export class FlowEdge {
   /**
    * Returns the endpoint of the edge that is different from the given vertex
    * (unless the edge represents a self-loop in which case it returns the same vertex).
-   * @param {number} vertex one endpoint of the edge
+   * @param  vertex one endpoint of the edge
    * @return  the endpoint of the edge that is different from the given vertex
    * (unless the edge represents a self-loop in which case it returns the same vertex)
    * @throws IllegalArgumentException if {@code vertex} is not one of the endpoints
@@ -158,7 +158,7 @@ export class FlowEdge {
   /**
    * Returns the residual capacity of the edge in the direction
    * to the given {@code vertex}.
-   * @param {number} vertex one endpoint of the edge
+   * @param  vertex one endpoint of the edge
    * @return  the residual capacity of the edge in the direction to the given vertex
    * If {@code vertex} is the tail vertex, the residual capacity equals
    * {@code capacity() - flow()}; if {@code vertex} is the head vertex, the
@@ -175,8 +175,8 @@ export class FlowEdge {
    * Increases the flow on the edge in the direction to the given vertex.
    * If {@code vertex} is the tail vertex, this increases the flow on the edge by {@code delta};
    * if {@code vertex} is the head vertex, this decreases the flow on the edge by {@code delta}.
-   * @param {number} vertex one endpoint of the edge
-   * @param {number} delta amount by which to increase flow
+   * @param  vertex one endpoint of the edge
+   * @param  delta amount by which to increase flow
    * @throws IllegalArgumentException if {@code vertex} is not one of the endpoints
    * of the edge
    * @throws IllegalArgumentException if {@code delta} makes the flow on
@@ -210,7 +210,7 @@ export class FlowEdge {
   /**
    * Unit tests the {@code FlowEdge} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const e: FlowEdge = new FlowEdge(12, 23, 4.56);

@@ -8,8 +8,8 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a random edge-weighted graph with {@code V} vertices and <em>E</em> edges.
  *
- * @param  {number} V the number of vertices
- * @param  {number} E the number of edges
+ * @param   V the number of vertices
+ * @param   E the number of edges
  * @throws IllegalArgumentException if {@code V < 0}
  * @throws IllegalArgumentException if {@code E < 0}
  * @class
@@ -239,7 +239,7 @@ export class EdgeWeightedGraph {
   /**
    * Returns the edges incident on vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the edges incident on vertex {@code v} as an Iterable
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -251,7 +251,7 @@ export class EdgeWeightedGraph {
   /**
    * Returns the degree of vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the degree of vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -316,7 +316,7 @@ export class EdgeWeightedGraph {
   /**
    * Unit tests the {@code EdgeWeightedGraph} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

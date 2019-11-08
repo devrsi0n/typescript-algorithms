@@ -4,7 +4,7 @@ import { StdDraw } from './StdDraw';
 /**
  * Initializes an empty drawing object with the given name.
  *
- * @param {string} name the title of the drawing window.
+ * @param  name the title of the drawing window.
  * @class
  * @author Robert Sedgewick
  */
@@ -399,8 +399,8 @@ export class Draw
   /**
    * Sets the upper-left hand corner of the drawing window to be (x, y), where (0, 0) is upper left.
    *
-   * @param  {number} x the number of pixels from the left
-   * @param  {number} y the number of pixels from the top
+   * @param   x the number of pixels from the left
+   * @param   y the number of pixels from the top
    * @throws IllegalArgumentException if the width or height is 0 or negative
    */
   public setLocationOnScreen(x: number, y: number) {
@@ -411,7 +411,7 @@ export class Draw
   /**
    * Sets the default close operation.
    *
-   * @param  {number} value the value, typically {@code JFrame.EXIT_ON_CLOSE}
+   * @param   value the value, typically {@code JFrame.EXIT_ON_CLOSE}
    * (close all windows) or {@code JFrame.DISPOSE_ON_CLOSE}
    * (close current window)
    */
@@ -425,8 +425,8 @@ export class Draw
    * pen color, and font back to their default values.
    * Ordinarly, this method is called once, at the very beginning of a program.
    *
-   * @param  {number} canvasWidth the width as a number of pixels
-   * @param  {number} canvasHeight the height as a number of pixels
+   * @param   canvasWidth the width as a number of pixels
+   * @param   canvasHeight the height as a number of pixels
    * @throws IllegalArgumentException unless both {@code canvasWidth}
    * and {@code canvasHeight} are positive
    */
@@ -457,8 +457,8 @@ export class Draw
 
   /**
    * User and screen coordinate systems.
-   * @param {number} x
-   * @param {string} name
+   * @param  x
+   * @param  name
    * @private
    */
   static validate(x: number, name: string) {
@@ -499,8 +499,8 @@ export class Draw
   /**
    * Sets the x-scale.
    *
-   * @param {number} min the minimum value of the x-scale
-   * @param {number} max the maximum value of the x-scale
+   * @param  min the minimum value of the x-scale
+   * @param  max the maximum value of the x-scale
    * @throws IllegalArgumentException if {@code (max == min)}
    * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
    */
@@ -529,8 +529,8 @@ export class Draw
   /**
    * Sets the y-scale.
    *
-   * @param {number} min the minimum value of the y-scale
-   * @param {number} max the maximum value of the y-scale
+   * @param  min the minimum value of the y-scale
+   * @param  max the maximum value of the y-scale
    * @throws IllegalArgumentException if {@code (max == min)}
    * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
    */
@@ -627,7 +627,7 @@ export class Draw
   /**
    * Sets the radius of the pen to the given size.
    *
-   * @param  {number} radius the radius of the pen
+   * @param   radius the radius of the pen
    * @throws IllegalArgumentException if {@code radius} is negative, NaN, or infinite
    */
   public setPenRadius(radius?: any): any {
@@ -671,9 +671,9 @@ export class Draw
   /**
    * Sets the pen color to the given RGB color.
    *
-   * @param  {number} red the amount of red (between 0 and 255)
-   * @param  {number} green the amount of green (between 0 and 255)
-   * @param  {number} blue the amount of blue (between 0 and 255)
+   * @param   red the amount of red (between 0 and 255)
+   * @param   green the amount of green (between 0 and 255)
+   * @param   blue the amount of blue (between 0 and 255)
    * @throws IllegalArgumentException if {@code red}, {@code green},
    * or {@code blue} is outside its prescribed range
    */
@@ -758,10 +758,10 @@ export class Draw
   /**
    * Draws a line from (x0, y0) to (x1, y1).
    *
-   * @param {number} x0 the x-coordinate of the starting point
-   * @param {number} y0 the y-coordinate of the starting point
-   * @param {number} x1 the x-coordinate of the destination point
-   * @param {number} y1 the y-coordinate of the destination point
+   * @param  x0 the x-coordinate of the starting point
+   * @param  y0 the y-coordinate of the starting point
+   * @param  x1 the x-coordinate of the destination point
+   * @param  y1 the y-coordinate of the destination point
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
    */
   public line(x0: number, y0: number, x1: number, y1: number) {
@@ -783,8 +783,8 @@ export class Draw
   /**
    * Draws one pixel at (x, y).
    *
-   * @param {number} x the x-coordinate of the pixel
-   * @param {number} y the y-coordinate of the pixel
+   * @param  x the x-coordinate of the pixel
+   * @param  y the y-coordinate of the pixel
    * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
    * @private
    */
@@ -802,8 +802,8 @@ export class Draw
   /**
    * Draws a point at (x, y).
    *
-   * @param {number} x the x-coordinate of the point
-   * @param {number} y the y-coordinate of the point
+   * @param  x the x-coordinate of the point
+   * @param  y the y-coordinate of the point
    * @throws IllegalArgumentException if either {@code x} or {@code y} is either NaN or infinite
    */
   public point(x: number, y: number) {
@@ -821,9 +821,9 @@ export class Draw
   /**
    * Draws a circle of the specified radius, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the x-coordinate of the center of the circle
-   * @param  {number} y the y-coordinate of the center of the circle
-   * @param  {number} radius the radius of the circle
+   * @param   x the x-coordinate of the center of the circle
+   * @param   y the y-coordinate of the center of the circle
+   * @param   radius the radius of the circle
    * @throws IllegalArgumentException if {@code radius} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -847,9 +847,9 @@ export class Draw
   /**
    * Draws a filled circle of the specified radius, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the x-coordinate of the center of the circle
-   * @param  {number} y the y-coordinate of the center of the circle
-   * @param  {number} radius the radius of the circle
+   * @param   x the x-coordinate of the center of the circle
+   * @param   y the y-coordinate of the center of the circle
+   * @param   radius the radius of the circle
    * @throws IllegalArgumentException if {@code radius} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -874,10 +874,10 @@ export class Draw
    * Draws an ellipse with the specified semimajor and semiminor axes,
    * centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the ellipse
-   * @param  {number} y the <em>y</em>-coordinate of the center of the ellipse
-   * @param  {number} semiMajorAxis is the semimajor axis of the ellipse
-   * @param  {number} semiMinorAxis is the semiminor axis of the ellipse
+   * @param   x the <em>x</em>-coordinate of the center of the ellipse
+   * @param   y the <em>y</em>-coordinate of the center of the ellipse
+   * @param   semiMajorAxis is the semimajor axis of the ellipse
+   * @param   semiMinorAxis is the semiminor axis of the ellipse
    * @throws IllegalArgumentException if either {@code semiMajorAxis}
    * or {@code semiMinorAxis} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
@@ -910,10 +910,10 @@ export class Draw
    * Draws a filled ellipse with the specified semimajor and semiminor axes,
    * centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the ellipse
-   * @param  {number} y the <em>y</em>-coordinate of the center of the ellipse
-   * @param  {number} semiMajorAxis is the semimajor axis of the ellipse
-   * @param  {number} semiMinorAxis is the semiminor axis of the ellipse
+   * @param   x the <em>x</em>-coordinate of the center of the ellipse
+   * @param   y the <em>y</em>-coordinate of the center of the ellipse
+   * @param   semiMajorAxis is the semimajor axis of the ellipse
+   * @param   semiMinorAxis is the semiminor axis of the ellipse
    * @throws IllegalArgumentException if either {@code semiMajorAxis}
    * or {@code semiMinorAxis} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
@@ -946,11 +946,11 @@ export class Draw
    * Draws a circular arc of the specified radius,
    * centered at (<em>x</em>, <em>y</em>), from angle1 to angle2 (in degrees).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the circle
-   * @param  {number} y the <em>y</em>-coordinate of the center of the circle
-   * @param  {number} radius the radius of the circle
-   * @param  {number} angle1 the starting angle. 0 would mean an arc beginning at 3 o'clock.
-   * @param  {number} angle2 the angle at the end of the arc. For example, if
+   * @param   x the <em>x</em>-coordinate of the center of the circle
+   * @param   y the <em>y</em>-coordinate of the center of the circle
+   * @param   radius the radius of the circle
+   * @param   angle1 the starting angle. 0 would mean an arc beginning at 3 o'clock.
+   * @param   angle2 the angle at the end of the arc. For example, if
    * you want a 90 degree arc, then angle2 should be angle1 + 90.
    * @throws IllegalArgumentException if {@code radius} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
@@ -994,9 +994,9 @@ export class Draw
   /**
    * Draws a square of the specified size, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the square
-   * @param  {number} y the <em>y</em>-coordinate of the center of the square
-   * @param  {number} halfLength one half the length of any side of the square
+   * @param   x the <em>x</em>-coordinate of the center of the square
+   * @param   y the <em>y</em>-coordinate of the center of the square
+   * @param   halfLength one half the length of any side of the square
    * @throws IllegalArgumentException if {@code halfLength} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1020,9 +1020,9 @@ export class Draw
   /**
    * Draws a square of the specified size, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the square
-   * @param  {number} y the <em>y</em>-coordinate of the center of the square
-   * @param  {number} halfLength one half the length of any side of the square
+   * @param   x the <em>x</em>-coordinate of the center of the square
+   * @param   y the <em>y</em>-coordinate of the center of the square
+   * @param   halfLength one half the length of any side of the square
    * @throws IllegalArgumentException if {@code halfLength} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1046,10 +1046,10 @@ export class Draw
   /**
    * Draws a rectangle of the specified size, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the rectangle
-   * @param  {number} y the <em>y</em>-coordinate of the center of the rectangle
-   * @param  {number} halfWidth one half the width of the rectangle
-   * @param  {number} halfHeight one half the height of the rectangle
+   * @param   x the <em>x</em>-coordinate of the center of the rectangle
+   * @param   y the <em>y</em>-coordinate of the center of the rectangle
+   * @param   halfWidth one half the width of the rectangle
+   * @param   halfHeight one half the height of the rectangle
    * @throws IllegalArgumentException if either {@code halfWidth} or {@code halfHeight} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1080,10 +1080,10 @@ export class Draw
   /**
    * Draws a filled rectangle of the specified size, centered at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the center of the rectangle
-   * @param  {number} y the <em>y</em>-coordinate of the center of the rectangle
-   * @param  {number} halfWidth one half the width of the rectangle
-   * @param  {number} halfHeight one half the height of the rectangle
+   * @param   x the <em>x</em>-coordinate of the center of the rectangle
+   * @param   y the <em>y</em>-coordinate of the center of the rectangle
+   * @param   halfWidth one half the width of the rectangle
+   * @param   halfHeight one half the height of the rectangle
    * @throws IllegalArgumentException if either {@code halfWidth} or {@code halfHeight} is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
@@ -1117,8 +1117,8 @@ export class Draw
    * (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>), ...,
    * (<em>x</em><sub><em>n</em>�C1</sub>, <em>y</em><sub><em>n</em>�C1</sub>).
    *
-   * @param  {Array} x an array of all the <em>x</em>-coordinates of the polygon
-   * @param  {Array} y an array of all the <em>y</em>-coordinates of the polygon
+   * @param   x an array of all the <em>x</em>-coordinates of the polygon
+   * @param   y an array of all the <em>y</em>-coordinates of the polygon
    * @throws IllegalArgumentException unless {@code x[]} and {@code y[]}
    * are of the same length
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
@@ -1160,8 +1160,8 @@ export class Draw
    * (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>), ...,
    * (<em>x</em><sub><em>n</em>�C1</sub>, <em>y</em><sub><em>n</em>�C1</sub>).
    *
-   * @param  {Array} x an array of all the <em>x</em>-coordinates of the polygon
-   * @param  {Array} y an array of all the <em>y</em>-coordinates of the polygon
+   * @param   x an array of all the <em>x</em>-coordinates of the polygon
+   * @param   y an array of all the <em>y</em>-coordinates of the polygon
    * @throws IllegalArgumentException unless {@code x[]} and {@code y[]}
    * are of the same length
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
@@ -1199,7 +1199,7 @@ export class Draw
 
   /**
    * Drawing images.
-   * @param {string} filename
+   * @param  filename
    * @return {Image}
    * @private
    */
@@ -1365,12 +1365,12 @@ export class Draw
    * given number of degrees, and rescaled to the specified bounding box.
    * The supported image formats are JPEG, PNG, and GIF.
    *
-   * @param  {number} x the center <em>x</em>-coordinate of the image
-   * @param  {number} y the center <em>y</em>-coordinate of the image
-   * @param  {string} filename the name of the image/picture, e.g., "ball.gif"
-   * @param  {number} scaledWidth the width of the scaled image (in screen coordinates)
-   * @param  {number} scaledHeight the height of the scaled image (in screen coordinates)
-   * @param  {number} degrees is the number of degrees to rotate counterclockwise
+   * @param   x the center <em>x</em>-coordinate of the image
+   * @param   y the center <em>y</em>-coordinate of the image
+   * @param   filename the name of the image/picture, e.g., "ball.gif"
+   * @param   scaledWidth the width of the scaled image (in screen coordinates)
+   * @param   scaledHeight the height of the scaled image (in screen coordinates)
+   * @param   degrees is the number of degrees to rotate counterclockwise
    * @throws IllegalArgumentException if either {@code scaledWidth}
    * or {@code scaledHeight} is negative
    * @throws IllegalArgumentException if the image filename is invalid
@@ -1500,10 +1500,10 @@ export class Draw
   /**
    * Writes the given text string in the current font, centered at (<em>x</em>, <em>y</em>) and
    * rotated by the specified number of degrees.
-   * @param  {number} x the center <em>x</em>-coordinate of the text
-   * @param  {number} y the center <em>y</em>-coordinate of the text
-   * @param  {string} text the text to write
-   * @param  {number} degrees is the number of degrees to rotate counterclockwise
+   * @param   x the center <em>x</em>-coordinate of the text
+   * @param   y the center <em>y</em>-coordinate of the text
+   * @param   text the text to write
+   * @param   degrees is the number of degrees to rotate counterclockwise
    * @throws IllegalArgumentException if {@code text} is {@code null}
    * @throws IllegalArgumentException if {@code x}, {@code y}, or {@code degrees} is either NaN or infinite
    */
@@ -1531,9 +1531,9 @@ export class Draw
 
   /**
    * Writes the given text string in the current font, left-aligned at (<em>x</em>, <em>y</em>).
-   * @param  {number} x the <em>x</em>-coordinate of the text
-   * @param  {number} y the <em>y</em>-coordinate of the text
-   * @param  {string} text the text
+   * @param   x the <em>x</em>-coordinate of the text
+   * @param   y the <em>y</em>-coordinate of the text
+   * @param   text the text
    * @throws IllegalArgumentException if {@code text} is {@code null}
    * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
    */
@@ -1557,9 +1557,9 @@ export class Draw
   /**
    * Writes the given text string in the current font, right-aligned at (<em>x</em>, <em>y</em>).
    *
-   * @param  {number} x the <em>x</em>-coordinate of the text
-   * @param  {number} y the <em>y</em>-coordinate of the text
-   * @param  {string} text the text to write
+   * @param   x the <em>x</em>-coordinate of the text
+   * @param   y the <em>y</em>-coordinate of the text
+   * @param   text the text to write
    * @throws IllegalArgumentException if {@code text} is {@code null}
    * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
    */
@@ -1590,7 +1590,7 @@ export class Draw
   /**
    * Copies the offscreen buffer to the onscreen buffer, pauses for t milliseconds
    * and enables double buffering.
-   * @param {number} t number of milliseconds
+   * @param  t number of milliseconds
    * @deprecated replaced by {@link #enableDoubleBuffering()}, {@link #show()}, and {@link #pause(int t)}
    */
   public show(t?: any): any {
@@ -1605,7 +1605,7 @@ export class Draw
 
   /**
    * Pause for t milliseconds. This method is intended to support computer animations.
-   * @param {number} t number of milliseconds
+   * @param  t number of milliseconds
    */
   public pause(t: number) {
     try {
@@ -1649,7 +1649,7 @@ export class Draw
    * The supported image formats are JPEG and PNG;
    * the filename suffix must be {@code .jpg} or {@code .png}.
    *
-   * @param  {string} filename the name of the file with one of the required suffixes
+   * @param   filename the name of the file with one of the required suffixes
    * @throws IllegalArgumentException if {@code filename} is {@code null}
    */
   public save(filename: string) {
@@ -1731,7 +1731,7 @@ export class Draw
   /**
    * Adds a {@link DrawListener} to listen to keyboard and mouse events.
    *
-   * @param {*} listener the {\tt DrawListener} argument
+   * @param  listener the {\tt DrawListener} argument
    */
   public addListener(listener: DrawListener) {
     this.show();
@@ -1906,7 +1906,7 @@ export class Draw
    * (such as shift and control).
    * See {@link KeyEvent} for a description of key codes.
    *
-   * @param  {number} keycode the keycode to check
+   * @param   keycode the keycode to check
    * @return  {@code true} if {@code keycode} is currently being pressed;
    * {@code false} otherwise
    */
@@ -1961,7 +1961,7 @@ export class Draw
   /**
    * Test client.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const draw1: Draw = new Draw('Test client 1');

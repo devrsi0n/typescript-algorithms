@@ -8,8 +8,8 @@ import { StdOut } from './StdOut';
  * from vertex {@code s} to vertex {@code t}.
  *
  * @param  {FlowNetwork} G the flow network
- * @param  {number} s the source vertex
- * @param  {number} t the sink vertex
+ * @param   s the source vertex
+ * @param   t the sink vertex
  * @throws IllegalArgumentException unless {@code 0 <= s < V}
  * @throws IllegalArgumentException unless {@code 0 <= t < V}
  * @throws IllegalArgumentException if {@code s == t}
@@ -70,7 +70,7 @@ export class FordFulkerson {
   /**
    * Returns true if the specified vertex is on the {@code s} side of the mincut.
    *
-   * @param  {number} v vertex
+   * @param   v vertex
    * @return  {@code true} if vertex {@code v} is on the {@code s} side of the micut;
    * {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -219,7 +219,7 @@ export class FordFulkerson {
   /**
    * Unit tests the {@code FordFulkerson} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V: number = parseInt(args[0]);

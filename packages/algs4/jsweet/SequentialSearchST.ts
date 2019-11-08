@@ -39,7 +39,7 @@ export class SequentialSearchST<Key, Value> {
   /**
    * Returns true if this symbol table contains the specified key.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  {@code true} if this symbol table contains {@code key};
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -52,7 +52,7 @@ export class SequentialSearchST<Key, Value> {
   /**
    * Returns the value associated with the given key in this symbol table.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the value associated with the given key if the key is in the symbol table
    * and {@code null} if the key is not in the symbol table
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -78,8 +78,8 @@ export class SequentialSearchST<Key, Value> {
    * Deletes the specified key (and its associated value) from this symbol table
    * if the specified value is {@code null}.
    *
-   * @param  {*} key the key
-   * @param  {*} val the value
+   * @param   key the key
+   * @param   val the value
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public put(key: Key, val: Value) {
@@ -165,7 +165,7 @@ export class SequentialSearchST<Key, Value> {
   /**
    * Unit tests the {@code SequentialSearchST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: SequentialSearchST<string, number> = <any>(

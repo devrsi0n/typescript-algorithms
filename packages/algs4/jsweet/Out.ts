@@ -110,7 +110,7 @@ export class Out {
   /**
    * Prints a boolean to this output stream and then terminates the line.
    *
-   * @param {boolean} x the boolean to print
+   * @param  x the boolean to print
    */
   public println(x?: any): any {
     if (typeof x === 'boolean' || x === null) {
@@ -175,7 +175,7 @@ export class Out {
   /**
    * Prints a boolean to this output stream and flushes this output stream.
    *
-   * @param {boolean} x the boolean to print
+   * @param  x the boolean to print
    */
   public print(x?: any): any {
     if (typeof x === 'boolean' || x === null) {
@@ -253,8 +253,8 @@ export class Out {
    * locale, format string, and arguments, and then flushes this output stream.
    *
    * @param {Locale} locale the locale
-   * @param {string} format the format string
-   * @param {Array} args   the arguments accompanying the format string
+   * @param  format the format string
+   * @param  args   the arguments accompanying the format string
    */
   public printf(locale?: any, format?: any, ...args: any[]): any {
     if (
@@ -291,7 +291,7 @@ export class Out {
   /**
    * A test client.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let out: Out;

@@ -171,7 +171,7 @@ export class DepthFirstOrder {
 
   /**
    * Returns the preorder number of vertex {@code v}.
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the preorder number of vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -192,7 +192,7 @@ export class DepthFirstOrder {
 
   /**
    * Returns the postorder number of vertex {@code v}.
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the postorder number of vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -262,7 +262,7 @@ export class DepthFirstOrder {
   /**
    * Unit tests the {@code DepthFirstOrder} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

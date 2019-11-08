@@ -3,8 +3,8 @@ import { StdOut } from './StdOut';
 /**
  * Preprocesses the pattern string.
  *
- * @param {Array} pattern the pattern string
- * @param {number} R the alphabet size
+ * @param  pattern the pattern string
+ * @param  R the alphabet size
  * @class
  */
 export class BoyerMoore {
@@ -124,7 +124,7 @@ export class BoyerMoore {
    * Returns the index of the first occurrrence of the pattern string
    * in the text string.
    *
-   * @param  {string} txt the text string
+   * @param   txt the text string
    * @return  the index of the first occurrence of the pattern string
    * in the text string; n if no such match
    */
@@ -176,7 +176,7 @@ export class BoyerMoore {
    * searches for the pattern string in the text string; and prints
    * the first occurrence of the pattern string in the text string.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const pat: string = args[0];

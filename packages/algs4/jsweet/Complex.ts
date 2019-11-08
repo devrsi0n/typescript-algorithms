@@ -3,8 +3,8 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a complex number from the specified real and imaginary parts.
  *
- * @param {number} real the real part
- * @param {number} imag the imaginary part
+ * @param  real the real part
+ * @param  imag the imaginary part
  * @class
  * @author Robert Sedgewick
  */
@@ -103,7 +103,7 @@ export class Complex {
   /**
    * Returns the product of this complex number and the specified scalar.
    *
-   * @param  {number} alpha the scalar
+   * @param   alpha the scalar
    * @return {Complex} the complex number whose value is {@code (alpha * this)}
    */
   public scale(alpha: number): Complex {
@@ -214,7 +214,7 @@ export class Complex {
   /**
    * Unit tests the {@code Complex} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: Complex = new Complex(5.0, 6.0);

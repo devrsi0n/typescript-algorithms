@@ -5,8 +5,8 @@ import { StdOut } from './StdOut';
  * Initializes an empty priority queue with the given initial capacity,
  * using the given comparator.
  *
- * @param  {number} initCapacity the initial capacity of this priority queue
- * @param  {*} comparator the order in which to compare the keys
+ * @param   initCapacity the initial capacity of this priority queue
+ * @param   comparator the order in which to compare the keys
  * @class
  * @author Robert Sedgewick
  */
@@ -187,7 +187,7 @@ export class MinPQ<Key> implements Iterable<Key> {
   /**
    * Adds a new key to this priority queue.
    *
-   * @param  {*} x the key to add to this priority queue
+   * @param   x the key to add to this priority queue
    */
   public insert(x: Key) {
     if (this.n === this.pq.length - 1) this.resize(2 * this.pq.length);
@@ -215,7 +215,7 @@ export class MinPQ<Key> implements Iterable<Key> {
 
   /**
    * Helper functions to restore the heap invariant.
-   * @param {number} k
+   * @param  k
    * @private
    */
   swim(k: number) {
@@ -241,8 +241,8 @@ export class MinPQ<Key> implements Iterable<Key> {
 
   /**
    * Helper functions for compares and swaps.
-   * @param {number} i
-   * @param {number} j
+   * @param  i
+   * @param  j
    * @return
    * @private
    */
@@ -298,7 +298,7 @@ export class MinPQ<Key> implements Iterable<Key> {
   /**
    * Unit tests the {@code MinPQ} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const pq: MinPQ<string> = <any>new MinPQ<string>();

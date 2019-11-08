@@ -193,7 +193,7 @@ export class BinaryIn {
   /**
    * Reads the next r bits from this binary input stream and return as an r-bit character.
    *
-   * @param  {number} r number of bits to read
+   * @param   r number of bits to read
    * @return  the next {@code r} bits of data from this binary input streamt as a {@code char}
    * @throws Error if there are fewer than {@code r} bits available
    * @throws IllegalArgumentException unless {@code 1 <= r <= 16}
@@ -275,7 +275,7 @@ export class BinaryIn {
   /**
    * Reads the next r bits from this binary input stream return as an r-bit int.
    *
-   * @param  {number} r number of bits to read
+   * @param   r number of bits to read
    * @return  the next {@code r} bits of data from this binary input stream as a {@code int}
    * @throws Error if there are fewer than r bits available
    * @throws IllegalArgumentException unless {@code 1 <= r <= 32}
@@ -348,7 +348,7 @@ export class BinaryIn {
    * Reads the name of a file or URL (first command-line argument)
    * and writes it to a file (second command-line argument).
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: BinaryIn = new BinaryIn(args[0]);

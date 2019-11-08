@@ -57,8 +57,8 @@ export class LSD {
    *
    * Rearranges the array of W-character strings in ascending order.
    *
-   * @param {Array} a the array to be sorted
-   * @param {number} w the number of characters per string
+   * @param  a the array to be sorted
+   * @param  w the number of characters per string
    */
   public static sort(a?: any, w?: any): any {
     if (
@@ -137,7 +137,7 @@ export class LSD {
    * LSD radix sorts them;
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

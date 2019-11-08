@@ -114,7 +114,7 @@ export class BipartiteX {
   /**
    * Returns the side of the bipartite that vertex {@code v} is on.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the side of the bipartition that vertex {@code v} is on; two vertices
    * are in the same side of the bipartition if and only if they have the
    * same color
@@ -187,7 +187,7 @@ export class BipartiteX {
   /**
    * Unit tests the {@code BipartiteX} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V1: number = parseInt(args[0]);

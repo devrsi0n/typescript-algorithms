@@ -3,8 +3,8 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a closed interval [min, max].
  *
- * @param  {number} min the smaller endpoint
- * @param  {number} max the larger endpoint
+ * @param   min the smaller endpoint
+ * @param   max the larger endpoint
  * @throws IllegalArgumentException if the min endpoint is greater than the max endpoint
  * @throws IllegalArgumentException if either {@code min} or {@code max}
  * is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
@@ -128,7 +128,7 @@ export class Interval1D {
   /**
    * Returns true if this interval contains the specified value.
    *
-   * @param {number} x the value
+   * @param  x the value
    * @return  {@code true} if this interval contains the value {@code x};
    * {@code false} otherwise
    */
@@ -157,7 +157,7 @@ export class Interval1D {
   /**
    * Compares this transaction to the specified object.
    *
-   * @param  {*} other the other interval
+   * @param   other the other interval
    * @return  {@code true} if this interval equals the other interval;
    * {@code false} otherwise
    */
@@ -207,7 +207,7 @@ export class Interval1D {
   /**
    * Unit tests the {@code Interval1D} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const intervals: Interval1D[] = [null, null, null, null];

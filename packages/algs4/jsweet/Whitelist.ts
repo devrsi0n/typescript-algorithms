@@ -24,7 +24,7 @@ export class Whitelist {
    * a command-line argument. Reads in integers from standard input and
    * prints to standard output those integers that are not in the file.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

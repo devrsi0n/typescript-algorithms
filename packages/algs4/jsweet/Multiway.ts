@@ -41,7 +41,7 @@ export class Multiway {
    * the results to standard output.
    * Note: this client does not check that the input files are sorted.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = args.length;

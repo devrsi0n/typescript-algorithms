@@ -3,7 +3,7 @@ import { StdOut } from './StdOut';
 
 /**
  * Initializes a d-dimensional zero vector.
- * @param {number} d the dimension of the vector
+ * @param  d the dimension of the vector
  * @class
  * @author Robert Sedgewick
  */
@@ -22,8 +22,8 @@ export class SparseVector {
   /**
    * Sets the ith coordinate of this vector to the specified value.
    *
-   * @param  {number} i the index
-   * @param  {number} value the new value
+   * @param   i the index
+   * @param   value the new value
    * @throws IllegalArgumentException unless i is between 0 and d-1
    */
   public put(i: number, value: number) {
@@ -35,7 +35,7 @@ export class SparseVector {
   /**
    * Returns the ith coordinate of this vector.
    *
-   * @param  {number} i the index
+   * @param   i the index
    * @return  the value of the ith coordinate of this vector
    * @throws IllegalArgumentException unless i is between 0 and d-1
    */
@@ -144,7 +144,7 @@ export class SparseVector {
   /**
    * Returns the scalar-vector product of this vector with the specified scalar.
    *
-   * @param  {number} alpha the scalar
+   * @param   alpha the scalar
    * @return {SparseVector} the scalar-vector product of this vector with the specified scalar
    */
   public scale(alpha: number): SparseVector {
@@ -196,7 +196,7 @@ export class SparseVector {
   /**
    * Unit tests the {@code SparseVector} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: SparseVector = new SparseVector(10);

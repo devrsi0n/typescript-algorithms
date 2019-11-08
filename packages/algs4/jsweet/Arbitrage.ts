@@ -30,7 +30,7 @@ export class Arbitrage {
    * Reads the currency exchange table from standard input and
    * prints an arbitrage opportunity to standard output (if one exists).
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V: number = StdIn.readInt();

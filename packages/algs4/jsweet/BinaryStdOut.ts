@@ -35,7 +35,7 @@ export class BinaryStdOut {
 
   /**
    * Writes the specified bit to standard output.
-   * @param {boolean} bit
+   * @param  bit
    * @private
    */
   private static writeBit(bit: boolean) {
@@ -48,7 +48,7 @@ export class BinaryStdOut {
 
   /**
    * Writes the 8-bit byte to standard output.
-   * @param {number} x
+   * @param  x
    * @private
    */
   private static writeByte(x: number) {
@@ -204,8 +204,8 @@ export class BinaryStdOut {
 
   /**
    * Writes the string of r-bit characters to standard output.
-   * @param {string} s the {@code String} to write.
-   * @param {number} r the number of relevants bits in each character.
+   * @param  s the {@code String} to write.
+   * @param  r the number of relevants bits in each character.
    * @throws IllegalArgumentException if r is not between 1 and 16.
    * @throws IllegalArgumentException if any character in the string is not
    * between 0 and 2<sup>r</sup> - 1.
@@ -250,7 +250,7 @@ export class BinaryStdOut {
   /**
    * Tests the methods in this class.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const m: number = parseInt(args[0]);

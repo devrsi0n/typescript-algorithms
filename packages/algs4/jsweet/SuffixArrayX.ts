@@ -4,7 +4,7 @@ import { StdOut } from './StdOut';
 
 /**
  * Initializes a suffix array for the given {@code text} string.
- * @param {string} text the input string
+ * @param  text the input string
  * @class
  */
 export class SuffixArrayX {
@@ -121,7 +121,7 @@ export class SuffixArrayX {
   /**
    * Returns the index into the original string of the <em>i</em>th smallest suffix.
    * That is, {@code text.substring(sa.index(i))} is the <em>i</em> smallest suffix.
-   * @param {number} i an integer between 0 and <em>n</em>-1
+   * @param  i an integer between 0 and <em>n</em>-1
    * @return  the index into the original string of the <em>i</em>th smallest suffix
    * @throws Error unless {@code 0 <=i < n}
    */
@@ -169,7 +169,7 @@ export class SuffixArrayX {
 
   /**
    * Returns the <em>i</em>th smallest suffix as a string.
-   * @param {number} i the index
+   * @param  i the index
    * @return  the <em>i</em> smallest suffix as a string
    * @throws Error unless {@code 0 <= i < n}
    */
@@ -188,7 +188,7 @@ export class SuffixArrayX {
    * Returns the number of suffixes strictly less than the {@code query} string.
    * We note that {@code rank(select(i))} equals {@code i} for each {@code i}
    * between 0 and <em>n</em>-1.
-   * @param {string} query the query string
+   * @param  query the query string
    * @return  the number of suffixes strictly less than {@code query}
    */
   public rank(query: string): number {
@@ -237,7 +237,7 @@ export class SuffixArrayX {
   /**
    * Unit tests the {@code SuffixArrayx} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const s: string = /* replaceAll */ StdIn.readAll()

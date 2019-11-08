@@ -6,8 +6,8 @@ import { StdRandom } from './StdRandom';
  * where <em>A</em> is an <em>n</em>-by-<em>n</em> matrix and <em>b</em>
  * is a length <em>n</em> vector.
  *
- * @param  {Array} A the <em>n</em>-by-<em>n</em> constraint matrix
- * @param  {Array} b the length <em>n</em> right-hand-side vector
+ * @param   A the <em>n</em>-by-<em>n</em> constraint matrix
+ * @param   b the length <em>n</em> right-hand-side vector
  * @class
  * @author Robert Sedgewick
  */
@@ -313,7 +313,7 @@ export class GaussJordanElimination {
   /**
    * Unit tests the {@code GaussJordanElimination} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     GaussJordanElimination.test1();

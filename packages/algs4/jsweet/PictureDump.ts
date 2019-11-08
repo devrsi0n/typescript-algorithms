@@ -24,7 +24,7 @@ export class PictureDump {
    * using black for 1 and white for 0 (and red for any leftover
    * pixels).
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const width: number = parseInt(args[0]);

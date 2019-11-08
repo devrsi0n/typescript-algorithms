@@ -723,7 +723,7 @@ export class StdIn {
   /**
    * Interactive test of basic functionality.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     StdOut.print$java_lang_Object('Type a string: ');

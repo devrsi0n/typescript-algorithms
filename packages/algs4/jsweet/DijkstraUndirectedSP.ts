@@ -10,7 +10,7 @@ import { StdOut } from './StdOut';
  * other vertex in the edge-weighted graph {@code G}.
  *
  * @param  {EdgeWeightedGraph} G the edge-weighted digraph
- * @param  {number} s the source vertex
+ * @param   s the source vertex
  * @throws IllegalArgumentException if an edge weight is negative
  * @throws IllegalArgumentException unless {@code 0 <= s < V}
  * @class
@@ -75,7 +75,7 @@ export class DijkstraUndirectedSP {
    * Returns the length of a shortest path between the source vertex {@code s} and
    * vertex {@code v}.
    *
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  the length of a shortest path between the source vertex {@code s} and
    * the vertex {@code v}; {@code Double.POSITIVE_INFINITY} if no such path
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -89,7 +89,7 @@ export class DijkstraUndirectedSP {
    * Returns true if there is a path between the source vertex {@code s} and
    * vertex {@code v}.
    *
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  {@code true} if there is a path between the source vertex
    * {@code s} to vertex {@code v}; {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -102,7 +102,7 @@ export class DijkstraUndirectedSP {
   /**
    * Returns a shortest path between the source vertex {@code s} and vertex {@code v}.
    *
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  a shortest path between the source vertex {@code s} and vertex {@code v};
    * {@code null} if no such path
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -185,7 +185,7 @@ export class DijkstraUndirectedSP {
   /**
    * Unit tests the {@code DijkstraUndirectedSP} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

@@ -367,7 +367,7 @@ export class Inversions {
    * Reads a sequence of integers from standard input and
    * prints the number of inversions to standard output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: number[] = StdIn.readAllInts();

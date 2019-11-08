@@ -10,8 +10,8 @@ import { StdOut } from './StdOut';
  * Each line in the file contains
  * the name of a vertex, followed by a list of the names
  * of the vertices adjacent to that vertex, separated by the delimiter.
- * @param {string} filename the name of the file
- * @param {string} delimiter the delimiter between fields
+ * @param  filename the name of the file
+ * @param  delimiter the delimiter between fields
  * @class
  * @author Robert Sedgewick
  */
@@ -67,7 +67,7 @@ export class SymbolDigraph {
 
   /**
    * Does the digraph contain the vertex named {@code s}?
-   * @param {string} s the name of a vertex
+   * @param  s the name of a vertex
    * @return  {@code true} if {@code s} is the name of a vertex, and {@code false} otherwise
    */
   public contains(s: string): boolean {
@@ -76,7 +76,7 @@ export class SymbolDigraph {
 
   /**
    * Returns the integer associated with the vertex named {@code s}.
-   * @param {string} s the name of a vertex
+   * @param  s the name of a vertex
    * @return  the integer (between 0 and <em>V</em> - 1) associated with the vertex named {@code s}
    * @deprecated Replaced by {@link #indexOf(String)}.
    */
@@ -86,7 +86,7 @@ export class SymbolDigraph {
 
   /**
    * Returns the integer associated with the vertex named {@code s}.
-   * @param {string} s the name of a vertex
+   * @param  s the name of a vertex
    * @return  the integer (between 0 and <em>V</em> - 1) associated with the vertex named {@code s}
    */
   public indexOf(s: string): number {
@@ -95,7 +95,7 @@ export class SymbolDigraph {
 
   /**
    * Returns the name of the vertex associated with the integer {@code v}.
-   * @param  {number} v the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
+   * @param   v the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
    * @return  the name of the vertex associated with the integer {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    * @deprecated Replaced by {@link #nameOf(int)}.
@@ -107,7 +107,7 @@ export class SymbolDigraph {
 
   /**
    * Returns the name of the vertex associated with the integer {@code v}.
-   * @param  {number} v the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
+   * @param   v the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
    * @return  the name of the vertex associated with the integer {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -146,7 +146,7 @@ export class SymbolDigraph {
   /**
    * Unit tests the {@code SymbolDigraph} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const filename: string = args[0];

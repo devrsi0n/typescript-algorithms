@@ -4,7 +4,7 @@ import { StdOut } from './StdOut';
 /**
  * Time-Complexity:  O(n*log(n))
  *
- * @param {Array} array the Initialization array
+ * @param  array the Initialization array
  * @class
  * @author Ricardo Pacheco
  */
@@ -223,7 +223,7 @@ export class SegmentTree {
    * input up 1 3
    * [3,2,3,4,5,6]
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let st: SegmentTree = null;

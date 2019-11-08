@@ -72,8 +72,8 @@ export class LongestCommonSubstring {
   /**
    * Returns the longest common string of the two specified strings.
    *
-   * @param  {string} s one string
-   * @param  {string} t the other string
+   * @param   s one string
+   * @param   t the other string
    * @return  the longest common string that appears as a substring
    * in both {@code s} and {@code t}; the empty string
    * if no such string
@@ -103,7 +103,7 @@ export class LongestCommonSubstring {
    * computes the longest common substring; and prints the results to
    * standard output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const in1: In = new In(args[0]);

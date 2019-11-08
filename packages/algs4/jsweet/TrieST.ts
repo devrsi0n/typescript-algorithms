@@ -31,7 +31,7 @@ export class TrieST<Value> {
 
   /**
    * Does this symbol table contain the given key?
-   * @param {string} key the key
+   * @param  key the key
    * @return  {@code true} if this symbol table contains {@code key} and
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -163,7 +163,7 @@ export class TrieST<Value> {
 
   /**
    * Returns all of the keys in the set that start with {@code prefix}.
-   * @param {string} prefix the prefix
+   * @param  prefix the prefix
    * @return  all of the keys in the set that start with {@code prefix},
    * as an iterable
    */
@@ -209,7 +209,7 @@ export class TrieST<Value> {
   /**
    * Returns all of the keys in the symbol table that match {@code pattern},
    * where . symbol is treated as a wildcard character.
-   * @param {string} pattern the pattern
+   * @param  pattern the pattern
    * @return  all of the keys in the symbol table that match {@code pattern},
    * as an iterable, where . is treated as a wildcard character.
    */
@@ -423,7 +423,7 @@ export class TrieST<Value> {
   /**
    * Unit tests the {@code TrieST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: TrieST<number> = <any>new TrieST<number>();

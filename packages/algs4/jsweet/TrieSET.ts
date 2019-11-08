@@ -21,7 +21,7 @@ export class TrieSET implements Iterable<string> {
 
   /**
    * Does the set contain the given key?
-   * @param {string} key the key
+   * @param  key the key
    * @return  {@code true} if the set contains {@code key} and
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -123,7 +123,7 @@ export class TrieSET implements Iterable<string> {
 
   /**
    * Returns all of the keys in the set that start with {@code prefix}.
-   * @param {string} prefix the prefix
+   * @param  prefix the prefix
    * @return  all of the keys in the set that start with {@code prefix},
    * as an iterable
    */
@@ -165,7 +165,7 @@ export class TrieSET implements Iterable<string> {
   /**
    * Returns all of the keys in the set that match {@code pattern},
    * where . symbol is treated as a wildcard character.
-   * @param {string} pattern the pattern
+   * @param  pattern the pattern
    * @return  all of the keys in the set that match {@code pattern},
    * as an iterable, where . is treated as a wildcard character.
    */
@@ -380,7 +380,7 @@ export class TrieSET implements Iterable<string> {
   /**
    * Unit tests the {@code TrieSET} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const set: TrieSET = new TrieSET();

@@ -17,53 +17,53 @@ export interface DrawListener {
   /**
    * Invoked when the mouse has been pressed.
    *
-   * @param {number} x the x-coordinate of the mouse
-   * @param {number} y the y-coordinate of the mouse
+   * @param  x the x-coordinate of the mouse
+   * @param  y the y-coordinate of the mouse
    */
   mousePressed(x: number, y: number);
 
   /**
    * Invoked when the mouse has been dragged.
    *
-   * @param {number} x the x-coordinate of the mouse
-   * @param {number} y the y-coordinate of the mouse
+   * @param  x the x-coordinate of the mouse
+   * @param  y the y-coordinate of the mouse
    */
   mouseDragged(x: number, y: number);
 
   /**
    * Invoked when the mouse has been released.
    *
-   * @param {number} x the x-coordinate of the mouse
-   * @param {number} y the y-coordinate of the mouse
+   * @param  x the x-coordinate of the mouse
+   * @param  y the y-coordinate of the mouse
    */
   mouseReleased(x: number, y: number);
 
   /**
    * Invoked when the mouse has been clicked (pressed and released).
    *
-   * @param {number} x the x-coordinate of the mouse
-   * @param {number} y the y-coordinate of the mouse
+   * @param  x the x-coordinate of the mouse
+   * @param  y the y-coordinate of the mouse
    */
   mouseClicked(x: number, y: number);
 
   /**
    * Invoked when a key has been typed.
    *
-   * @param {string} c the character typed
+   * @param  c the character typed
    */
   keyTyped(c: string);
 
   /**
    * Invoked when a key has been pressed.
    *
-   * @param {number} keycode the key combination pressed
+   * @param  keycode the key combination pressed
    */
   keyPressed(keycode: number);
 
   /**
    * Invoked when a key has been released.
    *
-   * @param {number} keycode the key combination released
+   * @param  keycode the key combination released
    */
   keyReleased(keycode: number);
 }

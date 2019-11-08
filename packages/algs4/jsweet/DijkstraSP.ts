@@ -10,7 +10,7 @@ import { StdOut } from './StdOut';
  * vertex in the edge-weighted digraph {@code G}.
  *
  * @param  {EdgeWeightedDigraph} G the edge-weighted digraph
- * @param  {number} s the source vertex
+ * @param   s the source vertex
  * @throws IllegalArgumentException if an edge weight is negative
  * @throws IllegalArgumentException unless {@code 0 <= s < V}
  * @class
@@ -74,7 +74,7 @@ export class DijkstraSP {
 
   /**
    * Returns the length of a shortest path from the source vertex {@code s} to vertex {@code v}.
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  the length of a shortest path from the source vertex {@code s} to vertex {@code v};
    * {@code Double.POSITIVE_INFINITY} if no such path
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -87,7 +87,7 @@ export class DijkstraSP {
   /**
    * Returns true if there is a path from the source vertex {@code s} to vertex {@code v}.
    *
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  {@code true} if there is a path from the source vertex
    * {@code s} to vertex {@code v}; {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -100,7 +100,7 @@ export class DijkstraSP {
   /**
    * Returns a shortest path from the source vertex {@code s} to vertex {@code v}.
    *
-   * @param  {number} v the destination vertex
+   * @param   v the destination vertex
    * @return  a shortest path from the source vertex {@code s} to vertex {@code v}
    * as an iterable of edges, and {@code null} if no such path
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -185,7 +185,7 @@ export class DijkstraSP {
   /**
    * Unit tests the {@code DijkstraSP} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

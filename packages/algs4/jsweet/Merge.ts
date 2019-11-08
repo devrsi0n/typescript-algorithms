@@ -85,8 +85,8 @@ export class Merge {
 
   /**
    * Helper sorting function.
-   * @param {*} v
-   * @param {*} w
+   * @param  v
+   * @param  w
    * @return
    * @private
    */
@@ -181,12 +181,12 @@ export class Merge {
 
   /**
    * Index mergesort.
-   * @param {Array} a
-   * @param {Array} index
-   * @param {Array} aux
-   * @param {number} lo
-   * @param {number} mid
-   * @param {number} hi
+   * @param  a
+   * @param  index
+   * @param  aux
+   * @param  lo
+   * @param  mid
+   * @param  hi
    * @private
    */
   public static merge(
@@ -281,7 +281,7 @@ export class Merge {
 
   /**
    * Returns a permutation that gives the elements in the array in ascending order.
-   * @param {Array} a the array
+   * @param  a the array
    * @return  a permutation {@code p[]} such that {@code a[p[0]]}, {@code a[p[1]]},
    * ..., {@code a[p[N-1]]} are in ascending order
    */
@@ -454,7 +454,7 @@ export class Merge {
    * Reads in a sequence of strings from standard input; mergesorts them;
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

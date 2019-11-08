@@ -7,7 +7,7 @@ import { StdOut } from './StdOut';
 /**
  * Computes the shortest path from {@code s} and every other vertex in graph {@code G}.
  * @param {Digraph} G the digraph
- * @param {number} s the source vertex
+ * @param  s the source vertex
  * @throws IllegalArgumentException unless {@code 0 <= v < V}
  * @class
  * @author Robert Sedgewick
@@ -186,7 +186,7 @@ export class BreadthFirstDirectedPaths {
 
   /**
    * Is there a directed path from the source {@code s} (or sources) to vertex {@code v}?
-   * @param {number} v the vertex
+   * @param  v the vertex
    * @return  {@code true} if there is a directed path, {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -198,7 +198,7 @@ export class BreadthFirstDirectedPaths {
   /**
    * Returns the number of edges in a shortest path from the source {@code s}
    * (or sources) to vertex {@code v}?
-   * @param {number} v the vertex
+   * @param  v the vertex
    * @return  the number of edges in a shortest path
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -210,7 +210,7 @@ export class BreadthFirstDirectedPaths {
   /**
    * Returns a shortest path from {@code s} (or sources) to {@code v}, or
    * {@code null} if no such path.
-   * @param {number} v the vertex
+   * @param  v the vertex
    * @return  the sequence of vertices on a shortest path, as an Iterable
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -250,7 +250,7 @@ export class BreadthFirstDirectedPaths {
   /**
    * Unit tests the {@code BreadthFirstDirectedPaths} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

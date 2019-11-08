@@ -17,7 +17,7 @@ export class Shell {
 
   /**
    * Rearranges the array in ascending order, using the natural order.
-   * @param {Array} a the array to be sorted
+   * @param  a the array to be sorted
    */
   public static sort(a: java.lang.Comparable<any>[]) {
     const n: number = a.length;
@@ -47,8 +47,8 @@ export class Shell {
 
   /**
    * Helper sorting functions.
-   * @param {*} v
-   * @param {*} w
+   * @param  v
+   * @param  w
    * @return
    * @private
    */
@@ -67,7 +67,7 @@ export class Shell {
 
   /**
    * Check if array is sorted - useful for debugging.
-   * @param {Array} a
+   * @param  a
    * @return
    * @private
    */
@@ -97,7 +97,7 @@ export class Shell {
    * Reads in a sequence of strings from standard input; Shellsorts them;
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

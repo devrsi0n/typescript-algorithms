@@ -3,7 +3,7 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a d-dimensional zero vector.
  *
- * @param {number} d the dimension of the vector
+ * @param  d the dimension of the vector
  * @class
  * @author Robert Sedgewick
  */
@@ -145,7 +145,7 @@ export class Vector {
   /**
    * Returns the ith cartesian coordinate.
    *
-   * @param  {number} i the coordinate index
+   * @param   i the coordinate index
    * @return  the ith cartesian coordinate
    */
   public cartesian(i: number): number {
@@ -155,7 +155,7 @@ export class Vector {
   /**
    * Returns the scalar-vector product of this vector and the specified scalar
    *
-   * @param  {number} alpha the scalar
+   * @param   alpha the scalar
    * @return {Vector} the vector whose value is {@code (alpha * this)}
    * @deprecated Replaced by {@link #scale(double)}.
    */
@@ -170,7 +170,7 @@ export class Vector {
   /**
    * Returns the scalar-vector product of this vector and the specified scalar
    *
-   * @param  {number} alpha the scalar
+   * @param   alpha the scalar
    * @return {Vector} the vector whose value is {@code (alpha * this)}
    */
   public scale(alpha: number): Vector {
@@ -210,7 +210,7 @@ export class Vector {
   /**
    * Unit tests the {@code Vector} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const xdata: number[] = [1.0, 2.0, 3.0, 4.0];

@@ -38,7 +38,7 @@ export class StopwatchCPU {
    * compute the sum. Note that the discrete sum can be approximated by
    * an integral - the sum should be approximately 2/3 * (n^(3/2) - 1).
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);

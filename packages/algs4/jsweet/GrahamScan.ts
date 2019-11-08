@@ -6,7 +6,7 @@ import { StdOut } from './StdOut';
 /**
  * Computes the convex hull of the specified array of points.
  *
- * @param  {Array} points the array of points
+ * @param   points the array of points
  * @throws IllegalArgumentException if {@code points} is {@code null}
  * @throws IllegalArgumentException if any entry in {@code points[]} is {@code null}
  * @throws IllegalArgumentException if {@code points.length} is {@code 0}
@@ -106,7 +106,7 @@ export class GrahamScan {
    * computes their convex hull; and prints out the points on the
    * convex hull to standard output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = StdIn.readInt();

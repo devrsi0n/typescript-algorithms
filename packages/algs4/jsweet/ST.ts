@@ -18,7 +18,7 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
   /**
    * Returns the value associated with the given key in this symbol table.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the value associated with the given key if the key is in this symbol table;
    * {@code null} if the key is not in this symbol table
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -34,8 +34,8 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
    * Deletes the specified key (and its associated value) from this symbol table
    * if the specified value is {@code null}.
    *
-   * @param  {*} key the key
-   * @param  {*} val the value
+   * @param   key the key
+   * @param   val the value
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public put(key: Key, val: Value) {
@@ -48,7 +48,7 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
    * Removes the specified key and its associated value from this symbol table
    * (if the key is in this symbol table).
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @throws IllegalArgumentException if {@code key} is {@code null}
    */
   public delete(key: Key) {
@@ -59,7 +59,7 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
   /**
    * Returns true if this symbol table contain the given key.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  {@code true} if this symbol table contains {@code key} and
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -107,7 +107,7 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
    * This method is provided for backward compatibility with the version from
    * <em>Introduction to Programming in Java: An Interdisciplinary Approach.</em>
    *
-   * @return     {*} an iterator to all of the keys in this symbol table
+   * @return      an iterator to all of the keys in this symbol table
    * @deprecated Replaced by {@link #keys()}.
    */
   public iterator(): Iterator<Key> {
@@ -141,7 +141,7 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
   /**
    * Returns the smallest key in this symbol table greater than or equal to {@code key}.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the smallest key in this symbol table greater than or equal to {@code key}
    * @throws Error if there is no such key
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -157,7 +157,7 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
   /**
    * Returns the largest key in this symbol table less than or equal to {@code key}.
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  the largest key in this symbol table less than or equal to {@code key}
    * @throws Error if there is no such key
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -173,7 +173,7 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
   /**
    * Unit tests the {@code ST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: ST<string, number> = <any>new ST<string, number>();

@@ -24,7 +24,7 @@ export class ThreeSum {
    * Prints to standard output the (i, j, k) with {@code i < j < k}
    * such that {@code a[i] + a[j] + a[k] == 0}.
    *
-   * @param {Array} a the array of integers
+   * @param  a the array of integers
    */
   public static printAll(a: number[]) {
     const n: number = a.length;
@@ -49,7 +49,7 @@ export class ThreeSum {
    * Returns the number of triples (i, j, k) with {@code i < j < k}
    * such that {@code a[i] + a[j] + a[k] == 0}.
    *
-   * @param  {Array} a the array of integers
+   * @param   a the array of integers
    * @return  the number of triples (i, j, k) with {@code i < j < k}
    * such that {@code a[i] + a[j] + a[k] == 0}
    */
@@ -79,7 +79,7 @@ export class ThreeSum {
    * counts the number of triples sum to exactly zero; prints out the time to perform
    * the computation.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

@@ -4,7 +4,7 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a new counter starting at 0, with the given id.
  *
- * @param {string} id the name of the counter
+ * @param  id the name of the counter
  * @class
  * @author Robert Sedgewick
  */
@@ -64,7 +64,7 @@ export class Counter implements java.lang.Comparable<Counter> {
    * Reads two command-line integers n and trials; creates n counters;
    * increments trials counters at random; and prints results.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);

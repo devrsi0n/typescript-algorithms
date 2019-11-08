@@ -28,7 +28,7 @@ export class BinaryDump {
    * to 16 if no integer is specified); also writes the number
    * of bits.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let bitsPerLine = 16;

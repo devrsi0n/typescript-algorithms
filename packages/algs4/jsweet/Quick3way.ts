@@ -86,8 +86,8 @@ export class Quick3way {
 
   /**
    * Helper sorting functions.
-   * @param {*} v
-   * @param {*} w
+   * @param  v
+   * @param  w
    * @return
    * @private
    */
@@ -177,7 +177,7 @@ export class Quick3way {
    * Reads in a sequence of strings from standard input; 3-way
    * quicksorts them; and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

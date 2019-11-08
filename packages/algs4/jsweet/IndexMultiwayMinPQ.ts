@@ -1,9 +1,9 @@
 /**
  * Initializes an empty indexed priority queue with indices between {@code 0} to {@code N-1}
  * Worst case is O(n)
- * @param {number} N number of keys in the priority queue, index from {@code 0} to {@code N-1}
- * @param {number} D dimension of the heap
- * @param {*} C a Comparator over the keys
+ * @param  N number of keys in the priority queue, index from {@code 0} to {@code N-1}
+ * @param  D dimension of the heap
+ * @param  C a Comparator over the keys
  * @throws Error if {@code N < 0}
  * @throws Error if {@code D < 2}
  * @class
@@ -131,7 +131,7 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
   /**
    * Does the priority queue contains the index i ?
    * Worst case is O(1)
-   * @param {number} i an index
+   * @param  i an index
    * @throws Error if the specified index is invalid
    * @return  true if i is on the priority queue, false if not
    */
@@ -152,8 +152,8 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
   /**
    * Associates a key with an index
    * Worst case is O(log-d(n))
-   * @param {number} i an index
-   * @param {*} key a Key associated with i
+   * @param  i an index
+   * @param  key a Key associated with i
    * @throws Error if the specified index is invalid
    * @throws Error if the index is already in the queue
    */
@@ -211,7 +211,7 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
   /**
    * Gets the key associated with index i
    * Worst case is O(1)
-   * @param {number} i an index
+   * @param  i an index
    * @throws Error if the specified index is invalid
    * @throws Error if the index is not in the queue
    * @return  the key associated with index i
@@ -227,8 +227,8 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
    * Changes the key associated with index i to the given key
    * If the given key is greater, Worst case is O(d*log-d(n))
    * If the given key is lower,   Worst case is O(log-d(n))
-   * @param {number} i an index
-   * @param {*} key the key to associate with i
+   * @param  i an index
+   * @param  key the key to associate with i
    * @throws Error if the specified index is invalid
    * @throws Error if the index has no key associated with
    */
@@ -248,8 +248,8 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
   /**
    * Decreases the key associated with index i to the given key
    * Worst case is O(log-d(n))
-   * @param {number} i an index
-   * @param {*} key the key to associate with i
+   * @param  i an index
+   * @param  key the key to associate with i
    * @throws Error if the specified index is invalid
    * @throws java.util.Error if the index has no key associated with
    * @throws Error if the given key is greater than the current key
@@ -267,8 +267,8 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
   /**
    * Increases the key associated with index i to the given key
    * Worst case is O(d*log-d(n))
-   * @param {number} i an index
-   * @param {*} key the key to associate with i
+   * @param  i an index
+   * @param  key the key to associate with i
    * @throws Error if the specified index is invalid
    * @throws java.util.Error if the index has no key associated with
    * @throws Error if the given key is lower than the current key
@@ -286,7 +286,7 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
   /**
    * Deletes the key associated to the given index
    * Worst case is O(d*log-d(n))
-   * @param {number} i an index
+   * @param  i an index
    * @throws Error if the specified index is invalid
    * @throws java.util.Error if the given index has no key associated with
    */
@@ -304,8 +304,8 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
 
   /**
    * General helper functions
-   * @param {number} i
-   * @param {number} j
+   * @param  i
+   * @param  j
    * @return
    * @private
    */
@@ -330,7 +330,7 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
 
   /**
    * Functions for moving upward or downward
-   * @param {number} i
+   * @param  i
    * @private
    */
   swim(i: number) {
@@ -354,7 +354,7 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
 
   /**
    * Deletes the minimum child
-   * @param {number} i
+   * @param  i
    * @return
    * @private
    */
@@ -434,8 +434,8 @@ export namespace IndexMultiwayMinPQ {
     public __parent: any;
     /**
      *
-     * @param {*} key1
-     * @param {*} key2
+     * @param  key1
+     * @param  key2
      * @return
      */
     public compare(key1: any, key2: any): number {

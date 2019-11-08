@@ -21,8 +21,8 @@ export class BinarySearch {
   /**
    * Returns the index of the specified key in the specified array.
    *
-   * @param  {Array} a the array of integers, must be sorted in ascending order
-   * @param  {number} key the search key
+   * @param   a the array of integers, must be sorted in ascending order
+   * @param   key the search key
    * @return  index of key in array {@code a} if present; {@code -1} otherwise
    */
   public static indexOf(a: number[], key: number): number {
@@ -44,8 +44,8 @@ export class BinarySearch {
    * This function is poorly named because it does not give the <em>rank</em>
    * if the array has duplicate keys or if the key is not in the array.
    *
-   * @param  {number} key the search key
-   * @param  {Array} a the array of integers, must be sorted in ascending order
+   * @param   key the search key
+   * @param   a the array of integers, must be sorted in ascending order
    * @return  index of key in array {@code a} if present; {@code -1} otherwise
    * @deprecated Replaced by {@link #indexOf(int[], int)}.
    */
@@ -58,7 +58,7 @@ export class BinarySearch {
    * a command-line argument; reads in integers from standard input;
    * prints to standard output those integers that do <em>not</em> appear in the file.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

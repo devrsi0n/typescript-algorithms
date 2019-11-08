@@ -2,9 +2,9 @@ import { StdOut } from './StdOut';
 
 /**
  * Initializes a new date from the month, day, and year.
- * @param {number} month the month (between 1 and 12)
- * @param {number} day the day (between 1 and 28-31, depending on the month)
- * @param {number} year the year
+ * @param  month the month (between 1 and 12)
+ * @param  day the day (between 1 and 28-31, depending on the month)
+ * @param  year the year
  * @throws IllegalArgumentException if this date is invalid
  * @class
  * @author Robert Sedgewick
@@ -170,7 +170,7 @@ export class Date implements java.lang.Comparable<Date> {
   /**
    * Compares this date to the specified date.
    *
-   * @param  {*} other the other date
+   * @param   other the other date
    * @return  {@code true} if this date equals {@code other}; {@code false} otherwise
    */
   public equals(other: any): boolean {
@@ -201,7 +201,7 @@ export class Date implements java.lang.Comparable<Date> {
   /**
    * Unit tests the {@code Date} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let today: Date = new Date(2, 25, 2004);

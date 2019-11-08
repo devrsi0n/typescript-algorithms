@@ -8,7 +8,7 @@ import { In } from './In';
  * Computes the shortest path between the source vertex {@code s}
  * and every other vertex in the graph {@code G}.
  * @param {Graph} G the graph
- * @param {number} s the source vertex
+ * @param  s the source vertex
  * @throws IllegalArgumentException unless {@code 0 <= s < V}
  * @class
  * @author Robert Sedgewick
@@ -186,7 +186,7 @@ export class BreadthFirstPaths {
 
   /**
    * Is there a path between the source vertex {@code s} (or sources) and vertex {@code v}?
-   * @param {number} v the vertex
+   * @param  v the vertex
    * @return  {@code true} if there is a path, and {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -198,7 +198,7 @@ export class BreadthFirstPaths {
   /**
    * Returns the number of edges in a shortest path between the source vertex {@code s}
    * (or sources) and vertex {@code v}?
-   * @param {number} v the vertex
+   * @param  v the vertex
    * @return  the number of edges in a shortest path
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -210,7 +210,7 @@ export class BreadthFirstPaths {
   /**
    * Returns a shortest path between the source vertex {@code s} (or sources)
    * and {@code v}, or {@code null} if no such path.
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the sequence of vertices on a shortest path, as an Iterable
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -301,7 +301,7 @@ export class BreadthFirstPaths {
   /**
    * Unit tests the {@code BreadthFirstPaths} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

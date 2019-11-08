@@ -118,9 +118,9 @@ export class MergeX {
 
   /**
    * Utility methods.
-   * @param {Array} a
-   * @param {number} i
-   * @param {number} j
+   * @param  a
+   * @param  i
+   * @param  j
    * @private
    */
   private static exch(a: any[], i: number, j: number) {
@@ -677,7 +677,7 @@ export class MergeX {
    * (using an optimized version of mergesort);
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

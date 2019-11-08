@@ -64,7 +64,7 @@ export class Interval2D {
 
   /**
    * Does this interval equal the other interval?
-   * @param {*} other the other interval
+   * @param  other the other interval
    * @return  true if this interval equals the other interval; false otherwise
    */
   public equals(other: any): boolean {
@@ -121,7 +121,7 @@ export class Interval2D {
   /**
    * Unit tests the {@code Interval2D} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const xmin: number = Number.parseFloat(args[0]);

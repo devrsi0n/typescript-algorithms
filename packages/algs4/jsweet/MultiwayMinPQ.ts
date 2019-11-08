@@ -2,9 +2,9 @@
  * Initializes a priority queue with given indexes
  * Worst case is O(a*log-d(n))
  *
- * @param  {number} d dimension of the heap
- * @param  {*} comparator a Comparator over the keys
- * @param  {Array} a an array of keys
+ * @param   d dimension of the heap
+ * @param   comparator a Comparator over the keys
+ * @param   a an array of keys
  * @throws Error if {@code d < 2}
  * @class
  * @author Tristan Claverie
@@ -179,7 +179,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
   /**
    * Puts a Key on the priority queue
    * Worst case is O(log-d(n))
-   * @param {*} key a Key
+   * @param  key a Key
    */
   public insert(key: Key) {
     this.keys[this.n + this.d] = key;
@@ -227,8 +227,8 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
 
   /**
    * General helper functions
-   * @param {number} x
-   * @param {number} y
+   * @param  x
+   * @param  y
    * @return
    * @private
    */
@@ -256,7 +256,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
 
   /**
    * Functions for moving upward or downward
-   * @param {number} i
+   * @param  i
    * @private
    */
   swim(i: number) {
@@ -281,7 +281,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
 
   /**
    * Deletes the minimum child
-   * @param {number} i
+   * @param  i
    * @return
    * @private
    */
@@ -299,7 +299,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
 
   /**
    * Resize the priority queue
-   * @param {number} N
+   * @param  N
    * @private
    */
   resize(N: number) {
@@ -378,8 +378,8 @@ export namespace MultiwayMinPQ {
     public __parent: any;
     /**
      *
-     * @param {*} key1
-     * @param {*} key2
+     * @param  key1
+     * @param  key2
      * @return
      */
     public compare(key1: any, key2: any): number {

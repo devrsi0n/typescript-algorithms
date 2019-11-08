@@ -609,8 +609,8 @@ export class In {
    * Reads all integers from a file and returns them as
    * an array of integers.
    *
-   * @param      {string} filename the name of the file
-   * @return     {Array} the integers in the file
+   * @param       filename the name of the file
+   * @return      the integers in the file
    * @deprecated Replaced by {@code new In(filename)}.{@link #readAllInts()}.
    */
   public static readInts(filename?: any): any {
@@ -631,8 +631,8 @@ export class In {
    * Reads all doubles from a file and returns them as
    * an array of doubles.
    *
-   * @param      {string} filename the name of the file
-   * @return     {Array} the doubles in the file
+   * @param       filename the name of the file
+   * @return      the doubles in the file
    * @deprecated Replaced by {@code new In(filename)}.{@link #readAllDoubles()}.
    */
   public static readDoubles(filename?: any): any {
@@ -653,8 +653,8 @@ export class In {
    * Reads all strings from a file and returns them as
    * an array of strings.
    *
-   * @param      {string} filename the name of the file
-   * @return     {Array} the strings in the file
+   * @param       filename the name of the file
+   * @return      the strings in the file
    * @deprecated Replaced by {@code new In(filename)}.{@link #readAllStrings()}.
    */
   public static readStrings(filename?: any): any {
@@ -682,7 +682,7 @@ export class In {
   /**
    * Unit tests the {@code In} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     let __in: In;

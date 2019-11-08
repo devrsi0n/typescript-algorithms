@@ -40,7 +40,7 @@ export class Bag<Item> implements Iterable<Item> {
   /**
    * Adds the item to this bag.
    *
-   * @param  {*} item the item to add to this bag
+   * @param   item the item to add to this bag
    */
   public add(item: Item) {
     const oldfirst: Bag.Node<Item> = this.first;
@@ -62,7 +62,7 @@ export class Bag<Item> implements Iterable<Item> {
   /**
    * Unit tests the {@code Bag} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const bag: Bag<string> = <any>new Bag<string>();

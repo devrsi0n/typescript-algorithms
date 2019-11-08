@@ -149,7 +149,7 @@ export class CC {
   /**
    * Returns the component id of the connected component containing vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the component id of the connected component containing vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -161,7 +161,7 @@ export class CC {
   /**
    * Returns the number of vertices in the connected component containing vertex {@code v}.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the number of vertices in the connected component containing vertex {@code v}
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -183,8 +183,8 @@ export class CC {
    * Returns true if vertices {@code v} and {@code w} are in the same
    * connected component.
    *
-   * @param  {number} v one vertex
-   * @param  {number} w the other vertex
+   * @param   v one vertex
+   * @param   w the other vertex
    * @return  {@code true} if vertices {@code v} and {@code w} are in the same
    * connected component; {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -200,8 +200,8 @@ export class CC {
    * Returns true if vertices {@code v} and {@code w} are in the same
    * connected component.
    *
-   * @param  {number} v one vertex
-   * @param  {number} w the other vertex
+   * @param   v one vertex
+   * @param   w the other vertex
    * @return  {@code true} if vertices {@code v} and {@code w} are in the same
    * connected component; {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -223,7 +223,7 @@ export class CC {
   /**
    * Unit tests the {@code CC} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

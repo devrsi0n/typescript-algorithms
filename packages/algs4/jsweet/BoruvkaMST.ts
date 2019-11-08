@@ -152,7 +152,7 @@ export class BoruvkaMST {
   /**
    * Unit tests the {@code BoruvkaMST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

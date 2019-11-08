@@ -5,10 +5,10 @@ import { StdDraw } from './StdDraw';
  * Initializes a new rectangle [<em>xmin</em>, <em>xmax</em>]
  * x [<em>ymin</em>, <em>ymax</em>].
  *
- * @param  {number} xmin the <em>x</em>-coordinate of the lower-left endpoint
- * @param  {number} xmax the <em>x</em>-coordinate of the upper-right endpoint
- * @param  {number} ymin the <em>y</em>-coordinate of the lower-left endpoint
- * @param  {number} ymax the <em>y</em>-coordinate of the upper-right endpoint
+ * @param   xmin the <em>x</em>-coordinate of the lower-left endpoint
+ * @param   xmax the <em>x</em>-coordinate of the upper-right endpoint
+ * @param   ymin the <em>y</em>-coordinate of the lower-left endpoint
+ * @param   ymax the <em>y</em>-coordinate of the upper-right endpoint
  * @throws IllegalArgumentException if any of {@code xmin},
  * {@code xmax}, {@code ymin}, or {@code ymax}
  * is {@code Double.NaN}.
@@ -168,7 +168,7 @@ export class RectHV {
   /**
    * Compares this rectangle to the specified rectangle.
    *
-   * @param  {*} other the other rectangle
+   * @param   other the other rectangle
    * @return  {@code true} if this rectangle equals {@code other};
    * {@code false} otherwise
    */

@@ -46,8 +46,8 @@ export class GraphGenerator {
 
   /**
    * Returns a random simple graph containing {@code V} vertices and {@code E} edges.
-   * @param {number} V the number of vertices
-   * @param {number} E the number of vertices
+   * @param  V the number of vertices
+   * @param  E the number of vertices
    * @return {Graph} a random simple graph on {@code V} vertices, containing a total
    * of {@code E} edges
    * @throws IllegalArgumentException if no such simple graph exists
@@ -82,7 +82,7 @@ export class GraphGenerator {
 
   /**
    * Returns the complete graph on {@code V} vertices.
-   * @param {number} V the number of vertices
+   * @param  V the number of vertices
    * @return {Graph} the complete graph on {@code V} vertices
    */
   public static complete(V: number): Graph {
@@ -91,8 +91,8 @@ export class GraphGenerator {
 
   /**
    * Returns a complete bipartite graph on {@code V1} and {@code V2} vertices.
-   * @param {number} V1 the number of vertices in one partition
-   * @param {number} V2 the number of vertices in the other partition
+   * @param  V1 the number of vertices in one partition
+   * @param  V2 the number of vertices in the other partition
    * @return {Graph} a complete bipartite graph on {@code V1} and {@code V2} vertices
    * @throws IllegalArgumentException if probability is not between 0 and 1
    */
@@ -139,9 +139,9 @@ export class GraphGenerator {
   /**
    * Returns a random simple bipartite graph on {@code V1} and {@code V2} vertices
    * with {@code E} edges.
-   * @param {number} V1 the number of vertices in one partition
-   * @param {number} V2 the number of vertices in the other partition
-   * @param {number} E the number of edges
+   * @param  V1 the number of vertices in one partition
+   * @param  V2 the number of vertices in the other partition
+   * @param  E the number of edges
    * @return {Graph} a random simple bipartite graph on {@code V1} and {@code V2} vertices,
    * containing a total of {@code E} edges
    * @throws IllegalArgumentException if no such simple bipartite graph exists
@@ -192,7 +192,7 @@ export class GraphGenerator {
 
   /**
    * Returns a path graph on {@code V} vertices.
-   * @param {number} V the number of vertices in the path
+   * @param  V the number of vertices in the path
    * @return {Graph} a path graph on {@code V} vertices
    */
   public static path(V: number): Graph {
@@ -216,7 +216,7 @@ export class GraphGenerator {
 
   /**
    * Returns a complete binary tree graph on {@code V} vertices.
-   * @param {number} V the number of vertices in the binary tree
+   * @param  V the number of vertices in the binary tree
    * @return {Graph} a complete binary tree graph on {@code V} vertices
    */
   public static binaryTree(V: number): Graph {
@@ -240,7 +240,7 @@ export class GraphGenerator {
 
   /**
    * Returns a cycle graph on {@code V} vertices.
-   * @param {number} V the number of vertices in the cycle
+   * @param  V the number of vertices in the cycle
    * @return {Graph} a cycle graph on {@code V} vertices
    */
   public static cycle(V: number): Graph {
@@ -266,8 +266,8 @@ export class GraphGenerator {
   /**
    * Returns an Eulerian cycle graph on {@code V} vertices.
    *
-   * @param  {number} V the number of vertices in the cycle
-   * @param  {number} E the number of edges in the cycle
+   * @param   V the number of vertices in the cycle
+   * @param   E the number of edges in the cycle
    * @return {Graph} a graph that is an Eulerian cycle on {@code V} vertices
    * and {@code E} edges
    * @throws IllegalArgumentException if either {@code V <= 0} or {@code E <= 0}
@@ -298,8 +298,8 @@ export class GraphGenerator {
   /**
    * Returns an Eulerian path graph on {@code V} vertices.
    *
-   * @param  {number} V the number of vertices in the path
-   * @param  {number} E the number of edges in the path
+   * @param   V the number of vertices in the path
+   * @param   E the number of edges in the path
    * @return {Graph} a graph that is an Eulerian path on {@code V} vertices
    * and {@code E} edges
    * @throws IllegalArgumentException if either {@code V <= 0} or {@code E < 0}
@@ -327,7 +327,7 @@ export class GraphGenerator {
 
   /**
    * Returns a wheel graph on {@code V} vertices.
-   * @param {number} V the number of vertices in the wheel
+   * @param  V the number of vertices in the wheel
    * @return {Graph} a wheel graph on {@code V} vertices: a single vertex connected to
    * every vertex in a cycle on {@code V-1} vertices
    */
@@ -359,7 +359,7 @@ export class GraphGenerator {
 
   /**
    * Returns a star graph on {@code V} vertices.
-   * @param {number} V the number of vertices in the star
+   * @param  V the number of vertices in the star
    * @return {Graph} a star graph on {@code V} vertices: a single vertex connected to
    * every other vertex
    */
@@ -388,8 +388,8 @@ export class GraphGenerator {
    * (not necessarily simple). The graph is simple with probability only about e^(-k^2/4),
    * which is tiny when k = 14.
    *
-   * @param {number} V the number of vertices in the graph
-   * @param {number} k degree of each vertex
+   * @param  V the number of vertices in the graph
+   * @param  k degree of each vertex
    * @return {Graph} a uniformly random {@code k}-regular graph on {@code V} vertices.
    */
   public static regular(V: number, k: number): Graph {
@@ -422,7 +422,7 @@ export class GraphGenerator {
   /**
    * Returns a uniformly random tree on {@code V} vertices.
    * This algorithm uses a Prufer sequence and takes time proportional to <em>V log V</em>.
-   * @param {number} V the number of vertices in the tree
+   * @param  V the number of vertices in the tree
    * @return {Graph} a uniformly random tree on {@code V} vertices
    */
   public static tree(V: number): Graph {
@@ -467,7 +467,7 @@ export class GraphGenerator {
   /**
    * Unit tests the {@code GraphGenerator} library.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V: number = parseInt(args[0]);

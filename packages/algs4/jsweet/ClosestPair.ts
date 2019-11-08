@@ -5,7 +5,7 @@ import { StdOut } from './StdOut';
 /**
  * Computes the closest pair of points in the specified array of points.
  *
- * @param  {Array} points the array of points
+ * @param   points the array of points
  * @throws IllegalArgumentException if {@code points} is {@code null} or if any
  * entry in {@code points[]} is {@code null}
  * @class
@@ -179,7 +179,7 @@ export class ClosestPair {
    * computes a closest pair of points; and prints the pair to standard
    * output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = StdIn.readInt();

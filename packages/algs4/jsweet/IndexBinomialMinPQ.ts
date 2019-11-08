@@ -1,8 +1,8 @@
 /**
  * Initializes an empty indexed priority queue with indices between {@code 0} to {@code N-1}
  * Worst case is O(n)
- * @param {number} N number of keys in the priority queue, index from {@code 0} to {@code N-1}
- * @param {*} comparator a Comparator over the keys
+ * @param  N number of keys in the priority queue, index from {@code 0} to {@code N-1}
+ * @param  comparator a Comparator over the keys
  * @throws Error if {@code N < 0}
  * @class
  * @author Tristan Claverie
@@ -96,7 +96,7 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
   /**
    * Does the priority queue contains the index i ?
    * Worst case is O(1)
-   * @param {number} i an index
+   * @param  i an index
    * @throws Error if the specified index is invalid
    * @return  true if i is on the priority queue, false if not
    */
@@ -134,8 +134,8 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
   /**
    * Associates a key with an index
    * Worst case is O(log(n))
-   * @param {number} i an index
-   * @param {*} key a Key associated with i
+   * @param  i an index
+   * @param  key a Key associated with i
    * @throws Error if the specified index is invalid
    * @throws Error if the index is already in the queue
    */
@@ -235,7 +235,7 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
   /**
    * Gets the key associated with index i
    * Worst case is O(1)
-   * @param {number} i an index
+   * @param  i an index
    * @throws Error if the specified index is invalid
    * @throws Error if the index is not in the queue
    * @return  the key associated with index i
@@ -250,8 +250,8 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
   /**
    * Changes the key associated with index i to the given key
    * Worst case is O(log(n))
-   * @param {number} i an index
-   * @param {*} key the key to associate with i
+   * @param  i an index
+   * @param  key the key to associate with i
    * @throws Error if the specified index is invalid
    * @throws Error if the index has no key associated with
    */
@@ -266,8 +266,8 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
   /**
    * Decreases the key associated with index i to the given key
    * Worst case is O(log(n))
-   * @param {number} i an index
-   * @param {*} key the key to associate with i
+   * @param  i an index
+   * @param  key the key to associate with i
    * @throws Error if the specified index is invalid
    * @throws java.util.Error if the index has no key associated with
    * @throws Error if the given key is greater than the current key
@@ -286,8 +286,8 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
   /**
    * Increases the key associated with index i to the given key
    * Worst case is O(log(n))
-   * @param {number} i an index
-   * @param {*} key the key to associate with i
+   * @param  i an index
+   * @param  key the key to associate with i
    * @throws Error if the specified index is invalid
    * @throws java.util.Error if the index has no key associated with
    * @throws Error if the given key is lower than the current key
@@ -305,7 +305,7 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
   /**
    * Deletes the key associated the given index
    * Worst case is O(log(n))
-   * @param {number} i an index
+   * @param  i an index
    * @throws Error if the specified index is invalid
    * @throws java.util.Error if the given index has no key associated with
    */
@@ -340,8 +340,8 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
 
   /**
    * General helper functions
-   * @param {*} n
-   * @param {*} m
+   * @param  n
+   * @param  m
    * @return
    * @private
    */
@@ -374,7 +374,7 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
 
   /**
    * Functions for moving upward
-   * @param {number} i
+   * @param  i
    * @private
    */
   swim(i: number) {
@@ -397,7 +397,7 @@ export class IndexBinomialMinPQ<Key> implements Iterable<number> {
 
   /**
    * Functions for deleting a key
-   * @param {number} i
+   * @param  i
    * @return {IndexBinomialMinPQ.Node}
    * @private
    */
@@ -588,8 +588,8 @@ export namespace IndexBinomialMinPQ {
     public __parent: any;
     /**
      *
-     * @param {*} key1
-     * @param {*} key2
+     * @param  key1
+     * @param  key2
      * @return
      */
     public compare(key1: any, key2: any): number {

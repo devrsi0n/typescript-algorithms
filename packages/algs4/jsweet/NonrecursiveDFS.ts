@@ -6,7 +6,7 @@ import { StdOut } from './StdOut';
 /**
  * Computes the vertices connected to the source vertex {@code s} in the graph {@code G}.
  * @param {Graph} G the graph
- * @param {number} s the source vertex
+ * @param  s the source vertex
  * @throws IllegalArgumentException unless {@code 0 <= s < V}
  * @class
  * @author Robert Sedgewick
@@ -51,7 +51,7 @@ export class NonrecursiveDFS {
 
   /**
    * Is vertex {@code v} connected to the source vertex {@code s}?
-   * @param {number} v the vertex
+   * @param  v the vertex
    * @return  {@code true} if vertex {@code v} is connected to the source vertex {@code s},
    * and {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -70,7 +70,7 @@ export class NonrecursiveDFS {
   /**
    * Unit tests the {@code NonrecursiveDFS} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

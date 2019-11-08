@@ -7,7 +7,7 @@ import { StdRandom } from './StdRandom';
 /**
  * Determines an optimal solution to the assignment problem.
  *
- * @param  {Array} weight the <em>n</em>-by-<em>n</em> matrix of weights
+ * @param   weight the <em>n</em>-by-<em>n</em> matrix of weights
  * @throws IllegalArgumentException unless all weights are nonnegative
  * @throws IllegalArgumentException if {@code weight} is {@code null}
  * @class
@@ -168,7 +168,7 @@ export class AssignmentProblem {
   /**
    * Returns the dual optimal value for the specified row.
    *
-   * @param  {number} i the row index
+   * @param   i the row index
    * @return  the dual optimal value for row {@code i}
    * @throws IllegalArgumentException unless {@code 0 <= i < n}
    */
@@ -180,7 +180,7 @@ export class AssignmentProblem {
   /**
    * Returns the dual optimal value for the specified column.
    *
-   * @param  {number} j the column index
+   * @param   j the column index
    * @return  the dual optimal value for column {@code j}
    * @throws IllegalArgumentException unless {@code 0 <= j < n}
    */
@@ -192,7 +192,7 @@ export class AssignmentProblem {
   /**
    * Returns the column associated with the specified row in the optimal solution.
    *
-   * @param  {number} i the row index
+   * @param   i the row index
    * @return  the column matched to row {@code i} in the optimal solution
    * @throws IllegalArgumentException unless {@code 0 <= i < n}
    */
@@ -311,7 +311,7 @@ export class AssignmentProblem {
    * solves the n-by-n assignment problem; and prints the optimal
    * solution.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);

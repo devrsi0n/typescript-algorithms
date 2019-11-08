@@ -6,8 +6,8 @@ import { StdRandom } from './StdRandom';
  * where <em>A</em> is an <em>m</em>-by-<em>n</em> matrix and <em>b</em>
  * is a length <em>m</em> vector.
  *
- * @param  {Array} A the <em>m</em>-by-<em>n</em> constraint matrix
- * @param  {Array} b the length <em>m</em> right-hand-side vector
+ * @param   A the <em>m</em>-by-<em>n</em> constraint matrix
+ * @param   b the length <em>m</em> right-hand-side vector
  * @throws IllegalArgumentException if the dimensions disagree, i.e.,
  * the length of {@code b} does not equal {@code m}
  * @class
@@ -169,9 +169,9 @@ export class GaussianElimination {
 
   /**
    * Unit tests the {@code GaussianElimination} data type.
-   * @param {string} name
-   * @param {Array} A
-   * @param {Array} b
+   * @param  name
+   * @param  A
+   * @param  b
    * @private
    */
   private static test(name: string, A: number[][], b: number[]) {
@@ -274,7 +274,7 @@ export class GaussianElimination {
   /**
    * Unit tests the {@code GaussianElimination} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     GaussianElimination.test1();

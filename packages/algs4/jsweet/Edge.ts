@@ -4,9 +4,9 @@ import { StdOut } from './StdOut';
  * Initializes an edge between vertices {@code v} and {@code w} of
  * the given {@code weight}.
  *
- * @param  {number} v one vertex
- * @param  {number} w the other vertex
- * @param  {number} weight the weight of this edge
+ * @param   v one vertex
+ * @param   w the other vertex
+ * @param   weight the weight of this edge
  * @throws IllegalArgumentException if either {@code v} or {@code w}
  * is a negative integer
  * @throws IllegalArgumentException if {@code weight} is {@code NaN}
@@ -53,7 +53,7 @@ export class Edge implements java.lang.Comparable<Edge> {
   /**
    * Returns the endpoint of this edge that is different from the given vertex.
    *
-   * @param  {number} vertex one endpoint of this edge
+   * @param   vertex one endpoint of this edge
    * @return  the other endpoint of this edge
    * @throws IllegalArgumentException if the vertex is not one of the
    * endpoints of this edge
@@ -95,7 +95,7 @@ export class Edge implements java.lang.Comparable<Edge> {
   /**
    * Unit tests the {@code Edge} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const e: Edge = new Edge(12, 34, 5.67);

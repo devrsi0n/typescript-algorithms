@@ -6,7 +6,7 @@ import { StdOut } from './StdOut';
  * {@code 0} through {@code n-1}. Each site is initially in its own
  * component.
  *
- * @param  {number} n the number of sites
+ * @param   n the number of sites
  * @throws IllegalArgumentException if {@code n < 0}
  * @class
  * @author Robert Sedgewick
@@ -44,7 +44,7 @@ export class QuickUnionUF {
   /**
    * Returns the component identifier for the component containing site {@code p}.
    *
-   * @param  {number} p the integer representing one object
+   * @param   p the integer representing one object
    * @return  the component identifier for the component containing site {@code p}
    * @throws IllegalArgumentException unless {@code 0 <= p < n}
    */
@@ -66,8 +66,8 @@ export class QuickUnionUF {
   /**
    * Returns true if the the two sites are in the same component.
    *
-   * @param  {number} p the integer representing one site
-   * @param  {number} q the integer representing the other site
+   * @param   p the integer representing one site
+   * @param   q the integer representing the other site
    * @return  {@code true} if the two sites {@code p} and {@code q} are in the same component;
    * {@code false} otherwise
    * @throws IllegalArgumentException unless
@@ -81,8 +81,8 @@ export class QuickUnionUF {
    * Merges the component containing site {@code p} with the
    * the component containing site {@code q}.
    *
-   * @param  {number} p the integer representing one site
-   * @param  {number} q the integer representing the other site
+   * @param   p the integer representing one site
+   * @param   q the integer representing the other site
    * @throws IllegalArgumentException unless
    * both {@code 0 <= p < n} and {@code 0 <= q < n}
    */
@@ -100,7 +100,7 @@ export class QuickUnionUF {
    * if the sites are in different components, merge the two components
    * and print the pair to standard output.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = StdIn.readInt();

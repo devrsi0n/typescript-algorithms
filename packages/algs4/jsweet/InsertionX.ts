@@ -18,7 +18,7 @@ export class InsertionX {
 
   /**
    * Rearranges the array in ascending order, using the natural order.
-   * @param {Array} a the array to be sorted
+   * @param  a the array to be sorted
    */
   public static sort(a: java.lang.Comparable<any>[]) {
     const n: number = a.length;
@@ -49,8 +49,8 @@ export class InsertionX {
 
   /**
    * Helper sorting functions.
-   * @param {*} v
-   * @param {*} w
+   * @param  v
+   * @param  w
    * @return
    * @private
    */
@@ -69,7 +69,7 @@ export class InsertionX {
 
   /**
    * Check if array is sorted - useful for debugging.
-   * @param {Array} a
+   * @param  a
    * @return
    * @private
    */
@@ -92,7 +92,7 @@ export class InsertionX {
    * Reads in a sequence of strings from standard input; insertion sorts them;
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

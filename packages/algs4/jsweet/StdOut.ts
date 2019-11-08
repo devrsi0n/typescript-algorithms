@@ -98,7 +98,7 @@ export class StdOut {
   /**
    * Prints a boolean to standard output and then terminates the line.
    *
-   * @param {boolean} x the boolean to print
+   * @param  x the boolean to print
    */
   public static println(x?: any): any {
     if (typeof x === 'boolean' || x === null) {
@@ -169,7 +169,7 @@ export class StdOut {
   /**
    * Prints a boolean to standard output and flushes standard output.
    *
-   * @param {boolean} x the boolean to print
+   * @param  x the boolean to print
    */
   public static print(x?: any): any {
     if (typeof x === 'boolean' || x === null) {
@@ -257,8 +257,8 @@ export class StdOut {
    * the specified format string and arguments; then flushes standard output.
    *
    * @param {Locale} locale the locale
-   * @param {string} format the <a href = "http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax">format string</a>
-   * @param {Array} args   the arguments accompanying the format string
+   * @param  format the <a href = "http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax">format string</a>
+   * @param  args   the arguments accompanying the format string
    */
   public static printf(locale?: any, format?: any, ...args: any[]): any {
     if (
@@ -295,7 +295,7 @@ export class StdOut {
   /**
    * Unit tests some of the methods in {@code StdOut}.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     StdOut.println$java_lang_Object('Test');

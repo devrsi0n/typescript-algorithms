@@ -5,7 +5,7 @@ import { StdRandom } from './StdRandom';
  * Initializes an empty indexed priority queue with indices between {@code 0}
  * and {@code maxN - 1}.
  *
- * @param  {number} maxN the keys on this priority queue are index from {@code 0} to {@code maxN - 1}
+ * @param   maxN the keys on this priority queue are index from {@code 0} to {@code maxN - 1}
  * @throws IllegalArgumentException if {@code maxN < 0}
  * @class
  * @author Robert Sedgewick
@@ -60,7 +60,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Is {@code i} an index on this priority queue?
    *
-   * @param  {number} i an index
+   * @param   i an index
    * @return  {@code true} if {@code i} is an index on this priority queue;
    * {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
@@ -81,8 +81,8 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Associate key with index i.
    *
-   * @param  {number} i an index
-   * @param  {*} key the key to associate with index {@code i}
+   * @param   i an index
+   * @param   key the key to associate with index {@code i}
    * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
    * @throws IllegalArgumentException if there already is an item
    * associated with index {@code i}
@@ -142,7 +142,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Returns the key associated with index {@code i}.
    *
-   * @param  {number} i the index of the key to return
+   * @param   i the index of the key to return
    * @return  the key associated with index {@code i}
    * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
    * @throws Error no key is associated with index {@code i}
@@ -156,8 +156,8 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Change the key associated with index {@code i} to the specified value.
    *
-   * @param  {number} i the index of the key to change
-   * @param  {*} key change the key associated with index {@code i} to this key
+   * @param   i the index of the key to change
+   * @param   key change the key associated with index {@code i} to this key
    * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
    */
   public changeKey(i: number, key: Key) {
@@ -171,8 +171,8 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Change the key associated with index {@code i} to the specified value.
    *
-   * @param  {number} i the index of the key to change
-   * @param  {*} key change the key associated with index {@code i} to this key
+   * @param   i the index of the key to change
+   * @param   key change the key associated with index {@code i} to this key
    * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
    * @deprecated Replaced by {@code changeKey(int, Key)}.
    */
@@ -183,8 +183,8 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Increase the key associated with index {@code i} to the specified value.
    *
-   * @param  {number} i the index of the key to increase
-   * @param  {*} key increase the key associated with index {@code i} to this key
+   * @param   i the index of the key to increase
+   * @param   key increase the key associated with index {@code i} to this key
    * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
    * @throws IllegalArgumentException if {@code key <= keyOf(i)}
    * @throws Error no key is associated with index {@code i}
@@ -203,8 +203,8 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Decrease the key associated with index {@code i} to the specified value.
    *
-   * @param  {number} i the index of the key to decrease
-   * @param  {*} key decrease the key associated with index {@code i} to this key
+   * @param   i the index of the key to decrease
+   * @param   key decrease the key associated with index {@code i} to this key
    * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
    * @throws IllegalArgumentException if {@code key >= keyOf(i)}
    * @throws Error no key is associated with index {@code i}
@@ -223,7 +223,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Remove the key on the priority queue associated with index {@code i}.
    *
-   * @param  {number} i the index of the key to remove
+   * @param   i the index of the key to remove
    * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
    * @throws Error no key is associated with index {@code i}
    */
@@ -240,8 +240,8 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
 
   /**
    * General helper functions.
-   * @param {number} i
-   * @param {number} j
+   * @param  i
+   * @param  j
    * @return
    * @private
    */
@@ -259,7 +259,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
 
   /**
    * Heap helper functions.
-   * @param {number} k
+   * @param  k
    * @private
    */
   swim(k: number) {
@@ -297,7 +297,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Unit tests the {@code IndexMaxPQ} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const strings: string[] = [

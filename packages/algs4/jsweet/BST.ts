@@ -34,7 +34,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Does this symbol table contain the given key?
    *
-   * @param  {*} key the key
+   * @param   key the key
    * @return  {@code true} if this symbol table contains {@code key} and
    * {@code false} otherwise
    * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -534,8 +534,8 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Returns the number of keys in the symbol table in the given range.
    *
-   * @param  {*} lo minimum endpoint
-   * @param  {*} hi maximum endpoint
+   * @param   lo minimum endpoint
+   * @param   hi maximum endpoint
    * @return  the number of keys in the symbol table between {@code lo}
    * (inclusive) and {@code hi} (inclusive)
    * @throws IllegalArgumentException if either {@code lo} or {@code hi}
@@ -698,7 +698,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Unit tests the {@code BST} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const st: BST<string, number> = <any>new BST<string, number>();

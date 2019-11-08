@@ -41,7 +41,7 @@ export class DegreesOfSeparation {
    * list of the names of the vertices adjacent to that vertex,
    * separated by the delimiter.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const filename: string = args[0];

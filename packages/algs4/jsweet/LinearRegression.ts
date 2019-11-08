@@ -1,8 +1,8 @@
 /**
  * Performs a linear regression on the data points {@code (y[i], x[i])}.
  *
- * @param  {Array} x the values of the predictor variable
- * @param  {Array} y the corresponding values of the response variable
+ * @param   x the values of the predictor variable
+ * @param   y the corresponding values of the response variable
  * @throws IllegalArgumentException if the lengths of the two arrays are not equal
  * @class
  * @author Robert Sedgewick
@@ -118,7 +118,7 @@ export class LinearRegression {
    * Returns the expected response {@code y} given the value of the predictor
    * variable {@code x}.
    *
-   * @param  {number} x the value of the predictor variable
+   * @param   x the value of the predictor variable
    * @return  the expected response {@code y} given the value of the predictor
    * variable {@code x}
    */

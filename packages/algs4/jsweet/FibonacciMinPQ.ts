@@ -1,8 +1,8 @@
 /**
  * Initializes a priority queue with given keys
  * Worst case is O(n)
- * @param {*} C a comparator over the keys
- * @param {Array} a an array of keys
+ * @param  C a comparator over the keys
+ * @param  a an array of keys
  * @class
  */
 export class FibonacciMinPQ<Key> implements Iterable<Key> {
@@ -187,8 +187,8 @@ export class FibonacciMinPQ<Key> implements Iterable<Key> {
 
   /**
    * General helper functions
-   * @param {*} n
-   * @param {*} m
+   * @param  n
+   * @param  m
    * @return
    * @private
    */
@@ -406,8 +406,8 @@ export namespace FibonacciMinPQ {
     public __parent: any;
     /**
      *
-     * @param {*} key1
-     * @param {*} key2
+     * @param  key1
+     * @param  key2
      * @return
      */
     public compare(key1: any, key2: any): number {

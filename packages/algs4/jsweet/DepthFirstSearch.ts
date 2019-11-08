@@ -6,7 +6,7 @@ import { StdOut } from './StdOut';
  * Computes the vertices in graph {@code G} that are
  * connected to the source vertex {@code s}.
  * @param {Graph} G the graph
- * @param {number} s the source vertex
+ * @param  s the source vertex
  * @throws IllegalArgumentException unless {@code 0 <= s < V}
  * @class
  * @author Robert Sedgewick
@@ -43,7 +43,7 @@ export class DepthFirstSearch {
 
   /**
    * Is there a path between the source vertex {@code s} and vertex {@code v}?
-   * @param {number} v the vertex
+   * @param  v the vertex
    * @return  {@code true} if there is a path, {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
    */
@@ -69,7 +69,7 @@ export class DepthFirstSearch {
   /**
    * Unit tests the {@code DepthFirstSearch} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const __in: In = new In(args[0]);

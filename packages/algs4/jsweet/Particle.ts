@@ -4,12 +4,12 @@ import { StdDraw } from './StdDraw';
 /**
  * Initializes a particle with the specified position, velocity, radius, mass, and color.
  *
- * @param  {number} rx <em>x</em>-coordinate of position
- * @param  {number} ry <em>y</em>-coordinate of position
- * @param  {number} vx <em>x</em>-coordinate of velocity
- * @param  {number} vy <em>y</em>-coordinate of velocity
- * @param  {number} radius the radius
- * @param  {number} mass the mass
+ * @param   rx <em>x</em>-coordinate of position
+ * @param   ry <em>y</em>-coordinate of position
+ * @param   vx <em>x</em>-coordinate of velocity
+ * @param   vy <em>y</em>-coordinate of velocity
+ * @param   radius the radius
+ * @param   mass the mass
  * @param  {Color} color the color
  * @class
  * @author Robert Sedgewick
@@ -124,7 +124,7 @@ export class Particle {
    * Moves this particle in a straight line (based on its velocity)
    * for the specified amount of time.
    *
-   * @param  {number} dt the amount of time
+   * @param   dt the amount of time
    */
   public move(dt: number) {
     this.rx += this.vx * dt;

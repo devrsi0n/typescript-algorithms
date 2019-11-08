@@ -181,7 +181,7 @@ export class HopcroftKarp {
    * Returns the vertex to which the specified vertex is matched in
    * the maximum matching computed by the algorithm.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  the vertex to which vertex {@code v} is matched in the
    * maximum matching; {@code -1} if the vertex is not matched
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -195,7 +195,7 @@ export class HopcroftKarp {
    * Returns true if the specified vertex is matched in the maximum matching
    * computed by the algorithm.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  {@code true} if vertex {@code v} is matched in maximum matching;
    * {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -230,7 +230,7 @@ export class HopcroftKarp {
    * Returns true if the specified vertex is in the minimum vertex cover
    * computed by the algorithm.
    *
-   * @param  {number} v the vertex
+   * @param   v the vertex
    * @return  {@code true} if vertex {@code v} is in the minimum vertex cover;
    * {@code false} otherwise
    * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -318,7 +318,7 @@ export class HopcroftKarp {
    * and {@code E} edges; computes a maximum matching and minimum vertex cover;
    * and prints the results.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V1: number = parseInt(args[0]);

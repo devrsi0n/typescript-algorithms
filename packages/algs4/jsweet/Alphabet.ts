@@ -3,7 +3,7 @@ import { StdOut } from './StdOut';
 /**
  * Initializes a new alphabet from the given set of characters.
  *
- * @param {string} alpha the set of characters
+ * @param  alpha the set of characters
  * @class
  */
 export class Alphabet {
@@ -231,7 +231,7 @@ export class Alphabet {
   /**
    * Returns true if the argument is a character in this alphabet.
    *
-   * @param  {string} c the character
+   * @param   c the character
    * @return  {@code true} if {@code c} is a character in this alphabet;
    * {@code false} otherwise
    */
@@ -278,7 +278,7 @@ export class Alphabet {
   /**
    * Returns the index corresponding to the argument character.
    *
-   * @param  {string} c the character
+   * @param   c the character
    * @return  the index corresponding to the character {@code c}
    * @throws IllegalArgumentException unless {@code c} is a character in this alphabet
    */
@@ -296,7 +296,7 @@ export class Alphabet {
   /**
    * Returns the indices corresponding to the argument characters.
    *
-   * @param  {string} s the characters
+   * @param   s the characters
    * @return  the indices corresponding to the characters {@code s}
    * @throws IllegalArgumentException unless every character in {@code s}
    * is a character in this alphabet
@@ -317,7 +317,7 @@ export class Alphabet {
   /**
    * Returns the character corresponding to the argument index.
    *
-   * @param  {number} index the index
+   * @param   index the index
    * @return  the character corresponding to the index {@code index}
    * @throws IllegalArgumentException unless {@code 0 <= index < R}
    */
@@ -331,7 +331,7 @@ export class Alphabet {
   /**
    * Returns the characters corresponding to the argument indices.
    *
-   * @param  {Array} indices the indices
+   * @param   indices the indices
    * @return  the characters corresponding to the indices {@code indices}
    * @throws IllegalArgumentException unless {@code 0 < indices[i] < R}
    * for every {@code i}
@@ -349,7 +349,7 @@ export class Alphabet {
   /**
    * Unit tests the {@code Alphabet} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const encoded1: number[] = Alphabet.BASE64_$LI$().toIndices(

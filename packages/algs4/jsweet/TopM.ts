@@ -26,7 +26,7 @@ export class TopM {
    * command-line integer m; prints to standard output the m largest
    * transactions in descending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const m: number = parseInt(args[0]);

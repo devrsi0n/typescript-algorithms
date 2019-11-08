@@ -17,7 +17,7 @@ export class Heap {
 
   /**
    * Rearranges the array in ascending order, using the natural order.
-   * @param {Array} pq the array to be sorted
+   * @param  pq the array to be sorted
    */
   public static sort(pq: java.lang.Comparable<any>[]) {
     let n: number = pq.length;
@@ -34,9 +34,9 @@ export class Heap {
 
   /**
    * Helper functions to restore the heap invariant.
-   * @param {Array} pq
-   * @param {number} k
-   * @param {number} n
+   * @param  pq
+   * @param  k
+   * @param  n
    * @private
    */
   private static sink(pq: java.lang.Comparable<any>[], k: number, n: number) {
@@ -54,9 +54,9 @@ export class Heap {
   /**
    * Helper functions for comparisons and swaps.
    * Indices are "off-by-one" to support 1-based indexing.
-   * @param {Array} pq
-   * @param {number} i
-   * @param {number} j
+   * @param  pq
+   * @param  i
+   * @param  j
    * @return
    * @private
    */
@@ -86,7 +86,7 @@ export class Heap {
    * Reads in a sequence of strings from standard input; heapsorts them;
    * and prints them to standard output in ascending order.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const a: string[] = StdIn.readAllStrings();

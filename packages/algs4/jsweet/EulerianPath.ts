@@ -164,7 +164,7 @@ export class EulerianPath {
   /**
    * Unit tests the {@code EulerianPath} data type.
    *
-   * @param {Array} args the command-line arguments
+   * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const V: number = parseInt(args[0]);
