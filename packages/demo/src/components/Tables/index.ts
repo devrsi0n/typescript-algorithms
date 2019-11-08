@@ -7,5 +7,5 @@ export default {
   Cell,
   Head,
   HeadCell,
-  Table
+  Table,
 };

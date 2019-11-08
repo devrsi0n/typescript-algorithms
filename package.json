@@ -20,8 +20,12 @@
     }
   },
   "lint-staged": {
-    "*.{ts,html,json,css,md}": [
+    "*.{html,json,css,md}": [
       "prettier --write",
+      "git add"
+    ],
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
       "git add"
     ]
   },

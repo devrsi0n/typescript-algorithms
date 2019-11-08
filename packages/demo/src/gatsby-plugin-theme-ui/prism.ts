@@ -27,5 +27,5 @@ export default {
   highlight: `rgba(255,255,255,0.07)`,
   highlightBorder: `#e1bde2`,
   dom: `#5F8DC3`,
-  operator: `#5FA8AA`
+  operator: `#5FA8AA`,
 };

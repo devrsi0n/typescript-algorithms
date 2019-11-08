@@ -5,7 +5,7 @@ const chineseSanSerifFonts = [
   '"Hiragino Sans GB"', // 冬青黑体, <mac>
   '"Microsoft YaHei"', // 微软雅黑, win
   '"Heiti SC"', // 黑体-简, win
-  '"WenQuanYi Micro Hei"' // 文泉驿微米黑，<Linux>
+  '"WenQuanYi Micro Hei"', // 文泉驿微米黑，<Linux>
 ];
 const chineseSerifFonts = [
   '"Noto Serif CJK SC"',
@@ -14,7 +14,7 @@ const chineseSerifFonts = [
   '"Songti SC"', // 华文宋体, mac
   '"SimSun"', // 中易宋体, win
   '"STSong"', // 华文宋体
-  '"AR PL Sungti"' // 文鼎简报宋, linux
+  '"AR PL Sungti"', // 文鼎简报宋, linux
 ];
 
 const serif = `"Merriweather", Georgia, ${chineseSerifFonts}, serif`;
@@ -27,5 +27,5 @@ export default {
   sansSerif,
   body: sansSerif,
   heading: serif,
-  monospace: `"Dank Mono", "Noto Sans Mono", "Menlo", "Roboto Mono", "Consolas", "Operator Mono", "Monaco", "source-code-pro", "Courier New", ${sansSerif}, monospace`
+  monospace: `"Dank Mono", "Noto Sans Mono", "Menlo", "Roboto Mono", "Consolas", "Operator Mono", "Monaco", "source-code-pro", "Courier New", ${sansSerif}, monospace`,
 };

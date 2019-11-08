@@ -3,5 +3,5 @@ import UnorderedList from './List.Unordered';
 
 export default {
   ol: OrderedList,
-  ul: UnorderedList
+  ul: UnorderedList,
 };

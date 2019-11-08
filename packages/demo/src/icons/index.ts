@@ -47,5 +47,5 @@ export default {
   ToggleOpen,
   Rows,
   Tiles,
-  Done
+  Done,
 };

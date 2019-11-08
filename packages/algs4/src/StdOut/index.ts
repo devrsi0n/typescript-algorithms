@@ -1,5 +1,7 @@
 import printf from 'printf';
 
+/* eslint-disable no-console */
+
 export default class StdOut {
   static print(s: any) {
     console.log(s);

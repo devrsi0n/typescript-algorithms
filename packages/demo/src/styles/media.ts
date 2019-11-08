@@ -31,7 +31,7 @@ const mediaqueries = theme.breakpoints.reduce(
       @media (min-width: ${toEm(theme.breakpoints[i - 1][1] + 1)}) {
         ${css(...args)};
       }
-    `
+    `,
   }),
   {}
 );

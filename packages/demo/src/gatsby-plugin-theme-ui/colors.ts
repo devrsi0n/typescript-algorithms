@@ -37,7 +37,7 @@ export default {
       success: '#46B17B',
       errorBackground: 'rgba(238, 86, 91, 0.1)',
       horizontalRule: 'rgba(255, 255, 255, 0.15)',
-      inputBackground: 'rgba(255, 255, 255, 0.07)'
-    }
-  }
+      inputBackground: 'rgba(255, 255, 255, 0.07)',
+    },
+  },
 };

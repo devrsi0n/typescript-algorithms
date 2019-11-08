@@ -82,13 +82,13 @@ export const getWindowDimensions = (): { height: number; width: number } => {
 
     return {
       height,
-      width
+      width,
     };
   }
 
   return {
     width: 0,
-    height: 0
+    height: 0,
   };
 };
 
@@ -264,7 +264,7 @@ export const getSelectionDimensions = () => {
   if (isSelectedInPrism || !isSelectedInArticle) {
     return {
       width: 0,
-      height: 0
+      height: 0,
     };
   }
 

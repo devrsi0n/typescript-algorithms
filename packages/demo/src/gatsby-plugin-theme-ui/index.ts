@@ -11,7 +11,7 @@ const breakpoints = [
   ['tablet', 735],
   ['desktop', 1070],
   ['desktop_medium', 1280],
-  ['desktop_large', 1440]
+  ['desktop_large', 1440],
 ];
 
 const colorModeTransition =
@@ -23,5 +23,5 @@ export default merge({
   colors,
   fonts,
   breakpoints,
-  tags
+  tags,
 });
