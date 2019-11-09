@@ -10,7 +10,8 @@
   "scripts": {
     "release": "lerna version --conventional-commits",
     "publish": "lerna publish from-git",
-    "build": "lerna run --stream --toposort build",
+    "build": "lerna run build",
+    "test": "lerna run test",
     "lint": "eslint --fix --ext .tsx,.ts,.js packages/"
   },
   "husky": {

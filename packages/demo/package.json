@@ -24,7 +24,7 @@
     "serve": "gatsby serve",
     "analyze": "cross-env ANALYZE=true gatsby build",
     "lint": "npm run eslint",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "eslint": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
     "prettier": "prettier --write ./**/*.{json,html,css,scss,md,yml}",
     "deploy": "gh-pages -r git@github.com:devrsi0n/devrsi0n.github.io.git -b master -d public",

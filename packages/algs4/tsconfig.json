@@ -17,6 +17,6 @@
     "types": ["jest"],
     "outDir": "lib"
   },
-  "exclude": ["node_modules", "lib", "**/*.test.ts"],
+  "exclude": ["node_modules", "lib", "**/*.test.ts", "jsweet"],
   "noEmitOnError": true
 }
