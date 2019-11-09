@@ -70,7 +70,9 @@ export default class Stack<Item> implements Iterable<Item> {
    * @throws Error if this stack is empty
    */
   public pop(): Item {
-    if (this.isEmpty()) throw new Error('Stack underflow');
+    if (this.isEmpty()) {
+      throw new Error('Stack underflow');
+    }
     const { item } = this.first;
     this.first = this.first.next;
     this.n--;
@@ -84,7 +86,9 @@ export default class Stack<Item> implements Iterable<Item> {
    * @throws Error if this stack is empty
    */
   public peek(): Item {
-    if (this.isEmpty()) throw new Error('Stack underflow');
+    if (this.isEmpty()) {
+      throw new Error('Stack underflow');
+    }
     return this.first.item;
   }
 
@@ -96,7 +100,7 @@ export default class Stack<Item> implements Iterable<Item> {
   public toString(): string {
     let str = '';
     for (const node of this) {
-      str += `${node.toString()}, `;
+      str += `${node}, `;
     }
     return `Stack [${str}]`;
   }

@@ -109,7 +109,7 @@ export default class Queue<Item> implements Iterable<Item> {
   public toString(): string {
     let str = '';
     for (const node of this) {
-      str += `${node.toString()}, `;
+      str += `${node}, `;
     }
     return `Queue [${str}]`;
   }

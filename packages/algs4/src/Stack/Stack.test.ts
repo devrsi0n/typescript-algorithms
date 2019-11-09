@@ -12,5 +12,7 @@ test('Stack test', () => {
   }
   expect(sum / numbers.size()).toEqual(2.5);
   expect(numbers.isEmpty()).toBe(false);
+  expect(numbers.pop()).toBe(4);
+  expect(numbers.pop()).toBe(3);
   expect(numbers.toString().startsWith('Stack'));
 });
