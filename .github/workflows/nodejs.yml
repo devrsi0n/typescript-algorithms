@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -17,10 +17,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    # Setup a virtual display for running electron, @see https://github.com/facebook-atom/jest-electron-runner/issues/47
+    - run: sudo apt-get install xvfb
     - name: yarn install, build, and test
       run: |
         yarn
         yarn run build
-        yarn test
+        xvfb-run --auto-servernum yarn test
       env:
         CI: true
+    - name: Cleanup xvfb pidx
+      # Clean up any remaining xvfb processes leftover in a Github Action.
+      uses: bcomnes/cleanup-xvfb@v1

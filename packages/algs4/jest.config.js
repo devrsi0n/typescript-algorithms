@@ -21,6 +21,7 @@
 // };
 
 module.exports = {
+  verbose: true,
   // notify: true,
   preset: 'ts-jest',
   setupFiles: ['./jest/setup.js'],
