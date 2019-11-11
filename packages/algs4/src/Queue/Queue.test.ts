@@ -14,3 +14,17 @@ test('Queue test', () => {
   expect(numbers.isEmpty()).toBe(false);
   expect(numbers.toString().startsWith('Queue'));
 });
+
+test('Queue exception', () => {
+  const numbers = new Queue<number>();
+  numbers.enqueue(1);
+  numbers.enqueue(2);
+  numbers.enqueue(3);
+  numbers.enqueue(4);
+  expect(() => {
+    for (const item of numbers) {
+      console.log(item);
+      numbers.enqueue(5);
+    }
+  }).toThrowError('ConcurrentModificationException');
+});

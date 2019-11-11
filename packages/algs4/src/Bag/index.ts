@@ -24,6 +24,7 @@ export class Node<Item> {
 export default class Bag<Item> implements Iterable<Item> {
   private first: Node<Item>; // beginning of bag
   private n: number; // number of elements in bag
+  private modCount: number;
 
   /**
    * Initializes an empty bag.
@@ -31,6 +32,7 @@ export default class Bag<Item> implements Iterable<Item> {
   public constructor() {
     this.first = null;
     this.n = 0;
+    this.modCount = 0;
   }
 
   /**
@@ -58,6 +60,8 @@ export default class Bag<Item> implements Iterable<Item> {
    * @param  item the item to add to this bag
    */
   public add(item: Item) {
+    this.modCount += 1;
+
     const oldfirst = this.first;
     this.first = new Node<Item>();
     this.first.item = item;
@@ -71,10 +75,15 @@ export default class Bag<Item> implements Iterable<Item> {
    * @return an iterator that iterates over the items in this bag in arbitrary order
    */
   [Symbol.iterator]() {
-    const { first } = this;
+    const { first, modCount } = this;
     let current = first;
+    const expectModCount = modCount;
+    const self = this;
     return {
       next(): IteratorResult<Item> {
+        if (expectModCount !== self.modCount) {
+          throw new Error('ConcurrentModificationException');
+        }
         if (current !== null) {
           const result = {
             done: false,

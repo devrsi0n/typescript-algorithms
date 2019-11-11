@@ -1,6 +1,6 @@
 export class Node<Item> {
-  item: Item;
-  next: Node<Item>;
+  item: Item = null;
+  next: Node<Item> = null;
 }
 
 /**
@@ -27,9 +27,12 @@ export default class Stack<Item> implements Iterable<Item> {
 
   private n: number;
 
+  private modCount: number;
+
   public constructor() {
     this.first = null;
     this.n = 0;
+    this.modCount = 0;
   }
 
   /**
@@ -56,6 +59,8 @@ export default class Stack<Item> implements Iterable<Item> {
    * @param   item the item to add
    */
   public push(item: Item) {
+    this.modCount += 1;
+
     const oldfirst = this.first;
     this.first = new Node<Item>();
     this.first.item = item;
@@ -70,6 +75,8 @@ export default class Stack<Item> implements Iterable<Item> {
    * @throws Error if this stack is empty
    */
   public pop(): Item {
+    this.modCount += 1;
+
     if (this.isEmpty()) {
       throw new Error('Stack underflow');
     }
@@ -111,10 +118,15 @@ export default class Stack<Item> implements Iterable<Item> {
    * @return  an iterator to this stack that iterates through the items in LIFO order
    */
   [Symbol.iterator]() {
-    const { first } = this;
+    const { first, modCount } = this;
     let current = first;
+    const expectModCount = modCount;
+    const self = this;
     return {
       next(): IteratorResult<Item> {
+        if (expectModCount !== self.modCount) {
+          throw new Error('ConcurrentModificationException');
+        }
         if (current !== null) {
           const result = {
             done: false,

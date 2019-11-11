@@ -31,10 +31,13 @@ export default class Queue<Item> implements Iterable<Item> {
 
   private n: number;
 
+  private modCount: number;
+
   public constructor() {
     this.first = null;
     this.last = null;
     this.n = 0;
+    this.modCount = 0;
   }
 
   /**
@@ -72,6 +75,8 @@ export default class Queue<Item> implements Iterable<Item> {
    * @param tem the item to add
    */
   public enqueue(item: Item) {
+    this.modCount += 1;
+
     const oldlast: Node<Item> = this.last;
     this.last = new Node<Item>();
     this.last.item = item;
@@ -91,6 +96,8 @@ export default class Queue<Item> implements Iterable<Item> {
    * @throws Error if this queue is empty
    */
   public dequeue(): Item {
+    this.modCount += 1;
+
     if (this.isEmpty()) {
       throw new Error('Queue underflow');
     }
@@ -120,10 +127,15 @@ export default class Queue<Item> implements Iterable<Item> {
    * @return an iterator that iterates over the items in this queue in FIFO order
    */
   [Symbol.iterator]() {
-    const { first } = this;
+    const { first, modCount } = this;
     let current = first;
+    const expectModCount = modCount;
+    const self = this;
     return {
       next(): IteratorResult<Item> {
+        if (expectModCount !== self.modCount) {
+          throw new Error('ConcurrentModificationException');
+        }
         if (current !== null) {
           const result = {
             done: false,

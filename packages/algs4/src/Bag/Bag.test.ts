@@ -14,3 +14,17 @@ test('Bag test', () => {
   expect(numbers.isEmpty()).toBe(false);
   expect(numbers.toString().startsWith('Bag'));
 });
+
+test('Bag exception', () => {
+  const numbers = new Bag<number>();
+  numbers.add(1);
+  numbers.add(2);
+  numbers.add(3);
+  numbers.add(4);
+  expect(() => {
+    for (const item of numbers) {
+      console.log(item);
+      numbers.add(5);
+    }
+  }).toThrowError('ConcurrentModificationException');
+});
