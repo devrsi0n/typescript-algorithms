@@ -24,7 +24,7 @@ module.exports = {
   verbose: true,
   // notify: true,
   preset: 'ts-jest',
-  setupFiles: ['./jest/setup.js'],
-  runner: '@jest-runner/electron',
-  testEnvironment: '@jest-runner/electron/environment',
+  setupFiles: ['jest-canvas-mock', './jest/setup.js'],
+  // runner: '@jest-runner/electron',
+  // testEnvironment: '@jest-runner/electron/environment',
 };

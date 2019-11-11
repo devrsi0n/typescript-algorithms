@@ -11,7 +11,7 @@
     "release": "lerna version --conventional-commits",
     "publish": "lerna publish from-git",
     "build": "lerna run build",
-    "test": "cd packages/algs4 && yarn run test",
+    "test": "lerna run test",
     "lint": "eslint --fix --ext .tsx,.ts,.js packages/"
   },
   "husky": {
