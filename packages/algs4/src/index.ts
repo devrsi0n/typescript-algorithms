@@ -11,4 +11,6 @@ export { default as Stack } from './Stack';
 export { default as StdDraw } from './StdDraw';
 export { default as StdOut } from './StdOut';
 export { default as StdRandom } from './StdRandom';
+export { default as StopWatch } from './StopWatch';
+export { default as ThreeSumFast } from './ThreeSumFast';
 export { default as VisualAccumulator } from './VisualAccumulator';
