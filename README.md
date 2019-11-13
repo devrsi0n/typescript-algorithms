@@ -7,3 +7,13 @@
 The book Algorithms(Fourth Edition)'s source code(implemented in TypeScript) and documents.
 
 ![](./assets/cover.jpg)
+
+## Quick Start
+
+```sh
+git clone git@github.com:devrsi0n/typescript-algorithms.git
+cd typescript-algorithms
+yarn
+cd packages/algs4
+yarn run-main
+```

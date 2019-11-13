@@ -1,6 +1,8 @@
 export { default as Accumulator } from './Accumulator';
 export { default as Bag } from './Bag';
 export { default as Counter } from './Counter';
+export { default as DoublingRatio } from './DoublingRatio';
+export { default as DoublingTest } from './DoublingTest';
 export { default as Evaluate } from './Evaluate';
 export { default as GCB } from './GCB';
 export { default as Interval1D } from './Interval1D';

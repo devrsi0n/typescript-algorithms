@@ -3,12 +3,12 @@ import ms from 'ms';
 export default class StopWatch {
   private start: number = Date.now();
 
-  elapseTime() {
+  elapsedTime() {
     return Date.now() - this.start;
   }
 
   toString() {
-    console.log(`Elapse ${this.getReadableStr(this.elapseTime())} ms`);
+    console.log(`Elapse ${this.getReadableStr(this.elapsedTime())} ms`);
   }
 
   private getReadableStr(time: number) {
