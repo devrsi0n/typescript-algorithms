@@ -37,7 +37,7 @@ export class BoyerMoore {
       if (this.pat === undefined) this.pat = null;
       (() => {
         this.R = R;
-        this.pattern = (s => {
+        this.pattern = ((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -45,7 +45,7 @@ export class BoyerMoore {
         for (let j = 0; j < pattern.length; j++) {
           this.pattern[j] = pattern[j];
         }
-        this.right = (s => {
+        this.right = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -74,7 +74,7 @@ export class BoyerMoore {
       (() => {
         this.R = 256;
         this.pat = pat;
-        this.right = (s => {
+        this.right = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -99,10 +99,10 @@ export class BoyerMoore {
         for (let j: number = m - 1; j >= 0; j--) {
           {
             if (
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 this.pat.charAt(j)
               ) !=
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 txt.charAt(i + j)
               )
             ) {
@@ -153,10 +153,10 @@ export class BoyerMoore {
         for (let j: number = m - 1; j >= 0; j--) {
           {
             if (
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 this.pattern[j]
               ) !=
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 text[i + j]
               )
             ) {

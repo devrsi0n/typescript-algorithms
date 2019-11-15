@@ -7,9 +7,9 @@ import { StdOut } from './StdOut';
  * Computes the convex hull of the specified array of points.
  *
  * @param   points the array of points
- * @throws IllegalArgumentException if {@code points} is {@code null}
- * @throws IllegalArgumentException if any entry in {@code points[]} is {@code null}
- * @throws IllegalArgumentException if {@code points.length} is {@code 0}
+ * @throws IllegalArgumentException if `points` is `null`
+ * @throws IllegalArgumentException if any entry in `points[]` is `null`
+ * @throws IllegalArgumentException if `points.length` is `0`
  * @class
  * @author Robert Sedgewick
  */
@@ -20,7 +20,7 @@ export class GrahamScan {
     if (points == null) throw new Error('argument is null');
     if (points.length === 0) throw new Error('array is of length 0');
     const n: number = points.length;
-    const a: Point2D[] = (s => {
+    const a: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -75,7 +75,7 @@ export class GrahamScan {
   private isConvex(): boolean {
     const n: number = this.__hull.size();
     if (n <= 2) return true;
-    const points: Point2D[] = (s => {
+    const points: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -100,8 +100,8 @@ export class GrahamScan {
   }
 
   /**
-   * Unit tests the {@code GrahamScan} data type.
-   * Reads in an integer {@code n} and {@code n} points (specified by
+   * Unit tests the `GrahamScan` data type.
+   * Reads in an integer `n` and `n` points (specified by
    * their <em>x</em>- and <em>y</em>-coordinates) from standard input;
    * computes their convex hull; and prints out the points on the
    * convex hull to standard output.
@@ -110,7 +110,7 @@ export class GrahamScan {
    */
   public static main(args: string[]) {
     const n: number = StdIn.readInt();
-    const points: Point2D[] = (s => {
+    const points: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

@@ -3,7 +3,7 @@ import { IndexMinPQ } from './IndexMinPQ';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code Multiway} class provides a client for reading in several
+ * The `Multiway` class provides a client for reading in several
  * sorted text files and merging them together into a single sorted
  * text stream.
  * This implementation uses a {@link IndexMinPQ} to perform the multiway
@@ -17,8 +17,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class Multiway {
-
-
   private static merge(streams: In[]) {
     const n: number = streams.length;
     const pq: IndexMinPQ<string> = <any>new IndexMinPQ<string>(n);
@@ -45,7 +43,7 @@ export class Multiway {
    */
   public static main(args: string[]) {
     const n: number = args.length;
-    const streams: In[] = (s => {
+    const streams: In[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

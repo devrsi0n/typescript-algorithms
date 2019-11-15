@@ -143,8 +143,7 @@ export class FibonacciMinPQ<Key> implements Iterable<Key> {
    * @return  the minimum key currently in the priority queue
    */
   public minKey(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     return this.min.key;
   }
 
@@ -155,8 +154,7 @@ export class FibonacciMinPQ<Key> implements Iterable<Key> {
    * @return  the minimum key
    */
   public delMin(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     this.head = this.cut(this.min, this.head);
     const x: FibonacciMinPQ.Node = this.min.child;
     const { key } = this.min;

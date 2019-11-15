@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code MergeBU} class provides static methods for sorting an
+ * The `MergeBU` class provides static methods for sorting an
  * array using bottom-up mergesort.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/21elementary">Section 2.1</a> of
@@ -13,8 +13,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class MergeBU {
-
-
   private static merge(
     a: java.lang.Comparable<any>[],
     aux: java.lang.Comparable<any>[],
@@ -45,7 +43,7 @@ export class MergeBU {
    */
   public static sort(a: java.lang.Comparable<any>[]) {
     const n: number = a.length;
-    const aux: java.lang.Comparable<any>[] = (s => {
+    const aux: java.lang.Comparable<any>[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

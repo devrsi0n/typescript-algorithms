@@ -5,7 +5,7 @@
  * @param   d dimension of the heap
  * @param   comparator a Comparator over the keys
  * @param   a an array of keys
- * @throws Error if {@code d < 2}
+ * @throws Error if `d < 2`
  * @class
  * @author Tristan Claverie
  */
@@ -45,7 +45,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
         if (d < 2) throw new Error('Dimension should be 2 or over');
         this.d = d;
         this.order = 1;
-        this.keys = <Key[]>(s => {
+        this.keys = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -78,7 +78,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
         if (d < 2) throw new Error('Dimension should be 2 or over');
         this.d = d;
         this.order = 1;
-        this.keys = <Key[]>(s => {
+        this.keys = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -112,7 +112,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
         if (d < 2) throw new Error('Dimension should be 2 or over');
         this.d = d;
         this.order = 1;
-        this.keys = <Key[]>(s => {
+        this.keys = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -146,7 +146,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
         if (d < 2) throw new Error('Dimension should be 2 or over');
         this.d = d;
         this.order = 1;
-        this.keys = <Key[]>(s => {
+        this.keys = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -197,8 +197,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
    * @return  the minimum key currently in the priority queue
    */
   public minKey(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     return this.keys[this.d];
   }
 
@@ -209,8 +208,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
    * @return  the minimum key
    */
   public delMin(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     this.exch(0, --this.n);
     this.sink(0);
     const min: Key = this.keys[this.n + this.d];
@@ -303,7 +301,7 @@ export class MultiwayMinPQ<Key> implements Iterable<Key> {
    * @private
    */
   resize(N: number) {
-    const array: Key[] = <Key[]>(s => {
+    const array: Key[] = <Key[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -341,7 +339,7 @@ export namespace MultiwayMinPQ {
       this.__parent = __parent;
       if (this.data === undefined) this.data = null;
       this.data = <any>new MultiwayMinPQ<any>(<any>__parent.comp, __parent.d);
-      this.data.keys = <any[]>(s => {
+      this.data.keys = <any[]>((s) => {
         const a = [];
         while (s-- > 0) a.push(null);
         return a;

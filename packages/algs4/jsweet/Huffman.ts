@@ -3,7 +3,7 @@ import { BinaryStdOut } from './BinaryStdOut';
 import { MinPQ } from './MinPQ';
 
 /**
- * The {@code Huffman} class provides static methods for compressing
+ * The `Huffman` class provides static methods for compressing
  * and expanding a binary input using Huffman codes over the 8-bit extended
  * ASCII alphabet.
  * <p>
@@ -18,8 +18,6 @@ import { MinPQ } from './MinPQ';
 export class Huffman {
   static R = 256;
 
-
-
   /**
    * Reads a sequence of 8-bit bytes from standard input; compresses them
    * using Huffman codes with an 8-bit alphabet; and writes the results
@@ -28,7 +26,7 @@ export class Huffman {
   public static compress() {
     const s: string = BinaryStdIn.readString();
     const input: string[] = /* toCharArray */ s.split('');
-    const freq: number[] = (s => {
+    const freq: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -37,7 +35,7 @@ export class Huffman {
       freq[input[i].charCodeAt(0)]++;
     }
     const root: Huffman.Node = Huffman.buildTrie(freq);
-    const st: string[] = (s => {
+    const st: string[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -51,13 +49,13 @@ export class Huffman {
         for (let j = 0; j < code.length; j++) {
           {
             if (
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 code.charAt(j)
               ) == '0'.charCodeAt(0)
             ) {
               BinaryStdOut.write$boolean(false);
             } else if (
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 code.charAt(j)
               ) == '1'.charCodeAt(0)
             ) {
@@ -74,7 +72,7 @@ export class Huffman {
     const pq: MinPQ<Huffman.Node> = <any>new MinPQ<Huffman.Node>();
     for (
       let i: string = String.fromCharCode(0);
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(i) < Huffman.R;
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(i) < Huffman.R;
       i++
     ) {
       if (freq[i.charCodeAt(0)] > 0)
@@ -158,8 +156,8 @@ export class Huffman {
   }
 
   /**
-   * Sample client that calls {@code compress()} if the command-line
-   * argument is "-" an {@code expand()} if it is "+".
+   * Sample client that calls `compress()` if the command-line
+   * argument is "-" an `expand()` if it is "+".
    *
    * @param  args the command-line arguments
    */

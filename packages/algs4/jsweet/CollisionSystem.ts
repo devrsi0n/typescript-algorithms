@@ -104,9 +104,9 @@ export class CollisionSystem {
   }
 
   /**
-   * Unit tests the {@code CollisionSystem} data type.
+   * Unit tests the `CollisionSystem` data type.
    * Reads in the particle collision system from a standard input
-   * (or generates {@code N} random particles if a command-line integer
+   * (or generates `N` random particles if a command-line integer
    * is specified); simulates the system.
    *
    * @param  args the command-line arguments
@@ -117,7 +117,7 @@ export class CollisionSystem {
     let particles: Particle[];
     if (args.length === 1) {
       const n: number = parseInt(args[0]);
-      particles = (s => {
+      particles = ((s) => {
         const a = [];
         while (s-- > 0) a.push(null);
         return a;
@@ -127,7 +127,7 @@ export class CollisionSystem {
       }
     } else {
       const n: number = StdIn.readInt();
-      particles = (s => {
+      particles = ((s) => {
         const a = [];
         while (s-- > 0) a.push(null);
         return a;

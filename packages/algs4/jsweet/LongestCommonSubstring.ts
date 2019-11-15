@@ -3,7 +3,7 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code LongestCommonSubstring} class provides a {@link SuffixArray}
+ * The `LongestCommonSubstring` class provides a {@link SuffixArray}
  * client for computing the longest common substring that appears in two
  * given strings.
  * <p>
@@ -22,17 +22,15 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class LongestCommonSubstring {
-
-
   private static lcp(s: string, p: number, t: string, q: number): string {
     const n: number = Math.min(s.length - p, t.length - q);
     for (let i = 0; i < n; i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             s.charAt(p + i)
           ) !=
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             t.charAt(q + i)
           )
         )
@@ -47,18 +45,18 @@ export class LongestCommonSubstring {
     for (let i = 0; i < n; i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             s.charAt(p + i)
           ) !=
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             t.charAt(q + i)
           )
         )
           return (
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               s.charAt(p + i)
             ) -
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               t.charAt(q + i)
             )
           );
@@ -75,7 +73,7 @@ export class LongestCommonSubstring {
    * @param   s one string
    * @param   t the other string
    * @return  the longest common string that appears as a substring
-   * in both {@code s} and {@code t}; the empty string
+   * in both `s` and `t`; the empty string
    * if no such string
    */
   public static lcs(s: string, t: string): string {
@@ -98,7 +96,7 @@ export class LongestCommonSubstring {
   }
 
   /**
-   * Unit tests the {@code lcs()} method.
+   * Unit tests the `lcs()` method.
    * Reads in two strings from files specified as command-line arguments;
    * computes the longest common substring; and prints the results to
    * standard output.

@@ -1,5 +1,5 @@
 /**
- * Performs a linear regression on the data points {@code (y[i], x[i])}.
+ * Performs a linear regression on the data points `(y[i], x[i])`.
  *
  * @param   x the values of the predictor variable
  * @param   y the corresponding values of the response variable
@@ -115,12 +115,12 @@ export class LinearRegression {
   }
 
   /**
-   * Returns the expected response {@code y} given the value of the predictor
-   * variable {@code x}.
+   * Returns the expected response `y` given the value of the predictor
+   * variable `x`.
    *
    * @param   x the value of the predictor variable
-   * @return  the expected response {@code y} given the value of the predictor
-   * variable {@code x}
+   * @return  the expected response `y` given the value of the predictor
+   * variable `x`
    */
   public predict(x: number): number {
     return this.__slope * x + this.__intercept;
@@ -134,17 +134,9 @@ export class LinearRegression {
    * <em>R</em><sup>2</sup>
    */
   public toString(): string {
-    const s= new String();
-    s.append(
-      printf(
-        '%.2f n + %.2f',
-        this.slope(),
-        this.intercept()
-      )
-    );
-    s.append(
-      `  (R^2 = ${printf('%.3f', this.R2())})`
-    );
+    const s = new String();
+    s.append(printf('%.2f n + %.2f', this.slope(), this.intercept()));
+    s.append(`  (R^2 = ${printf('%.3f', this.R2())})`);
     return s.toString();
   }
 }

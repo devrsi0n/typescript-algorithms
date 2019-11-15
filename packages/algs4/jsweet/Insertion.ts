@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code Insertion} class provides static methods for sorting an
+ * The `Insertion` class provides static methods for sorting an
  * array using insertion sort.
  * <p>
  * This implementation makes ~ 1/2 n^2 compares and exchanges in
@@ -24,8 +24,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class Insertion {
-
-
   public static sort$java_lang_Comparable_A(a: java.lang.Comparable<any>[]) {
     const n: number = a.length;
     for (let i = 1; i < n; i++) {
@@ -204,16 +202,12 @@ export class Insertion {
   /**
    * Returns a permutation that gives the elements in the array in ascending order.
    * @param  a the array
-   * @return  a permutation {@code p[]} such that {@code a[p[0]]}, {@code a[p[1]]},
-   * ..., {@code a[p[n-1]]} are in ascending order
+   * @return  a permutation `p[]` such that `a[p[0]]`, `a[p[1]]`,
+   * ..., `a[p[n-1]]` are in ascending order
    */
   public static indexSort(a: java.lang.Comparable<any>[]): number[] {
     const n: number = a.length;
-    const index: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const index: number[] = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       index[i] = i;
     }

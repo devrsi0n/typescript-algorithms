@@ -9,7 +9,7 @@ import { StdRandom } from './StdRandom';
  * @param   A the <em>m</em>-by-<em>b</em> matrix
  * @param   b the <em>m</em>-length RHS vector
  * @param   c the <em>n</em>-length cost vector
- * @throws IllegalArgumentException unless {@code b[i] >= 0} for each {@code i}
+ * @throws IllegalArgumentException unless `b[i] >= 0` for each `i`
  * @throws ArithmeticException if the linear program is unbounded
  * @class
  * @author Robert Sedgewick
@@ -62,7 +62,7 @@ export class LinearProgramming {
     for (let i = 0; i < this.m; i++) {
       this.a[i][this.m + this.n] = b[i];
     }
-    this.basis = (s => {
+    this.basis = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -79,10 +79,7 @@ export class LinearProgramming {
         const q: number = this.bland();
         if (q === -1) break;
         const p: number = this.minRatioRule(q);
-        if (p === -1)
-          throw new Error(
-            'Linear program is unbounded'
-          );
+        if (p === -1) throw new Error('Linear program is unbounded');
         this.pivot(p, q);
         this.basis[p] = q;
       }
@@ -152,7 +149,7 @@ export class LinearProgramming {
    * @return  the optimal primal solution to this linear program
    */
   public primal(): number[] {
-    const x: number[] = (s => {
+    const x: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -169,7 +166,7 @@ export class LinearProgramming {
    * @return  the optimal dual solution to this linear program
    */
   public dual(): number[] {
-    const y: number[] = (s => {
+    const y: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -349,7 +346,7 @@ export class LinearProgramming {
   }
 
   /**
-   * Unit tests the {@code LinearProgramming} data type.
+   * Unit tests the `LinearProgramming` data type.
    *
    * @param  args the command-line arguments
    */
@@ -369,12 +366,8 @@ export class LinearProgramming {
     StdOut.println$java_lang_Object('----- test random ---------------');
     const m: number = parseInt(args[0]);
     const n: number = parseInt(args[1]);
-    const c: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
-    const b: number[] = (s => {
+    const c: number[] = new Array(n).fill(0);
+    const b: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

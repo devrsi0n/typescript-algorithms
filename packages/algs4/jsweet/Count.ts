@@ -3,7 +3,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code Count} class provides an {@link Alphabet} client for reading
+ * The `Count` class provides an {@link Alphabet} client for reading
  * in a piece of text and computing the frequency of occurrence of each
  * character over a given alphabet.
  * <p>
@@ -16,8 +16,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class Count {
-
-
   /**
    * Reads in text from standard input; calculates the frequency of
    * occurrence of each character over the alphabet specified as a
@@ -29,7 +27,7 @@ export class Count {
   public static main(args: string[]) {
     const alphabet: Alphabet = new Alphabet(args[0]);
     const R: number = alphabet.radix();
-    const count: number[] = (s => {
+    const count: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

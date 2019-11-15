@@ -6,7 +6,7 @@ import { StdRandom } from './StdRandom';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code DirectedCycleX} class represents a data type for
+ * The `DirectedCycleX` class represents a data type for
  * determining whether a digraph has a directed cycle.
  * The <em>hasCycle</em> operation determines whether the digraph has
  * a simple directed cycle and, if so, the <em>cycle</em> operation
@@ -38,7 +38,7 @@ export class DirectedCycleX {
 
   public constructor(G: Digraph) {
     if (this.__cycle === undefined) this.__cycle = null;
-    const indegree: number[] = (s => {
+    const indegree: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -64,7 +64,7 @@ export class DirectedCycleX {
         }
       }
     }
-    const edgeTo: number[] = (s => {
+    const edgeTo: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -85,7 +85,7 @@ export class DirectedCycleX {
       }
     }
     if (root !== -1) {
-      const visited: boolean[] = (s => {
+      const visited: boolean[] = ((s) => {
         const a = [];
         while (s-- > 0) a.push(false);
         return a;
@@ -109,9 +109,9 @@ export class DirectedCycleX {
   }
 
   /**
-   * Returns a directed cycle if the digraph has a directed cycle, and {@code null} otherwise.
+   * Returns a directed cycle if the digraph has a directed cycle, and `null` otherwise.
    * @return  a directed cycle (as an iterable) if the digraph has a directed cycle,
-   * and {@code null} otherwise
+   * and `null` otherwise
    */
   public cycle(): Iterable<number> {
     return this.__cycle;
@@ -119,7 +119,7 @@ export class DirectedCycleX {
 
   /**
    * Does the digraph have a directed cycle?
-   * @return  {@code true} if the digraph has a directed cycle, {@code false} otherwise
+   * @return  `true` if the digraph has a directed cycle, `false` otherwise
    */
   public hasCycle(): boolean {
     return this.__cycle != null;

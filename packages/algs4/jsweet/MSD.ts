@@ -2,7 +2,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code MSD} class provides static methods for sorting an
+ * The `MSD` class provides static methods for sorting an
  * array of extended ASCII strings or integers using MSD radix sort.
  * <p>
  * For additional documentation,
@@ -22,11 +22,9 @@ export class MSD {
 
   static CUTOFF = 15;
 
-
-
   public static sort$java_lang_String_A(a: string[]) {
     const n: number = a.length;
-    const aux: string[] = (s => {
+    const aux: string[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -56,7 +54,7 @@ export class MSD {
       MSD.insertion$java_lang_String_A$int$int$int(a, lo, hi, d);
       return;
     }
-    const count: number[] = (s => {
+    const count: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -233,17 +231,21 @@ export class MSD {
     for (let i: number = d; i < Math.min(v.length, w.length); i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) <
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return true;
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) >
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return false;
       }
@@ -253,11 +255,7 @@ export class MSD {
 
   public static sort$int_A(a: number[]) {
     const n: number = a.length;
-    const aux: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const aux: number[] = new Array(n).fill(0);
     MSD.sort$int_A$int$int$int$int_A(a, 0, n - 1, 0, aux);
   }
 
@@ -272,7 +270,7 @@ export class MSD {
       MSD.insertion$int_A$int$int$int(a, lo, hi, d);
       return;
     }
-    const count: number[] = (s => {
+    const count: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

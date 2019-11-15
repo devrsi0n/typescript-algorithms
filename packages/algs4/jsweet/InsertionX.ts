@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code InsertionX} class provides static methods for sorting
+ * The `InsertionX` class provides static methods for sorting
  * an array using an optimized version of insertion sort (with half exchanges
  * and a sentinel).
  * <p>
@@ -14,8 +14,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class InsertionX {
-
-
   /**
    * Rearranges the array in ascending order, using the natural order.
    * @param  a the array to be sorted

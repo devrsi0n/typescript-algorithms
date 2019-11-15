@@ -6,12 +6,12 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Computes a longest paths tree from {@code s} to every other vertex in
- * the directed acyclic graph {@code G}.
+ * Computes a longest paths tree from `s` to every other vertex in
+ * the directed acyclic graph `G`.
  * @param {EdgeWeightedDigraph} G the acyclic digraph
  * @param  s the source vertex
  * @throws IllegalArgumentException if the digraph is not acyclic
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -23,12 +23,12 @@ export class AcyclicLP {
   public constructor(G: EdgeWeightedDigraph, s: number) {
     if (this.__distTo === undefined) this.__distTo = null;
     if (this.edgeTo === undefined) this.edgeTo = null;
-    this.__distTo = (s => {
+    this.__distTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(G.V());
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -61,11 +61,11 @@ export class AcyclicLP {
   }
 
   /**
-   * Returns the length of a longest path from the source vertex {@code s} to vertex {@code v}.
+   * Returns the length of a longest path from the source vertex `s` to vertex `v`.
    * @param   v the destination vertex
-   * @return  the length of a longest path from the source vertex {@code s} to vertex {@code v};
-   * {@code Double.NEGATIVE_INFINITY} if no such path
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the length of a longest path from the source vertex `s` to vertex `v`;
+   * `Double.NEGATIVE_INFINITY` if no such path
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public distTo(v: number): number {
     this.validateVertex(v);
@@ -73,11 +73,11 @@ export class AcyclicLP {
   }
 
   /**
-   * Is there a path from the source vertex {@code s} to vertex {@code v}?
+   * Is there a path from the source vertex `s` to vertex `v`?
    * @param   v the destination vertex
-   * @return  {@code true} if there is a path from the source vertex
-   * {@code s} to vertex {@code v}, and {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if there is a path from the source vertex
+   * `s` to vertex `v`, and `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public hasPathTo(v: number): boolean {
     this.validateVertex(v);
@@ -85,11 +85,11 @@ export class AcyclicLP {
   }
 
   /**
-   * Returns a longest path from the source vertex {@code s} to vertex {@code v}.
+   * Returns a longest path from the source vertex `s` to vertex `v`.
    * @param   v the destination vertex
-   * @return  a longest path from the source vertex {@code s} to vertex {@code v}
-   * as an iterable of edges, and {@code null} if no such path
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  a longest path from the source vertex `s` to vertex `v`
+   * as an iterable of edges, and `null` if no such path
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public pathTo(v: number): Iterable<DirectedEdge> {
     this.validateVertex(v);
@@ -114,7 +114,7 @@ export class AcyclicLP {
   }
 
   /**
-   * Unit tests the {@code AcyclicLP} data type.
+   * Unit tests the `AcyclicLP` data type.
    *
    * @param  args the command-line arguments
    */

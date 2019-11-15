@@ -30,7 +30,7 @@ export class DirectedEulerianPath {
     }
     if (deficit > 1) return;
     if (s === -1) s = 0;
-    const adj: Iterator<number>[] = <Iterator<number>[]>(s => {
+    const adj: Iterator<number>[] = <Iterator<number>[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -60,7 +60,7 @@ export class DirectedEulerianPath {
    * Returns the sequence of vertices on an Eulerian path.
    *
    * @return  the sequence of vertices on an Eulerian path;
-   * {@code null} if no such path
+   * `null` if no such path
    */
   public path(): Iterable<number> {
     return this.__path;
@@ -69,8 +69,8 @@ export class DirectedEulerianPath {
   /**
    * Returns true if the digraph has an Eulerian path.
    *
-   * @return  {@code true} if the digraph has an Eulerian path;
-   * {@code false} otherwise
+   * @return  `true` if the digraph has an Eulerian path;
+   * `false` otherwise
    */
   public hasEulerianPath(): boolean {
     return this.__path != null;
@@ -148,7 +148,7 @@ export class DirectedEulerianPath {
   }
 
   /**
-   * Unit tests the {@code DirectedEulerianPath} data type.
+   * Unit tests the `DirectedEulerianPath` data type.
    *
    * @param  args the command-line arguments
    */

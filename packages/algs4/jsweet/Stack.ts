@@ -80,7 +80,7 @@ export class Stack<Item> implements Iterable<Item> {
    * @return  the sequence of items in this stack in LIFO order, separated by spaces
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     for (let index356 = this.iterator(); index356.hasNext(); ) {
       const item = index356.next();
       {
@@ -101,7 +101,7 @@ export class Stack<Item> implements Iterable<Item> {
   }
 
   /**
-   * Unit tests the {@code Stack} data type.
+   * Unit tests the `Stack` data type.
    *
    * @param  args the command-line arguments
    */

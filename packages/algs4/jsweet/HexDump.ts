@@ -2,7 +2,7 @@ import { BinaryStdIn } from './BinaryStdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code HexDump} class provides a client for displaying the contents
+ * The `HexDump` class provides a client for displaying the contents
  * of a binary file in hexadecimal.
  * <p>
  * For additional documentation,
@@ -11,7 +11,7 @@ import { StdOut } from './StdOut';
  * <p>
  * See also {@link BinaryDump} and {@link PictureDump}.
  * For more full-featured versions, see the Unix utilities
- * {@code od} (octal dump) and {@code hexdump} (hexadecimal dump).
+ * `od` (octal dump) and `hexdump` (hexadecimal dump).
  * <p>
  *
  * @author Robert Sedgewick
@@ -19,8 +19,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class HexDump {
-
-
   /**
    * Reads in a sequence of bytes from standard input and writes
    * them to standard output using hexademical notation, k hex digits
@@ -48,7 +46,7 @@ export class HexDump {
         const c: string = BinaryStdIn.readChar();
         StdOut.printf(
           '%02x',
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) & 255
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) & 255
         );
       }
     }

@@ -2,7 +2,7 @@ import { Picture } from './Picture';
 import { BinaryStdIn } from './BinaryStdIn';
 
 /**
- * The {@code PictureDump} class provides a client for displaying the contents
+ * The `PictureDump` class provides a client for displaying the contents
  * of a binary file as a black-and-white picture.
  * <p>
  * For additional documentation,
@@ -16,8 +16,6 @@ import { BinaryStdIn } from './BinaryStdIn';
  * @class
  */
 export class PictureDump {
-
-
   /**
    * Reads in a sequence of bytes from standard input and draws
    * them to standard drawing output as a width-by-height picture,

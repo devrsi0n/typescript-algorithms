@@ -3,7 +3,7 @@ import { BinaryStdIn } from './BinaryStdIn';
 import { BinaryStdOut } from './BinaryStdOut';
 
 /**
- * The {@code Genome} class provides static methods for compressing
+ * The `Genome` class provides static methods for compressing
  * and expanding a genomic sequence using a 2-bit code.
  * <p>
  * For additional documentation,
@@ -15,8 +15,6 @@ import { BinaryStdOut } from './BinaryStdOut';
  * @class
  */
 export class Genome {
-
-
   /**
    * Reads a sequence of 8-bit extended ASCII characters over the alphabet
    * { A, C, T, G } from standard input; compresses them using two bits per
@@ -54,8 +52,8 @@ export class Genome {
   }
 
   /**
-   * Sample client that calls {@code compress()} if the command-line
-   * argument is "-" an {@code expand()} if it is "+".
+   * Sample client that calls `compress()` if the command-line
+   * argument is "-" an `expand()` if it is "+".
    *
    * @param  args the command-line arguments
    */

@@ -87,7 +87,7 @@ export class RabinKarp {
     for (let j = 0; j < m; j++) {
       h =
         (this.R * h +
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             key.charAt(j)
           )) %
         this.q;
@@ -98,10 +98,10 @@ export class RabinKarp {
   private check(txt: string, i: number): boolean {
     for (let j = 0; j < this.m; j++) {
       if (
-        (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+        ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
           this.pat.charAt(j)
         ) !=
-        (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+        ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
           txt.charAt(i + j)
         )
       )
@@ -129,14 +129,14 @@ export class RabinKarp {
           (txtHash +
             this.q -
             ((this.RM *
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 txt.charAt(i - this.m)
               )) %
               this.q)) %
           this.q;
         txtHash =
           (txtHash * this.R +
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               txt.charAt(i)
             )) %
           this.q;

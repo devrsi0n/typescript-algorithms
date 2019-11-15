@@ -33,7 +33,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
    * Adds the key to this set (if it is not already present).
    *
    * @param   key the key to add
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public add(key: Key) {
     if (key == null) throw new Error('called add() with a null key');
@@ -44,9 +44,9 @@ export class SET<Key extends java.lang.Comparable<Key>>
    * Returns true if this set contains the given key.
    *
    * @param   key the key
-   * @return  {@code true} if this set contains {@code key};
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if this set contains `key`;
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: Key): boolean {
     if (key == null) throw new Error('called contains() with a null key');
@@ -57,7 +57,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
    * Removes the specified key from this set (if the set contains the specified key).
    *
    * @param   key the key
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public delete(key: Key) {
     if (key == null) throw new Error('called delete() with a null key');
@@ -76,8 +76,8 @@ export class SET<Key extends java.lang.Comparable<Key>>
   /**
    * Returns true if this set is empty.
    *
-   * @return  {@code true} if this set is empty;
-   * {@code false} otherwise
+   * @return  `true` if this set is empty;
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return this.size() === 0;
@@ -85,8 +85,8 @@ export class SET<Key extends java.lang.Comparable<Key>>
 
   /**
    * Returns all of the keys in this set, as an iterator.
-   * To iterate over all of the keys in a set named {@code set}, use the
-   * foreach notation: {@code for (Key key : set)}.
+   * To iterate over all of the keys in a set named `set`, use the
+   * foreach notation: `for (Key key : set)`.
    *
    * @return  an iterator to all of the keys in this set
    */
@@ -101,8 +101,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
    * @throws Error if this set is empty
    */
   public max(): Key {
-    if (this.isEmpty())
-      throw new Error('called max() with empty set');
+    if (this.isEmpty()) throw new Error('called max() with empty set');
     return this.set.last();
   }
 
@@ -113,40 +112,37 @@ export class SET<Key extends java.lang.Comparable<Key>>
    * @throws Error if this set is empty
    */
   public min(): Key {
-    if (this.isEmpty())
-      throw new Error('called min() with empty set');
+    if (this.isEmpty()) throw new Error('called min() with empty set');
     return this.set.first();
   }
 
   /**
-   * Returns the smallest key in this set greater than or equal to {@code key}.
+   * Returns the smallest key in this set greater than or equal to `key`.
    *
    * @param   key the key
-   * @return  the smallest key in this set greater than or equal to {@code key}
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  the smallest key in this set greater than or equal to `key`
+   * @throws IllegalArgumentException if `key` is `null`
    * @throws Error if there is no such key
    */
   public ceiling(key: Key): Key {
     if (key == null) throw new Error('called ceiling() with a null key');
     const k: Key = this.set.ceiling(key);
-    if (k == null)
-      throw new Error(`all keys are less than ${key}`);
+    if (k == null) throw new Error(`all keys are less than ${key}`);
     return k;
   }
 
   /**
-   * Returns the largest key in this set less than or equal to {@code key}.
+   * Returns the largest key in this set less than or equal to `key`.
    *
    * @param   key the key
-   * @return  the largest key in this set table less than or equal to {@code key}
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  the largest key in this set table less than or equal to `key`
+   * @throws IllegalArgumentException if `key` is `null`
    * @throws Error if there is no such key
    */
   public floor(key: Key): Key {
     if (key == null) throw new Error('called floor() with a null key');
     const k: Key = this.set.floor(key);
-    if (k == null)
-      throw new Error(`all keys are greater than ${key}`);
+    if (k == null) throw new Error(`all keys are greater than ${key}`);
     return k;
   }
 
@@ -155,7 +151,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
    *
    * @param  {SET} that the other set
    * @return {SET} the union of this set and that set
-   * @throws IllegalArgumentException if {@code that} is {@code null}
+   * @throws IllegalArgumentException if `that` is `null`
    */
   public union(that: SET<Key>): SET<Key> {
     if (that == null) throw new Error('called union() with a null argument');
@@ -180,7 +176,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
    *
    * @param  {SET} that the other set
    * @return {SET} the intersection of this set and that set
-   * @throws IllegalArgumentException if {@code that} is {@code null}
+   * @throws IllegalArgumentException if `that` is `null`
    */
   public intersects(that: SET<Key>): SET<Key> {
     if (that == null)
@@ -210,12 +206,12 @@ export class SET<Key extends java.lang.Comparable<Key>>
    * <p>
    * Note that this method declares two empty sets to be equal
    * even if they are parameterized by different generic types.
-   * This is consistent with the behavior of {@code equals()}
+   * This is consistent with the behavior of `equals()`
    * within Java's Collections framework.
    *
    * @param   other the other set
-   * @return  {@code true} if this set equals {@code other};
-   * {@code false} otherwise
+   * @return  `true` if this set equals `other`;
+   * `false` otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -249,7 +245,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
   }
 
   /**
-   * Unit tests the {@code SET} data type.
+   * Unit tests the `SET` data type.
    *
    * @param  args the command-line arguments
    */

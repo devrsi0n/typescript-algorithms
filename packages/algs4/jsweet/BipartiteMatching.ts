@@ -9,7 +9,7 @@ import { StdOut } from './StdOut';
  * in a bipartite graph.
  *
  * @param  {Graph} G the bipartite graph
- * @throws IllegalArgumentException if {@code G} is not bipartite
+ * @throws IllegalArgumentException if `G` is not bipartite
  * @class
  * @author Robert Sedgewick
  */
@@ -43,7 +43,7 @@ export class BipartiteMatching {
       throw new Error('graph is not bipartite');
     }
     this.V = G.V();
-    this.__mate = (s => {
+    this.__mate = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -72,7 +72,7 @@ export class BipartiteMatching {
         this.cardinality++;
       }
     }
-    this.__inMinVertexCover = (s => {
+    this.__inMinVertexCover = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -88,12 +88,12 @@ export class BipartiteMatching {
   }
 
   private hasAugmentingPath(G: Graph): boolean {
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(this.V);
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -140,9 +140,9 @@ export class BipartiteMatching {
    * the maximum matching computed by the algorithm.
    *
    * @param   v the vertex
-   * @return  the vertex to which vertex {@code v} is matched in the
-   * maximum matching; {@code -1} if the vertex is not matched
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the vertex to which vertex `v` is matched in the
+   * maximum matching; `-1` if the vertex is not matched
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public mate(v: number): number {
     this.validate(v);
@@ -154,9 +154,9 @@ export class BipartiteMatching {
    * computed by the algorithm.
    *
    * @param   v the vertex
-   * @return  {@code true} if vertex {@code v} is matched in maximum matching;
-   * {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if vertex `v` is matched in maximum matching;
+   * `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public isMatched(v: number): boolean {
     this.validate(v);
@@ -177,8 +177,8 @@ export class BipartiteMatching {
    * That is, the number of edges in a maximum matching is equal to one half
    * of the number of vertices in the graph (so that every vertex is matched).
    *
-   * @return  {@code true} if the graph contains a perfect matching;
-   * {@code false} otherwise
+   * @return  `true` if the graph contains a perfect matching;
+   * `false` otherwise
    */
   public isPerfect(): boolean {
     return this.cardinality * 2 === this.V;
@@ -189,9 +189,9 @@ export class BipartiteMatching {
    * computed by the algorithm.
    *
    * @param   v the vertex
-   * @return  {@code true} if vertex {@code v} is in the minimum vertex cover;
-   * {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if vertex `v` is in the minimum vertex cover;
+   * `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public inMinVertexCover(v: number): boolean {
     this.validate(v);
@@ -229,7 +229,7 @@ export class BipartiteMatching {
       if (this.inMinVertexCover(v)) sizeOfMinVertexCover++;
     }
     if (this.size() !== sizeOfMinVertexCover) return false;
-    const isMatched: boolean[] = (s => {
+    const isMatched: boolean[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -269,10 +269,10 @@ export class BipartiteMatching {
   }
 
   /**
-   * Unit tests the {@code HopcroftKarp} data type.
-   * Takes three command-line arguments {@code V1}, {@code V2}, and {@code E};
-   * creates a random bipartite graph with {@code V1} + {@code V2} vertices
-   * and {@code E} edges; computes a maximum matching and minimum vertex cover;
+   * Unit tests the `HopcroftKarp` data type.
+   * Takes three command-line arguments `V1`, `V2`, and `E`;
+   * creates a random bipartite graph with `V1` + `V2` vertices
+   * and `E` edges; computes a maximum matching and minimum vertex cover;
    * and prints the results.
    *
    * @param  args the command-line arguments

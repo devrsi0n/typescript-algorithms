@@ -13,8 +13,6 @@ export class Accumulator {
 
   private mu = 0.0;
 
-
-
   /**
    * Adds the specified data value to the accumulator.
    * @param   x the data value
@@ -68,7 +66,7 @@ export class Accumulator {
   }
 
   /**
-   * Unit tests the {@code Accumulator} data type.
+   * Unit tests the `Accumulator` data type.
    * Reads in a stream of real number from standard input;
    * adds them to the accumulator; and prints the mean,
    * sample standard deviation, and sample variance to standard

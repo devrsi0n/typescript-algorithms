@@ -23,7 +23,7 @@ export class BoruvkaMST {
     const uf: UF = new UF(G.V());
     for (let t = 1; t < G.V() && this.mst.size() < G.V() - 1; t += t) {
       {
-        const closest: Edge[] = (s => {
+        const closest: Edge[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -150,7 +150,7 @@ export class BoruvkaMST {
   }
 
   /**
-   * Unit tests the {@code BoruvkaMST} data type.
+   * Unit tests the `BoruvkaMST` data type.
    *
    * @param  args the command-line arguments
    */

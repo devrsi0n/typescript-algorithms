@@ -7,7 +7,7 @@ import { StdOut } from './StdOut';
 import { In } from './In';
 
 /**
- * Determines a depth-first order for the digraph {@code G}.
+ * Determines a depth-first order for the digraph `G`.
  * @param {Digraph} G the digraph
  * @class
  * @author Robert Sedgewick
@@ -45,19 +45,19 @@ export class DepthFirstOrder {
       if (this.preCounter === undefined) this.preCounter = 0;
       if (this.postCounter === undefined) this.postCounter = 0;
       (() => {
-        this.__pre = (s => {
+        this.__pre = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
-        this.__post = (s => {
+        this.__post = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
         this.postorder = <any>new Queue<number>();
         this.preorder = <any>new Queue<number>();
-        this.marked = (s => {
+        this.marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
@@ -87,19 +87,19 @@ export class DepthFirstOrder {
       if (this.preCounter === undefined) this.preCounter = 0;
       if (this.postCounter === undefined) this.postCounter = 0;
       (() => {
-        this.__pre = (s => {
+        this.__pre = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
-        this.__post = (s => {
+        this.__post = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
         this.postorder = <any>new Queue<number>();
         this.preorder = <any>new Queue<number>();
-        this.marked = (s => {
+        this.marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
@@ -170,10 +170,10 @@ export class DepthFirstOrder {
   }
 
   /**
-   * Returns the preorder number of vertex {@code v}.
+   * Returns the preorder number of vertex `v`.
    * @param   v the vertex
-   * @return  the preorder number of vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the preorder number of vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public pre(v?: any): any {
     if (typeof v === 'number' || v === null) {
@@ -191,10 +191,10 @@ export class DepthFirstOrder {
   }
 
   /**
-   * Returns the postorder number of vertex {@code v}.
+   * Returns the postorder number of vertex `v`.
    * @param   v the vertex
-   * @return  the postorder number of vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the postorder number of vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public post(v?: any): any {
     if (typeof v === 'number' || v === null) {
@@ -260,7 +260,7 @@ export class DepthFirstOrder {
   }
 
   /**
-   * Unit tests the {@code DepthFirstOrder} data type.
+   * Unit tests the `DepthFirstOrder` data type.
    *
    * @param  args the command-line arguments
    */

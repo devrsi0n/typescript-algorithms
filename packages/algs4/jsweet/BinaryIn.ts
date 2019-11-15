@@ -1,9 +1,9 @@
 import { BinaryOut } from './BinaryOut';
 
 /**
- * Initializes a binary input stream from an {@code InputStream}.
+ * Initializes a binary input stream from an `InputStream`.
  *
- * @param {InputStream} is the {@code InputStream} object
+ * @param {InputStream} is the `InputStream` object
  * @class
  * @author Robert Sedgewick
  */
@@ -125,8 +125,8 @@ export class BinaryIn {
   /**
    * Returns true if this binary input stream exists.
    *
-   * @return  {@code true} if this binary input stream exists;
-   * {@code false} otherwise
+   * @return  `true` if this binary input stream exists;
+   * `false` otherwise
    */
   public exists(): boolean {
     return this.in != null;
@@ -135,8 +135,8 @@ export class BinaryIn {
   /**
    * Returns true if this binary input stream is empty.
    *
-   * @return  {@code true} if this binary input stream is empty;
-   * {@code false} otherwise
+   * @return  `true` if this binary input stream is empty;
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return this.buffer === BinaryIn.EOF;
@@ -145,12 +145,11 @@ export class BinaryIn {
   /**
    * Reads the next bit of data from this binary input stream and return as a boolean.
    *
-   * @return  the next bit of data from this binary input stream as a {@code boolean}
+   * @return  the next bit of data from this binary input stream as a `boolean`
    * @throws Error if this binary input stream is empty
    */
   public readBoolean(): boolean {
-    if (this.isEmpty())
-      throw new Error('Reading from empty input stream');
+    if (this.isEmpty()) throw new Error('Reading from empty input stream');
     this.n--;
     const bit: boolean = ((this.buffer >> this.n) & 1) === 1;
     if (this.n === 0) this.fillBuffer();
@@ -158,8 +157,7 @@ export class BinaryIn {
   }
 
   public readChar$(): string {
-    if (this.isEmpty())
-      throw new Error('Reading from empty input stream');
+    if (this.isEmpty()) throw new Error('Reading from empty input stream');
     if (this.n === 8) {
       const x: number = this.buffer;
       this.fillBuffer();
@@ -169,8 +167,7 @@ export class BinaryIn {
     x <<= 8 - this.n;
     const oldN: number = this.n;
     this.fillBuffer();
-    if (this.isEmpty())
-      throw new Error('Reading from empty input stream');
+    if (this.isEmpty()) throw new Error('Reading from empty input stream');
     this.n = oldN;
     x |= this.buffer >>> this.n;
     return String.fromCharCode(x & 255);
@@ -194,9 +191,9 @@ export class BinaryIn {
    * Reads the next r bits from this binary input stream and return as an r-bit character.
    *
    * @param   r number of bits to read
-   * @return  the next {@code r} bits of data from this binary input streamt as a {@code char}
-   * @throws Error if there are fewer than {@code r} bits available
-   * @throws IllegalArgumentException unless {@code 1 <= r <= 16}
+   * @return  the next `r` bits of data from this binary input streamt as a `char`
+   * @throws Error if there are fewer than `r` bits available
+   * @throws IllegalArgumentException unless `1 <= r <= 16`
    */
   public readChar(r?: any): any {
     if (typeof r === 'number' || r === null) {
@@ -211,14 +208,13 @@ export class BinaryIn {
   /**
    * Reads the remaining bytes of data from this binary input stream and return as a string.
    *
-   * @return  the remaining bytes of data from this binary input stream as a {@code String}
+   * @return  the remaining bytes of data from this binary input stream as a `String`
    * @throws Error if this binary input stream is empty or if the number of bits
    * available is not a multiple of 8 (byte-aligned)
    */
   public readString(): string {
-    if (this.isEmpty())
-      throw new Error('Reading from empty input stream');
-    const sb= new String();
+    if (this.isEmpty()) throw new Error('Reading from empty input stream');
+    const sb = new String();
     while (!this.isEmpty()) {
       {
         const c: string = this.readChar();
@@ -231,7 +227,7 @@ export class BinaryIn {
   /**
    * Reads the next 16 bits from this binary input stream and return as a 16-bit short.
    *
-   * @return  the next 16 bits of data from this binary input stream as a {@code short}
+   * @return  the next 16 bits of data from this binary input stream as a `short`
    * @throws Error if there are fewer than 16 bits available
    */
   public readShort(): number {
@@ -276,9 +272,9 @@ export class BinaryIn {
    * Reads the next r bits from this binary input stream return as an r-bit int.
    *
    * @param   r number of bits to read
-   * @return  the next {@code r} bits of data from this binary input stream as a {@code int}
+   * @return  the next `r` bits of data from this binary input stream as a `int`
    * @throws Error if there are fewer than r bits available
-   * @throws IllegalArgumentException unless {@code 1 <= r <= 32}
+   * @throws IllegalArgumentException unless `1 <= r <= 32`
    */
   public readInt(r?: any): any {
     if (typeof r === 'number' || r === null) {
@@ -293,7 +289,7 @@ export class BinaryIn {
   /**
    * Reads the next 64 bits from this binary input stream and return as a 64-bit long.
    *
-   * @return  the next 64 bits of data from this binary input stream as a {@code long}
+   * @return  the next 64 bits of data from this binary input stream as a `long`
    * @throws Error if there are fewer than 64 bits available
    */
   public readLong(): number {
@@ -311,7 +307,7 @@ export class BinaryIn {
   /**
    * Reads the next 64 bits from this binary input stream and return as a 64-bit double.
    *
-   * @return  the next 64 bits of data from this binary input stream as a {@code double}
+   * @return  the next 64 bits of data from this binary input stream as a `double`
    * @throws Error if there are fewer than 64 bits available
    */
   public readDouble(): number {
@@ -321,7 +317,7 @@ export class BinaryIn {
   /**
    * Reads the next 32 bits from this binary input stream and return as a 32-bit float.
    *
-   * @return  the next 32 bits of data from this binary input stream as a {@code float}
+   * @return  the next 32 bits of data from this binary input stream as a `float`
    * @throws Error if there are fewer than 32 bits available
    */
   public readFloat(): number {
@@ -331,20 +327,20 @@ export class BinaryIn {
   /**
    * Reads the next 8 bits from this binary input stream and return as an 8-bit byte.
    *
-   * @return  the next 8 bits of data from this binary input stream as a {@code byte}
+   * @return  the next 8 bits of data from this binary input stream as a `byte`
    * @throws Error if there are fewer than 8 bits available
    */
   public readByte(): number {
     const c: string = this.readChar();
     return (
       (<number>(
-        ((c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) & 255)
+        (((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) & 255)
       )) | 0
     );
   }
 
   /**
-   * Unit tests the {@code BinaryIn} data type.
+   * Unit tests the `BinaryIn` data type.
    * Reads the name of a file or URL (first command-line argument)
    * and writes it to a file (second command-line argument).
    *

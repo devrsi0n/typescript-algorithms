@@ -4,7 +4,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code BlackFilter} class provides a client for reading in a <em>blacklist</em>
+ * The `BlackFilter` class provides a client for reading in a <em>blacklist</em>
  * of words from a file; then, reading in a sequence of words from standard input,
  * printing out each word that <em>does not</em> appear in the file.
  * It is useful as a test client for various symbol table implementations.
@@ -17,8 +17,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class BlackFilter {
-
-
   public static main(args: string[]) {
     const set: SET<string> = <any>new SET<string>();
     const __in: In = new In(args[0]);

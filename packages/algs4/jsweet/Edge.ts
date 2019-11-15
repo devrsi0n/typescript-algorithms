@@ -1,15 +1,15 @@
 import { StdOut } from './StdOut';
 
 /**
- * Initializes an edge between vertices {@code v} and {@code w} of
- * the given {@code weight}.
+ * Initializes an edge between vertices `v` and `w` of
+ * the given `weight`.
  *
  * @param   v one vertex
  * @param   w the other vertex
  * @param   weight the weight of this edge
- * @throws IllegalArgumentException if either {@code v} or {@code w}
+ * @throws IllegalArgumentException if either `v` or `w`
  * is a negative integer
- * @throws IllegalArgumentException if {@code weight} is {@code NaN}
+ * @throws IllegalArgumentException if `weight` is `NaN`
  * @class
  * @author Robert Sedgewick
  */
@@ -66,8 +66,8 @@ export class Edge implements java.lang.Comparable<Edge> {
 
   /**
    * Compares two edges by weight.
-   * Note that {@code compareTo()} is not consistent with {@code equals()},
-   * which uses the reference equality implementation inherited from {@code Object}.
+   * Note that `compareTo()` is not consistent with `equals()`,
+   * which uses the reference equality implementation inherited from `Object`.
    *
    * @param  {Edge} that the other edge
    * @return  a negative integer, zero, or positive integer depending on whether
@@ -84,16 +84,11 @@ export class Edge implements java.lang.Comparable<Edge> {
    * @return  a string representation of this edge
    */
   public toString(): string {
-    return printf(
-      '%d-%d %.5f',
-      this.v,
-      this.w,
-      this.__weight
-    );
+    return printf('%d-%d %.5f', this.v, this.w, this.__weight);
   }
 
   /**
-   * Unit tests the {@code Edge} data type.
+   * Unit tests the `Edge` data type.
    *
    * @param  args the command-line arguments
    */

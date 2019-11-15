@@ -5,11 +5,11 @@ import { StdOut } from './StdOut';
 import { In } from './In';
 
 /**
- * Computes the shortest path between the source vertex {@code s}
- * and every other vertex in the graph {@code G}.
+ * Computes the shortest path between the source vertex `s`
+ * and every other vertex in the graph `G`.
  * @param {Graph} G the graph
  * @param  s the source vertex
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -35,8 +35,7 @@ export class BreadthFirstPaths {
           sources.__interfaces.indexOf('Iterable') >= 0) ||
           (sources.constructor != null &&
             sources.constructor.__interfaces != null &&
-            sources.constructor.__interfaces.indexOf('Iterable') >=
-              0))) ||
+            sources.constructor.__interfaces.indexOf('Iterable') >= 0))) ||
         sources === null)
     ) {
       const __args = arguments;
@@ -47,17 +46,17 @@ export class BreadthFirstPaths {
       if (this.edgeTo === undefined) this.edgeTo = null;
       if (this.__distTo === undefined) this.__distTo = null;
       (() => {
-        this.marked = (s => {
+        this.marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
         })(G.V());
-        this.__distTo = (s => {
+        this.__distTo = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
-        this.edgeTo = (s => {
+        this.edgeTo = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -81,17 +80,17 @@ export class BreadthFirstPaths {
       if (this.edgeTo === undefined) this.edgeTo = null;
       if (this.__distTo === undefined) this.__distTo = null;
       (() => {
-        this.marked = (s => {
+        this.marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
         })(G.V());
-        this.__distTo = (s => {
+        this.__distTo = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
-        this.edgeTo = (s => {
+        this.edgeTo = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -167,8 +166,7 @@ export class BreadthFirstPaths {
           sources.__interfaces.indexOf('Iterable') >= 0) ||
           (sources.constructor != null &&
             sources.constructor.__interfaces != null &&
-            sources.constructor.__interfaces.indexOf('Iterable') >=
-              0))) ||
+            sources.constructor.__interfaces.indexOf('Iterable') >= 0))) ||
         sources === null)
     ) {
       return <any>(
@@ -185,10 +183,10 @@ export class BreadthFirstPaths {
   }
 
   /**
-   * Is there a path between the source vertex {@code s} (or sources) and vertex {@code v}?
+   * Is there a path between the source vertex `s` (or sources) and vertex `v`?
    * @param  v the vertex
-   * @return  {@code true} if there is a path, and {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if there is a path, and `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public hasPathTo(v: number): boolean {
     this.validateVertex(v);
@@ -196,11 +194,11 @@ export class BreadthFirstPaths {
   }
 
   /**
-   * Returns the number of edges in a shortest path between the source vertex {@code s}
-   * (or sources) and vertex {@code v}?
+   * Returns the number of edges in a shortest path between the source vertex `s`
+   * (or sources) and vertex `v`?
    * @param  v the vertex
    * @return  the number of edges in a shortest path
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public distTo(v: number): number {
     this.validateVertex(v);
@@ -208,11 +206,11 @@ export class BreadthFirstPaths {
   }
 
   /**
-   * Returns a shortest path between the source vertex {@code s} (or sources)
-   * and {@code v}, or {@code null} if no such path.
+   * Returns a shortest path between the source vertex `s` (or sources)
+   * and `v`, or `null` if no such path.
    * @param   v the vertex
    * @return  the sequence of vertices on a shortest path, as an Iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public pathTo(v: number): Iterable<number> {
     this.validateVertex(v);
@@ -299,7 +297,7 @@ export class BreadthFirstPaths {
   }
 
   /**
-   * Unit tests the {@code BreadthFirstPaths} data type.
+   * Unit tests the `BreadthFirstPaths` data type.
    *
    * @param  args the command-line arguments
    */

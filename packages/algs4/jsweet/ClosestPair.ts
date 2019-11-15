@@ -6,8 +6,8 @@ import { StdOut } from './StdOut';
  * Computes the closest pair of points in the specified array of points.
  *
  * @param   points the array of points
- * @throws IllegalArgumentException if {@code points} is {@code null} or if any
- * entry in {@code points[]} is {@code null}
+ * @throws IllegalArgumentException if `points` is `null` or if any
+ * entry in `points[]` is `null`
  * @class
  * @author Robert Sedgewick
  */
@@ -16,8 +16,7 @@ export class ClosestPair {
 
   private best2: Point2D;
 
-  private bestDistance: number =
-    Number.POSITIVE_INFINITY;
+  private bestDistance: number = Number.POSITIVE_INFINITY;
 
   public constructor(points: Point2D[]) {
     if (this.best1 === undefined) this.best1 = null;
@@ -30,7 +29,7 @@ export class ClosestPair {
     }
     const n: number = points.length;
     if (n <= 1) return;
-    const pointsByX: Point2D[] = (s => {
+    const pointsByX: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -49,7 +48,7 @@ export class ClosestPair {
         }
       }
     }
-    const pointsByY: Point2D[] = (s => {
+    const pointsByY: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -57,7 +56,7 @@ export class ClosestPair {
     for (let i = 0; i < n; i++) {
       pointsByY[i] = pointsByX[i];
     }
-    const aux: Point2D[] = (s => {
+    const aux: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -114,7 +113,7 @@ export class ClosestPair {
    * Returns one of the points in the closest pair of points.
    *
    * @return {Point2D} one of the two points in the closest pair of points;
-   * {@code null} if no such point (because there are fewer than 2 points)
+   * `null` if no such point (because there are fewer than 2 points)
    */
   public either(): Point2D {
     return this.best1;
@@ -124,7 +123,7 @@ export class ClosestPair {
    * Returns the other point in the closest pair of points.
    *
    * @return {Point2D} the other point in the closest pair of points
-   * {@code null} if no such point (because there are fewer than 2 points)
+   * `null` if no such point (because there are fewer than 2 points)
    */
   public other(): Point2D {
     return this.best2;
@@ -134,7 +133,7 @@ export class ClosestPair {
    * Returns the Eucliden distance between the closest pair of points.
    *
    * @return  the Euclidean distance between the closest pair of points
-   * {@code Double.POSITIVE_INFINITY} if no such pair of points
+   * `Double.POSITIVE_INFINITY` if no such pair of points
    * exist (because there are fewer than 2 points)
    */
   public distance(): number {
@@ -173,8 +172,8 @@ export class ClosestPair {
   }
 
   /**
-   * Unit tests the {@code ClosestPair} data type.
-   * Reads in an integer {@code n} and {@code n} points (specified by
+   * Unit tests the `ClosestPair` data type.
+   * Reads in an integer `n` and `n` points (specified by
    * their <em>x</em>- and <em>y</em>-coordinates) from standard input;
    * computes a closest pair of points; and prints the pair to standard
    * output.
@@ -183,7 +182,7 @@ export class ClosestPair {
    */
   public static main(args: string[]) {
     const n: number = StdIn.readInt();
-    const points: Point2D[] = (s => {
+    const points: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

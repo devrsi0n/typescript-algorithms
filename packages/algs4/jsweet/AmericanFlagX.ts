@@ -3,7 +3,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code AmericanFlagX} class provides static methods for sorting an
+ * The `AmericanFlagX` class provides static methods for sorting an
  * array of extended ASCII strings or integers in-place using
  * American Flag sort. This implementation is non-recursive and uses only
  * one auxiliary array.
@@ -23,8 +23,6 @@ export class AmericanFlagX {
 
   static CUTOFF = 15;
 
-
-
   private static charAt(s: string, d: number): number {
     if (d === s.length) return -1;
     return s.charAt(d).charCodeAt(0);
@@ -40,7 +38,7 @@ export class AmericanFlagX {
     hi: number
   ) {
     const st: Stack<number> = <any>new Stack<number>();
-    const count: number[] = (s => {
+    const count: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -147,17 +145,21 @@ export class AmericanFlagX {
     for (let i: number = d; i < Math.min(v.length, w.length); i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) <
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return true;
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) >
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return false;
       }

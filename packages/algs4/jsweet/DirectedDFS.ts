@@ -4,11 +4,11 @@ import { Bag } from './Bag';
 import { StdOut } from './StdOut';
 
 /**
- * Computes the vertices in digraph {@code G} that are
- * reachable from the source vertex {@code s}.
+ * Computes the vertices in digraph `G` that are
+ * reachable from the source vertex `s`.
  * @param {Digraph} G the digraph
  * @param  s the source vertex
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -25,8 +25,7 @@ export class DirectedDFS {
           sources.__interfaces.indexOf('Iterable') >= 0) ||
           (sources.constructor != null &&
             sources.constructor.__interfaces != null &&
-            sources.constructor.__interfaces.indexOf('Iterable') >=
-              0))) ||
+            sources.constructor.__interfaces.indexOf('Iterable') >= 0))) ||
         sources === null)
     ) {
       const __args = arguments;
@@ -35,7 +34,7 @@ export class DirectedDFS {
       if (this.__marked === undefined) this.__marked = null;
       if (this.__count === undefined) this.__count = 0;
       (() => {
-        this.__marked = (s => {
+        this.__marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
@@ -59,7 +58,7 @@ export class DirectedDFS {
       if (this.__marked === undefined) this.__marked = null;
       if (this.__count === undefined) this.__count = 0;
       (() => {
-        this.__marked = (s => {
+        this.__marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
@@ -83,10 +82,10 @@ export class DirectedDFS {
 
   /**
    * Is there a directed path from the source vertex (or any
-   * of the source vertices) and vertex {@code v}?
+   * of the source vertices) and vertex `v`?
    * @param   v the vertex
-   * @return  {@code true} if there is a directed path, {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if there is a directed path, `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public marked(v: number): boolean {
     this.validateVertex(v);
@@ -125,7 +124,7 @@ export class DirectedDFS {
   }
 
   /**
-   * Unit tests the {@code DirectedDFS} data type.
+   * Unit tests the `DirectedDFS` data type.
    *
    * @param  args the command-line arguments
    */

@@ -30,22 +30,22 @@ export class NFA {
       {
         let lp: number = i;
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             regexp.charAt(i)
           ) == '('.charCodeAt(0) ||
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             regexp.charAt(i)
           ) == '|'.charCodeAt(0)
         )
           ops.push(i);
         else if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             regexp.charAt(i)
           ) == ')'.charCodeAt(0)
         ) {
           const or: number = ops.pop();
           if (
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               regexp.charAt(or)
             ) == '|'.charCodeAt(0)
           ) {
@@ -53,7 +53,7 @@ export class NFA {
             this.graph.addEdge(lp, or + 1);
             this.graph.addEdge(or, i);
           } else if (
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               regexp.charAt(or)
             ) == '('.charCodeAt(0)
           )
@@ -62,7 +62,7 @@ export class NFA {
         }
         if (
           i < this.m - 1 &&
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             regexp.charAt(i + 1)
           ) == '*'.charCodeAt(0)
         ) {
@@ -70,13 +70,13 @@ export class NFA {
           this.graph.addEdge(i + 1, lp);
         }
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             regexp.charAt(i)
           ) == '('.charCodeAt(0) ||
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             regexp.charAt(i)
           ) == '*'.charCodeAt(0) ||
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             regexp.charAt(i)
           ) == ')'.charCodeAt(0)
         )
@@ -90,8 +90,8 @@ export class NFA {
    * Returns true if the text is matched by the regular expression.
    *
    * @param   txt the text
-   * @return  {@code true} if the text is matched by the regular expression,
-   * {@code false} otherwise
+   * @return  `true` if the text is matched by the regular expression,
+   * `false` otherwise
    */
   public recognizes(txt: string): boolean {
     let dfs: DirectedDFS = new DirectedDFS(this.graph, 0);
@@ -102,16 +102,16 @@ export class NFA {
     for (let i = 0; i < txt.length; i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             txt.charAt(i)
           ) == '*'.charCodeAt(0) ||
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             txt.charAt(i)
           ) == '|'.charCodeAt(0) ||
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             txt.charAt(i)
           ) == '('.charCodeAt(0) ||
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             txt.charAt(i)
           ) == ')'.charCodeAt(0)
         )
@@ -122,13 +122,13 @@ export class NFA {
           {
             if (v === this.m) continue;
             if (
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 this.regexp.charAt(v)
               ) ==
-                (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+                ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                   txt.charAt(i)
                 ) ||
-              (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+              ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
                 this.regexp.charAt(v)
               ) == '.'.charCodeAt(0)
             )
@@ -151,7 +151,7 @@ export class NFA {
   }
 
   /**
-   * Unit tests the {@code NFA} data type.
+   * Unit tests the `NFA` data type.
    *
    * @param  args the command-line arguments
    */

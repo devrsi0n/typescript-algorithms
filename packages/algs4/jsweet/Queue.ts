@@ -25,7 +25,7 @@ export class Queue<Item> implements Iterable<Item> {
   /**
    * Returns true if this queue is empty.
    *
-   * @return  {@code true} if this queue is empty; {@code false} otherwise
+   * @return  `true` if this queue is empty; `false` otherwise
    */
   public isEmpty(): boolean {
     return this.first == null;
@@ -87,7 +87,7 @@ export class Queue<Item> implements Iterable<Item> {
    * @return  the sequence of items in FIFO order, separated by spaces
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     for (let index335 = this.iterator(); index335.hasNext(); ) {
       const item = index335.next();
       {
@@ -108,7 +108,7 @@ export class Queue<Item> implements Iterable<Item> {
   }
 
   /**
-   * Unit tests the {@code Queue} data type.
+   * Unit tests the `Queue` data type.
    *
    * @param  args the command-line arguments
    */

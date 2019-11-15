@@ -3,11 +3,11 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Computes the vertices in graph {@code G} that are
- * connected to the source vertex {@code s}.
+ * Computes the vertices in graph `G` that are
+ * connected to the source vertex `s`.
  * @param {Graph} G the graph
  * @param  s the source vertex
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -19,7 +19,7 @@ export class DepthFirstSearch {
   public constructor(G: Graph, s: number) {
     if (this.__marked === undefined) this.__marked = null;
     if (this.__count === undefined) this.__count = 0;
-    this.__marked = (s => {
+    this.__marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -42,10 +42,10 @@ export class DepthFirstSearch {
   }
 
   /**
-   * Is there a path between the source vertex {@code s} and vertex {@code v}?
+   * Is there a path between the source vertex `s` and vertex `v`?
    * @param  v the vertex
-   * @return  {@code true} if there is a path, {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if there is a path, `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public marked(v: number): boolean {
     this.validateVertex(v);
@@ -53,8 +53,8 @@ export class DepthFirstSearch {
   }
 
   /**
-   * Returns the number of vertices connected to the source vertex {@code s}.
-   * @return  the number of vertices connected to the source vertex {@code s}
+   * Returns the number of vertices connected to the source vertex `s`.
+   * @return  the number of vertices connected to the source vertex `s`
    */
   public count(): number {
     return this.__count;
@@ -67,7 +67,7 @@ export class DepthFirstSearch {
   }
 
   /**
-   * Unit tests the {@code DepthFirstSearch} data type.
+   * Unit tests the `DepthFirstSearch` data type.
    *
    * @param  args the command-line arguments
    */

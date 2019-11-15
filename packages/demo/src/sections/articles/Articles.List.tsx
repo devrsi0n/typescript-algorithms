@@ -36,8 +36,6 @@ interface ArticlesListItemProps {
 }
 
 function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
-  if (!articles) return null;
-
   const hasOnlyOneArticle = articles.length === 1;
   const { gridLayout = 'tiles', hasSetGridLayout, getGridLayout } = useContext(
     GridLayoutContext
@@ -56,6 +54,8 @@ function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
   }, []);
 
   useEffect(() => getGridLayout(), [getGridLayout]);
+
+  if (!articles) return null;
 
   return (
     <ArticlesListContainer
@@ -85,13 +85,12 @@ function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
 export default ArticlesList;
 
 const ListItem = ({ article, narrow }: ArticlesListItemProps) => {
-  if (!article) return null;
-
   const { gridLayout } = useContext(GridLayoutContext);
   const hasOverflow = narrow && article.title.length > 35;
   const imageSource = narrow ? article.hero.narrow : article.hero.regular;
   const hasHeroImage =
     Object.keys(imageSource).length !== 0 && imageSource.constructor === Object;
+  if (!article) return null;
 
   return (
     <ArticleLink to={article.slug} data-a11y="false">

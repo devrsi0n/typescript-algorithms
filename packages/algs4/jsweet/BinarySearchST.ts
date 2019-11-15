@@ -25,12 +25,12 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
       if (this.__keys === undefined) this.__keys = null;
       if (this.vals === undefined) this.vals = null;
       (() => {
-        this.__keys = <Key[]>(s => {
+        this.__keys = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
         })(capacity);
-        this.vals = <Value[]>(s => {
+        this.vals = <Value[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -47,12 +47,12 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
         if (this.__keys === undefined) this.__keys = null;
         if (this.vals === undefined) this.vals = null;
         (() => {
-          this.__keys = <Key[]>(s => {
+          this.__keys = <Key[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
           })(capacity);
-          this.vals = <Value[]>(s => {
+          this.vals = <Value[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -63,12 +63,12 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   private resize(capacity: number) {
-    const tempk: Key[] = <Key[]>(s => {
+    const tempk: Key[] = <Key[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
     })(capacity);
-    const tempv: Value[] = <Value[]>(s => {
+    const tempv: Value[] = <Value[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -90,8 +90,8 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Returns true if this symbol table is empty.
    *
-   * @return  {@code true} if this symbol table is empty;
-   * {@code false} otherwise
+   * @return  `true` if this symbol table is empty;
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return this.size() === 0;
@@ -101,9 +101,9 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * Does this symbol table contain the given key?
    *
    * @param   key the key
-   * @return  {@code true} if this symbol table contains {@code key} and
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if this symbol table contains `key` and
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: Key): boolean {
     if (key == null) throw new Error('argument to contains() is null');
@@ -115,8 +115,8 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param   key the key
    * @return  the value associated with the given key if the key is in the symbol table
-   * and {@code null} if the key is not in the symbol table
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * and `null` if the key is not in the symbol table
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public get(key: Key): Value {
     if (key == null) throw new Error('argument to get() is null');
@@ -127,11 +127,11 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   /**
-   * Returns the number of keys in this symbol table strictly less than {@code key}.
+   * Returns the number of keys in this symbol table strictly less than `key`.
    *
    * @param   key the key
-   * @return  the number of keys in the symbol table strictly less than {@code key}
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  the number of keys in the symbol table strictly less than `key`
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public rank(key: Key): number {
     if (key == null) throw new Error('argument to rank() is null');
@@ -153,11 +153,11 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * Inserts the specified key-value pair into the symbol table, overwriting the old
    * value with the new value if the symbol table already contains the specified key.
    * Deletes the specified key (and its associated value) from this symbol table
-   * if the specified value is {@code null}.
+   * if the specified value is `null`.
    *
    * @param   key the key
    * @param   val the value
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public put(key: Key, val: Value) {
     if (key == null) throw new Error('first argument to put() is null');
@@ -187,7 +187,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * (if the key is in the symbol table).
    *
    * @param   key the key
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public delete(key: Key) {
     if (key == null) throw new Error('argument to delete() is null');
@@ -215,8 +215,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * @throws Error if the symbol table is empty
    */
   public deleteMin() {
-    if (this.isEmpty())
-      throw new Error('Symbol table underflow error');
+    if (this.isEmpty()) throw new Error('Symbol table underflow error');
     this.delete(this.min());
   }
 
@@ -226,8 +225,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * @throws Error if the symbol table is empty
    */
   public deleteMax() {
-    if (this.isEmpty())
-      throw new Error('Symbol table underflow error');
+    if (this.isEmpty()) throw new Error('Symbol table underflow error');
     this.delete(this.max());
   }
 
@@ -238,8 +236,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * @throws Error if this symbol table is empty
    */
   public min(): Key {
-    if (this.isEmpty())
-      throw new Error('called min() with empty symbol table');
+    if (this.isEmpty()) throw new Error('called min() with empty symbol table');
     return this.__keys[0];
   }
 
@@ -250,8 +247,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * @throws Error if this symbol table is empty
    */
   public max(): Key {
-    if (this.isEmpty())
-      throw new Error('called max() with empty symbol table');
+    if (this.isEmpty()) throw new Error('called max() with empty symbol table');
     return this.__keys[this.n - 1];
   }
 
@@ -259,8 +255,8 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    * Return the kth smallest key in this symbol table.
    *
    * @param   k the order statistic
-   * @return  the {@code k}th smallest key in this symbol table
-   * @throws IllegalArgumentException unless {@code k} is between 0 and
+   * @return  the `k`th smallest key in this symbol table
+   * @throws IllegalArgumentException unless `k` is between 0 and
    * <em>n</em>�C1
    */
   public select(k: number): Key {
@@ -271,12 +267,12 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   /**
-   * Returns the largest key in this symbol table less than or equal to {@code key}.
+   * Returns the largest key in this symbol table less than or equal to `key`.
    *
    * @param   key the key
-   * @return  the largest key in this symbol table less than or equal to {@code key}
+   * @return  the largest key in this symbol table less than or equal to `key`
    * @throws Error if there is no such key
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public floor(key: Key): Key {
     if (key == null) throw new Error('argument to floor() is null');
@@ -288,12 +284,12 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   /**
-   * Returns the smallest key in this symbol table greater than or equal to {@code key}.
+   * Returns the smallest key in this symbol table greater than or equal to `key`.
    *
    * @param   key the key
-   * @return  the smallest key in this symbol table greater than or equal to {@code key}
+   * @return  the smallest key in this symbol table greater than or equal to `key`
    * @throws Error if there is no such key
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public ceiling(key: Key): Key {
     if (key == null) throw new Error('argument to ceiling() is null');
@@ -318,10 +314,10 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param  lo minimum endpoint
    * @param  hi maximum endpoint
-   * @return  the number of keys in this symbol table between {@code lo}
-   * (inclusive) and {@code hi} (inclusive)
-   * @throws IllegalArgumentException if either {@code lo} or {@code hi}
-   * is {@code null}
+   * @return  the number of keys in this symbol table between `lo`
+   * (inclusive) and `hi` (inclusive)
+   * @throws IllegalArgumentException if either `lo` or `hi`
+   * is `null`
    */
   public size(lo?: any, hi?: any): any {
     if ((lo != null || lo === null) && (hi != null || hi === null)) {
@@ -354,14 +350,14 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
 
   /**
    * Returns all keys in this symbol table in the given range,
-   * as an {@code Iterable}.
+   * as an `Iterable`.
    *
    * @param  lo minimum endpoint
    * @param  hi maximum endpoint
-   * @return  all keys in this symbol table between {@code lo}
-   * (inclusive) and {@code hi} (inclusive)
-   * @throws IllegalArgumentException if either {@code lo} or {@code hi}
-   * is {@code null}
+   * @return  all keys in this symbol table between `lo`
+   * (inclusive) and `hi` (inclusive)
+   * @throws IllegalArgumentException if either `lo` or `hi`
+   * is `null`
    */
   public keys(lo?: any, hi?: any): any {
     if ((lo != null || lo === null) && (hi != null || hi === null)) {
@@ -403,7 +399,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   /**
-   * Unit tests the {@code BinarySearchST} data type.
+   * Unit tests the `BinarySearchST` data type.
    *
    * @param  args the command-line arguments
    */

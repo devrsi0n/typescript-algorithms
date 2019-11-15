@@ -4,10 +4,10 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Computes a path between {@code s} and every other vertex in graph {@code G}.
+ * Computes a path between `s` and every other vertex in graph `G`.
  * @param {Graph} G the graph
  * @param  s the source vertex
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -23,12 +23,12 @@ export class DepthFirstPaths {
     if (this.edgeTo === undefined) this.edgeTo = null;
     if (this.s === undefined) this.s = 0;
     this.s = s;
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(G.V());
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -51,10 +51,10 @@ export class DepthFirstPaths {
   }
 
   /**
-   * Is there a path between the source vertex {@code s} and vertex {@code v}?
+   * Is there a path between the source vertex `s` and vertex `v`?
    * @param  v the vertex
-   * @return  {@code true} if there is a path, {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if there is a path, `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public hasPathTo(v: number): boolean {
     this.validateVertex(v);
@@ -62,12 +62,12 @@ export class DepthFirstPaths {
   }
 
   /**
-   * Returns a path between the source vertex {@code s} and vertex {@code v}, or
-   * {@code null} if no such path.
+   * Returns a path between the source vertex `s` and vertex `v`, or
+   * `null` if no such path.
    * @param   v the vertex
    * @return  the sequence of vertices on a path between the source vertex
-   * {@code s} and vertex {@code v}, as an Iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * `s` and vertex `v`, as an Iterable
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public pathTo(v: number): Iterable<number> {
     this.validateVertex(v);
@@ -87,7 +87,7 @@ export class DepthFirstPaths {
   }
 
   /**
-   * Unit tests the {@code DepthFirstPaths} data type.
+   * Unit tests the `DepthFirstPaths` data type.
    *
    * @param  args the command-line arguments
    */

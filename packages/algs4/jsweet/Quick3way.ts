@@ -3,7 +3,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code Quick3way} class provides static methods for sorting an
+ * The `Quick3way` class provides static methods for sorting an
  * array using quicksort with 3-way partitioning.
  * <p>
  * For additional documentation,
@@ -15,8 +15,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class Quick3way {
-
-
   public static sort$java_lang_Comparable_A(a: java.lang.Comparable<any>[]) {
     StdRandom.shuffle$java_lang_Object_A(a);
     Quick3way.sort$java_lang_Comparable_A$int$int(a, 0, a.length - 1);

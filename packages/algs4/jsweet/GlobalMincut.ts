@@ -12,8 +12,8 @@ import { StdOut } from './StdOut';
  * Computes a minimum cut of an edge-weighted graph.
  *
  * @param {EdgeWeightedGraph} G the edge-weighted graph
- * @throws IllegalArgumentException if the number of vertices of {@code G}
- * is less than {@code 2} or if anny edge weight is negative
+ * @throws IllegalArgumentException if the number of vertices of `G`
+ * is less than `2` or if anny edge weight is negative
  * @class
  * @author Marcelo Silva
  */
@@ -38,8 +38,8 @@ export class GlobalMincut {
    * Validates the edge-weighted graph.
    *
    * @param {EdgeWeightedGraph} G the edge-weighted graph
-   * @throws IllegalArgumentException if the number of vertices of {@code G}
-   * is less than {@code 2} or if any edge weight is negative
+   * @throws IllegalArgumentException if the number of vertices of `G`
+   * is less than `2` or if any edge weight is negative
    * @private
    */
   validate(G: EdgeWeightedGraph) {
@@ -62,16 +62,16 @@ export class GlobalMincut {
   }
 
   /**
-   * Returns {@code true} if the vertex {@code v} is on the first subset of
-   * vertices of the minimum cut; or {@code false} if the vertex {@code v} is
+   * Returns `true` if the vertex `v` is on the first subset of
+   * vertices of the minimum cut; or `false` if the vertex `v` is
    * on the second subset.
    *
    * @param  v the vertex to check
-   * @return  {@code true} if the vertex {@code v} is on the first subset of
-   * vertices of the minimum cut; or {@code false} if the vertex
-   * {@code v} is on the second subset.
-   * @throws IllegalArgumentException unless vertex {@code v} is between
-   * {@code 0} and {@code (G.V() - 1)}
+   * @return  `true` if the vertex `v` is on the first subset of
+   * vertices of the minimum cut; or `false` if the vertex
+   * `v` is on the second subset.
+   * @throws IllegalArgumentException unless vertex `v` is between
+   * `0` and `(G.V() - 1)`
    */
   public cut(v: number): boolean {
     this.validateVertex(v);
@@ -81,10 +81,10 @@ export class GlobalMincut {
   /**
    * Makes a cut for the current edge-weighted graph by partitioning its set
    * of vertices into two nonempty subsets. The vertices connected to the
-   * vertex {@code t} belong to the first subset. Other vertices not connected
-   * to {@code t} belong to the second subset.
+   * vertex `t` belong to the first subset. Other vertices not connected
+   * to `t` belong to the second subset.
    *
-   * @param  t the vertex {@code t}
+   * @param  t the vertex `t`
    * @param {UF} uf the union-find data type
    * @private
    */
@@ -107,12 +107,12 @@ export class GlobalMincut {
    */
   minCut(G: EdgeWeightedGraph, a: number) {
     const uf: UF = new UF(G.V());
-    const marked: boolean[] = (s => {
+    const marked: boolean[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
-    this.__cut = (s => {
+    this.__cut = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -134,14 +134,14 @@ export class GlobalMincut {
 
   /**
    * Returns the cut-of-the-phase. The cut-of-the-phase is a minimum s-t-cut
-   * in the current graph, where {@code s} and {@code t} are the two vertices
+   * in the current graph, where `s` and `t` are the two vertices
    * added last in the phase. This algorithm is known in the literature as
    * <em>maximum adjacency search</em> or <em>maximum cardinality search</em>.
    *
    * @param {EdgeWeightedGraph} G the edge-weighted graph
-   * @param  marked the array of contracted vertices, where {@code marked[v]}
-   * is {@code true} if the vertex {@code v} was already
-   * contracted; or {@code false} otherwise
+   * @param  marked the array of contracted vertices, where `marked[v]`
+   * is `true` if the vertex `v` was already
+   * contracted; or `false` otherwise
    * @param {GlobalMincut.CutPhase} cp the previous cut-of-the-phase
    * @return {GlobalMincut.CutPhase} the cut-of-the-phase
    * @private
@@ -183,14 +183,14 @@ export class GlobalMincut {
   }
 
   /**
-   * Contracts the edges incidents on the vertices {@code s} and {@code t} of
+   * Contracts the edges incidents on the vertices `s` and `t` of
    * the given edge-weighted graph.
    *
    * @param {EdgeWeightedGraph} G the edge-weighted graph
-   * @param  s the vertex {@code s}
-   * @param  t the vertex {@code t}
+   * @param  s the vertex `s`
+   * @param  t the vertex `t`
    * @return {EdgeWeightedGraph} a new edge-weighted graph for which the edges incidents on the
-   * vertices {@code s} and {@code t} were contracted
+   * vertices `s` and `t` were contracted
    * @private
    */
   contractEdge(G: EdgeWeightedGraph, s: number, t: number): EdgeWeightedGraph {
@@ -218,7 +218,7 @@ export class GlobalMincut {
    * Checks optimality conditions.
    *
    * @param {EdgeWeightedGraph} G the edge-weighted graph
-   * @return  {@code true} if optimality conditions are fine
+   * @return  `true` if optimality conditions are fine
    * @private
    */
   check(G: EdgeWeightedGraph): boolean {
@@ -254,7 +254,7 @@ export class GlobalMincut {
   }
 
   /**
-   * Unit tests the {@code GlobalMincut} data type.
+   * Unit tests the `GlobalMincut` data type.
    *
    * @param  args the command-line arguments
    */
@@ -278,7 +278,7 @@ export namespace GlobalMincut {
   /**
    * This helper class represents the <em>cut-of-the-phase</em>. The
    * cut-of-the-phase is a <em>minimum s-t-cut</em> in the current graph,
-   * where {@code s} and {@code t} are the two vertices added last in the
+   * where `s` and `t` are the two vertices added last in the
    * phase.
    * @param  weight
    * @param  s

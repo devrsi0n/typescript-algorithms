@@ -183,7 +183,7 @@ export class SparseVector {
    * the vector entries, separates by commas, enclosed in parentheses
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     for (let index354 = this.st.keys().iterator(); index354.hasNext(); ) {
       const i = index354.next();
       {
@@ -194,7 +194,7 @@ export class SparseVector {
   }
 
   /**
-   * Unit tests the {@code SparseVector} data type.
+   * Unit tests the `SparseVector` data type.
    *
    * @param  args the command-line arguments
    */

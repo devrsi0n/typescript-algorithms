@@ -37,7 +37,7 @@ export class KMP {
       if (this.pat === undefined) this.pat = null;
       (() => {
         this.R = R;
-        this.pattern = (s => {
+        this.pattern = ((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;

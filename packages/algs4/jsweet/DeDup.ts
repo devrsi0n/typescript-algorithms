@@ -3,7 +3,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code DeDup} class provides a client for reading in a sequence of
+ * The `DeDup` class provides a client for reading in a sequence of
  * words from standard input and printing each word, removing any duplicates.
  * It is useful as a test client for various symbol table implementations.
  * <p>
@@ -15,8 +15,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class DeDup {
-
-
   public static main(args: string[]) {
     const set: SET<string> = <any>new SET<string>();
     while (!StdIn.isEmpty()) {

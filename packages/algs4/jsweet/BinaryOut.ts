@@ -1,8 +1,8 @@
 import { BinaryIn } from './BinaryIn';
 
 /**
- * Initializes a binary output stream from an {@code OutputStream}.
- * @param {OutputStream} os the {@code OutputStream}
+ * Initializes a binary output stream from an `OutputStream`.
+ * @param {OutputStream} os the `OutputStream`
  * @class
  * @author Robert Sedgewick
  */
@@ -201,8 +201,8 @@ export class BinaryOut {
 
   public write$char(x: string) {
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) < 0 ||
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) >= 256
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) < 0 ||
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) >= 256
     )
       throw new Error(`Illegal 8-bit char = ${x}`);
     this.writeByte(x.charCodeAt(0));
@@ -214,7 +214,7 @@ export class BinaryOut {
       return;
     }
     if (r < 1 || r > 16) throw new Error(`Illegal value for r = ${r}`);
-    if ((c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) >= 1 << r)
+    if (((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) >= 1 << r)
       throw new Error(`Illegal ${r}-bit char = ${x}`);
     for (let i = 0; i < r; i++) {
       {
@@ -238,7 +238,7 @@ export class BinaryOut {
 
   /**
    * Writes the string of r-bit characters to the binary output stream.
-   * @param   s the {@code String} to write
+   * @param   s the `String` to write
    * @param   r the number of relevants bits in each character
    * @throws IllegalArgumentException unless r is between 1 and 16
    * @throws IllegalArgumentException if any character in the string is not
@@ -250,35 +250,47 @@ export class BinaryOut {
       (typeof r === 'number' || r === null)
     ) {
       return <any>this.write$java_lang_String$int(s, r);
-    } if (
+    }
+    if (
       (typeof s === 'string' || s === null) &&
       (typeof r === 'number' || r === null)
     ) {
       return <any>this.write$char$int(s, r);
-    } if (
+    }
+    if (
       (typeof s === 'number' || s === null) &&
       (typeof r === 'number' || r === null)
     ) {
       return <any>this.write$int$int(s, r);
-    } if ((typeof s === 'string' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'string' || s === null) && r === undefined) {
       return <any>this.write$java_lang_String(s);
-    } if ((typeof s === 'boolean' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'boolean' || s === null) && r === undefined) {
       return <any>this.write$boolean(s);
-    } if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>this.write$byte(s);
-    } if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>this.write$short(s);
-    } if ((typeof s === 'string' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'string' || s === null) && r === undefined) {
       return <any>this.write$char(s);
-    } if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>this.write$int(s);
-    } if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>this.write$long(s);
-    } else if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>this.write$float(s);
-    } else if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>this.write$double(s);
-    } else throw new Error('invalid overload');
+    }
+    throw new Error('invalid overload');
   }
 
   /**

@@ -5,7 +5,7 @@ export class Node<Item> {
 }
 
 /**
- *  The {@code Queue} class represents a first-in-first-out (FIFO)
+ *  The `Queue` class represents a first-in-first-out (FIFO)
  *  queue of generic items.
  *  It supports the usual <em>enqueue</em> and <em>dequeue</em>
  *  operations, along with methods for peeking at the first item,
@@ -43,7 +43,7 @@ export default class Queue<Item> implements Iterable<Item> {
   /**
    * Returns true if this queue is empty.
    *
-   * @return  {@code true} if this queue is empty; {@code false} otherwise
+   * @return  `true` if this queue is empty; `false` otherwise
    */
   public isEmpty(): boolean {
     return this.first == null;

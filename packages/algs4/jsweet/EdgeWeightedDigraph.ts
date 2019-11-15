@@ -6,12 +6,12 @@ import { Stack } from './Stack';
 import { StdOut } from './StdOut';
 
 /**
- * Initializes a random edge-weighted digraph with {@code V} vertices and <em>E</em> edges.
+ * Initializes a random edge-weighted digraph with `V` vertices and <em>E</em> edges.
  *
  * @param   V the number of vertices
  * @param   E the number of edges
- * @throws IllegalArgumentException if {@code V < 0}
- * @throws IllegalArgumentException if {@code E < 0}
+ * @throws IllegalArgumentException if `V < 0`
+ * @throws IllegalArgumentException if `E < 0`
  * @class
  * @author Robert Sedgewick
  */
@@ -56,12 +56,12 @@ export class EdgeWeightedDigraph {
             );
           this.__V = V;
           this.__E = 0;
-          this.__indegree = (s => {
+          this.__indegree = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;
           })(V);
-          this.__adj = <Bag<DirectedEdge>[]>(s => {
+          this.__adj = <Bag<DirectedEdge>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -108,12 +108,12 @@ export class EdgeWeightedDigraph {
             );
           this.__V = V;
           this.__E = 0;
-          this.__indegree = (s => {
+          this.__indegree = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;
           })(V);
-          this.__adj = <Bag<DirectedEdge>[]>(s => {
+          this.__adj = <Bag<DirectedEdge>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -161,12 +161,12 @@ export class EdgeWeightedDigraph {
             );
           this.__V = V;
           this.__E = 0;
-          this.__indegree = (s => {
+          this.__indegree = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;
           })(V);
-          this.__adj = <Bag<DirectedEdge>[]>(s => {
+          this.__adj = <Bag<DirectedEdge>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -216,12 +216,12 @@ export class EdgeWeightedDigraph {
           );
         this.__V = V;
         this.__E = 0;
-        this.__indegree = (s => {
+        this.__indegree = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(V);
-        this.__adj = <Bag<DirectedEdge>[]>(s => {
+        this.__adj = <Bag<DirectedEdge>[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -257,11 +257,11 @@ export class EdgeWeightedDigraph {
   }
 
   /**
-   * Adds the directed edge {@code e} to this edge-weighted digraph.
+   * Adds the directed edge `e` to this edge-weighted digraph.
    *
    * @param  {DirectedEdge} e the edge
-   * @throws IllegalArgumentException unless endpoints of edge are between {@code 0}
-   * and {@code V-1}
+   * @throws IllegalArgumentException unless endpoints of edge are between `0`
+   * and `V-1`
    */
   public addEdge(e: DirectedEdge) {
     const v: number = e.from();
@@ -274,11 +274,11 @@ export class EdgeWeightedDigraph {
   }
 
   /**
-   * Returns the directed edges incident from vertex {@code v}.
+   * Returns the directed edges incident from vertex `v`.
    *
    * @param   v the vertex
-   * @return  the directed edges incident from vertex {@code v} as an Iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the directed edges incident from vertex `v` as an Iterable
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public adj(v: number): Iterable<DirectedEdge> {
     this.validateVertex(v);
@@ -286,12 +286,12 @@ export class EdgeWeightedDigraph {
   }
 
   /**
-   * Returns the number of directed edges incident from vertex {@code v}.
-   * This is known as the <em>outdegree</em> of vertex {@code v}.
+   * Returns the number of directed edges incident from vertex `v`.
+   * This is known as the <em>outdegree</em> of vertex `v`.
    *
    * @param   v the vertex
-   * @return  the outdegree of vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the outdegree of vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public outdegree(v: number): number {
     this.validateVertex(v);
@@ -299,12 +299,12 @@ export class EdgeWeightedDigraph {
   }
 
   /**
-   * Returns the number of directed edges incident to vertex {@code v}.
-   * This is known as the <em>indegree</em> of vertex {@code v}.
+   * Returns the number of directed edges incident to vertex `v`.
+   * This is known as the <em>indegree</em> of vertex `v`.
    *
    * @param   v the vertex
-   * @return  the indegree of vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the indegree of vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public indegree(v: number): number {
     this.validateVertex(v);
@@ -314,7 +314,7 @@ export class EdgeWeightedDigraph {
   /**
    * Returns all directed edges in this edge-weighted digraph.
    * To iterate over the edges in this edge-weighted digraph, use foreach notation:
-   * {@code for (DirectedEdge e : G.edges())}.
+   * `for (DirectedEdge e : G.edges())`.
    *
    * @return  all edges in this edge-weighted digraph, as an iterable
    */
@@ -340,7 +340,7 @@ export class EdgeWeightedDigraph {
    * followed by the <em>V</em> adjacency lists of edges
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     s.append(`${this.__V} ${this.__E}${EdgeWeightedDigraph.NEWLINE_$LI$()}`);
     for (let v = 0; v < this.__V; v++) {
       {
@@ -358,7 +358,7 @@ export class EdgeWeightedDigraph {
   }
 
   /**
-   * Unit tests the {@code EdgeWeightedDigraph} data type.
+   * Unit tests the `EdgeWeightedDigraph` data type.
    *
    * @param  args the command-line arguments
    */

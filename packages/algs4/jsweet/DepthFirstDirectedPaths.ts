@@ -4,10 +4,10 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Computes a directed path from {@code s} to every other vertex in digraph {@code G}.
+ * Computes a directed path from `s` to every other vertex in digraph `G`.
  * @param  {Digraph} G the digraph
  * @param   s the source vertex
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -22,12 +22,12 @@ export class DepthFirstDirectedPaths {
     if (this.marked === undefined) this.marked = null;
     if (this.edgeTo === undefined) this.edgeTo = null;
     if (this.s === undefined) this.s = 0;
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -51,11 +51,11 @@ export class DepthFirstDirectedPaths {
   }
 
   /**
-   * Is there a directed path from the source vertex {@code s} to vertex {@code v}?
+   * Is there a directed path from the source vertex `s` to vertex `v`?
    * @param   v the vertex
-   * @return  {@code true} if there is a directed path from the source
-   * vertex {@code s} to vertex {@code v}, {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if there is a directed path from the source
+   * vertex `s` to vertex `v`, `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public hasPathTo(v: number): boolean {
     this.validateVertex(v);
@@ -63,12 +63,12 @@ export class DepthFirstDirectedPaths {
   }
 
   /**
-   * Returns a directed path from the source vertex {@code s} to vertex {@code v}, or
-   * {@code null} if no such path.
+   * Returns a directed path from the source vertex `s` to vertex `v`, or
+   * `null` if no such path.
    * @param   v the vertex
    * @return  the sequence of vertices on a directed path from the source vertex
-   * {@code s} to vertex {@code v}, as an Iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * `s` to vertex `v`, as an Iterable
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public pathTo(v: number): Iterable<number> {
     this.validateVertex(v);
@@ -88,7 +88,7 @@ export class DepthFirstDirectedPaths {
   }
 
   /**
-   * Unit tests the {@code DepthFirstDirectedPaths} data type.
+   * Unit tests the `DepthFirstDirectedPaths` data type.
    *
    * @param  args the command-line arguments
    */

@@ -2,11 +2,11 @@ import { BinaryStdIn } from './BinaryStdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code BinaryDump} class provides a client for displaying the contents
+ * The `BinaryDump` class provides a client for displaying the contents
  * of a binary file in binary.
  * <p>
  * For more full-featured versions, see the Unix utilities
- * {@code od} (octal dump) and {@code hexdump} (hexadecimal dump).
+ * `od` (octal dump) and `hexdump` (hexadecimal dump).
  * <p>
  * For additional documentation,
  * see <a href="https://algs4.cs.princeton.edu/55compression">Section 5.5</a> of
@@ -19,8 +19,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class BinaryDump {
-
-
   /**
    * Reads in a sequence of bytes from standard input and writes
    * them to standard output in binary, k bits per line,

@@ -2,7 +2,7 @@ import { StdRandom } from './StdRandom';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code RandomSeq} class is a client that prints out a pseudorandom
+ * The `RandomSeq` class is a client that prints out a pseudorandom
  * sequence of real numbers in a given range.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/11model">Section 1.1</a> of
@@ -13,8 +13,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class RandomSeq {
-
-
   /**
    * Reads in two command-line arguments lo and hi and prints n uniformly
    * random real numbers in [lo, hi) to standard output.

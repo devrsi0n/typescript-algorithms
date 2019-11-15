@@ -60,8 +60,6 @@ export class StdAudio {
 
   static bufferSize = 0;
 
-
-
   static __static_initializer_0() {
     StdAudio.init();
   }
@@ -84,7 +82,7 @@ export class StdAudio {
         format,
         StdAudio.SAMPLE_BUFFER_SIZE * StdAudio.BYTES_PER_SAMPLE
       );
-      StdAudio.buffer = (s => {
+      StdAudio.buffer = ((s) => {
         const a = [];
         while (s-- > 0) a.push(0);
         return a;
@@ -171,8 +169,8 @@ export class StdAudio {
    * If a sample is outside the range, it will be clipped.
    *
    * @param   samples the array of samples to play
-   * @throws IllegalArgumentException if any sample is {@code Double.NaN}
-   * @throws IllegalArgumentException if {@code samples} is {@code null}
+   * @throws IllegalArgumentException if any sample is `Double.NaN`
+   * @throws IllegalArgumentException if `samples` is `null`
    */
   public static play(samples?: any): any {
     if (
@@ -226,7 +224,7 @@ export class StdAudio {
     let bytes: number[] = null;
     try {
       const bytesToRead: number = ais.available();
-      bytes = (s => {
+      bytes = ((s) => {
         const a = [];
         while (s-- > 0) a.push(0);
         return a;
@@ -242,7 +240,7 @@ export class StdAudio {
     }
     const n: number = bytes.length;
     if (audioFormat.getChannels() === StdAudio.MONO) {
-      const data: number[] = (s => {
+      const data: number[] = ((s) => {
         const a = [];
         while (s-- > 0) a.push(0);
         return a;
@@ -260,7 +258,7 @@ export class StdAudio {
       return data;
     }
     if (audioFormat.getChannels() === StdAudio.STEREO) {
-      const data: number[] = (s => {
+      const data: number[] = ((s) => {
         const a = [];
         while (s-- > 0) a.push(0);
         return a;
@@ -294,11 +292,11 @@ export class StdAudio {
    *
    * @param   filename the name of the audio file
    * @param   samples the array of samples
-   * @throws IllegalArgumentException if unable to save {@code filename}
-   * @throws IllegalArgumentException if {@code samples} is {@code null}
-   * @throws IllegalArgumentException if {@code filename} is {@code null}
-   * @throws IllegalArgumentException if {@code filename} extension is not {@code .wav}
-   * or {@code .au}
+   * @throws IllegalArgumentException if unable to save `filename`
+   * @throws IllegalArgumentException if `samples` is `null`
+   * @throws IllegalArgumentException if `filename` is `null`
+   * @throws IllegalArgumentException if `filename` extension is not `.wav`
+   * or `.au`
    */
   public static save(filename: string, samples: number[]) {
     if (filename == null) {
@@ -314,7 +312,7 @@ export class StdAudio {
       StdAudio.SIGNED,
       StdAudio.LITTLE_ENDIAN
     );
-    const data: number[] = (s => {
+    const data: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -389,7 +387,7 @@ export class StdAudio {
       line = <SourceDataLine>(<any>AudioSystem.getLine(info));
       line.open(audioFormat);
       line.start();
-      const samples: number[] = (s => {
+      const samples: number[] = ((s) => {
         const a = [];
         while (s-- > 0) a.push(0);
         return a;
@@ -421,7 +419,7 @@ export class StdAudio {
    * Loops an audio file (in .wav, .mid, or .au format) in a background thread.
    *
    * @param  filename the name of the audio file
-   * @throws IllegalArgumentException if {@code filename} is {@code null}
+   * @throws IllegalArgumentException if `filename` is `null`
    */
   public static loop(filename: string) {
     if (filename == null) throw new Error();
@@ -456,7 +454,7 @@ export class StdAudio {
   }
 
   /**
-   * Unit tests {@code StdAudio}.
+   * Unit tests `StdAudio`.
    * @param  hz
    * @param  duration
    * @param  amplitude
@@ -469,7 +467,7 @@ export class StdAudio {
     amplitude: number
   ): number[] {
     const n: number = (<number>(StdAudio.SAMPLE_RATE * duration)) | 0;
-    const a: number[] = (s => {
+    const a: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

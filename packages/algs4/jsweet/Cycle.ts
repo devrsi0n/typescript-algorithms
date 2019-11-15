@@ -4,7 +4,7 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Determines whether the undirected graph {@code G} has a cycle and,
+ * Determines whether the undirected graph `G` has a cycle and,
  * if so, finds such a cycle.
  *
  * @param {Graph} G the undirected graph
@@ -24,12 +24,12 @@ export class Cycle {
     if (this.__cycle === undefined) this.__cycle = null;
     if (this.hasSelfLoop(G)) return;
     if (this.hasParallelEdges(G)) return;
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -59,7 +59,7 @@ export class Cycle {
   }
 
   private hasParallelEdges(G: Graph): boolean {
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -91,18 +91,18 @@ export class Cycle {
   }
 
   /**
-   * Returns true if the graph {@code G} has a cycle.
+   * Returns true if the graph `G` has a cycle.
    *
-   * @return  {@code true} if the graph has a cycle; {@code false} otherwise
+   * @return  `true` if the graph has a cycle; `false` otherwise
    */
   public hasCycle(): boolean {
     return this.__cycle != null;
   }
 
   /**
-   * Returns a cycle in the graph {@code G}.
-   * @return  a cycle if the graph {@code G} has a cycle,
-   * and {@code null} otherwise
+   * Returns a cycle in the graph `G`.
+   * @return  a cycle if the graph `G` has a cycle,
+   * and `null` otherwise
    */
   public cycle(): Iterable<number> {
     return this.__cycle;
@@ -132,7 +132,7 @@ export class Cycle {
   }
 
   /**
-   * Unit tests the {@code Cycle} data type.
+   * Unit tests the `Cycle` data type.
    *
    * @param  args the command-line arguments
    */

@@ -4,7 +4,7 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Computes the transitive closure of the digraph {@code G}.
+ * Computes the transitive closure of the digraph `G`.
  * @param {Digraph} G the digraph
  * @class
  * @author Robert Sedgewick
@@ -14,7 +14,7 @@ export class TransitiveClosure {
 
   public constructor(G: Digraph) {
     if (this.tc === undefined) this.tc = null;
-    this.tc = (s => {
+    this.tc = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -25,13 +25,13 @@ export class TransitiveClosure {
   }
 
   /**
-   * Is there a directed path from vertex {@code v} to vertex {@code w} in the digraph?
+   * Is there a directed path from vertex `v` to vertex `w` in the digraph?
    * @param   v the source vertex
    * @param   w the target vertex
-   * @return  {@code true} if there is a directed path from {@code v} to {@code w},
-   * {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
-   * @throws IllegalArgumentException unless {@code 0 <= w < V}
+   * @return  `true` if there is a directed path from `v` to `w`,
+   * `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
+   * @throws IllegalArgumentException unless `0 <= w < V`
    */
   public reachable(v: number, w: number): boolean {
     this.validateVertex(v);
@@ -46,7 +46,7 @@ export class TransitiveClosure {
   }
 
   /**
-   * Unit tests the {@code TransitiveClosure} data type.
+   * Unit tests the `TransitiveClosure` data type.
    *
    * @param  args the command-line arguments
    */

@@ -5,7 +5,7 @@ import { StdRandom } from './StdRandom';
 import { StdOut } from './StdOut';
 
 /**
- * Determines whether the edge-weighted digraph {@code G} has a directed cycle and,
+ * Determines whether the edge-weighted digraph `G` has a directed cycle and,
  * if so, finds such a cycle.
  * @param {EdgeWeightedDigraph} G the edge-weighted digraph
  * @class
@@ -25,17 +25,17 @@ export class EdgeWeightedDirectedCycle {
     if (this.edgeTo === undefined) this.edgeTo = null;
     if (this.onStack === undefined) this.onStack = null;
     if (this.__cycle === undefined) this.__cycle = null;
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
-    this.onStack = (s => {
+    this.onStack = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -75,8 +75,8 @@ export class EdgeWeightedDirectedCycle {
 
   /**
    * Does the edge-weighted digraph have a directed cycle?
-   * @return  {@code true} if the edge-weighted digraph has a directed cycle,
-   * {@code false} otherwise
+   * @return  `true` if the edge-weighted digraph has a directed cycle,
+   * `false` otherwise
    */
   public hasCycle(): boolean {
     return this.__cycle != null;
@@ -84,9 +84,9 @@ export class EdgeWeightedDirectedCycle {
 
   /**
    * Returns a directed cycle if the edge-weighted digraph has a directed cycle,
-   * and {@code null} otherwise.
+   * and `null` otherwise.
    * @return  a directed cycle (as an iterable) if the edge-weighted digraph
-   * has a directed cycle, and {@code null} otherwise
+   * has a directed cycle, and `null` otherwise
    */
   public cycle(): Iterable<DirectedEdge> {
     return this.__cycle;
@@ -118,7 +118,7 @@ export class EdgeWeightedDirectedCycle {
   }
 
   /**
-   * Unit tests the {@code EdgeWeightedDirectedCycle} data type.
+   * Unit tests the `EdgeWeightedDirectedCycle` data type.
    *
    * @param  args the command-line arguments
    */
@@ -127,7 +127,7 @@ export class EdgeWeightedDirectedCycle {
     const E: number = parseInt(args[1]);
     const F: number = parseInt(args[2]);
     const G: EdgeWeightedDigraph = new EdgeWeightedDigraph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

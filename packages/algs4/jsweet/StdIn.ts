@@ -1,7 +1,7 @@
 import { StdOut } from './StdOut';
 
 /**
- * The {@code StdIn} class provides static methods for reading strings
+ * The `StdIn` class provides static methods for reading strings
  * and numbers from standard input.
  * These functions fall into one of four categories:
  * <ul>
@@ -17,7 +17,7 @@ import { StdOut } from './StdOut';
  * categories in the same program.
  * <p>
  * <b>Getting started.</b>
- * To use this class, you must have {@code StdIn.class} in your
+ * To use this class, you must have `StdIn.class` in your
  * Java classpath. If you used our autoinstaller, you should be all set.
  * Otherwise, either download
  * <a href = "https://introcs.cs.princeton.edu/java/code/stdlib.jar">stdlib.jar</a>
@@ -99,9 +99,9 @@ import { StdOut } from './StdOut';
  * discarding the trailing line separator.
  * <p>
  * A <em>line separator</em> is defined to be one of the following strings:
- * {@code \n} (Linux), {@code \r} (old Macintosh),
- * {@code \r\n} (Windows),
- * {@code \}{@code u2028}, {@code \}{@code u2029}, or {@code \}{@code u0085}.
+ * `\n` (Linux), `\r` (old Macintosh),
+ * `\r\n` (Windows),
+ * `\}`u2028`, `\}`u2029`, or `\``u0085`.
  * <p>
  * As an example, the following code fragment reads text from standard input,
  * one line at a time, and prints it to standard output.
@@ -127,10 +127,10 @@ import { StdOut } from './StdOut';
  * The first three methods read of all of remaining token on standard input
  * and converts the tokens to values of
  * the specified type, as in the corresponding
- * {@code readDouble}, {@code readInt}, and {@code readString()} methods.
- * The {@code readAllLines()} method reads all remaining lines on standard
+ * `readDouble`, `readInt`, and `readString()` methods.
+ * The `readAllLines()` method reads all remaining lines on standard
  * input and returns them as an array of strings.
- * The {@code readAll()} method reads all remaining input on standard
+ * The `readAll()` method reads all remaining input on standard
  * input and returns it as a string.
  * <p>
  * As an example, the following code fragment reads all of the remaining
@@ -140,49 +140,49 @@ import { StdOut } from './StdOut';
  * </pre>
  * <p>
  * <b>Differences with Scanner.</b>
- * {@code StdIn} and {@link Scanner} are both designed to parse
+ * `StdIn` and {@link Scanner} are both designed to parse
  * tokens and convert them to primitive types and strings.
  * The main differences are summarized below:
  * <ul>
- * <li> {@code StdIn} is a set of static methods and reads
+ * <li> `StdIn` is a set of static methods and reads
  * reads input from only standard input. It is suitable for use before
  * a programmer knows about objects.
  * See {@link In} for an object-oriented version that handles
  * input from files, URLs,
  * and sockets.
- * <li> {@code StdIn} uses whitespace as the delimiter pattern
+ * <li> `StdIn` uses whitespace as the delimiter pattern
  * that separates tokens.
  * {@link Scanner} supports arbitrary delimiter patterns.
- * <li> {@code StdIn} coerces the character-set encoding to UTF-8,
+ * <li> `StdIn` coerces the character-set encoding to UTF-8,
  * which is the most widely used character encoding for Unicode.
- * <li> {@code StdIn} coerces the locale to {@link Locale#US},
+ * <li> `StdIn` coerces the locale to {@link Locale#US},
  * for consistency with {@link StdOut}, {@link Double#parseDouble(String)},
  * and floating-point literals.
- * <li> {@code StdIn} has convenient methods for reading a single
+ * <li> `StdIn` has convenient methods for reading a single
  * character; reading in sequences of integers, doubles, or strings;
  * and reading in all of the remaining input.
  * </ul>
  * <p>
- * Historical note: {@code StdIn} preceded {@code Scanner}; when
- * {@code Scanner} was introduced, this class was re-implemented to use {@code Scanner}.
+ * Historical note: `StdIn` preceded `Scanner`; when
+ * `Scanner` was introduced, this class was re-implemented to use `Scanner`.
  * <p>
  * <b>Using standard input.</b>
  * Standard input is a fundamental operating system abstraction on Mac OS X,
  * Windows, and Linux.
- * The methods in {@code StdIn} are <em>blocking</em>, which means that they
+ * The methods in `StdIn` are <em>blocking</em>, which means that they
  * will wait until you enter input on standard input.
  * If your program has a loop that repeats until standard input is empty,
  * you must signal that the input is finished.
  * To do so, depending on your operating system and IDE,
- * use either {@code <Ctrl-d>} or {@code <Ctrl-z>}, on its own line.
+ * use either `<Ctrl-d>` or `<Ctrl-z>`, on its own line.
  * If you are redirecting standard input from a file, you will not need
  * to do anything to signal that the input is finished.
  * <p>
  * <b>Known bugs.</b>
  * Java's UTF-8 encoding does not recognize the optional
  * <a href = "http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4508058">byte-order mask</a>.
- * If the input begins with the optional byte-order mask, {@code StdIn}
- * will have an extra character {@code \}{@code uFEFF} at the beginning.
+ * If the input begins with the optional byte-order mask, `StdIn`
+ * will have an extra character `\``uFEFF` at the beginning.
  * <p>
  * <b>Reference.</b>
  * For additional documentation,
@@ -248,15 +248,13 @@ export class StdIn {
     return StdIn.scanner;
   }
 
-
-
   /**
    * Returns true if standard input is empty (except possibly for whitespace).
    * Use this method to know whether the next call to {@link #readString()},
    * {@link #readDouble()}, etc will succeed.
    *
-   * @return  {@code true} if standard input is empty (except possibly
-   * for whitespace); {@code false} otherwise
+   * @return  `true` if standard input is empty (except possibly
+   * for whitespace); `false` otherwise
    */
   public static isEmpty(): boolean {
     return !StdIn.scanner_$LI$().hasNext();
@@ -268,8 +266,8 @@ export class StdIn {
    * next call to {@link #readLine()} will succeed.
    * This method is functionally equivalent to {@link #hasNextChar()}.
    *
-   * @return  {@code true} if standard input has more input (including whitespace);
-   * {@code false} otherwise
+   * @return  `true` if standard input has more input (including whitespace);
+   * `false` otherwise
    */
   public static hasNextLine(): boolean {
     return StdIn.scanner_$LI$().hasNextLine();
@@ -280,8 +278,8 @@ export class StdIn {
    * Use this method to know whether the next call to {@link #readChar()} will succeed.
    * This method is functionally equivalent to {@link #hasNextLine()}.
    *
-   * @return  {@code true} if standard input has more input (including whitespace);
-   * {@code false} otherwise
+   * @return  `true` if standard input has more input (including whitespace);
+   * `false` otherwise
    */
   public static hasNextChar(): boolean {
     StdIn.scanner_$LI$().useDelimiter(StdIn.EMPTY_PATTERN_$LI$());
@@ -294,7 +292,7 @@ export class StdIn {
    * Reads and returns the next line, excluding the line separator if present.
    *
    * @return  the next line, excluding the line separator if present;
-   * {@code null} if no such line
+   * `null` if no such line
    */
   public static readLine(): string {
     let line: string;
@@ -309,7 +307,7 @@ export class StdIn {
   /**
    * Reads and returns the next character.
    *
-   * @return  the next {@code char}
+   * @return  the next `char`
    * @throws Error if standard input is empty
    */
   public static readChar(): string {
@@ -341,9 +339,9 @@ export class StdIn {
   }
 
   /**
-   * Reads the next token  and returns the {@code String}.
+   * Reads the next token  and returns the `String`.
    *
-   * @return  the next {@code String}
+   * @return  the next `String`
    * @throws Error if standard input is empty
    */
   public static readString(): string {
@@ -361,7 +359,7 @@ export class StdIn {
    *
    * @return  the next integer on standard input
    * @throws Error if standard input is empty
-   * @throws InputMismatchException if the next token cannot be parsed as an {@code int}
+   * @throws InputMismatchException if the next token cannot be parsed as an `int`
    */
   public static readInt(): number {
     try {
@@ -388,7 +386,7 @@ export class StdIn {
    *
    * @return  the next double on standard input
    * @throws Error if standard input is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code double}
+   * @throws InputMismatchException if the next token cannot be parsed as a `double`
    */
   public static readDouble(): number {
     try {
@@ -415,7 +413,7 @@ export class StdIn {
    *
    * @return  the next float on standard input
    * @throws Error if standard input is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code float}
+   * @throws InputMismatchException if the next token cannot be parsed as a `float`
    */
   public static readFloat(): number {
     try {
@@ -442,7 +440,7 @@ export class StdIn {
    *
    * @return  the next long integer on standard input
    * @throws Error if standard input is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code long}
+   * @throws InputMismatchException if the next token cannot be parsed as a `long`
    */
   public static readLong(): number {
     try {
@@ -469,7 +467,7 @@ export class StdIn {
    *
    * @return  the next short integer on standard input
    * @throws Error if standard input is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code short}
+   * @throws InputMismatchException if the next token cannot be parsed as a `short`
    */
   public static readShort(): number {
     try {
@@ -496,7 +494,7 @@ export class StdIn {
    *
    * @return  the next byte on standard input
    * @throws Error if standard input is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code byte}
+   * @throws InputMismatchException if the next token cannot be parsed as a `byte`
    */
   public static readByte(): number {
     try {
@@ -524,8 +522,8 @@ export class StdIn {
    *
    * @return  the next boolean on standard input
    * @throws Error if standard input is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code boolean}:
-   * {@code true} or {@code 1} for true, and {@code false} or {@code 0} for false,
+   * @throws InputMismatchException if the next token cannot be parsed as a `boolean`:
+   * `true` or `1` for true, and `false` or `0` for false,
    * ignoring case
    */
   public static readBoolean(): boolean {
@@ -579,7 +577,7 @@ export class StdIn {
       StdIn.readAll()
     );
     if (tokens.length === 0 || tokens[0].length > 0) return tokens;
-    const decapitokens: string[] = (s => {
+    const decapitokens: string[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -602,7 +600,7 @@ export class StdIn {
       }
     }
     return lines.toArray<any>(
-      (s => {
+      ((s) => {
         const a = [];
         while (s-- > 0) a.push(null);
         return a;
@@ -614,11 +612,11 @@ export class StdIn {
    * Reads all remaining tokens from standard input, parses them as integers, and returns
    * them as an array of integers.
    * @return  all remaining integers on standard input, as an array
-   * @throws InputMismatchException if any token cannot be parsed as an {@code int}
+   * @throws InputMismatchException if any token cannot be parsed as an `int`
    */
   public static readAllInts(): number[] {
     const fields: string[] = StdIn.readAllStrings();
-    const vals: number[] = (s => {
+    const vals: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -633,11 +631,11 @@ export class StdIn {
    * Reads all remaining tokens from standard input, parses them as longs, and returns
    * them as an array of longs.
    * @return  all remaining longs on standard input, as an array
-   * @throws InputMismatchException if any token cannot be parsed as a {@code long}
+   * @throws InputMismatchException if any token cannot be parsed as a `long`
    */
   public static readAllLongs(): number[] {
     const fields: string[] = StdIn.readAllStrings();
-    const vals: number[] = (s => {
+    const vals: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -652,11 +650,11 @@ export class StdIn {
    * Reads all remaining tokens from standard input, parses them as doubles, and returns
    * them as an array of doubles.
    * @return  all remaining doubles on standard input, as an array
-   * @throws InputMismatchException if any token cannot be parsed as a {@code double}
+   * @throws InputMismatchException if any token cannot be parsed as a `double`
    */
   public static readAllDoubles(): number[] {
     const fields: string[] = StdIn.readAllStrings();
-    const vals: number[] = (s => {
+    const vals: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -693,7 +691,7 @@ export class StdIn {
    * Reads all remaining tokens, parses them as integers, and returns
    * them as an array of integers.
    * @return  all remaining integers, as an array
-   * @throws InputMismatchException if any token cannot be parsed as an {@code int}
+   * @throws InputMismatchException if any token cannot be parsed as an `int`
    * @deprecated Replaced by {@link #readAllInts()}.
    */
   public static readInts(): number[] {
@@ -704,7 +702,7 @@ export class StdIn {
    * Reads all remaining tokens, parses them as doubles, and returns
    * them as an array of doubles.
    * @return  all remaining doubles, as an array
-   * @throws InputMismatchException if any token cannot be parsed as a {@code double}
+   * @throws InputMismatchException if any token cannot be parsed as a `double`
    * @deprecated Replaced by {@link #readAllDoubles()}.
    */
   public static readDoubles(): number[] {

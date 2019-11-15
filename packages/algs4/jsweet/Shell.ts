@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code Shell} class provides static methods for sorting an
+ * The `Shell` class provides static methods for sorting an
  * array using Shellsort with Knuth's increment sequence (1, 4, 13, 40, ...).
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/21elementary">Section 2.1</a> of
@@ -13,8 +13,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class Shell {
-
-
   /**
    * Rearranges the array in ascending order, using the natural order.
    * @param  a the array to be sorted
@@ -40,7 +38,7 @@ export class Shell {
             }
           }
         }
-        h = (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(h / 3);
+        h = ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(h / 3);
       }
     }
   }

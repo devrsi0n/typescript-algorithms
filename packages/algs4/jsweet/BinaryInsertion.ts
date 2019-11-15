@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code BinaryInsertion} class provides a static method for sorting an
+ * The `BinaryInsertion` class provides a static method for sorting an
  * array using an optimized binary insertion sort with half exchanges.
  * <p>
  * This implementation makes ~ n lg n compares for any array of length n.
@@ -22,8 +22,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class BinaryInsertion {
-
-
   /**
    * Rearranges the array in ascending order, using the natural order.
    * @param  a the array to be sorted

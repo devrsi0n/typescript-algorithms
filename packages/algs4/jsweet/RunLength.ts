@@ -2,7 +2,7 @@ import { BinaryStdIn } from './BinaryStdIn';
 import { BinaryStdOut } from './BinaryStdOut';
 
 /**
- * The {@code RunLength} class provides static methods for compressing
+ * The `RunLength` class provides static methods for compressing
  * and expanding a binary input using run-length coding with 8-bit
  * run lengths.
  * <p>
@@ -18,8 +18,6 @@ export class RunLength {
   static R = 256;
 
   static LG_R = 8;
-
-
 
   /**
    * Reads a sequence of bits from standard input (that are encoded
@@ -57,7 +55,7 @@ export class RunLength {
           old = !old;
         } else {
           if (
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(run) ==
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(run) ==
             RunLength.R - 1
           ) {
             BinaryStdOut.write$char$int(run, RunLength.LG_R);
@@ -73,8 +71,8 @@ export class RunLength {
   }
 
   /**
-   * Sample client that calls {@code compress()} if the command-line
-   * argument is "-" an {@code expand()} if it is "+".
+   * Sample client that calls `compress()` if the command-line
+   * argument is "-" an `expand()` if it is "+".
    *
    * @param  args the command-line arguments
    */

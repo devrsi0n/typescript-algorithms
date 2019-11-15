@@ -22,9 +22,9 @@ export class TrieSET implements Iterable<string> {
   /**
    * Does the set contain the given key?
    * @param  key the key
-   * @return  {@code true} if the set contains {@code key} and
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if the set contains `key` and
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: string): boolean {
     if (key == null) throw new Error('argument to contains() is null');
@@ -105,7 +105,7 @@ export class TrieSET implements Iterable<string> {
 
   /**
    * Is the set empty?
-   * @return  {@code true} if the set is empty, and {@code false} otherwise
+   * @return  `true` if the set is empty, and `false` otherwise
    */
   public isEmpty(): boolean {
     return this.size() === 0;
@@ -113,8 +113,8 @@ export class TrieSET implements Iterable<string> {
 
   /**
    * Returns all of the keys in the set, as an iterator.
-   * To iterate over all of the keys in a set named {@code set}, use the
-   * foreach notation: {@code for (Key key : set)}.
+   * To iterate over all of the keys in a set named `set`, use the
+   * foreach notation: `for (Key key : set)`.
    * @return  an iterator to all of the keys in the set
    */
   public iterator(): Iterator<string> {
@@ -122,9 +122,9 @@ export class TrieSET implements Iterable<string> {
   }
 
   /**
-   * Returns all of the keys in the set that start with {@code prefix}.
+   * Returns all of the keys in the set that start with `prefix`.
    * @param  prefix the prefix
-   * @return  all of the keys in the set that start with {@code prefix},
+   * @return  all of the keys in the set that start with `prefix`,
    * as an iterable
    */
   public keysWithPrefix(prefix: string): Iterable<string> {
@@ -147,7 +147,7 @@ export class TrieSET implements Iterable<string> {
     if (x.isString) results.enqueue(prefix.toString());
     for (
       let c: string = String.fromCharCode(0);
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) < TrieSET.R;
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) < TrieSET.R;
       c++
     ) {
       {
@@ -163,15 +163,15 @@ export class TrieSET implements Iterable<string> {
   }
 
   /**
-   * Returns all of the keys in the set that match {@code pattern},
+   * Returns all of the keys in the set that match `pattern`,
    * where . symbol is treated as a wildcard character.
    * @param  pattern the pattern
-   * @return  all of the keys in the set that match {@code pattern},
+   * @return  all of the keys in the set that match `pattern`,
    * as an iterable, where . is treated as a wildcard character.
    */
   public keysThatMatch(pattern: string): Iterable<string> {
     const results: Queue<string> = <any>new Queue<string>();
-    const prefix= new String();
+    const prefix = new String();
     this.collect$edu_princeton_cs_algs4_TrieSET_Node$java_lang_StringBuilder$java_lang_String$edu_princeton_cs_algs4_Queue(
       this.root,
       prefix,
@@ -193,12 +193,12 @@ export class TrieSET implements Iterable<string> {
     if (d === pattern.length) return;
     const c: string = pattern.charAt(d);
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
       '.'.charCodeAt(0)
     ) {
       for (
         let ch: string = String.fromCharCode(0);
-        (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(ch) <
+        ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(ch) <
         TrieSET.R;
         ch++
       ) {
@@ -378,7 +378,7 @@ export class TrieSET implements Iterable<string> {
   }
 
   /**
-   * Unit tests the {@code TrieSET} data type.
+   * Unit tests the `TrieSET` data type.
    *
    * @param  args the command-line arguments
    */
@@ -446,7 +446,7 @@ TrieSET.__interfaces = ['Iterable'];
 
 export namespace TrieSET {
   export class Node {
-    next: TrieSET.Node[] = (s => {
+    next: TrieSET.Node[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

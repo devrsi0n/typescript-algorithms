@@ -24,10 +24,10 @@ export class Stopwatch {
   }
 
   /**
-   * Unit tests the {@code Stopwatch} data type.
-   * Takes a command-line argument {@code n} and computes the
-   * sum of the square roots of the first {@code n} positive integers,
-   * first using {@code Math.sqrt()}, then using {@code Math.pow()}.
+   * Unit tests the `Stopwatch` data type.
+   * Takes a command-line argument `n` and computes the
+   * sum of the square roots of the first `n` positive integers,
+   * first using `Math.sqrt()}, then using `Math.pow()`.
    * It prints to standard output the sum and the amount of time to
    * compute the sum. Note that the discrete sum can be approximated by
    * an integral - the sum should be approximately 2/3 * (n^(3/2) - 1).

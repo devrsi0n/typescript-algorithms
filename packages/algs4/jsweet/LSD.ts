@@ -2,7 +2,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code LSD} class provides static methods for sorting an
+ * The `LSD` class provides static methods for sorting an
  * array of <em>w</em>-character strings or 32-bit integers using LSD radix sort.
  * <p>
  * For additional documentation,
@@ -16,26 +16,24 @@ import { StdOut } from './StdOut';
 export class LSD {
   static BITS_PER_BYTE = 8;
 
-
-
   public static sort$java_lang_String_A$int(a: string[], w: number) {
     const n: number = a.length;
     const R = 256;
-    const aux: string[] = (s => {
+    const aux: string[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
     })(n);
     for (let d: number = w - 1; d >= 0; d--) {
       {
-        const count: number[] = (s => {
+        const count: number[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(R + 1);
         for (let i = 0; i < n; i++) {
           count[
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               a[i].charAt(d)
             ) + 1
           ]++;
@@ -88,14 +86,10 @@ export class LSD {
     const MASK: number = R - 1;
     const w: number = (BITS / LSD.BITS_PER_BYTE) | 0;
     const n: number = a.length;
-    const aux: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const aux: number[] = new Array(n).fill(0);
     for (let d = 0; d < w; d++) {
       {
-        const count: number[] = (s => {
+        const count: number[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;

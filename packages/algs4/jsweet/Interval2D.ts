@@ -119,7 +119,7 @@ export class Interval2D {
   }
 
   /**
-   * Unit tests the {@code Interval2D} data type.
+   * Unit tests the `Interval2D` data type.
    *
    * @param  args the command-line arguments
    */

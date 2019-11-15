@@ -5,9 +5,9 @@ import { StdRandom } from './StdRandom';
  * Initializes a new point (x, y).
  * @param  x the x-coordinate
  * @param  y the y-coordinate
- * @throws IllegalArgumentException if either {@code x} or {@code y}
- * is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
- * {@code Double.NEGATIVE_INFINITY}
+ * @throws IllegalArgumentException if either `x` or `y`
+ * is `Double.NaN`, `Double.POSITIVE_INFINITY` or
+ * `Double.NEGATIVE_INFINITY`
  * @class
  * @author Robert Sedgewick
  */
@@ -56,10 +56,10 @@ export class Point2D implements java.lang.Comparable<Point2D> {
     if (this.__x === undefined) this.__x = 0;
     if (this.__y === undefined) this.__y = 0;
     if (
-      /* isInfinite */ (value =>
+      /* isInfinite */ ((value) =>
         Number.NEGATIVE_INFINITY === value ||
         Number.POSITIVE_INFINITY === value)(x) ||
-      /* isInfinite */ (value =>
+      /* isInfinite */ ((value) =>
         Number.NEGATIVE_INFINITY === value ||
         Number.POSITIVE_INFINITY === value)(y)
     )
@@ -169,11 +169,11 @@ export class Point2D implements java.lang.Comparable<Point2D> {
   /**
    * Compares two points by y-coordinate, breaking ties by x-coordinate.
    * Formally, the invoking point (x0, y0) is less than the argument point (x1, y1)
-   * if and only if either {@code y0 < y1} or if {@code y0 == y1} and {@code x0 < x1}.
+   * if and only if either `y0 < y1` or if `y0 == y1` and `x0 < x1`.
    *
    * @param  {Point2D} that the other point
-   * @return  the value {@code 0} if this string is equal to the argument
-   * string (precisely when {@code equals()} returns {@code true});
+   * @return  the value `0` if this string is equal to the argument
+   * string (precisely when `equals()` returns `true`);
    * a negative integer if this point is less than the argument
    * point; and a positive integer if this point is greater than the
    * argument point
@@ -224,8 +224,8 @@ export class Point2D implements java.lang.Comparable<Point2D> {
    * Compares this point to the specified point.
    *
    * @param   other the other point
-   * @return  {@code true} if this point equals {@code other};
-   * {@code false} otherwise
+   * @return  `true` if this point equals `other`;
+   * `false` otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -306,7 +306,7 @@ export class Point2D implements java.lang.Comparable<Point2D> {
     StdDraw.setYscale$double$double(0, 100);
     StdDraw.setPenRadius$double(0.005);
     StdDraw.enableDoubleBuffering();
-    const points: Point2D[] = (s => {
+    const points: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -345,8 +345,6 @@ export namespace Point2D {
       if (p.__x > q.__x) return +1;
       return 0;
     }
-
-
   }
   XOrder.__class = 'edu.princeton.cs.algs4.Point2D.XOrder';
   XOrder.__interfaces = ['java.util.Comparator'];
@@ -357,8 +355,6 @@ export namespace Point2D {
       if (p.__y > q.__y) return +1;
       return 0;
     }
-
-
   }
   YOrder.__class = 'edu.princeton.cs.algs4.Point2D.YOrder';
   YOrder.__interfaces = ['java.util.Comparator'];
@@ -371,8 +367,6 @@ export namespace Point2D {
       if (delta > 0) return +1;
       return 0;
     }
-
-
   }
   ROrder.__class = 'edu.princeton.cs.algs4.Point2D.ROrder';
   ROrder.__interfaces = ['java.util.Comparator'];

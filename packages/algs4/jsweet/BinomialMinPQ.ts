@@ -136,8 +136,7 @@ export class BinomialMinPQ<Key> implements Iterable<Key> {
    * @return  the minimum key currently in the priority queue
    */
   public minKey(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     let min: BinomialMinPQ.Node = this.head;
     let current: BinomialMinPQ.Node = this.head;
     while (current.sibling != null) {
@@ -156,8 +155,7 @@ export class BinomialMinPQ<Key> implements Iterable<Key> {
    * @return  the minimum key
    */
   public delMin(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     const min: BinomialMinPQ.Node = this.eraseMin();
     let x: BinomialMinPQ.Node = min.child == null ? min : min.child;
     if (min.child != null) {

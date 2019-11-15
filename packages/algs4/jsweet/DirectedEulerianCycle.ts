@@ -22,7 +22,7 @@ export class DirectedEulerianCycle {
     for (let v = 0; v < G.V(); v++) {
       if (G.outdegree(v) !== G.indegree(v)) return;
     }
-    const adj: Iterator<number>[] = <Iterator<number>[]>(s => {
+    const adj: Iterator<number>[] = <Iterator<number>[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -53,7 +53,7 @@ export class DirectedEulerianCycle {
    * Returns the sequence of vertices on an Eulerian cycle.
    *
    * @return  the sequence of vertices on an Eulerian cycle;
-   * {@code null} if no such cycle
+   * `null` if no such cycle
    */
   public cycle(): Iterable<number> {
     return this.__cycle;
@@ -62,8 +62,8 @@ export class DirectedEulerianCycle {
   /**
    * Returns true if the digraph has an Eulerian cycle.
    *
-   * @return  {@code true} if the digraph has an Eulerian cycle;
-   * {@code false} otherwise
+   * @return  `true` if the digraph has an Eulerian cycle;
+   * `false` otherwise
    */
   public hasEulerianCycle(): boolean {
     return this.__cycle != null;
@@ -138,7 +138,7 @@ export class DirectedEulerianCycle {
   }
 
   /**
-   * Unit tests the {@code DirectedEulerianCycle} data type.
+   * Unit tests the `DirectedEulerianCycle` data type.
    *
    * @param  args the command-line arguments
    */
@@ -163,7 +163,7 @@ export class DirectedEulerianCycle {
       V - ((V / 2) | 0),
       E - ((E / 2) | 0)
     );
-    const perm: number[] = (s => {
+    const perm: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

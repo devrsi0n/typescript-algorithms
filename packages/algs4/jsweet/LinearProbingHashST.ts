@@ -34,12 +34,12 @@ export class LinearProbingHashST<Key, Value> {
       (() => {
         this.m = capacity;
         this.n = 0;
-        this.__keys = <Key[]>(s => {
+        this.__keys = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
         })(this.m);
-        this.vals = <Value[]>(s => {
+        this.vals = <Value[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -61,12 +61,12 @@ export class LinearProbingHashST<Key, Value> {
         (() => {
           this.m = capacity;
           this.n = 0;
-          this.__keys = <Key[]>(s => {
+          this.__keys = <Key[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
           })(this.m);
-          this.vals = <Value[]>(s => {
+          this.vals = <Value[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -88,8 +88,8 @@ export class LinearProbingHashST<Key, Value> {
   /**
    * Returns true if this symbol table is empty.
    *
-   * @return  {@code true} if this symbol table is empty;
-   * {@code false} otherwise
+   * @return  `true` if this symbol table is empty;
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return this.size() === 0;
@@ -99,9 +99,9 @@ export class LinearProbingHashST<Key, Value> {
    * Returns true if this symbol table contains the specified key.
    *
    * @param   key the key
-   * @return  {@code true} if this symbol table contains {@code key};
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if this symbol table contains `key`;
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: Key): boolean {
     if (key == null) throw new Error('argument to contains() is null');
@@ -144,11 +144,11 @@ export class LinearProbingHashST<Key, Value> {
    * Inserts the specified key-value pair into the symbol table, overwriting the old
    * value with the new value if the symbol table already contains the specified key.
    * Deletes the specified key (and its associated value) from this symbol table
-   * if the specified value is {@code null}.
+   * if the specified value is `null`.
    *
    * @param   key the key
    * @param   val the value
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public put(key: Key, val: Value) {
     if (key == null) throw new Error('first argument to put() is null');
@@ -179,9 +179,9 @@ export class LinearProbingHashST<Key, Value> {
   /**
    * Returns the value associated with the specified key.
    * @param  key the key
-   * @return  the value associated with {@code key};
-   * {@code null} if no such value
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  the value associated with `key`;
+   * `null` if no such value
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public get(key: Key): Value {
     if (key == null) throw new Error('argument to get() is null');
@@ -205,7 +205,7 @@ export class LinearProbingHashST<Key, Value> {
    * (if the key is in this symbol table).
    *
    * @param   key the key
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public delete(key: Key) {
     if (key == null) throw new Error('argument to delete() is null');
@@ -241,9 +241,9 @@ export class LinearProbingHashST<Key, Value> {
   }
 
   /**
-   * Returns all keys in this symbol table as an {@code Iterable}.
-   * To iterate over all of the keys in the symbol table named {@code st},
-   * use the foreach notation: {@code for (Key key : st.keys())}.
+   * Returns all keys in this symbol table as an `Iterable`.
+   * To iterate over all of the keys in the symbol table named `st`,
+   * use the foreach notation: `for (Key key : st.keys())`.
    *
    * @return  all keys in this symbol table
    */
@@ -277,7 +277,7 @@ export class LinearProbingHashST<Key, Value> {
   }
 
   /**
-   * Unit tests the {@code LinearProbingHashST} data type.
+   * Unit tests the `LinearProbingHashST` data type.
    *
    * @param  args the command-line arguments
    */

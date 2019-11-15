@@ -411,8 +411,8 @@ export class Draw
   /**
    * Sets the default close operation.
    *
-   * @param   value the value, typically {@code JFrame.EXIT_ON_CLOSE}
-   * (close all windows) or {@code JFrame.DISPOSE_ON_CLOSE}
+   * @param   value the value, typically `JFrame.EXIT_ON_CLOSE`
+   * (close all windows) or `JFrame.DISPOSE_ON_CLOSE`
    * (close current window)
    */
   public setDefaultCloseOperation(value: number) {
@@ -427,8 +427,8 @@ export class Draw
    *
    * @param   canvasWidth the width as a number of pixels
    * @param   canvasHeight the height as a number of pixels
-   * @throws IllegalArgumentException unless both {@code canvasWidth}
-   * and {@code canvasHeight} are positive
+   * @throws IllegalArgumentException unless both `canvasWidth`
+   * and `canvasHeight` are positive
    */
   public setCanvasSize(canvasWidth: number, canvasHeight: number) {
     if (canvasWidth < 1 || canvasHeight < 1) {
@@ -464,7 +464,7 @@ export class Draw
   static validate(x: number, name: string) {
     if (/* isNaN */ isNaN(x)) throw new Error(`${name} is NaN`);
     if (
-      /* isInfinite */ (value =>
+      /* isInfinite */ ((value) =>
         Number.NEGATIVE_INFINITY === value ||
         Number.POSITIVE_INFINITY === value)(x)
     )
@@ -501,8 +501,8 @@ export class Draw
    *
    * @param  min the minimum value of the x-scale
    * @param  max the maximum value of the x-scale
-   * @throws IllegalArgumentException if {@code (max == min)}
-   * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
+   * @throws IllegalArgumentException if `(max == min)`
+   * @throws IllegalArgumentException if either `min` or `max` is either NaN or infinite
    */
   public setXscale(min?: any, max?: any): any {
     if (
@@ -531,8 +531,8 @@ export class Draw
    *
    * @param  min the minimum value of the y-scale
    * @param  max the maximum value of the y-scale
-   * @throws IllegalArgumentException if {@code (max == min)}
-   * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
+   * @throws IllegalArgumentException if `(max == min)`
+   * @throws IllegalArgumentException if either `min` or `max` is either NaN or infinite
    */
   public setYscale(min?: any, max?: any): any {
     if (
@@ -587,7 +587,7 @@ export class Draw
    * Clears the screen to the given color.
    *
    * @param {Color} color the color to make the background
-   * @throws IllegalArgumentException if {@code color} is {@code null}
+   * @throws IllegalArgumentException if `color` is `null`
    */
   public clear(color?: any): any {
     if ((color != null && color instanceof <any>Color) || color === null) {
@@ -628,7 +628,7 @@ export class Draw
    * Sets the radius of the pen to the given size.
    *
    * @param   radius the radius of the pen
-   * @throws IllegalArgumentException if {@code radius} is negative, NaN, or infinite
+   * @throws IllegalArgumentException if `radius` is negative, NaN, or infinite
    */
   public setPenRadius(radius?: any): any {
     if (typeof radius === 'number' || radius === null) {
@@ -674,8 +674,8 @@ export class Draw
    * @param   red the amount of red (between 0 and 255)
    * @param   green the amount of green (between 0 and 255)
    * @param   blue the amount of blue (between 0 and 255)
-   * @throws IllegalArgumentException if {@code red}, {@code green},
-   * or {@code blue} is outside its prescribed range
+   * @throws IllegalArgumentException if `red`, `green`,
+   * or `blue` is outside its prescribed range
    */
   public setPenColor(red?: any, green?: any, blue?: any): any {
     if (
@@ -713,9 +713,9 @@ export class Draw
   }
 
   /**
-   * Gets the current {@code JLabel} for use in some other GUI.
+   * Gets the current `JLabel` for use in some other GUI.
    *
-   * @return {JLabel} the current {@code JLabel}
+   * @return {JLabel} the current `JLabel`
    */
   public getJLabel(): JLabel {
     return this.__draw;
@@ -743,7 +743,7 @@ export class Draw
    * Sets the font to the given value.
    *
    * @param {Font} font the font
-   * @throws IllegalArgumentException if {@code font} is {@code null}
+   * @throws IllegalArgumentException if `font` is `null`
    */
   public setFont(font?: any): any {
     if ((font != null && font instanceof <any>Font) || font === null) {
@@ -785,7 +785,7 @@ export class Draw
    *
    * @param  x the x-coordinate of the pixel
    * @param  y the y-coordinate of the pixel
-   * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
+   * @throws IllegalArgumentException if `x` or `y` is either NaN or infinite
    * @private
    */
   pixel(x: number, y: number) {
@@ -804,7 +804,7 @@ export class Draw
    *
    * @param  x the x-coordinate of the point
    * @param  y the y-coordinate of the point
-   * @throws IllegalArgumentException if either {@code x} or {@code y} is either NaN or infinite
+   * @throws IllegalArgumentException if either `x` or `y` is either NaN or infinite
    */
   public point(x: number, y: number) {
     Draw.validate(x, 'x');
@@ -824,7 +824,7 @@ export class Draw
    * @param   x the x-coordinate of the center of the circle
    * @param   y the y-coordinate of the center of the circle
    * @param   radius the radius of the circle
-   * @throws IllegalArgumentException if {@code radius} is negative
+   * @throws IllegalArgumentException if `radius` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public circle(x: number, y: number, radius: number) {
@@ -850,7 +850,7 @@ export class Draw
    * @param   x the x-coordinate of the center of the circle
    * @param   y the y-coordinate of the center of the circle
    * @param   radius the radius of the circle
-   * @throws IllegalArgumentException if {@code radius} is negative
+   * @throws IllegalArgumentException if `radius` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public filledCircle(x: number, y: number, radius: number) {
@@ -878,8 +878,8 @@ export class Draw
    * @param   y the <em>y</em>-coordinate of the center of the ellipse
    * @param   semiMajorAxis is the semimajor axis of the ellipse
    * @param   semiMinorAxis is the semiminor axis of the ellipse
-   * @throws IllegalArgumentException if either {@code semiMajorAxis}
-   * or {@code semiMinorAxis} is negative
+   * @throws IllegalArgumentException if either `semiMajorAxis`
+   * or `semiMinorAxis` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public ellipse(
@@ -914,8 +914,8 @@ export class Draw
    * @param   y the <em>y</em>-coordinate of the center of the ellipse
    * @param   semiMajorAxis is the semimajor axis of the ellipse
    * @param   semiMinorAxis is the semiminor axis of the ellipse
-   * @throws IllegalArgumentException if either {@code semiMajorAxis}
-   * or {@code semiMinorAxis} is negative
+   * @throws IllegalArgumentException if either `semiMajorAxis`
+   * or `semiMinorAxis` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public filledEllipse(
@@ -952,7 +952,7 @@ export class Draw
    * @param   angle1 the starting angle. 0 would mean an arc beginning at 3 o'clock.
    * @param   angle2 the angle at the end of the arc. For example, if
    * you want a 90 degree arc, then angle2 should be angle1 + 90.
-   * @throws IllegalArgumentException if {@code radius} is negative
+   * @throws IllegalArgumentException if `radius` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public arc(
@@ -997,7 +997,7 @@ export class Draw
    * @param   x the <em>x</em>-coordinate of the center of the square
    * @param   y the <em>y</em>-coordinate of the center of the square
    * @param   halfLength one half the length of any side of the square
-   * @throws IllegalArgumentException if {@code halfLength} is negative
+   * @throws IllegalArgumentException if `halfLength` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public square(x: number, y: number, halfLength: number) {
@@ -1023,7 +1023,7 @@ export class Draw
    * @param   x the <em>x</em>-coordinate of the center of the square
    * @param   y the <em>y</em>-coordinate of the center of the square
    * @param   halfLength one half the length of any side of the square
-   * @throws IllegalArgumentException if {@code halfLength} is negative
+   * @throws IllegalArgumentException if `halfLength` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public filledSquare(x: number, y: number, halfLength: number) {
@@ -1050,7 +1050,7 @@ export class Draw
    * @param   y the <em>y</em>-coordinate of the center of the rectangle
    * @param   halfWidth one half the width of the rectangle
    * @param   halfHeight one half the height of the rectangle
-   * @throws IllegalArgumentException if either {@code halfWidth} or {@code halfHeight} is negative
+   * @throws IllegalArgumentException if either `halfWidth` or `halfHeight` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public rectangle(
@@ -1084,7 +1084,7 @@ export class Draw
    * @param   y the <em>y</em>-coordinate of the center of the rectangle
    * @param   halfWidth one half the width of the rectangle
    * @param   halfHeight one half the height of the rectangle
-   * @throws IllegalArgumentException if either {@code halfWidth} or {@code halfHeight} is negative
+   * @throws IllegalArgumentException if either `halfWidth` or `halfHeight` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public filledRectangle(
@@ -1119,10 +1119,10 @@ export class Draw
    *
    * @param   x an array of all the <em>x</em>-coordinates of the polygon
    * @param   y an array of all the <em>y</em>-coordinates of the polygon
-   * @throws IllegalArgumentException unless {@code x[]} and {@code y[]}
+   * @throws IllegalArgumentException unless `x[]` and `y[]`
    * are of the same length
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
-   * @throws IllegalArgumentException if either {@code x[]} or {@code y[]} is {@code null}
+   * @throws IllegalArgumentException if either `x[]` or `y[]` is `null`
    */
   public polygon(x: number[], y: number[]) {
     Draw.validateNotNull(x, 'x-coordinate array');
@@ -1162,10 +1162,10 @@ export class Draw
    *
    * @param   x an array of all the <em>x</em>-coordinates of the polygon
    * @param   y an array of all the <em>y</em>-coordinates of the polygon
-   * @throws IllegalArgumentException unless {@code x[]} and {@code y[]}
+   * @throws IllegalArgumentException unless `x[]` and `y[]`
    * are of the same length
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
-   * @throws IllegalArgumentException if either {@code x[]} or {@code y[]} is {@code null}
+   * @throws IllegalArgumentException if either `x[]` or `y[]` is `null`
    */
   public filledPolygon(x: number[], y: number[]) {
     Draw.validateNotNull(x, 'x-coordinate array');
@@ -1264,7 +1264,7 @@ export class Draw
     const hs: number = image.getHeight(null);
     if (ws < 0 || hs < 0) throw new Error(`image ${filename} is corrupt`);
     this.offscreen.rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(-degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(-degrees),
       xs,
       ys
     );
@@ -1275,7 +1275,7 @@ export class Draw
       null
     );
     this.offscreen.rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(+degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(+degrees),
       xs,
       ys
     );
@@ -1340,7 +1340,7 @@ export class Draw
     if (ws < 0 || hs < 0) throw new Error(`image ${filename} is corrupt`);
     if (ws <= 1 && hs <= 1) this.pixel(x, y);
     this.offscreen.rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(-degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(-degrees),
       xs,
       ys
     );
@@ -1353,7 +1353,7 @@ export class Draw
       null
     );
     this.offscreen.rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(+degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(+degrees),
       xs,
       ys
     );
@@ -1371,8 +1371,8 @@ export class Draw
    * @param   scaledWidth the width of the scaled image (in screen coordinates)
    * @param   scaledHeight the height of the scaled image (in screen coordinates)
    * @param   degrees is the number of degrees to rotate counterclockwise
-   * @throws IllegalArgumentException if either {@code scaledWidth}
-   * or {@code scaledHeight} is negative
+   * @throws IllegalArgumentException if either `scaledWidth`
+   * or `scaledHeight` is negative
    * @throws IllegalArgumentException if the image filename is invalid
    */
   public picture(
@@ -1485,13 +1485,13 @@ export class Draw
     const xs: number = this.scaleX(x);
     const ys: number = this.scaleY(y);
     this.offscreen.rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(-degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(-degrees),
       xs,
       ys
     );
     this.text$double$double$java_lang_String(x, y, text);
     this.offscreen.rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(+degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(+degrees),
       xs,
       ys
     );
@@ -1504,8 +1504,8 @@ export class Draw
    * @param   y the center <em>y</em>-coordinate of the text
    * @param   text the text to write
    * @param   degrees is the number of degrees to rotate counterclockwise
-   * @throws IllegalArgumentException if {@code text} is {@code null}
-   * @throws IllegalArgumentException if {@code x}, {@code y}, or {@code degrees} is either NaN or infinite
+   * @throws IllegalArgumentException if `text` is `null`
+   * @throws IllegalArgumentException if `x`, `y`, or `degrees` is either NaN or infinite
    */
   public text(x?: any, y?: any, text?: any, degrees?: any): any {
     if (
@@ -1534,8 +1534,8 @@ export class Draw
    * @param   x the <em>x</em>-coordinate of the text
    * @param   y the <em>y</em>-coordinate of the text
    * @param   text the text
-   * @throws IllegalArgumentException if {@code text} is {@code null}
-   * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
+   * @throws IllegalArgumentException if `text` is `null`
+   * @throws IllegalArgumentException if `x` or `y` is either NaN or infinite
    */
   public textLeft(x: number, y: number, text: string) {
     Draw.validate(x, 'x');
@@ -1560,8 +1560,8 @@ export class Draw
    * @param   x the <em>x</em>-coordinate of the text
    * @param   y the <em>y</em>-coordinate of the text
    * @param   text the text to write
-   * @throws IllegalArgumentException if {@code text} is {@code null}
-   * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
+   * @throws IllegalArgumentException if `text` is `null`
+   * @throws IllegalArgumentException if `x` or `y` is either NaN or infinite
    */
   public textRight(x: number, y: number, text: string) {
     Draw.validate(x, 'x');
@@ -1626,8 +1626,8 @@ export class Draw
 
   /**
    * Enable double buffering. All subsequent calls to
-   * drawing methods such as {@code line()}, {@code circle()},
-   * and {@code square()} will be deferred until the next call
+   * drawing methods such as `line()}, `$1` circle()`,
+   * and `square()` will be deferred until the next call
    * to show(). Useful for animations.
    */
   public enableDoubleBuffering() {
@@ -1636,8 +1636,8 @@ export class Draw
 
   /**
    * Disable double buffering. All subsequent calls to
-   * drawing methods such as {@code line()}, {@code circle()},
-   * and {@code square()} will be displayed on screen when called.
+   * drawing methods such as `line()`, `circle()`,
+   * and `square()` will be displayed on screen when called.
    * This is the default.
    */
   public disableDoubleBuffering() {
@@ -1647,10 +1647,10 @@ export class Draw
   /**
    * Saves the drawing to using the specified filename.
    * The supported image formats are JPEG and PNG;
-   * the filename suffix must be {@code .jpg} or {@code .png}.
+   * the filename suffix must be `.jpg` or `.png`.
    *
    * @param   filename the name of the file with one of the required suffixes
-   * @throws IllegalArgumentException if {@code filename} is {@code null}
+   * @throws IllegalArgumentException if `filename` is `null`
    */
   public save(filename: string) {
     Draw.validateNotNull(filename, 'filename');
@@ -1745,8 +1745,8 @@ export class Draw
   /**
    * Returns true if the mouse is being pressed.
    *
-   * @return  {@code true} if the mouse is being pressed;
-   * {@code false} otherwise
+   * @return  `true` if the mouse is being pressed;
+   * `false` otherwise
    */
   public isMousePressed(): boolean {
     {
@@ -1879,7 +1879,7 @@ export class Draw
   /**
    * Returns true if the user has typed a key.
    *
-   * @return  {@code true} if the user has typed a key; {@code false} otherwise
+   * @return  `true` if the user has typed a key; `false` otherwise
    */
   public hasNextKeyTyped(): boolean {
     {
@@ -1907,8 +1907,8 @@ export class Draw
    * See {@link KeyEvent} for a description of key codes.
    *
    * @param   keycode the keycode to check
-   * @return  {@code true} if {@code keycode} is currently being pressed;
-   * {@code false} otherwise
+   * @return  `true` if `keycode` is currently being pressed;
+   * `false` otherwise
    */
   public isKeyPressed(keycode: number): boolean {
     {

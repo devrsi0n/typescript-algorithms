@@ -47,7 +47,7 @@ export class Counter implements java.lang.Comparable<Counter> {
    * Compares this counter to the specified counter.
    *
    * @param  {Counter} that the other counter
-   * @return  {@code 0} if the value of this counter equals
+   * @return  `0` if the value of this counter equals
    * the value of that counter; a negative integer if
    * the value of this counter is less than the value of
    * that counter; and a positive integer if the value
@@ -69,7 +69,7 @@ export class Counter implements java.lang.Comparable<Counter> {
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);
     const trials: number = parseInt(args[1]);
-    const hits: Counter[] = (s => {
+    const hits: Counter[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

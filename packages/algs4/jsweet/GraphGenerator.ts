@@ -5,7 +5,7 @@ import { MinPQ } from './MinPQ';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code GraphGenerator} class provides static methods for creating
+ * The `GraphGenerator` class provides static methods for creating
  * various graphs, including Erdos-Renyi random graphs, random bipartite
  * graphs, random k-regular graphs, and random rooted trees.
  * <p>
@@ -17,13 +17,12 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class GraphGenerator {
-
-
   public static simple$int$int(V: number, E: number): Graph {
     if (
       E >
-      (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
-        ((n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) / 2
+      ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
+        (((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) /
+          2
       )
     )
       throw new Error('Too many edges');
@@ -45,11 +44,11 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a random simple graph containing {@code V} vertices and {@code E} edges.
+   * Returns a random simple graph containing `V` vertices and `E` edges.
    * @param  V the number of vertices
    * @param  E the number of vertices
-   * @return {Graph} a random simple graph on {@code V} vertices, containing a total
-   * of {@code E} edges
+   * @return {Graph} a random simple graph on `V` vertices, containing a total
+   * of `E` edges
    * @throws IllegalArgumentException if no such simple graph exists
    */
   public static simple(V?: any, E?: any): any {
@@ -81,19 +80,19 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns the complete graph on {@code V} vertices.
+   * Returns the complete graph on `V` vertices.
    * @param  V the number of vertices
-   * @return {Graph} the complete graph on {@code V} vertices
+   * @return {Graph} the complete graph on `V` vertices
    */
   public static complete(V: number): Graph {
     return GraphGenerator.simple$int$double(V, 1.0);
   }
 
   /**
-   * Returns a complete bipartite graph on {@code V1} and {@code V2} vertices.
+   * Returns a complete bipartite graph on `V1` and `V2` vertices.
    * @param  V1 the number of vertices in one partition
    * @param  V2 the number of vertices in the other partition
-   * @return {Graph} a complete bipartite graph on {@code V1} and {@code V2} vertices
+   * @return {Graph} a complete bipartite graph on `V1` and `V2` vertices
    * @throws IllegalArgumentException if probability is not between 0 and 1
    */
   public static completeBipartite(V1: number, V2: number): Graph {
@@ -105,11 +104,11 @@ export class GraphGenerator {
     V2: number,
     E: number
   ): Graph {
-    if (E > (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V1) * V2)
+    if (E > ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V1) * V2)
       throw new Error('Too many edges');
     if (E < 0) throw new Error('Too few edges');
     const G: Graph = new Graph(V1 + V2);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -137,13 +136,13 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a random simple bipartite graph on {@code V1} and {@code V2} vertices
-   * with {@code E} edges.
+   * Returns a random simple bipartite graph on `V1` and `V2` vertices
+   * with `E` edges.
    * @param  V1 the number of vertices in one partition
    * @param  V2 the number of vertices in the other partition
    * @param  E the number of edges
-   * @return {Graph} a random simple bipartite graph on {@code V1} and {@code V2} vertices,
-   * containing a total of {@code E} edges
+   * @return {Graph} a random simple bipartite graph on `V1` and `V2` vertices,
+   * containing a total of `E` edges
    * @throws IllegalArgumentException if no such simple bipartite graph exists
    */
   public static bipartite(V1?: any, V2?: any, E?: any): any {
@@ -171,7 +170,7 @@ export class GraphGenerator {
   ): Graph {
     if (p < 0.0 || p > 1.0)
       throw new Error('Probability must be between 0 and 1');
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -191,13 +190,13 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a path graph on {@code V} vertices.
+   * Returns a path graph on `V` vertices.
    * @param  V the number of vertices in the path
-   * @return {Graph} a path graph on {@code V} vertices
+   * @return {Graph} a path graph on `V` vertices
    */
   public static path(V: number): Graph {
     const G: Graph = new Graph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -215,13 +214,13 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a complete binary tree graph on {@code V} vertices.
+   * Returns a complete binary tree graph on `V` vertices.
    * @param  V the number of vertices in the binary tree
-   * @return {Graph} a complete binary tree graph on {@code V} vertices
+   * @return {Graph} a complete binary tree graph on `V` vertices
    */
   public static binaryTree(V: number): Graph {
     const G: Graph = new Graph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -239,13 +238,13 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a cycle graph on {@code V} vertices.
+   * Returns a cycle graph on `V` vertices.
    * @param  V the number of vertices in the cycle
-   * @return {Graph} a cycle graph on {@code V} vertices
+   * @return {Graph} a cycle graph on `V` vertices
    */
   public static cycle(V: number): Graph {
     const G: Graph = new Graph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -264,13 +263,13 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns an Eulerian cycle graph on {@code V} vertices.
+   * Returns an Eulerian cycle graph on `V` vertices.
    *
    * @param   V the number of vertices in the cycle
    * @param   E the number of edges in the cycle
-   * @return {Graph} a graph that is an Eulerian cycle on {@code V} vertices
-   * and {@code E} edges
-   * @throws IllegalArgumentException if either {@code V <= 0} or {@code E <= 0}
+   * @return {Graph} a graph that is an Eulerian cycle on `V` vertices
+   * and `E` edges
+   * @throws IllegalArgumentException if either `V <= 0` or `E <= 0`
    */
   public static eulerianCycle(V: number, E: number): Graph {
     if (E <= 0)
@@ -278,7 +277,7 @@ export class GraphGenerator {
     if (V <= 0)
       throw new Error('An Eulerian cycle must have at least one vertex');
     const G: Graph = new Graph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -296,20 +295,20 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns an Eulerian path graph on {@code V} vertices.
+   * Returns an Eulerian path graph on `V` vertices.
    *
    * @param   V the number of vertices in the path
    * @param   E the number of edges in the path
-   * @return {Graph} a graph that is an Eulerian path on {@code V} vertices
-   * and {@code E} edges
-   * @throws IllegalArgumentException if either {@code V <= 0} or {@code E < 0}
+   * @return {Graph} a graph that is an Eulerian path on `V` vertices
+   * and `E` edges
+   * @throws IllegalArgumentException if either `V <= 0` or `E < 0`
    */
   public static eulerianPath(V: number, E: number): Graph {
     if (E < 0) throw new Error('negative number of edges');
     if (V <= 0)
       throw new Error('An Eulerian path must have at least one vertex');
     const G: Graph = new Graph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -326,15 +325,15 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a wheel graph on {@code V} vertices.
+   * Returns a wheel graph on `V` vertices.
    * @param  V the number of vertices in the wheel
-   * @return {Graph} a wheel graph on {@code V} vertices: a single vertex connected to
-   * every vertex in a cycle on {@code V-1} vertices
+   * @return {Graph} a wheel graph on `V` vertices: a single vertex connected to
+   * every vertex in a cycle on `V-1` vertices
    */
   public static wheel(V: number): Graph {
     if (V <= 1) throw new Error('Number of vertices must be at least 2');
     const G: Graph = new Graph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -358,15 +357,15 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a star graph on {@code V} vertices.
+   * Returns a star graph on `V` vertices.
    * @param  V the number of vertices in the star
-   * @return {Graph} a star graph on {@code V} vertices: a single vertex connected to
+   * @return {Graph} a star graph on `V` vertices: a single vertex connected to
    * every other vertex
    */
   public static star(V: number): Graph {
     if (V <= 0) throw new Error('Number of vertices must be at least 1');
     const G: Graph = new Graph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -384,19 +383,19 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a uniformly random {@code k}-regular graph on {@code V} vertices
+   * Returns a uniformly random `k`-regular graph on `V` vertices
    * (not necessarily simple). The graph is simple with probability only about e^(-k^2/4),
    * which is tiny when k = 14.
    *
    * @param  V the number of vertices in the graph
    * @param  k degree of each vertex
-   * @return {Graph} a uniformly random {@code k}-regular graph on {@code V} vertices.
+   * @return {Graph} a uniformly random `k`-regular graph on `V` vertices.
    */
   public static regular(V: number, k: number): Graph {
     if ((V * k) % 2 !== 0)
       throw new Error('Number of vertices * k must be even');
     const G: Graph = new Graph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -420,15 +419,15 @@ export class GraphGenerator {
   }
 
   /**
-   * Returns a uniformly random tree on {@code V} vertices.
+   * Returns a uniformly random tree on `V` vertices.
    * This algorithm uses a Prufer sequence and takes time proportional to <em>V log V</em>.
    * @param  V the number of vertices in the tree
-   * @return {Graph} a uniformly random tree on {@code V} vertices
+   * @return {Graph} a uniformly random tree on `V` vertices
    */
   public static tree(V: number): Graph {
     const G: Graph = new Graph(V);
     if (V === 1) return G;
-    const prufer: number[] = (s => {
+    const prufer: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -436,7 +435,7 @@ export class GraphGenerator {
     for (let i = 0; i < V - 2; i++) {
       prufer[i] = StdRandom.uniform$int(V);
     }
-    const degree: number[] = (s => {
+    const degree: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -465,7 +464,7 @@ export class GraphGenerator {
   }
 
   /**
-   * Unit tests the {@code GraphGenerator} library.
+   * Unit tests the `GraphGenerator` library.
    *
    * @param  args the command-line arguments
    */

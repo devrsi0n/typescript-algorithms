@@ -1,7 +1,7 @@
 /**
  * Initializes an output stream from a {@link OutputStream}.
  *
- * @param  {OutputStream} os the {@code OutputStream}
+ * @param  {OutputStream} os the `OutputStream`
  * @class
  * @author Robert Sedgewick
  */
@@ -115,23 +115,32 @@ export class Out {
   public println(x?: any): any {
     if (typeof x === 'boolean' || x === null) {
       return <any>this.println$boolean(x);
-    } if (typeof x === 'string' || x === null) {
+    }
+    if (typeof x === 'string' || x === null) {
       return <any>this.println$char(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.println$byte(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.println$int(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.println$long(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.println$float(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.println$double(x);
-    } if (x != null || x === null) {
+    }
+    if (x != null || x === null) {
       return <any>this.println$java_lang_Object(x);
-    } if (x === undefined) {
+    }
+    if (x === undefined) {
       return <any>this.println$();
-    } throw new Error('invalid overload');
+    }
+    throw new Error('invalid overload');
   }
 
   public println$char(x: string) {
@@ -180,23 +189,32 @@ export class Out {
   public print(x?: any): any {
     if (typeof x === 'boolean' || x === null) {
       return <any>this.print$boolean(x);
-    } if (typeof x === 'string' || x === null) {
+    }
+    if (typeof x === 'string' || x === null) {
       return <any>this.print$char(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.print$byte(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.print$int(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.print$long(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.print$float(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>this.print$double(x);
-    } if (x != null || x === null) {
+    }
+    if (x != null || x === null) {
       return <any>this.print$java_lang_Object(x);
-    } if (x === undefined) {
+    }
+    if (x === undefined) {
       return <any>this.print$();
-    } throw new Error('invalid overload');
+    }
+    throw new Error('invalid overload');
   }
 
   public print$char(x: string) {
@@ -233,7 +251,7 @@ export class Out {
     format: string,
     ...args: any[]
   ) {
-    (o => o.printf.apply(o, [Out.LOCALE_$LI$(), format].concat(<any[]>args)))(
+    ((o) => o.printf.apply(o, [Out.LOCALE_$LI$(), format].concat(<any[]>args)))(
       this.out
     );
     this.out.flush();
@@ -244,7 +262,7 @@ export class Out {
     format: string,
     ...args: any[]
   ) {
-    (o => o.printf.apply(o, [locale, format].concat(<any[]>args)))(this.out);
+    ((o) => o.printf.apply(o, [locale, format].concat(<any[]>args)))(this.out);
     this.out.flush();
   }
 

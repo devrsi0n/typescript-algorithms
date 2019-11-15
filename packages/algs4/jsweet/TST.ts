@@ -27,9 +27,9 @@ export class TST<Value> {
   /**
    * Does this symbol table contain the given key?
    * @param  key the key
-   * @return  {@code true} if this symbol table contains {@code key} and
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if this symbol table contains `key` and
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: string): boolean {
     if (key == null) {
@@ -63,8 +63,8 @@ export class TST<Value> {
     if (key.length === 0) throw new Error('key must have length >= 1');
     const c: string = key.charAt(d);
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) <
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) <
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
     )
       return this.get$edu_princeton_cs_algs4_TST_Node$java_lang_String$int(
         x.left,
@@ -72,8 +72,8 @@ export class TST<Value> {
         d
       );
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
     )
       return this.get$edu_princeton_cs_algs4_TST_Node$java_lang_String$int(
         x.right,
@@ -130,13 +130,13 @@ export class TST<Value> {
       x.c = c;
     }
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) <
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) <
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
     )
       x.left = this.put(x.left, key, val, d);
     else if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
     )
       x.right = this.put(x.right, key, val, d);
     else if (d < key.length - 1) x.mid = this.put(x.mid, key, val, d + 1);
@@ -172,12 +172,12 @@ export class TST<Value> {
   }
 
   /**
-   * Returns the string in the symbol table that is the longest prefix of {@code query},
-   * or {@code null}, if no such string.
+   * Returns the string in the symbol table that is the longest prefix of `query`,
+   * or `null`, if no such string.
    * @param  query the query string
-   * @return  the string in the symbol table that is the longest prefix of {@code query},
-   * or {@code null} if no such string
-   * @throws IllegalArgumentException if {@code query} is {@code null}
+   * @return  the string in the symbol table that is the longest prefix of `query`,
+   * or `null` if no such string
+   * @throws IllegalArgumentException if `query` is `null`
    */
   public longestPrefixOf(query: string): string {
     if (query == null) {
@@ -191,13 +191,13 @@ export class TST<Value> {
       {
         const c: string = query.charAt(i);
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) <
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) <
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
         )
           x = x.left;
         else if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
         )
           x = x.right;
         else {
@@ -211,10 +211,10 @@ export class TST<Value> {
   }
 
   /**
-   * Returns all keys in the symbol table as an {@code Iterable}.
-   * To iterate over all of the keys in the symbol table named {@code st},
-   * use the foreach notation: {@code for (Key key : st.keys())}.
-   * @return  all keys in the symbol table as an {@code Iterable}
+   * Returns all keys in the symbol table as an `Iterable`.
+   * To iterate over all of the keys in the symbol table named `st`,
+   * use the foreach notation: `for (Key key : st.keys())`.
+   * @return  all keys in the symbol table as an `Iterable`
    */
   public keys(): Iterable<string> {
     const queue: Queue<string> = <any>new Queue<string>();
@@ -227,11 +227,11 @@ export class TST<Value> {
   }
 
   /**
-   * Returns all of the keys in the set that start with {@code prefix}.
+   * Returns all of the keys in the set that start with `prefix`.
    * @param  prefix the prefix
-   * @return  all of the keys in the set that start with {@code prefix},
+   * @return  all of the keys in the set that start with `prefix`,
    * as an iterable
-   * @throws IllegalArgumentException if {@code prefix} is {@code null}
+   * @throws IllegalArgumentException if `prefix` is `null`
    */
   public keysWithPrefix(prefix: string): Iterable<string> {
     if (prefix == null) {
@@ -281,10 +281,10 @@ export class TST<Value> {
   }
 
   /**
-   * Returns all of the keys in the symbol table that match {@code pattern},
+   * Returns all of the keys in the symbol table that match `pattern`,
    * where . symbol is treated as a wildcard character.
    * @param  pattern the pattern
-   * @return  all of the keys in the symbol table that match {@code pattern},
+   * @return  all of the keys in the symbol table that match `pattern`,
    * as an iterable, where . is treated as a wildcard character.
    */
   public keysThatMatch(pattern: string): Iterable<string> {
@@ -309,10 +309,10 @@ export class TST<Value> {
     if (x == null) return;
     const c: string = pattern.charAt(i);
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
         '.'.charCodeAt(0) ||
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) <
-        (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) <
+        ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
     )
       this.collect$edu_princeton_cs_algs4_TST_Node$java_lang_StringBuilder$int$java_lang_String$edu_princeton_cs_algs4_Queue(
         x.left,
@@ -322,10 +322,10 @@ export class TST<Value> {
         queue
       );
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
         '.'.charCodeAt(0) ||
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
-        (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
+        ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
     ) {
       if (i === pattern.length - 1 && x.val != null)
         queue.enqueue(prefix.toString() + x.c);
@@ -341,10 +341,10 @@ export class TST<Value> {
       }
     }
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
         '.'.charCodeAt(0) ||
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >
-        (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >
+        ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x.c)
     )
       this.collect$edu_princeton_cs_algs4_TST_Node$java_lang_StringBuilder$int$java_lang_String$edu_princeton_cs_algs4_Queue(
         x.right,
@@ -400,7 +400,7 @@ export class TST<Value> {
   }
 
   /**
-   * Unit tests the {@code TST} data type.
+   * Unit tests the `TST` data type.
    *
    * @param  args the command-line arguments
    */

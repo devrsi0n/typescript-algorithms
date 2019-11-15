@@ -2,13 +2,13 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * Creates a {@code width}-by-{@code height} picture, with {@code width} columns
- * and {@code height} rows, where each pixel is black.
+ * Creates a `width`-by-`height` picture, with `width` columns
+ * and `height` rows, where each pixel is black.
  *
  * @param  width the width of the picture
  * @param  height the height of the picture
- * @throws IllegalArgumentException if {@code width} is negative
- * @throws IllegalArgumentException if {@code height} is negative
+ * @throws IllegalArgumentException if `width` is negative
+ * @throws IllegalArgumentException if `height` is negative
  * @class
  * @author Robert Sedgewick
  */
@@ -158,7 +158,7 @@ export class GrayscalePicture implements ActionListener {
    * Returns a {@link JLabel} containing this picture, for embedding in a {@link JPanel},
    * {@link JFrame} or other GUI widget.
    *
-   * @return {JLabel} the {@code JLabel}
+   * @return {JLabel} the `JLabel`
    */
   public getJLabel(): JLabel {
     if (this.image == null) return null;
@@ -249,12 +249,12 @@ export class GrayscalePicture implements ActionListener {
   }
 
   /**
-   * Returns the grayscale value of pixel ({@code col}, {@code row}) as a {@link java.awt.Color}.
+   * Returns the grayscale value of pixel (`col`, `row`) as a {@link java.awt.Color}.
    *
    * @param  col the column index
    * @param  row the row index
-   * @return {Color} the grayscale value of pixel ({@code col}, {@code row})
-   * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+   * @return {Color} the grayscale value of pixel (`col`, `row`)
+   * @throws IllegalArgumentException unless both `0 <= col < width` and `0 <= row < height`
    */
   public get(col: number, row: number): Color {
     this.validateColumnIndex(col);
@@ -264,15 +264,15 @@ export class GrayscalePicture implements ActionListener {
   }
 
   /**
-   * Returns the grayscale value of pixel ({@code col}, {@code row}) as an {@code int}
+   * Returns the grayscale value of pixel (`col`, `row`) as an `int`
    * between 0 and 255.
    * Using this method can be more efficient than {@link #get(int, int)} because
-   * it does not create a {@code Color} object.
+   * it does not create a `Color` object.
    *
    * @param  col the column index
    * @param  row the row index
-   * @return  the 8-bit integer representation of the grayscale value of pixel ({@code col}, {@code row})
-   * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+   * @return  the 8-bit integer representation of the grayscale value of pixel (`col`, `row`)
+   * @throws IllegalArgumentException unless both `0 <= col < width` and `0 <= row < height`
    */
   public getGrayscale(col: number, row: number): number {
     this.validateColumnIndex(col);
@@ -282,13 +282,13 @@ export class GrayscalePicture implements ActionListener {
   }
 
   /**
-   * Sets the color of pixel ({@code col}, {@code row}) to the given grayscale value.
+   * Sets the color of pixel (`col`, `row`) to the given grayscale value.
    *
    * @param  col the column index
    * @param  row the row index
    * @param {Color} color the color (converts to grayscale if color is not a shade of gray)
-   * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
-   * @throws IllegalArgumentException if {@code color} is {@code null}
+   * @throws IllegalArgumentException unless both `0 <= col < width` and `0 <= row < height`
+   * @throws IllegalArgumentException if `color` is `null`
    */
   public set(col: number, row: number, color: Color) {
     this.validateColumnIndex(col);
@@ -299,13 +299,13 @@ export class GrayscalePicture implements ActionListener {
   }
 
   /**
-   * Sets the color of pixel ({@code col}, {@code row}) to the given grayscale value
+   * Sets the color of pixel (`col`, `row`) to the given grayscale value
    * between 0 and 255.
    *
    * @param  col the column index
    * @param  row the row index
    * @param  gray the 8-bit integer representation of the grayscale value
-   * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+   * @throws IllegalArgumentException unless both `0 <= col < width` and `0 <= row < height`
    */
   public setGrayscale(col: number, row: number, gray: number) {
     this.validateColumnIndex(col);
@@ -320,8 +320,8 @@ export class GrayscalePicture implements ActionListener {
    * Returns true if this picture is equal to the argument picture.
    *
    * @param  other the other picture
-   * @return  {@code true} if this picture is the same dimension as {@code other}
-   * and if all pixels have the same color; {@code false} otherwise
+   * @return  `true` if this picture is the same dimension as `other`
+   * and if all pixels have the same color; `false` otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -347,7 +347,7 @@ export class GrayscalePicture implements ActionListener {
    * @return  a string representation of this picture
    */
   public toString(): string {
-    const sb= new String();
+    const sb = new String();
     sb.append(
       `${this.__width}-by-${this.__height} grayscale picture (grayscale values given in hex)\n`
     );
@@ -391,7 +391,7 @@ export class GrayscalePicture implements ActionListener {
    * The filetype extension must be either .png or .jpg.
    *
    * @param  name the name of the file
-   * @throws IllegalArgumentException if {@code name} is {@code null}
+   * @throws IllegalArgumentException if `name` is `null`
    */
   public save(name?: any): any {
     if (typeof name === 'string' || name === null) {
@@ -451,7 +451,7 @@ export class GrayscalePicture implements ActionListener {
   }
 
   /**
-   * Unit tests this {@code Picture} data type.
+   * Unit tests this `Picture` data type.
    * Reads a picture specified by the command-line argument,
    * and shows it in a window on the screen.
    *

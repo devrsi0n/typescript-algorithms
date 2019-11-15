@@ -3,7 +3,7 @@ import { StdOut } from './StdOut';
 import { StdRandom } from './StdRandom';
 
 /**
- * The {@code FFT} class provides methods for computing the
+ * The `FFT` class provides methods for computing the
  * FFT (Fast-Fourier Transform), inverse FFT, linear convolution,
  * and circular convolution of a complex array.
  * <p>
@@ -30,14 +30,12 @@ export class FFT {
     return FFT.ZERO;
   }
 
-
-
   /**
    * Returns the FFT of the specified complex array.
    *
    * @param   x the complex array
-   * @return  the FFT of the complex array {@code x}
-   * @throws IllegalArgumentException if the length of {@code x} is not a power of 2
+   * @return  the FFT of the complex array `x`
+   * @throws IllegalArgumentException if the length of `x` is not a power of 2
    */
   public static fft(x: Complex[]): Complex[] {
     const n: number = x.length;
@@ -47,7 +45,7 @@ export class FFT {
     if (n % 2 !== 0) {
       throw new Error('n is not a power of 2');
     }
-    const even: Complex[] = (s => {
+    const even: Complex[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -65,7 +63,7 @@ export class FFT {
       }
     }
     const r: Complex[] = FFT.fft(odd);
-    const y: Complex[] = (s => {
+    const y: Complex[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -87,12 +85,12 @@ export class FFT {
    * Returns the inverse FFT of the specified complex array.
    *
    * @param   x the complex array
-   * @return  the inverse FFT of the complex array {@code x}
-   * @throws IllegalArgumentException if the length of {@code x} is not a power of 2
+   * @return  the inverse FFT of the complex array `x`
+   * @throws IllegalArgumentException if the length of `x` is not a power of 2
    */
   public static ifft(x: Complex[]): Complex[] {
     const n: number = x.length;
-    let y: Complex[] = (s => {
+    let y: Complex[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -121,9 +119,9 @@ export class FFT {
    *
    * @param   x one complex array
    * @param   y the other complex array
-   * @return  the circular convolution of {@code x} and {@code y}
-   * @throws IllegalArgumentException if the length of {@code x} does not equal
-   * the length of {@code y} or if the length is not a power of 2
+   * @return  the circular convolution of `x` and `y`
+   * @throws IllegalArgumentException if the length of `x` does not equal
+   * the length of `y` or if the length is not a power of 2
    */
   public static cconvolve(x: Complex[], y: Complex[]): Complex[] {
     if (x.length !== y.length) {
@@ -132,7 +130,7 @@ export class FFT {
     const n: number = x.length;
     const a: Complex[] = FFT.fft(x);
     const b: Complex[] = FFT.fft(y);
-    const c: Complex[] = (s => {
+    const c: Complex[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -150,12 +148,12 @@ export class FFT {
    *
    * @param   x one complex array
    * @param   y the other complex array
-   * @return  the linear convolution of {@code x} and {@code y}
-   * @throws IllegalArgumentException if the length of {@code x} does not equal
-   * the length of {@code y} or if the length is not a power of 2
+   * @return  the linear convolution of `x` and `y`
+   * @throws IllegalArgumentException if the length of `x` does not equal
+   * the length of `y` or if the length is not a power of 2
    */
   public static convolve(x: Complex[], y: Complex[]): Complex[] {
-    const a: Complex[] = (s => {
+    const a: Complex[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -166,7 +164,7 @@ export class FFT {
     for (let i: number = x.length; i < 2 * x.length; i++) {
       a[i] = FFT.ZERO_$LI$();
     }
-    const b: Complex[] = (s => {
+    const b: Complex[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -192,13 +190,13 @@ export class FFT {
   }
 
   /**
-   * Unit tests the {@code FFT} class.
+   * Unit tests the `FFT` class.
    *
    * @param  args the command-line arguments
    */
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);
-    const x: Complex[] = (s => {
+    const x: Complex[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

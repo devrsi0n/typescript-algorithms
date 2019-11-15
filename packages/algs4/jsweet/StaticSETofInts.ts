@@ -10,7 +10,7 @@ export class StaticSETofInts {
 
   public constructor(keys: number[]) {
     if (this.a === undefined) this.a = null;
-    this.a = (s => {
+    this.a = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

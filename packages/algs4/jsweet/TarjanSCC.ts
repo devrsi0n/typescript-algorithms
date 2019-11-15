@@ -6,7 +6,7 @@ import { StdOut } from './StdOut';
 import { Queue } from './Queue';
 
 /**
- * Computes the strong components of the digraph {@code G}.
+ * Computes the strong components of the digraph `G`.
  * @param {Digraph} G the digraph
  * @class
  * @author Robert Sedgewick
@@ -31,18 +31,18 @@ export class TarjanSCC {
     if (this.pre === undefined) this.pre = 0;
     if (this.__count === undefined) this.__count = 0;
     if (this.stack === undefined) this.stack = null;
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
     this.stack = <any>new Stack<number>();
-    this.__id = (s => {
+    this.__id = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(G.V());
-    this.low = (s => {
+    this.low = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -90,13 +90,13 @@ export class TarjanSCC {
   }
 
   /**
-   * Are vertices {@code v} and {@code w} in the same strong component?
+   * Are vertices `v` and `w` in the same strong component?
    * @param   v one vertex
    * @param   w the other vertex
-   * @return  {@code true} if vertices {@code v} and {@code w} are in the same
-   * strong component, and {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
-   * @throws IllegalArgumentException unless {@code 0 <= w < V}
+   * @return  `true` if vertices `v` and `w` are in the same
+   * strong component, and `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
+   * @throws IllegalArgumentException unless `0 <= w < V`
    */
   public stronglyConnected(v: number, w: number): boolean {
     this.validateVertex(v);
@@ -105,10 +105,10 @@ export class TarjanSCC {
   }
 
   /**
-   * Returns the component id of the strong component containing vertex {@code v}.
+   * Returns the component id of the strong component containing vertex `v`.
    * @param   v the vertex
-   * @return  the component id of the strong component containing vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the component id of the strong component containing vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public id(v: number): number {
     this.validateVertex(v);
@@ -140,7 +140,7 @@ export class TarjanSCC {
   }
 
   /**
-   * Unit tests the {@code TarjanSCC} data type.
+   * Unit tests the `TarjanSCC` data type.
    *
    * @param  args the command-line arguments
    */
@@ -150,7 +150,7 @@ export class TarjanSCC {
     const scc: TarjanSCC = new TarjanSCC(G);
     const m: number = scc.count();
     StdOut.println$java_lang_Object(`${m} components`);
-    const components: Queue<number>[] = <Queue<number>[]>(s => {
+    const components: Queue<number>[] = <Queue<number>[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

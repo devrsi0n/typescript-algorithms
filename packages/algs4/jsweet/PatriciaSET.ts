@@ -24,8 +24,8 @@ export class PatriciaSET implements Iterable<string> {
   /**
    * Adds the key to the set if it is not already present.
    * @param  key the key to add
-   * @throws IllegalArgumentException if {@code key} is {@code null}
-   * @throws IllegalArgumentException if {@code key} is the empty string.
+   * @throws IllegalArgumentException if `key` is `null`
+   * @throws IllegalArgumentException if `key` is the empty string.
    */
   public add(key: string) {
     if (key == null) throw new Error('called add(null)');
@@ -71,10 +71,10 @@ export class PatriciaSET implements Iterable<string> {
   /**
    * Does the set contain the given key?
    * @param  key the key
-   * @return  {@code true} if the set contains {@code key} and
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
-   * @throws IllegalArgumentException if {@code key} is the empty string.
+   * @return  `true` if the set contains `key` and
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
+   * @throws IllegalArgumentException if `key` is the empty string.
    */
   public contains(key: string): boolean {
     if (key == null) throw new Error('called contains(null)');
@@ -99,8 +99,8 @@ export class PatriciaSET implements Iterable<string> {
   /**
    * Removes the key from the set if the key is present.
    * @param  key the key
-   * @throws IllegalArgumentException if {@code key} is {@code null}
-   * @throws IllegalArgumentException if {@code key} is the empty string.
+   * @throws IllegalArgumentException if `key` is `null`
+   * @throws IllegalArgumentException if `key` is the empty string.
    */
   public delete(key: string) {
     if (key == null) throw new Error('called delete(null)');
@@ -155,7 +155,7 @@ export class PatriciaSET implements Iterable<string> {
 
   /**
    * Is the set empty?
-   * @return  {@code true} if the set is empty, and {@code false}
+   * @return  `true` if the set is empty, and `false`
    * otherwise
    */
   isEmpty(): boolean {
@@ -172,8 +172,8 @@ export class PatriciaSET implements Iterable<string> {
 
   /**
    * Returns all of the keys in the set, as an iterator.
-   * To iterate over all of the keys in a set named {@code set}, use the
-   * foreach notation: {@code for (Key key : set)}.
+   * To iterate over all of the keys in a set named `set`, use the
+   * foreach notation: `for (Key key : set)`.
    * @return  an iterator to all of the keys in the set
    */
   public iterator(): Iterator<string> {
@@ -197,7 +197,7 @@ export class PatriciaSET implements Iterable<string> {
    * by single spaces
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     for (let index321 = this.iterator(); index321.hasNext(); ) {
       const key = index321.next();
       s.append(`${key} `);
@@ -242,7 +242,7 @@ export class PatriciaSET implements Iterable<string> {
   }
 
   /**
-   * Unit tests the {@code PatriciaSET} data type.
+   * Unit tests the `PatriciaSET` data type.
    * This test fixture runs a series of tests on a randomly generated dataset.
    * You may specify up to two integer parameters on the command line. The
    * first parameter indicates the size of the dataset. The second parameter
@@ -257,13 +257,11 @@ export class PatriciaSET implements Iterable<string> {
     let limitPass = 1;
     let countPass = 0;
     let ok = true;
-    if (args.length > 0)
-      limitItem = parseInt(args[0]);
-    if (args.length > 1)
-      limitPass = parseInt(args[1]);
+    if (args.length > 0) limitItem = parseInt(args[0]);
+    if (args.length > 1) limitPass = parseInt(args[1]);
     do {
       {
-        const a: string[] = (s => {
+        const a: string[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;

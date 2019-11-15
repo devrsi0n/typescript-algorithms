@@ -24,12 +24,12 @@ export class PatriciaST<Value> {
   /**
    * Places a key-value pair into the symbol table. If the table already
    * contains the specified key, then its associated value becomes updated.
-   * If the value provided is {@code null}, then the key becomes removed
+   * If the value provided is `null`, then the key becomes removed
    * from the symbol table.
    * @param  key the key
    * @param  val the value
-   * @throws IllegalArgumentException if {@code key} is {@code null}
-   * @throws IllegalArgumentException if {@code key} is the empty string.
+   * @throws IllegalArgumentException if `key` is `null`
+   * @throws IllegalArgumentException if `key` is the empty string.
    */
   public put(key: string, val: Value) {
     if (key == null) throw new Error('called put(null)');
@@ -77,9 +77,9 @@ export class PatriciaST<Value> {
    * Retrieves the value associated with the given key.
    * @param  key the key
    * @return  the value associated with the given key if the key is in the
-   * symbol table and {@code null} if the key is not in the symbol table
-   * @throws IllegalArgumentException if {@code key} is {@code null}
-   * @throws IllegalArgumentException if {@code key} is the empty string.
+   * symbol table and `null` if the key is not in the symbol table
+   * @throws IllegalArgumentException if `key` is `null`
+   * @throws IllegalArgumentException if `key` is the empty string.
    */
   public get(key: string): Value {
     if (key == null) throw new Error('called get(null)');
@@ -106,8 +106,8 @@ export class PatriciaST<Value> {
    * Removes a key and its associated value from the symbol table, if it
    * exists.
    * @param  key the key
-   * @throws IllegalArgumentException if {@code key} is {@code null}
-   * @throws IllegalArgumentException if {@code key} is the empty string.
+   * @throws IllegalArgumentException if `key` is `null`
+   * @throws IllegalArgumentException if `key` is the empty string.
    */
   public delete(key: string) {
     if (key == null) throw new Error('called delete(null)');
@@ -161,22 +161,22 @@ export class PatriciaST<Value> {
   }
 
   /**
-   * Returns {@code true} if the key-value pair, specified by the given
+   * Returns `true` if the key-value pair, specified by the given
    * key, exists within the symbol table.
    * @param  key the key
-   * @return  {@code true} if this symbol table contains the given
-   * {@code key} and {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
-   * @throws IllegalArgumentException if {@code key} is the empty string.
+   * @return  `true` if this symbol table contains the given
+   * `key` and `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
+   * @throws IllegalArgumentException if `key` is the empty string.
    */
   public contains(key: string): boolean {
     return this.get(key) != null;
   }
 
   /**
-   * Returns {@code true} if the symbol table is empty.
-   * @return  {@code true} if this symbol table is empty and
-   * {@code false} otherwise
+   * Returns `true` if the symbol table is empty.
+   * @return  `true` if this symbol table is empty and
+   * `false` otherwise
    */
   isEmpty(): boolean {
     return this.count === 0;
@@ -283,7 +283,7 @@ export class PatriciaST<Value> {
   }
 
   /**
-   * Unit tests the {@code PatriciaST} data type.
+   * Unit tests the `PatriciaST` data type.
    * This test fixture runs a series of tests on a randomly generated dataset.
    * You may specify up to two integer parameters on the command line. The
    * first parameter indicates the size of the dataset. The second parameter
@@ -298,18 +298,16 @@ export class PatriciaST<Value> {
     let limitPass = 1;
     let countPass = 0;
     let ok = true;
-    if (args.length > 0)
-      limitItem = parseInt(args[0]);
-    if (args.length > 1)
-      limitPass = parseInt(args[1]);
+    if (args.length > 0) limitItem = parseInt(args[0]);
+    if (args.length > 1) limitPass = parseInt(args[1]);
     do {
       {
-        const a: string[] = (s => {
+        const a: string[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
         })(limitItem);
-        const v: number[] = (s => {
+        const v: number[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;

@@ -35,7 +35,7 @@ export class ResizingArrayStack<Item> implements Iterable<Item> {
   }
 
   resize(capacity: number) {
-    const temp: Item[] = <Item[]>(s => {
+    const temp: Item[] = <Item[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -91,7 +91,7 @@ export class ResizingArrayStack<Item> implements Iterable<Item> {
   }
 
   /**
-   * Unit tests the {@code Stack} data type.
+   * Unit tests the `Stack` data type.
    *
    * @param  args the command-line arguments
    */

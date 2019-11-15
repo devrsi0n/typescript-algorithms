@@ -3,7 +3,7 @@ import { StdArrayIO } from './StdArrayIO';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code StdStats} class provides static methods for computing
+ * The `StdStats` class provides static methods for computing
  * statistics such as min, max, mean, sample standard deviation, and
  * sample variance.
  * <p>
@@ -17,8 +17,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class StdStats {
-
-
   public static max$double_A(a: number[]): number {
     StdStats.validateNotNull(a);
     let max: number = Number.NEGATIVE_INFINITY;
@@ -54,10 +52,10 @@ export class StdStats {
    * @param   a the array
    * @param   lo the left endpoint of the subarray (inclusive)
    * @param   hi the right endpoint of the subarray (exclusive)
-   * @return  the maximum value in the subarray {@code a[lo..hi)};
-   * {@code Double.NEGATIVE_INFINITY} if no such value
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @return  the maximum value in the subarray `a[lo..hi)`;
+   * `Double.NEGATIVE_INFINITY` if no such value
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    */
   public static max(a?: any, lo?: any, hi?: any): any {
     if (
@@ -139,10 +137,10 @@ export class StdStats {
    * @param   a the array
    * @param   lo the left endpoint of the subarray (inclusive)
    * @param   hi the right endpoint of the subarray (exclusive)
-   * @return  the maximum value in the subarray {@code a[lo..hi)};
-   * {@code Double.POSITIVE_INFINITY} if no such value
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @return  the maximum value in the subarray `a[lo..hi)`;
+   * `Double.POSITIVE_INFINITY` if no such value
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    */
   public static min(a?: any, lo?: any, hi?: any): any {
     if (
@@ -215,10 +213,10 @@ export class StdStats {
    * @param  a the array
    * @param  lo the left endpoint of the subarray (inclusive)
    * @param  hi the right endpoint of the subarray (exclusive)
-   * @return  the average value in the subarray {@code a[lo..hi)};
-   * {@code Double.NaN} if no such value
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @return  the average value in the subarray `a[lo..hi)`;
+   * `Double.NaN` if no such value
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    */
   public static mean(a?: any, lo?: any, hi?: any): any {
     if (
@@ -299,10 +297,10 @@ export class StdStats {
    * @param   a the array
    * @param  lo the left endpoint of the subarray (inclusive)
    * @param  hi the right endpoint of the subarray (exclusive)
-   * @return  the sample variance in the subarray {@code a[lo..hi)};
-   * {@code Double.NaN} if no such value
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @return  the sample variance in the subarray `a[lo..hi)`;
+   * `Double.NaN` if no such value
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    */
   public static var(a?: any, lo?: any, hi?: any): any {
     if (
@@ -389,10 +387,10 @@ export class StdStats {
    * @param   a the array
    * @param  lo the left endpoint of the subarray (inclusive)
    * @param  hi the right endpoint of the subarray (exclusive)
-   * @return  the population variance in the subarray {@code a[lo..hi)};
-   * {@code Double.NaN} if no such value
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @return  the population variance in the subarray `a[lo..hi)`;
+   * `Double.NaN` if no such value
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    */
   public static varp(a?: any, lo?: any, hi?: any): any {
     if (
@@ -444,10 +442,10 @@ export class StdStats {
    * @param   a the array
    * @param  lo the left endpoint of the subarray (inclusive)
    * @param  hi the right endpoint of the subarray (exclusive)
-   * @return  the sample standard deviation in the subarray {@code a[lo..hi)};
-   * {@code Double.NaN} if no such value
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @return  the sample standard deviation in the subarray `a[lo..hi)`;
+   * `Double.NaN` if no such value
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    */
   public static stddev(a?: any, lo?: any, hi?: any): any {
     if (
@@ -504,10 +502,10 @@ export class StdStats {
    * @param   a the array
    * @param  lo the left endpoint of the subarray (inclusive)
    * @param  hi the right endpoint of the subarray (exclusive)
-   * @return  the population standard deviation in the subarray {@code a[lo..hi)};
-   * {@code Double.NaN} if no such value
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @return  the population standard deviation in the subarray `a[lo..hi)`;
+   * `Double.NaN` if no such value
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    */
   public static stddevp(a?: any, lo?: any, hi?: any): any {
     if (
@@ -566,10 +564,10 @@ export class StdStats {
    * @param   a the array
    * @param  lo the left endpoint of the subarray (inclusive)
    * @param  hi the right endpoint of the subarray (exclusive)
-   * @return  the sum of all values in the subarray {@code a[lo..hi)};
-   * {@code 0.0} if no such value
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @return  the sum of all values in the subarray `a[lo..hi)`;
+   * `0.0` if no such value
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    * @private
    */
   public static sum(a?: any, lo?: any, hi?: any): any {
@@ -687,7 +685,7 @@ export class StdStats {
   }
 
   /**
-   * Unit tests {@code StdStats}.
+   * Unit tests `StdStats`.
    * Convert command-line arguments to array of doubles and call various methods.
    *
    * @param  args the command-line arguments

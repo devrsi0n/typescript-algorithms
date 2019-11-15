@@ -7,8 +7,8 @@ import { StdOut } from './StdOut';
  * Computes the farthest pair of points in the specified array of points.
  *
  * @param   points the array of points
- * @throws IllegalArgumentException if {@code points} is {@code null} or if any
- * entry in {@code points[]} is {@code null}
+ * @throws IllegalArgumentException if `points` is `null` or if any
+ * entry in `points[]` is `null`
  * @class
  * @author Robert Sedgewick
  */
@@ -17,8 +17,7 @@ export class FarthestPair {
 
   private best2: Point2D;
 
-  private bestDistanceSquared: number =
-    Number.NEGATIVE_INFINITY;
+  private bestDistanceSquared: number = Number.NEGATIVE_INFINITY;
 
   public constructor(points: Point2D[]) {
     if (this.best1 === undefined) this.best1 = null;
@@ -36,7 +35,7 @@ export class FarthestPair {
       const p = index252.next();
       m++;
     }
-    const hull: Point2D[] = (s => {
+    const hull: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -96,7 +95,7 @@ export class FarthestPair {
    * Returns one of the points in the farthest pair of points.
    *
    * @return {Point2D} one of the two points in the farthest pair of points;
-   * {@code null} if no such point (because there are fewer than 2 points)
+   * `null` if no such point (because there are fewer than 2 points)
    */
   public either(): Point2D {
     return this.best1;
@@ -106,7 +105,7 @@ export class FarthestPair {
    * Returns the other point in the farthest pair of points.
    *
    * @return {Point2D} the other point in the farthest pair of points
-   * {@code null} if no such point (because there are fewer than 2 points)
+   * `null` if no such point (because there are fewer than 2 points)
    */
   public other(): Point2D {
     return this.best2;
@@ -117,7 +116,7 @@ export class FarthestPair {
    * This quantity is also known as the <em>diameter</em> of the set of points.
    *
    * @return  the Euclidean distance between the farthest pair of points
-   * {@code Double.POSITIVE_INFINITY} if no such pair of points
+   * `Double.POSITIVE_INFINITY` if no such pair of points
    * exist (because there are fewer than 2 points)
    */
   public distance(): number {
@@ -125,8 +124,8 @@ export class FarthestPair {
   }
 
   /**
-   * Unit tests the {@code FarthestPair} data type.
-   * Reads in an integer {@code n} and {@code n} points (specified by
+   * Unit tests the `FarthestPair` data type.
+   * Reads in an integer `n` and `n` points (specified by
    * their <em>x</em>- and <em>y</em>-coordinates) from standard input;
    * computes a farthest pair of points; and prints the pair to standard
    * output.
@@ -135,7 +134,7 @@ export class FarthestPair {
    */
   public static main(args: string[]) {
     const n: number = StdIn.readInt();
-    const points: Point2D[] = (s => {
+    const points: Point2D[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

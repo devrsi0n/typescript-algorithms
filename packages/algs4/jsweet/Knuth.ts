@@ -2,7 +2,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code Knuth} class provides a client for reading in a
+ * The `Knuth` class provides a client for reading in a
  * sequence of strings and <em>shuffling</em> them using the Knuth (or Fisher-Yates)
  * shuffling algorithm. This algorithm guarantees to rearrange the
  * elements in uniformly random order, under
@@ -20,11 +20,9 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class Knuth {
-
-
   /**
    * Rearranges an array of objects in uniformly random order
-   * (under the assumption that {@code Math.random()} generates independent
+   * (under the assumption that `Math.random()` generates independent
    * and uniformly distributed numbers between 0 and 1).
    * @param  a the array to be shuffled
    */
@@ -42,7 +40,7 @@ export class Knuth {
 
   /**
    * Rearranges an array of objects in uniformly random order
-   * (under the assumption that {@code Math.random()} generates independent
+   * (under the assumption that `Math.random()` generates independent
    * and uniformly distributed numbers between 0 and 1).
    * @param  a the array to be shuffled
    */

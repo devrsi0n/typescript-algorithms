@@ -7,7 +7,7 @@ import { StdRandom } from './StdRandom';
 import { StdOut } from './StdOut';
 
 /**
- * Determines whether the digraph {@code G} has a topological order and, if so,
+ * Determines whether the digraph `G` has a topological order and, if so,
  * finds such a topological order.
  * @param {Digraph} G the digraph
  * @class
@@ -26,7 +26,7 @@ export class TopologicalX {
       if (this.__order === undefined) this.__order = null;
       if (this.ranks === undefined) this.ranks = null;
       (() => {
-        const indegree: number[] = (s => {
+        const indegree: number[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -36,7 +36,7 @@ export class TopologicalX {
             indegree[v] = G.indegree(v);
           }
         }
-        this.ranks = (s => {
+        this.ranks = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -75,7 +75,7 @@ export class TopologicalX {
       if (this.__order === undefined) this.__order = null;
       if (this.ranks === undefined) this.ranks = null;
       (() => {
-        const indegree: number[] = (s => {
+        const indegree: number[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -85,7 +85,7 @@ export class TopologicalX {
             indegree[v] = G.indegree(v);
           }
         }
-        this.ranks = (s => {
+        this.ranks = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -120,10 +120,10 @@ export class TopologicalX {
 
   /**
    * Returns a topological order if the digraph has a topologial order,
-   * and {@code null} otherwise.
+   * and `null` otherwise.
    * @return  a topological order of the vertices (as an interable) if the
    * digraph has a topological order (or equivalently, if the digraph is a DAG),
-   * and {@code null} otherwise
+   * and `null` otherwise
    */
   public order(): Iterable<number> {
     return this.__order;
@@ -131,21 +131,21 @@ export class TopologicalX {
 
   /**
    * Does the digraph have a topological order?
-   * @return  {@code true} if the digraph has a topological order (or equivalently,
-   * if the digraph is a DAG), and {@code false} otherwise
+   * @return  `true` if the digraph has a topological order (or equivalently,
+   * if the digraph is a DAG), and `false` otherwise
    */
   public hasOrder(): boolean {
     return this.__order != null;
   }
 
   /**
-   * The the rank of vertex {@code v} in the topological order;
+   * The the rank of vertex `v` in the topological order;
    * -1 if the digraph is not a DAG
    *
    * @param  v vertex
-   * @return  the position of vertex {@code v} in a topological order
+   * @return  the position of vertex `v` in a topological order
    * of the digraph; -1 if the digraph is not a DAG
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public rank(v: number): number {
     this.validateVertex(v);
@@ -155,7 +155,7 @@ export class TopologicalX {
 
   public check$edu_princeton_cs_algs4_Digraph(G: Digraph): boolean {
     if (this.hasOrder()) {
-      const found: boolean[] = (s => {
+      const found: boolean[] = ((s) => {
         const a = [];
         while (s-- > 0) a.push(false);
         return a;
@@ -215,7 +215,7 @@ export class TopologicalX {
     G: EdgeWeightedDigraph
   ): boolean {
     if (this.hasOrder()) {
-      const found: boolean[] = (s => {
+      const found: boolean[] = ((s) => {
         const a = [];
         while (s-- > 0) a.push(false);
         return a;
@@ -269,7 +269,7 @@ export class TopologicalX {
   }
 
   /**
-   * Unit tests the {@code TopologicalX} data type.
+   * Unit tests the `TopologicalX` data type.
    *
    * @param  args the command-line arguments
    */

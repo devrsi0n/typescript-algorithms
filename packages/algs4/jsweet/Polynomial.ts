@@ -4,7 +4,7 @@ import { StdOut } from './StdOut';
  * Initializes a new polynomial a x^b
  * @param  a the leading coefficient
  * @param  b the exponent
- * @throws IllegalArgumentException if {@code b} is negative
+ * @throws IllegalArgumentException if `b` is negative
  * @class
  * @author Robert Sedgewick
  */
@@ -19,7 +19,7 @@ export class Polynomial {
     if (b < 0) {
       throw new Error(`exponent cannot be negative: ${b}`);
     }
-    this.coef = (s => {
+    this.coef = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -52,7 +52,7 @@ export class Polynomial {
    * Returns the sum of this polynomial and the specified polynomial.
    *
    * @param  {Polynomial} that the other polynomial
-   * @return {Polynomial} the polynomial whose value is {@code (this(x) + that(x))}
+   * @return {Polynomial} the polynomial whose value is `(this(x) + that(x))`
    */
   public plus(that: Polynomial): Polynomial {
     const poly: Polynomial = new Polynomial(
@@ -74,7 +74,7 @@ export class Polynomial {
    * from this polynomial.
    *
    * @param  {Polynomial} that the other polynomial
-   * @return {Polynomial} the polynomial whose value is {@code (this(x) - that(x))}
+   * @return {Polynomial} the polynomial whose value is `(this(x) - that(x))`
    */
   public minus(that: Polynomial): Polynomial {
     const poly: Polynomial = new Polynomial(
@@ -97,7 +97,7 @@ export class Polynomial {
    * (Faster algorithms are known, e.g., via FFT.)
    *
    * @param  {Polynomial} that the other polynomial
-   * @return {Polynomial} the polynomial whose value is {@code (this(x) * that(x))}
+   * @return {Polynomial} the polynomial whose value is `(this(x) * that(x))`
    */
   public times(that: Polynomial): Polynomial {
     const poly: Polynomial = new Polynomial(0, this.__degree + that.__degree);
@@ -117,7 +117,7 @@ export class Polynomial {
    * (Faster algorithms are known, e.g., via FFT.)
    *
    * @param  {Polynomial} that the other polynomial
-   * @return {Polynomial} the polynomial whose value is {@code (this(that(x)))}
+   * @return {Polynomial} the polynomial whose value is `(this(that(x)))`
    */
   public compose(that: Polynomial): Polynomial {
     let poly: Polynomial = new Polynomial(0, 0);
@@ -135,8 +135,8 @@ export class Polynomial {
    * Compares this polynomial to the specified polynomial.
    *
    * @param   other the other polynoimal
-   * @return  {@code true} if this polynomial equals {@code other};
-   * {@code false} otherwise
+   * @return  `true` if this polynomial equals `other`;
+   * `false` otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -153,7 +153,7 @@ export class Polynomial {
   /**
    * Returns the result of differentiating this polynomial.
    *
-   * @return {Polynomial} the polynomial whose value is {@code this'(x)}
+   * @return {Polynomial} the polynomial whose value is `this'(x)`
    */
   public differentiate(): Polynomial {
     if (this.__degree === 0) return new Polynomial(0, 0);
@@ -169,7 +169,7 @@ export class Polynomial {
    * Returns the result of evaluating this polynomial at the point x.
    *
    * @param   x the point at which to evaluate the polynomial
-   * @return  the integer whose value is {@code (this(x))}
+   * @return  the integer whose value is `(this(x))`
    */
   public evaluate(x: number): number {
     let p = 0;
@@ -183,8 +183,8 @@ export class Polynomial {
    * Compares two polynomials by degree, breaking ties by coefficient of leading term.
    *
    * @param  {Polynomial} that the other point
-   * @return  the value {@code 0} if this polynomial is equal to the argument
-   * polynomial (precisely when {@code equals()} returns {@code true});
+   * @return  the value `0` if this polynomial is equal to the argument
+   * polynomial (precisely when `equals()` returns `true`);
    * a negative integer if this polynomialt is less than the argument
    * polynomial; and a positive integer if this polynomial is greater than the
    * argument point

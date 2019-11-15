@@ -6,10 +6,10 @@ import { StdOut } from './StdOut';
 
 /**
  * Computes a shortest paths tree from each vertex to to every other vertex in
- * the edge-weighted digraph {@code G}.
+ * the edge-weighted digraph `G`.
  * @param {EdgeWeightedDigraph} G the edge-weighted digraph
  * @throws IllegalArgumentException if an edge weight is negative
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -18,7 +18,7 @@ export class DijkstraAllPairsSP {
 
   public constructor(G: EdgeWeightedDigraph) {
     if (this.all === undefined) this.all = null;
-    this.all = (s => {
+    this.all = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -29,13 +29,13 @@ export class DijkstraAllPairsSP {
   }
 
   /**
-   * Returns a shortest path from vertex {@code s} to vertex {@code t}.
+   * Returns a shortest path from vertex `s` to vertex `t`.
    * @param   s the source vertex
    * @param   t the destination vertex
-   * @return  a shortest path from vertex {@code s} to vertex {@code t}
-   * as an iterable of edges, and {@code null} if no such path
-   * @throws IllegalArgumentException unless {@code 0 <= s < V}
-   * @throws IllegalArgumentException unless {@code 0 <= t < V}
+   * @return  a shortest path from vertex `s` to vertex `t`
+   * as an iterable of edges, and `null` if no such path
+   * @throws IllegalArgumentException unless `0 <= s < V`
+   * @throws IllegalArgumentException unless `0 <= t < V`
    */
   public path(s: number, t: number): Iterable<DirectedEdge> {
     this.validateVertex(s);
@@ -44,13 +44,13 @@ export class DijkstraAllPairsSP {
   }
 
   /**
-   * Is there a path from the vertex {@code s} to vertex {@code t}?
+   * Is there a path from the vertex `s` to vertex `t`?
    * @param   s the source vertex
    * @param   t the destination vertex
-   * @return  {@code true} if there is a path from vertex {@code s}
-   * to vertex {@code t}, and {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= s < V}
-   * @throws IllegalArgumentException unless {@code 0 <= t < V}
+   * @return  `true` if there is a path from vertex `s`
+   * to vertex `t`, and `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= s < V`
+   * @throws IllegalArgumentException unless `0 <= t < V`
    */
   public hasPath(s: number, t: number): boolean {
     this.validateVertex(s);
@@ -59,13 +59,13 @@ export class DijkstraAllPairsSP {
   }
 
   /**
-   * Returns the length of a shortest path from vertex {@code s} to vertex {@code t}.
+   * Returns the length of a shortest path from vertex `s` to vertex `t`.
    * @param   s the source vertex
    * @param   t the destination vertex
-   * @return  the length of a shortest path from vertex {@code s} to vertex {@code t};
-   * {@code Double.POSITIVE_INFINITY} if no such path
-   * @throws IllegalArgumentException unless {@code 0 <= s < V}
-   * @throws IllegalArgumentException unless {@code 0 <= t < V}
+   * @return  the length of a shortest path from vertex `s` to vertex `t`;
+   * `Double.POSITIVE_INFINITY` if no such path
+   * @throws IllegalArgumentException unless `0 <= s < V`
+   * @throws IllegalArgumentException unless `0 <= t < V`
    */
   public dist(s: number, t: number): number {
     this.validateVertex(s);
@@ -80,7 +80,7 @@ export class DijkstraAllPairsSP {
   }
 
   /**
-   * Unit tests the {@code DijkstraAllPairsSP} data type.
+   * Unit tests the `DijkstraAllPairsSP` data type.
    *
    * @param  args the command-line arguments
    */

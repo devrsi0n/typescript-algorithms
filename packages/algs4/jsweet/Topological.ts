@@ -7,7 +7,7 @@ import { SymbolDigraph } from './SymbolDigraph';
 import { StdOut } from './StdOut';
 
 /**
- * Determines whether the digraph {@code G} has a topological order and, if so,
+ * Determines whether the digraph `G` has a topological order and, if so,
  * finds such a topological order.
  * @param {Digraph} G the digraph
  * @class
@@ -30,7 +30,7 @@ export class Topological {
         if (!finder.hasCycle()) {
           const dfs: DepthFirstOrder = new DepthFirstOrder(G);
           this.__order = dfs.reversePost();
-          this.__rank = (s => {
+          this.__rank = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;
@@ -65,10 +65,10 @@ export class Topological {
 
   /**
    * Returns a topological order if the digraph has a topologial order,
-   * and {@code null} otherwise.
+   * and `null` otherwise.
    * @return  a topological order of the vertices (as an interable) if the
    * digraph has a topological order (or equivalently, if the digraph is a DAG),
-   * and {@code null} otherwise
+   * and `null` otherwise
    */
   public order(): Iterable<number> {
     return this.__order;
@@ -76,8 +76,8 @@ export class Topological {
 
   /**
    * Does the digraph have a topological order?
-   * @return  {@code true} if the digraph has a topological order (or equivalently,
-   * if the digraph is a DAG), and {@code false} otherwise
+   * @return  `true` if the digraph has a topological order (or equivalently,
+   * if the digraph is a DAG), and `false` otherwise
    */
   public hasOrder(): boolean {
     return this.__order != null;
@@ -85,8 +85,8 @@ export class Topological {
 
   /**
    * Does the digraph have a topological order?
-   * @return  {@code true} if the digraph has a topological order (or equivalently,
-   * if the digraph is a DAG), and {@code false} otherwise
+   * @return  `true` if the digraph has a topological order (or equivalently,
+   * if the digraph is a DAG), and `false` otherwise
    * @deprecated Replaced by {@link #hasOrder()}.
    */
   public isDAG(): boolean {
@@ -94,13 +94,13 @@ export class Topological {
   }
 
   /**
-   * The the rank of vertex {@code v} in the topological order;
+   * The the rank of vertex `v` in the topological order;
    * -1 if the digraph is not a DAG
    *
    * @param  v the vertex
-   * @return  the position of vertex {@code v} in a topological order
+   * @return  the position of vertex `v` in a topological order
    * of the digraph; -1 if the digraph is not a DAG
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public rank(v: number): number {
     this.validateVertex(v);
@@ -115,7 +115,7 @@ export class Topological {
   }
 
   /**
-   * Unit tests the {@code Topological} data type.
+   * Unit tests the `Topological` data type.
    *
    * @param  args the command-line arguments
    */

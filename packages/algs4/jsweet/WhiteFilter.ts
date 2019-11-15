@@ -4,7 +4,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code WhiteFilter} class provides a client for reading in a <em>whitelist</em>
+ * The `WhiteFilter` class provides a client for reading in a <em>whitelist</em>
  * of words from a file; then, reading in a sequence of words from standard input,
  * printing out each word that appears in the file.
  * It is useful as a test client for various symbol table implementations.
@@ -17,8 +17,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class WhiteFilter {
-
-
   public static main(args: string[]) {
     const set: SET<string> = <any>new SET<string>();
     const __in: In = new In(args[0]);

@@ -3,7 +3,7 @@ import { TST } from './TST';
 import { BinaryStdOut } from './BinaryStdOut';
 
 /**
- * The {@code LZW} class provides static methods for compressing
+ * The `LZW` class provides static methods for compressing
  * and expanding a binary input using LZW compression over the 8-bit extended
  * ASCII alphabet with 12-bit codewords.
  * <p>
@@ -21,8 +21,6 @@ export class LZW {
   static L = 4096;
 
   static W = 12;
-
-
 
   /**
    * Reads a sequence of 8-bit bytes from standard input; compresses
@@ -56,7 +54,7 @@ export class LZW {
    * the results to standard output.
    */
   public static expand() {
-    const st: string[] = (s => {
+    const st: string[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -84,8 +82,8 @@ export class LZW {
   }
 
   /**
-   * Sample client that calls {@code compress()} if the command-line
-   * argument is "-" an {@code expand()} if it is "+".
+   * Sample client that calls `compress()` if the command-line
+   * argument is "-" an `expand()` if it is "+".
    *
    * @param  args the command-line arguments
    */

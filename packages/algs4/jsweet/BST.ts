@@ -16,7 +16,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
 
   /**
    * Returns true if this symbol table is empty.
-   * @return  {@code true} if this symbol table is empty; {@code false} otherwise
+   * @return  `true` if this symbol table is empty; `false` otherwise
    */
   public isEmpty(): boolean {
     return this.size() === 0;
@@ -35,9 +35,9 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
    * Does this symbol table contain the given key?
    *
    * @param   key the key
-   * @return  {@code true} if this symbol table contains {@code key} and
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if this symbol table contains `key` and
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: Key): boolean {
     if (key == null) throw new Error('argument to contains() is null');
@@ -126,8 +126,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   public deleteMin$() {
-    if (this.isEmpty())
-      throw new Error('Symbol table underflow');
+    if (this.isEmpty()) throw new Error('Symbol table underflow');
     this.root = this.deleteMin$edu_princeton_cs_algs4_BST_Node(this.root);
   }
 
@@ -152,8 +151,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   public deleteMax$() {
-    if (this.isEmpty())
-      throw new Error('Symbol table underflow');
+    if (this.isEmpty()) throw new Error('Symbol table underflow');
     this.root = this.deleteMax$edu_princeton_cs_algs4_BST_Node(this.root);
   }
 
@@ -221,8 +219,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   public min$(): Key {
-    if (this.isEmpty())
-      throw new Error('calls min() with empty symbol table');
+    if (this.isEmpty()) throw new Error('calls min() with empty symbol table');
     return this.min$edu_princeton_cs_algs4_BST_Node(this.root).key;
   }
 
@@ -242,8 +239,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   public max$(): Key {
-    if (this.isEmpty())
-      throw new Error('calls max() with empty symbol table');
+    if (this.isEmpty()) throw new Error('calls max() with empty symbol table');
     return this.max$edu_princeton_cs_algs4_BST_Node(this.root).key;
   }
 
@@ -338,9 +334,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   public ceiling$java_lang_Comparable(key: Key): Key {
     if (key == null) throw new Error('argument to ceiling() is null');
     if (this.isEmpty())
-      throw new Error(
-        'calls ceiling() with empty symbol table'
-      );
+      throw new Error('calls ceiling() with empty symbol table');
     const x: BST.Node = this.ceiling(this.root, key);
     if (x == null) return null;
     return x.key;
@@ -536,10 +530,10 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param   lo minimum endpoint
    * @param   hi maximum endpoint
-   * @return  the number of keys in the symbol table between {@code lo}
-   * (inclusive) and {@code hi} (inclusive)
-   * @throws IllegalArgumentException if either {@code lo} or {@code hi}
-   * is {@code null}
+   * @return  the number of keys in the symbol table between `lo`
+   * (inclusive) and `hi` (inclusive)
+   * @throws IllegalArgumentException if either `lo` or `hi`
+   * is `null`
    */
   public size(lo?: any, hi?: any): any {
     if ((lo != null || lo === null) && (hi != null || hi === null)) {
@@ -696,7 +690,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   /**
-   * Unit tests the {@code BST} data type.
+   * Unit tests the `BST` data type.
    *
    * @param  args the command-line arguments
    */

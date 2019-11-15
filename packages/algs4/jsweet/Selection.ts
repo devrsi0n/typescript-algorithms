@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code Selection} class provides static methods for sorting an
+ * The `Selection` class provides static methods for sorting an
  * array using selection sort.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/21elementary">Section 2.1</a> of
@@ -13,8 +13,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class Selection {
-
-
   public static sort$java_lang_Comparable_A(a: java.lang.Comparable<any>[]) {
     const n: number = a.length;
     for (let i = 0; i < n; i++) {

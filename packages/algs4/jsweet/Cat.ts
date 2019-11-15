@@ -2,7 +2,7 @@ import { Out } from './Out';
 import { In } from './In';
 
 /**
- * The {@code Cat} class provides a client for concatenating the results
+ * The `Cat` class provides a client for concatenating the results
  * of several text files.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/11model">Section 1.1</a> of
@@ -13,8 +13,6 @@ import { In } from './In';
  * @class
  */
 export class Cat {
-
-
   /**
    * Reads in a sequence of text files specified as the first command-line
    * arguments, concatenates them, and writes the results to the file

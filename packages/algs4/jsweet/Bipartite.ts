@@ -30,17 +30,17 @@ export class Bipartite {
     if (this.edgeTo === undefined) this.edgeTo = null;
     if (this.cycle === undefined) this.cycle = null;
     this.__isBipartite = true;
-    this.__color = (s => {
+    this.__color = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -82,20 +82,20 @@ export class Bipartite {
   /**
    * Returns true if the graph is bipartite.
    *
-   * @return  {@code true} if the graph is bipartite; {@code false} otherwise
+   * @return  `true` if the graph is bipartite; `false` otherwise
    */
   public isBipartite(): boolean {
     return this.__isBipartite;
   }
 
   /**
-   * Returns the side of the bipartite that vertex {@code v} is on.
+   * Returns the side of the bipartite that vertex `v` is on.
    *
    * @param   v the vertex
-   * @return  the side of the bipartition that vertex {@code v} is on; two vertices
+   * @return  the side of the bipartition that vertex `v` is on; two vertices
    * are in the same side of the bipartition if and only if they have the
    * same color
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    * @throws UnsupportedOperationException if this method is called when the graph
    * is not bipartite
    */
@@ -110,10 +110,10 @@ export class Bipartite {
 
   /**
    * Returns an odd-length cycle if the graph is not bipartite, and
-   * {@code null} otherwise.
+   * `null` otherwise.
    *
    * @return  an odd-length cycle if the graph is not bipartite
-   * (and hence has an odd-length cycle), and {@code null}
+   * (and hence has an odd-length cycle), and `null`
    * otherwise
    */
   public oddCycle(): Iterable<number> {
@@ -162,7 +162,7 @@ export class Bipartite {
   }
 
   /**
-   * Unit tests the {@code Bipartite} data type.
+   * Unit tests the `Bipartite` data type.
    *
    * @param  args the command-line arguments
    */

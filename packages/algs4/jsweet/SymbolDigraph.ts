@@ -38,7 +38,7 @@ export class SymbolDigraph {
         }
       }
     }
-    this.keys = (s => {
+    this.keys = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -66,18 +66,18 @@ export class SymbolDigraph {
   }
 
   /**
-   * Does the digraph contain the vertex named {@code s}?
+   * Does the digraph contain the vertex named `s`?
    * @param  s the name of a vertex
-   * @return  {@code true} if {@code s} is the name of a vertex, and {@code false} otherwise
+   * @return  `true` if `s` is the name of a vertex, and `false` otherwise
    */
   public contains(s: string): boolean {
     return this.st.contains(s);
   }
 
   /**
-   * Returns the integer associated with the vertex named {@code s}.
+   * Returns the integer associated with the vertex named `s`.
    * @param  s the name of a vertex
-   * @return  the integer (between 0 and <em>V</em> - 1) associated with the vertex named {@code s}
+   * @return  the integer (between 0 and <em>V</em> - 1) associated with the vertex named `s`
    * @deprecated Replaced by {@link #indexOf(String)}.
    */
   public index(s: string): number {
@@ -85,19 +85,19 @@ export class SymbolDigraph {
   }
 
   /**
-   * Returns the integer associated with the vertex named {@code s}.
+   * Returns the integer associated with the vertex named `s`.
    * @param  s the name of a vertex
-   * @return  the integer (between 0 and <em>V</em> - 1) associated with the vertex named {@code s}
+   * @return  the integer (between 0 and <em>V</em> - 1) associated with the vertex named `s`
    */
   public indexOf(s: string): number {
     return this.st.get(s);
   }
 
   /**
-   * Returns the name of the vertex associated with the integer {@code v}.
+   * Returns the name of the vertex associated with the integer `v`.
    * @param   v the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
-   * @return  the name of the vertex associated with the integer {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the name of the vertex associated with the integer `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    * @deprecated Replaced by {@link #nameOf(int)}.
    */
   public name(v: number): string {
@@ -106,10 +106,10 @@ export class SymbolDigraph {
   }
 
   /**
-   * Returns the name of the vertex associated with the integer {@code v}.
+   * Returns the name of the vertex associated with the integer `v`.
    * @param   v the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
-   * @return  the name of the vertex associated with the integer {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the name of the vertex associated with the integer `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public nameOf(v: number): string {
     this.validateVertex(v);
@@ -144,7 +144,7 @@ export class SymbolDigraph {
   }
 
   /**
-   * Unit tests the {@code SymbolDigraph} data type.
+   * Unit tests the `SymbolDigraph` data type.
    *
    * @param  args the command-line arguments
    */

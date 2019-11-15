@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code QuickBentleyMcIlroy} class provides static methods for sorting
+ * The `QuickBentleyMcIlroy` class provides static methods for sorting
  * an array using an optimized version of quicksort (using Bentley-McIlroy
  * 3-way partitioning, Tukey's ninther, and cutoff to insertion sort).
  * <p>
@@ -18,8 +18,6 @@ export class QuickBentleyMcIlroy {
   static INSERTION_SORT_CUTOFF = 8;
 
   static MEDIAN_OF_3_CUTOFF = 40;
-
-
 
   public static sort$java_lang_Comparable_A(a: java.lang.Comparable<any>[]) {
     QuickBentleyMcIlroy.sort$java_lang_Comparable_A$int$int(a, 0, a.length - 1);

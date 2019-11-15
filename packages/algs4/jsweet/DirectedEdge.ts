@@ -1,14 +1,14 @@
 import { StdOut } from './StdOut';
 
 /**
- * Initializes a directed edge from vertex {@code v} to vertex {@code w} with
- * the given {@code weight}.
+ * Initializes a directed edge from vertex `v` to vertex `w` with
+ * the given `weight`.
  * @param  v the tail vertex
  * @param  w the head vertex
  * @param  weight the weight of the directed edge
- * @throws IllegalArgumentException if either {@code v} or {@code w}
+ * @throws IllegalArgumentException if either `v` or `w`
  * is a negative integer
- * @throws IllegalArgumentException if {@code weight} is {@code NaN}
+ * @throws IllegalArgumentException if `weight` is `NaN`
  * @class
  * @author Robert Sedgewick
  */
@@ -60,14 +60,11 @@ export class DirectedEdge {
    * @return  a string representation of the directed edge
    */
   public toString(): string {
-    return `${this.v}->${this.w} ${printf(
-      '%5.2f',
-      this.__weight
-    )}`;
+    return `${this.v}->${this.w} ${printf('%5.2f', this.__weight)}`;
   }
 
   /**
-   * Unit tests the {@code DirectedEdge} data type.
+   * Unit tests the `DirectedEdge` data type.
    *
    * @param  args the command-line arguments
    */

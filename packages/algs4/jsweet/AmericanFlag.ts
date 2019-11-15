@@ -3,7 +3,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code AmericanFlag} class provides static methods for sorting an
+ * The `AmericanFlag` class provides static methods for sorting an
  * array of extended ASCII strings or integers in-place using
  * American flag sort. This is a non-recursive implementation.
  * <p>
@@ -43,12 +43,12 @@ export class AmericanFlag {
     hi: number
   ) {
     const st: Stack<number> = <any>new Stack<number>();
-    const first: number[] = (s => {
+    const first: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(AmericanFlag.R + 2);
-    const next: number[] = (s => {
+    const next: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -244,17 +244,21 @@ export class AmericanFlag {
     for (let i: number = d; i < Math.min(v.length, w.length); i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) <
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return true;
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) >
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return false;
       }
@@ -288,12 +292,12 @@ export class AmericanFlag {
 
   private static sort$int_A$int$int(a: number[], lo: number, hi: number) {
     const st: Stack<number> = <any>new Stack<number>();
-    const first: number[] = (s => {
+    const first: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(AmericanFlag.R + 1);
-    const next: number[] = (s => {
+    const next: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

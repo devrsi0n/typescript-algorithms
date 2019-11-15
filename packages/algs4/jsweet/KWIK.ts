@@ -4,7 +4,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code KWIK} class provides a {@link SuffixArray} client for computing
+ * The `KWIK` class provides a {@link SuffixArray} client for computing
  * all occurrences of a keyword in a given string, with surrounding context.
  * This is known as <em>keyword-in-context search</em>.
  * <p>
@@ -17,8 +17,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class KWIK {
-
-
   /**
    * Reads a string from a file specified as the first
    * command-line argument; read an integer k specified as the

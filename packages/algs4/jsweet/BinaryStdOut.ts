@@ -1,14 +1,14 @@
 /**
  * <i>Binary standard output</i>. This class provides methods for converting
- * primtive type variables ({@code boolean}, {@code byte}, {@code char},
- * {@code int}, {@code long}, {@code float}, and {@code double})
+ * primtive type variables (`boolean`, `byte`, `char`,
+ * `int`, `long`, `float`, and `double`)
  * to sequences of bits and writing them to standard output.
  * Uses big-endian (most-significant byte first).
  * <p>
- * The client must {@code flush()} the output stream when finished writing bits.
+ * The client must `flush()` the output stream when finished writing bits.
  * <p>
- * The client should not intermix calls to {@code BinaryStdOut} with calls
- * to {@code StdOut} or {@code System.out}; otherwise unexpected behavior
+ * The client should not intermix calls to `BinaryStdOut` with calls
+ * to `StdOut` or `System.out`; otherwise unexpected behavior
  * will result.
  *
  * @author Robert Sedgewick
@@ -23,8 +23,6 @@ export class BinaryStdOut {
   static n = 0;
 
   static isInitialized = false;
-
-
 
   private static initialize() {
     BinaryStdOut.out = new BufferedOutputStream(java.lang.System.out);
@@ -167,8 +165,8 @@ export class BinaryStdOut {
 
   public static write$char(x: string) {
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) < 0 ||
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) >= 256
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) < 0 ||
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) >= 256
     )
       throw new Error(`Illegal 8-bit char = ${x}`);
     BinaryStdOut.writeByte(x.charCodeAt(0));
@@ -180,7 +178,7 @@ export class BinaryStdOut {
       return;
     }
     if (r < 1 || r > 16) throw new Error(`Illegal value for r = ${r}`);
-    if ((c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) >= 1 << r)
+    if (((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(x) >= 1 << r)
       throw new Error(`Illegal ${r}-bit char = ${x}`);
     for (let i = 0; i < r; i++) {
       {
@@ -204,7 +202,7 @@ export class BinaryStdOut {
 
   /**
    * Writes the string of r-bit characters to standard output.
-   * @param  s the {@code String} to write.
+   * @param  s the `String` to write.
    * @param  r the number of relevants bits in each character.
    * @throws IllegalArgumentException if r is not between 1 and 16.
    * @throws IllegalArgumentException if any character in the string is not
@@ -216,35 +214,47 @@ export class BinaryStdOut {
       (typeof r === 'number' || r === null)
     ) {
       return <any>BinaryStdOut.write$java_lang_String$int(s, r);
-    } if (
+    }
+    if (
       (typeof s === 'string' || s === null) &&
       (typeof r === 'number' || r === null)
     ) {
       return <any>BinaryStdOut.write$char$int(s, r);
-    } if (
+    }
+    if (
       (typeof s === 'number' || s === null) &&
       (typeof r === 'number' || r === null)
     ) {
       return <any>BinaryStdOut.write$int$int(s, r);
-    } if ((typeof s === 'string' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'string' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$java_lang_String(s);
-    } if ((typeof s === 'boolean' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'boolean' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$boolean(s);
-    } if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$byte(s);
-    } if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$short(s);
-    } if ((typeof s === 'string' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'string' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$char(s);
-    } if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$int(s);
-    } if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$long(s);
-    } else if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$float(s);
-    } else if ((typeof s === 'number' || s === null) && r === undefined) {
+    }
+    if ((typeof s === 'number' || s === null) && r === undefined) {
       return <any>BinaryStdOut.write$double(s);
-    } else throw new Error('invalid overload');
+    }
+    throw new Error('invalid overload');
   }
 
   /**

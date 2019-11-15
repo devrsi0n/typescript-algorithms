@@ -1,7 +1,7 @@
 import { StdOut } from './StdOut';
 
 /**
- * The {@code StdRandom} class provides static methods for generating
+ * The `StdRandom` class provides static methods for generating
  * random number from various discrete and continuous distributions,
  * including uniform, Bernoulli, geometric, Gaussian, exponential, Pareto,
  * Poisson, and Cauchy. It also provides method for shuffling an
@@ -48,8 +48,6 @@ export class StdRandom {
     StdRandom.seed = java.lang.System.currentTimeMillis();
     StdRandom.__random = new Random(StdRandom.seed);
   }
-
-
 
   /**
    * Sets the seed of the pseudo-random number generator.
@@ -111,7 +109,7 @@ export class StdRandom {
   public static uniform$int$int(a: number, b: number): number {
     if (
       b <= a ||
-      (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>b) - a >=
+      ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>b) - a >=
         Number.MAX_VALUE
     ) {
       throw new Error(`invalid range: [${a}, ${b})`);
@@ -125,8 +123,8 @@ export class StdRandom {
    * @param   a the left endpoint
    * @param   b the right endpoint
    * @return  a random integer uniformly in [a, b)
-   * @throws IllegalArgumentException if {@code b <= a}
-   * @throws IllegalArgumentException if {@code b - a >= Integer.MAX_VALUE}
+   * @throws IllegalArgumentException if `b <= a`
+   * @throws IllegalArgumentException if `b - a >= Integer.MAX_VALUE`
    */
   public static uniform(a?: any, b?: any): any {
     if (
@@ -170,10 +168,10 @@ export class StdRandom {
    * Returns a random boolean from a Bernoulli distribution with success
    * probability <em>p</em>.
    *
-   * @param   p the probability of returning {@code true}
-   * @return  {@code true} with probability {@code p} and
-   * {@code false} with probability {@code 1 - p}
-   * @throws IllegalArgumentException unless {@code 0} &le; {@code p} &le; {@code 1.0}
+   * @param   p the probability of returning `true`
+   * @return  `true` with probability `p` and
+   * `false` with probability `1 - p`
+   * @throws IllegalArgumentException unless `0` &le; `p` &le; `1.0`
    */
   public static bernoulli(p?: any): any {
     if (typeof p === 'number' || p === null) {
@@ -214,7 +212,7 @@ export class StdRandom {
    * @param   mu the mean
    * @param   sigma the standard deviation
    * @return  a real number distributed according to the Gaussian distribution
-   * with mean {@code mu} and standard deviation {@code sigma}
+   * with mean `mu` and standard deviation `sigma`
    */
   public static gaussian(mu?: any, sigma?: any): any {
     if (
@@ -237,9 +235,9 @@ export class StdRandom {
    *
    * @param   p the parameter of the geometric distribution
    * @return  a random integer from a geometric distribution with success
-   * probability {@code p}; or {@code Integer.MAX_VALUE} if
-   * {@code p} is (nearly) equal to {@code 1.0}.
-   * @throws IllegalArgumentException unless {@code p >= 0.0} and {@code p <= 1.0}
+   * probability `p`; or `Integer.MAX_VALUE` if
+   * `p` is (nearly) equal to `1.0`.
+   * @throws IllegalArgumentException unless `p >= 0.0` and `p <= 1.0`
    */
   public static geometric(p: number): number {
     if (!(p >= 0)) {
@@ -257,13 +255,13 @@ export class StdRandom {
    * Returns a random integer from a Poisson distribution with mean &lambda;.
    *
    * @param   lambda the mean of the Poisson distribution
-   * @return  a random integer from a Poisson distribution with mean {@code lambda}
-   * @throws IllegalArgumentException unless {@code lambda > 0.0} and not infinite
+   * @return  a random integer from a Poisson distribution with mean `lambda`
+   * @throws IllegalArgumentException unless `lambda > 0.0` and not infinite
    */
   public static poisson(lambda: number): number {
     if (!(lambda > 0.0)) throw new Error(`lambda must be positive: ${lambda}`);
     if (
-      /* isInfinite */ (value =>
+      /* isInfinite */ ((value) =>
         Number.NEGATIVE_INFINITY === value ||
         Number.POSITIVE_INFINITY === value)(lambda)
     )
@@ -295,8 +293,8 @@ export class StdRandom {
    *
    * @param   alpha shape parameter
    * @return  a random real number from a Pareto distribution with shape
-   * parameter {@code alpha}
-   * @throws IllegalArgumentException unless {@code alpha > 0.0}
+   * parameter `alpha`
+   * @throws IllegalArgumentException unless `alpha > 0.0`
    */
   public static pareto(alpha?: any): any {
     if (typeof alpha === 'number' || alpha === null) {
@@ -353,10 +351,10 @@ export class StdRandom {
    *
    * @param   probabilities the probability of occurrence of each integer
    * @return  a random integer from a discrete distribution:
-   * {@code i} with probability {@code probabilities[i]}
-   * @throws IllegalArgumentException if {@code probabilities} is {@code null}
-   * @throws IllegalArgumentException if sum of array entries is not (very nearly) equal to {@code 1.0}
-   * @throws IllegalArgumentException unless {@code probabilities[i] >= 0.0} for each index {@code i}
+   * `i` with probability `probabilities[i]`
+   * @throws IllegalArgumentException if `probabilities` is `null`
+   * @throws IllegalArgumentException if sum of array entries is not (very nearly) equal to `1.0`
+   * @throws IllegalArgumentException unless `probabilities[i] >= 0.0` for each index `i`
    */
   public static discrete(probabilities?: any): any {
     if (
@@ -414,8 +412,8 @@ export class StdRandom {
    *
    * @param   lambda the rate of the exponential distribution
    * @return  a random real number from an exponential distribution with
-   * rate {@code lambda}
-   * @throws IllegalArgumentException unless {@code lambda > 0.0}
+   * rate `lambda`
+   * @throws IllegalArgumentException unless `lambda > 0.0`
    */
   public static exp(lambda: number): number {
     if (!(lambda > 0.0)) throw new Error(`lambda must be positive: ${lambda}`);
@@ -497,8 +495,8 @@ export class StdRandom {
    * @param   a the array to shuffle
    * @param   lo the left endpoint (inclusive)
    * @param   hi the right endpoint (exclusive)
-   * @throws IllegalArgumentException if {@code a} is {@code null}
-   * @throws IllegalArgumentException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
+   * @throws IllegalArgumentException if `a` is `null`
+   * @throws IllegalArgumentException unless `(0 <= lo) && (lo < hi) && (hi <= a.length)`
    *
    */
   public static shuffle(a?: any, lo?: any, hi?: any): any {
@@ -603,11 +601,7 @@ export class StdRandom {
 
   public static permutation$int(n: number): number[] {
     if (n < 0) throw new Error('argument is negative');
-    const perm: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const perm: number[] = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       perm[i] = i;
     }
@@ -618,7 +612,7 @@ export class StdRandom {
   public static permutation$int$int(n: number, k: number): number[] {
     if (n < 0) throw new Error('argument is negative');
     if (k < 0 || k > n) throw new Error('k must be between 0 and n');
-    const perm: number[] = (s => {
+    const perm: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -644,10 +638,10 @@ export class StdRandom {
    *
    * @param   n number of elements
    * @param   k number of elements to select
-   * @throws IllegalArgumentException if {@code n} is negative
-   * @throws IllegalArgumentException unless {@code 0 <= k <= n}
-   * @return  an array of length {@code k} that is a uniformly random permutation
-   * of {@code k} of the elements from {@code 0}, {@code 1}, ..., {@code n-1}
+   * @throws IllegalArgumentException if `n` is negative
+   * @throws IllegalArgumentException unless `0 <= k <= n`
+   * @return  an array of length `k` that is a uniformly random permutation
+   * of `k` of the elements from `0`, `1`, ..., `n-1`
    */
   public static permutation(n?: any, k?: any): any {
     if (
@@ -685,8 +679,7 @@ export class StdRandom {
    */
   public static main(args: string[]) {
     const n: number = parseInt(args[0]);
-    if (args.length === 2)
-      StdRandom.setSeed(Number.parseInt(args[1]));
+    if (args.length === 2) StdRandom.setSeed(Number.parseInt(args[1]));
     const probabilities: number[] = [0.5, 0.3, 0.1, 0.1];
     const frequencies: number[] = [5, 3, 1, 1];
     const a: string[] = 'A B C D E F G'.split(' ');

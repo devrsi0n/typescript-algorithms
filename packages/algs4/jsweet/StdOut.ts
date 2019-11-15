@@ -2,7 +2,7 @@
  * This class provides methods for printing strings and numbers to standard output.
  * <p>
  * <b>Getting started.</b>
- * To use this class, you must have {@code StdOut.class} in your
+ * To use this class, you must have `StdOut.class` in your
  * Java classpath. If you used our autoinstaller, you should be all set.
  * Otherwise, either download
  * <a href = "https://introcs.cs.princeton.edu/java/code/stdlib.jar">stdlib.jar</a>
@@ -10,7 +10,7 @@
  * <a href = "https://introcs.cs.princeton.edu/java/stdlib/StdOut.java">StdOut.java</a>
  * and put a copy in your working directory.
  * <p>
- * Here is an example program that uses {@code StdOut}:
+ * Here is an example program that uses `StdOut`:
  * <pre>
  * public class TestStdOut {
  * public static void main(String[] args) {
@@ -24,16 +24,16 @@
  * </pre>
  * <p>
  * <b>Differences with System.out.</b>
- * The behavior of {@code StdOut} is similar to that of {@link System#out},
+ * The behavior of `StdOut` is similar to that of {@link System#out},
  * but there are a few technical differences:
  * <ul>
- * <li> {@code StdOut} coerces the character-set encoding to UTF-8,
+ * <li> `StdOut` coerces the character-set encoding to UTF-8,
  * which is a standard character encoding for Unicode.
- * <li> {@code StdOut} coerces the locale to {@link Locale#US},
+ * <li> `StdOut` coerces the locale to {@link Locale#US},
  * for consistency with {@link StdIn}, {@link Double#parseDouble(String)},
  * and floating-point literals.
- * <li> {@code StdOut} <em>flushes</em> standard output after each call to
- * {@code print()} so that text will appear immediately in the terminal.
+ * <li> `StdOut` <em>flushes</em> standard output after each call to
+ * `print()` so that text will appear immediately in the terminal.
  * </ul>
  * <p>
  * <b>Reference.</b>
@@ -81,8 +81,6 @@ export class StdOut {
     }
   }
 
-
-
   public static println$() {
     StdOut.out_$LI$().println();
   }
@@ -103,25 +101,35 @@ export class StdOut {
   public static println(x?: any): any {
     if (typeof x === 'boolean' || x === null) {
       return <any>StdOut.println$boolean(x);
-    } if (typeof x === 'string' || x === null) {
+    }
+    if (typeof x === 'string' || x === null) {
       return <any>StdOut.println$char(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.println$byte(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.println$short(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.println$int(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.println$long(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.println$float(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.println$double(x);
-    } if (x != null || x === null) {
+    }
+    if (x != null || x === null) {
       return <any>StdOut.println$java_lang_Object(x);
-    } if (x === undefined) {
+    }
+    if (x === undefined) {
       return <any>StdOut.println$();
-    } else throw new Error('invalid overload');
+    }
+    throw new Error('invalid overload');
   }
 
   public static println$char(x: string) {
@@ -174,25 +182,35 @@ export class StdOut {
   public static print(x?: any): any {
     if (typeof x === 'boolean' || x === null) {
       return <any>StdOut.print$boolean(x);
-    } if (typeof x === 'string' || x === null) {
+    }
+    if (typeof x === 'string' || x === null) {
       return <any>StdOut.print$char(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.print$byte(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.print$short(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.print$int(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.print$long(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.print$float(x);
-    } if (typeof x === 'number' || x === null) {
+    }
+    if (typeof x === 'number' || x === null) {
       return <any>StdOut.print$double(x);
-    } if (x != null || x === null) {
+    }
+    if (x != null || x === null) {
       return <any>StdOut.print$java_lang_Object(x);
-    } if (x === undefined) {
+    }
+    if (x === undefined) {
       return <any>StdOut.print$();
-    } else throw new Error('invalid overload');
+    }
+    throw new Error('invalid overload');
   }
 
   public static print$char(x: string) {
@@ -234,7 +252,7 @@ export class StdOut {
     format: string,
     ...args: any[]
   ) {
-    (o =>
+    ((o) =>
       o.printf.apply(o, [StdOut.LOCALE_$LI$(), format].concat(<any[]>args)))(
       StdOut.out_$LI$()
     );
@@ -246,7 +264,7 @@ export class StdOut {
     format: string,
     ...args: any[]
   ) {
-    (o => o.printf.apply(o, [locale, format].concat(<any[]>args)))(
+    ((o) => o.printf.apply(o, [locale, format].concat(<any[]>args)))(
       StdOut.out_$LI$()
     );
     StdOut.out_$LI$().flush();
@@ -293,7 +311,7 @@ export class StdOut {
   }
 
   /**
-   * Unit tests some of the methods in {@code StdOut}.
+   * Unit tests some of the methods in `StdOut`.
    *
    * @param  args the command-line arguments
    */

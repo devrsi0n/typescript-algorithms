@@ -17,8 +17,7 @@ import { StdDraw } from './StdDraw';
 export class Particle {
   static INFINITY: number;
   public static INFINITY_$LI$(): number {
-    if (Particle.INFINITY == null)
-      Particle.INFINITY = Number.POSITIVE_INFINITY;
+    if (Particle.INFINITY == null) Particle.INFINITY = Number.POSITIVE_INFINITY;
     return Particle.INFINITY;
   }
 
@@ -160,7 +159,7 @@ export class Particle {
    * @param  {Particle} that the other particle
    * @return  the amount of time for this particle to collide with the specified
    * particle, assuming no interening collisions;
-   * {@code Double.POSITIVE_INFINITY} if the particles will not collide
+   * `Double.POSITIVE_INFINITY` if the particles will not collide
    */
   public timeToHit(that: Particle): number {
     if (this === that) return Particle.INFINITY_$LI$();
@@ -185,7 +184,7 @@ export class Particle {
    *
    * @return  the amount of time for this particle to collide with a vertical wall,
    * assuming no interening collisions;
-   * {@code Double.POSITIVE_INFINITY} if the particle will not collide
+   * `Double.POSITIVE_INFINITY` if the particle will not collide
    * with a vertical wall
    */
   public timeToHitVerticalWall(): number {
@@ -200,7 +199,7 @@ export class Particle {
    *
    * @return  the amount of time for this particle to collide with a horizontal wall,
    * assuming no interening collisions;
-   * {@code Double.POSITIVE_INFINITY} if the particle will not collide
+   * `Double.POSITIVE_INFINITY` if the particle will not collide
    * with a horizontal wall
    */
   public timeToHitHorizontalWall(): number {

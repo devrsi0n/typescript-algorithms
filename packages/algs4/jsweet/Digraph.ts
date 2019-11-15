@@ -7,7 +7,7 @@ import { StdOut } from './StdOut';
  * Initializes an empty digraph with <em>V</em> vertices.
  *
  * @param   V the number of vertices
- * @throws IllegalArgumentException if {@code V < 0}
+ * @throws IllegalArgumentException if `V < 0`
  * @class
  * @author Robert Sedgewick
  */
@@ -45,12 +45,12 @@ export class Digraph {
             throw new Error(
               'number of vertices in a Digraph must be nonnegative'
             );
-          this.__indegree = (s => {
+          this.__indegree = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;
           })(this.__V);
-          this.__adj = <Bag<number>[]>(s => {
+          this.__adj = <Bag<number>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -98,12 +98,12 @@ export class Digraph {
             );
           this.__V = V;
           this.__E = 0;
-          this.__indegree = (s => {
+          this.__indegree = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;
           })(V);
-          this.__adj = <Bag<number>[]>(s => {
+          this.__adj = <Bag<number>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -156,12 +156,12 @@ export class Digraph {
           );
         this.__V = V;
         this.__E = 0;
-        this.__indegree = (s => {
+        this.__indegree = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(V);
-        this.__adj = <Bag<number>[]>(s => {
+        this.__adj = <Bag<number>[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -203,7 +203,7 @@ export class Digraph {
    *
    * @param   v the tail vertex
    * @param   w the head vertex
-   * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
+   * @throws IllegalArgumentException unless both `0 <= v < V` and `0 <= w < V`
    */
   public addEdge(v: number, w: number) {
     this.validateVertex(v);
@@ -214,11 +214,11 @@ export class Digraph {
   }
 
   /**
-   * Returns the vertices adjacent from vertex {@code v} in this digraph.
+   * Returns the vertices adjacent from vertex `v` in this digraph.
    *
    * @param   v the vertex
-   * @return  the vertices adjacent from vertex {@code v} in this digraph, as an iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the vertices adjacent from vertex `v` in this digraph, as an iterable
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public adj(v: number): Iterable<number> {
     this.validateVertex(v);
@@ -226,12 +226,12 @@ export class Digraph {
   }
 
   /**
-   * Returns the number of directed edges incident from vertex {@code v}.
-   * This is known as the <em>outdegree</em> of vertex {@code v}.
+   * Returns the number of directed edges incident from vertex `v`.
+   * This is known as the <em>outdegree</em> of vertex `v`.
    *
    * @param   v the vertex
-   * @return  the outdegree of vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the outdegree of vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public outdegree(v: number): number {
     this.validateVertex(v);
@@ -239,12 +239,12 @@ export class Digraph {
   }
 
   /**
-   * Returns the number of directed edges incident to vertex {@code v}.
-   * This is known as the <em>indegree</em> of vertex {@code v}.
+   * Returns the number of directed edges incident to vertex `v`.
+   * This is known as the <em>indegree</em> of vertex `v`.
    *
    * @param   v the vertex
-   * @return  the indegree of vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the indegree of vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public indegree(v: number): number {
     this.validateVertex(v);
@@ -278,7 +278,7 @@ export class Digraph {
    * followed by the <em>V</em> adjacency lists
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     s.append(
       `${this.__V} vertices, ${this.__E} edges ${Digraph.NEWLINE_$LI$()}`
     );
@@ -298,7 +298,7 @@ export class Digraph {
   }
 
   /**
-   * Unit tests the {@code Digraph} data type.
+   * Unit tests the `Digraph` data type.
    *
    * @param  args the command-line arguments
    */

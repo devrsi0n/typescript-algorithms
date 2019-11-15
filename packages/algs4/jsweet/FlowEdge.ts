@@ -1,17 +1,17 @@
 import { StdOut } from './StdOut';
 
 /**
- * Initializes an edge from vertex {@code v} to vertex {@code w} with
- * the given {@code capacity} and {@code flow}.
+ * Initializes an edge from vertex `v` to vertex `w` with
+ * the given `capacity` and `flow`.
  * @param  v the tail vertex
  * @param  w the head vertex
  * @param  capacity the capacity of the edge
  * @param  flow the flow on the edge
- * @throws IllegalArgumentException if either {@code v} or {@code w}
+ * @throws IllegalArgumentException if either `v` or `w`
  * is a negative integer
- * @throws IllegalArgumentException if {@code capacity} is negative
- * @throws IllegalArgumentException unless {@code flow} is between
- * {@code 0.0} and {@code capacity}.
+ * @throws IllegalArgumentException if `capacity` is negative
+ * @throws IllegalArgumentException unless `flow` is between
+ * `0.0` and `capacity`.
  * @class
  * @author Robert Sedgewick
  */
@@ -146,7 +146,7 @@ export class FlowEdge {
    * @param  vertex one endpoint of the edge
    * @return  the endpoint of the edge that is different from the given vertex
    * (unless the edge represents a self-loop in which case it returns the same vertex)
-   * @throws IllegalArgumentException if {@code vertex} is not one of the endpoints
+   * @throws IllegalArgumentException if `vertex` is not one of the endpoints
    * of the edge
    */
   public other(vertex: number): number {
@@ -157,13 +157,13 @@ export class FlowEdge {
 
   /**
    * Returns the residual capacity of the edge in the direction
-   * to the given {@code vertex}.
+   * to the given `vertex`.
    * @param  vertex one endpoint of the edge
    * @return  the residual capacity of the edge in the direction to the given vertex
-   * If {@code vertex} is the tail vertex, the residual capacity equals
-   * {@code capacity() - flow()}; if {@code vertex} is the head vertex, the
-   * residual capacity equals {@code flow()}.
-   * @throws IllegalArgumentException if {@code vertex} is not one of the endpoints of the edge
+   * If `vertex` is the tail vertex, the residual capacity equals
+   * `capacity() - flow()`; if `vertex` is the head vertex, the
+   * residual capacity equals `flow()`.
+   * @throws IllegalArgumentException if `vertex` is not one of the endpoints of the edge
    */
   public residualCapacityTo(vertex: number): number {
     if (vertex === this.v) return this.__flow;
@@ -173,15 +173,15 @@ export class FlowEdge {
 
   /**
    * Increases the flow on the edge in the direction to the given vertex.
-   * If {@code vertex} is the tail vertex, this increases the flow on the edge by {@code delta};
-   * if {@code vertex} is the head vertex, this decreases the flow on the edge by {@code delta}.
+   * If `vertex` is the tail vertex, this increases the flow on the edge by `delta`;
+   * if `vertex` is the head vertex, this decreases the flow on the edge by `delta`.
    * @param  vertex one endpoint of the edge
    * @param  delta amount by which to increase flow
-   * @throws IllegalArgumentException if {@code vertex} is not one of the endpoints
+   * @throws IllegalArgumentException if `vertex` is not one of the endpoints
    * of the edge
-   * @throws IllegalArgumentException if {@code delta} makes the flow on
+   * @throws IllegalArgumentException if `delta` makes the flow on
    * on the edge either negative or larger than its capacity
-   * @throws IllegalArgumentException if {@code delta} is {@code NaN}
+   * @throws IllegalArgumentException if `delta` is `NaN`
    */
   public addResidualFlowTo(vertex: number, delta: number) {
     if (!(delta >= 0.0)) throw new Error('Delta must be nonnegative');
@@ -208,7 +208,7 @@ export class FlowEdge {
   }
 
   /**
-   * Unit tests the {@code FlowEdge} data type.
+   * Unit tests the `FlowEdge` data type.
    *
    * @param  args the command-line arguments
    */

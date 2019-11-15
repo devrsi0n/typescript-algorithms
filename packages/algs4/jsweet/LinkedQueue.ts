@@ -81,7 +81,7 @@ export class LinkedQueue<Item> implements Iterable<Item> {
    * @return  the sequence of items in FIFO order, separated by spaces
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     for (let index313 = this.iterator(); index313.hasNext(); ) {
       const item = index313.next();
       s.append(`${item} `);
@@ -136,7 +136,7 @@ export class LinkedQueue<Item> implements Iterable<Item> {
   }
 
   /**
-   * Unit tests the {@code LinkedQueue} data type.
+   * Unit tests the `LinkedQueue` data type.
    *
    * @param  args the command-line arguments
    */

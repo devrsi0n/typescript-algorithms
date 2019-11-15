@@ -2,7 +2,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code Average} class provides a client for reading in a sequence
+ * The `Average` class provides a client for reading in a sequence
  * of real numbers and printing out their average.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/11model">Section 1.1</a> of
@@ -13,8 +13,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class Average {
-
-
   /**
    * Reads in a sequence of real numbers from standard input and prints
    * out their average to standard output.

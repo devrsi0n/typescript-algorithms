@@ -32,7 +32,7 @@ export class MinPQ<Key> implements Iterable<Key> {
       if (this.comparator === undefined) this.comparator = null;
       (() => {
         this.comparator = <any>comparator;
-        this.pq = <Key[]>(s => {
+        this.pq = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -58,7 +58,7 @@ export class MinPQ<Key> implements Iterable<Key> {
         if (this.comparator === undefined) this.comparator = null;
         (() => {
           this.comparator = <any>comparator;
-          this.pq = <Key[]>(s => {
+          this.pq = <Key[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -85,7 +85,7 @@ export class MinPQ<Key> implements Iterable<Key> {
       if (this.comparator === undefined) this.comparator = null;
       (() => {
         this.n = keys.length;
-        this.pq = <Key[]>(s => {
+        this.pq = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -109,7 +109,7 @@ export class MinPQ<Key> implements Iterable<Key> {
       if (this.n === undefined) this.n = 0;
       if (this.comparator === undefined) this.comparator = null;
       (() => {
-        this.pq = <Key[]>(s => {
+        this.pq = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -128,7 +128,7 @@ export class MinPQ<Key> implements Iterable<Key> {
         if (this.n === undefined) this.n = 0;
         if (this.comparator === undefined) this.comparator = null;
         (() => {
-          this.pq = <Key[]>(s => {
+          this.pq = <Key[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -142,8 +142,8 @@ export class MinPQ<Key> implements Iterable<Key> {
   /**
    * Returns true if this priority queue is empty.
    *
-   * @return  {@code true} if this priority queue is empty;
-   * {@code false} otherwise
+   * @return  `true` if this priority queue is empty;
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return this.n === 0;
@@ -165,13 +165,12 @@ export class MinPQ<Key> implements Iterable<Key> {
    * @throws Error if this priority queue is empty
    */
   public min(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue underflow');
+    if (this.isEmpty()) throw new Error('Priority queue underflow');
     return this.pq[1];
   }
 
   resize(capacity: number) {
-    const temp: Key[] = <Key[]>(s => {
+    const temp: Key[] = <Key[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -202,8 +201,7 @@ export class MinPQ<Key> implements Iterable<Key> {
    * @throws Error if this priority queue is empty
    */
   public delMin(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue underflow');
+    if (this.isEmpty()) throw new Error('Priority queue underflow');
     const min: Key = this.pq[1];
     this.exch(1, this.n--);
     this.sink(1);
@@ -287,7 +285,7 @@ export class MinPQ<Key> implements Iterable<Key> {
    * Returns an iterator that iterates over the keys on this priority queue
    * in ascending order.
    * <p>
-   * The iterator doesn't implement {@code remove()} since it's optional.
+   * The iterator doesn't implement `remove()` since it's optional.
    *
    * @return  an iterator that iterates over the keys in ascending order
    */
@@ -296,7 +294,7 @@ export class MinPQ<Key> implements Iterable<Key> {
   }
 
   /**
-   * Unit tests the {@code MinPQ} data type.
+   * Unit tests the `MinPQ` data type.
    *
    * @param  args the command-line arguments
    */

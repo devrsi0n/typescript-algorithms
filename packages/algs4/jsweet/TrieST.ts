@@ -32,9 +32,9 @@ export class TrieST<Value> {
   /**
    * Does this symbol table contain the given key?
    * @param  key the key
-   * @return  {@code true} if this symbol table contains {@code key} and
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if this symbol table contains `key` and
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: string): boolean {
     if (key == null) throw new Error('argument to contains() is null');
@@ -145,26 +145,26 @@ export class TrieST<Value> {
 
   /**
    * Is this symbol table empty?
-   * @return  {@code true} if this symbol table is empty and {@code false} otherwise
+   * @return  `true` if this symbol table is empty and `false` otherwise
    */
   public isEmpty(): boolean {
     return this.size() === 0;
   }
 
   /**
-   * Returns all keys in the symbol table as an {@code Iterable}.
-   * To iterate over all of the keys in the symbol table named {@code st},
-   * use the foreach notation: {@code for (Key key : st.keys())}.
-   * @return  all keys in the symbol table as an {@code Iterable}
+   * Returns all keys in the symbol table as an `Iterable`.
+   * To iterate over all of the keys in the symbol table named `st`,
+   * use the foreach notation: `for (Key key : st.keys())`.
+   * @return  all keys in the symbol table as an `Iterable`
    */
   public keys(): Iterable<string> {
     return this.keysWithPrefix('');
   }
 
   /**
-   * Returns all of the keys in the set that start with {@code prefix}.
+   * Returns all of the keys in the set that start with `prefix`.
    * @param  prefix the prefix
-   * @return  all of the keys in the set that start with {@code prefix},
+   * @return  all of the keys in the set that start with `prefix`,
    * as an iterable
    */
   public keysWithPrefix(prefix: string): Iterable<string> {
@@ -191,7 +191,7 @@ export class TrieST<Value> {
     if (x.val != null) results.enqueue(prefix.toString());
     for (
       let c: string = String.fromCharCode(0);
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) < TrieST.R;
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) < TrieST.R;
       c++
     ) {
       {
@@ -207,10 +207,10 @@ export class TrieST<Value> {
   }
 
   /**
-   * Returns all of the keys in the symbol table that match {@code pattern},
+   * Returns all of the keys in the symbol table that match `pattern`,
    * where . symbol is treated as a wildcard character.
    * @param  pattern the pattern
-   * @return  all of the keys in the symbol table that match {@code pattern},
+   * @return  all of the keys in the symbol table that match `pattern`,
    * as an iterable, where . is treated as a wildcard character.
    */
   public keysThatMatch(pattern: string): Iterable<string> {
@@ -237,12 +237,13 @@ export class TrieST<Value> {
     if (d === pattern.length) return;
     const c: string = pattern.charAt(d);
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) ==
       '.'.charCodeAt(0)
     ) {
       for (
         let ch: string = String.fromCharCode(0);
-        (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(ch) < TrieST.R;
+        ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(ch) <
+        TrieST.R;
         ch++
       ) {
         {
@@ -421,7 +422,7 @@ export class TrieST<Value> {
   }
 
   /**
-   * Unit tests the {@code TrieST} data type.
+   * Unit tests the `TrieST` data type.
    *
    * @param  args the command-line arguments
    */
@@ -482,7 +483,7 @@ export namespace TrieST {
   export class Node {
     val: any;
 
-    next: TrieST.Node[] = (s => {
+    next: TrieST.Node[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

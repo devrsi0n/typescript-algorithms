@@ -55,7 +55,7 @@ export class LinkedBag<Item> implements Iterable<Item> {
   }
 
   /**
-   * Unit tests the {@code LinkedBag} data type.
+   * Unit tests the `LinkedBag` data type.
    *
    * @param  args the command-line arguments
    */

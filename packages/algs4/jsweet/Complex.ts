@@ -40,7 +40,7 @@ export class Complex {
    * @return  the absolute value of this complex number
    */
   public abs(): number {
-    return /* hypot */ (x => Math.sqrt(x * x + y * y))(this.__re, this.__im);
+    return /* hypot */ ((x) => Math.sqrt(x * x + y * y))(this.__re, this.__im);
   }
 
   /**
@@ -57,7 +57,7 @@ export class Complex {
    * Returns the sum of this complex number and the specified complex number.
    *
    * @param  {Complex} that the other complex number
-   * @return {Complex} the complex number whose value is {@code (this + that)}
+   * @return {Complex} the complex number whose value is `(this + that)`
    */
   public plus(that: Complex): Complex {
     const real: number = this.__re + that.__re;
@@ -70,7 +70,7 @@ export class Complex {
    * this complex number.
    *
    * @param  {Complex} that the other complex number
-   * @return {Complex} the complex number whose value is {@code (this - that)}
+   * @return {Complex} the complex number whose value is `(this - that)`
    */
   public minus(that: Complex): Complex {
     const real: number = this.__re - that.__re;
@@ -88,7 +88,7 @@ export class Complex {
    * Returns the product of this complex number and the specified complex number.
    *
    * @param  {Complex} that the other complex number
-   * @return {Complex} the complex number whose value is {@code (this * that)}
+   * @return {Complex} the complex number whose value is `(this * that)`
    */
   public times(that?: any): any {
     if ((that != null && that instanceof <any>Complex) || that === null) {
@@ -104,7 +104,7 @@ export class Complex {
    * Returns the product of this complex number and the specified scalar.
    *
    * @param   alpha the scalar
-   * @return {Complex} the complex number whose value is {@code (alpha * this)}
+   * @return {Complex} the complex number whose value is `(alpha * this)`
    */
   public scale(alpha: number): Complex {
     return new Complex(alpha * this.__re, alpha * this.__im);
@@ -126,7 +126,7 @@ export class Complex {
   /**
    * Returns the reciprocal of this complex number.
    *
-   * @return {Complex} the complex number whose value is {@code (1 / this)}
+   * @return {Complex} the complex number whose value is `(1 / this)`
    */
   public reciprocal(): Complex {
     const scale: number = this.__re * this.__re + this.__im * this.__im;
@@ -156,7 +156,7 @@ export class Complex {
    * this complex number.
    *
    * @param  {Complex} that the other complex number
-   * @return {Complex} the complex number whose value is {@code (this / that)}
+   * @return {Complex} the complex number whose value is `(this / that)`
    */
   public divides(that: Complex): Complex {
     return this.times$edu_princeton_cs_algs4_Complex(that.reciprocal());
@@ -182,9 +182,9 @@ export class Complex {
   public sin(): Complex {
     return new Complex(
       Math.sin(this.__re) *
-        /* cosh */ (x => (Math.exp(x) + Math.exp(-x)) / 2)(this.__im),
+        /* cosh */ ((x) => (Math.exp(x) + Math.exp(-x)) / 2)(this.__im),
       Math.cos(this.__re) *
-        /* sinh */ (x => (Math.exp(x) - Math.exp(-x)) / 2)(this.__im)
+        /* sinh */ ((x) => (Math.exp(x) - Math.exp(-x)) / 2)(this.__im)
     );
   }
 
@@ -196,9 +196,9 @@ export class Complex {
   public cos(): Complex {
     return new Complex(
       Math.cos(this.__re) *
-        /* cosh */ (x => (Math.exp(x) + Math.exp(-x)) / 2)(this.__im),
+        /* cosh */ ((x) => (Math.exp(x) + Math.exp(-x)) / 2)(this.__im),
       -Math.sin(this.__re) *
-        /* sinh */ (x => (Math.exp(x) - Math.exp(-x)) / 2)(this.__im)
+        /* sinh */ ((x) => (Math.exp(x) - Math.exp(-x)) / 2)(this.__im)
     );
   }
 
@@ -212,7 +212,7 @@ export class Complex {
   }
 
   /**
-   * Unit tests the {@code Complex} data type.
+   * Unit tests the `Complex` data type.
    *
    * @param  args the command-line arguments
    */

@@ -123,7 +123,7 @@ export class Date implements java.lang.Comparable<Date> {
    * Compares two dates chronologically.
    *
    * @param  {Date} that the other date
-   * @return  {@code true} if this date is after that date; {@code false} otherwise
+   * @return  `true` if this date is after that date; `false` otherwise
    */
   public isAfter(that: Date): boolean {
     return this.compareTo(that) > 0;
@@ -133,7 +133,7 @@ export class Date implements java.lang.Comparable<Date> {
    * Compares two dates chronologically.
    *
    * @param  {Date} that the other date
-   * @return  {@code true} if this date is before that date; {@code false} otherwise
+   * @return  `true` if this date is before that date; `false` otherwise
    */
   public isBefore(that: Date): boolean {
     return this.compareTo(that) < 0;
@@ -142,7 +142,7 @@ export class Date implements java.lang.Comparable<Date> {
   /**
    * Compares two dates chronologically.
    *
-   * @return  the value {@code 0} if the argument date is equal to this date;
+   * @return  the value `0` if the argument date is equal to this date;
    * a negative integer if this date is chronologically less than
    * the argument date; and a positive ineger if this date is chronologically
    * after the argument date
@@ -171,7 +171,7 @@ export class Date implements java.lang.Comparable<Date> {
    * Compares this date to the specified date.
    *
    * @param   other the other date
-   * @return  {@code true} if this date equals {@code other}; {@code false} otherwise
+   * @return  `true` if this date equals `other`; `false` otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -199,7 +199,7 @@ export class Date implements java.lang.Comparable<Date> {
   }
 
   /**
-   * Unit tests the {@code Date} data type.
+   * Unit tests the `Date` data type.
    *
    * @param  args the command-line arguments
    */

@@ -10,7 +10,7 @@ import { StdOut } from './StdOut';
  * in a bipartite graph.
  *
  * @param  {Graph} G the bipartite graph
- * @throws IllegalArgumentException if {@code G} is not bipartite
+ * @throws IllegalArgumentException if `G` is not bipartite
  * @class
  * @author Robert Sedgewick
  */
@@ -44,7 +44,7 @@ export class HopcroftKarp {
       throw new Error('graph is not bipartite');
     }
     this.V = G.V();
-    this.__mate = (s => {
+    this.__mate = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -54,7 +54,7 @@ export class HopcroftKarp {
     }
     while (this.hasAugmentingPath(G)) {
       {
-        const adj: Iterator<number>[] = <Iterator<number>[]>(s => {
+        const adj: Iterator<number>[] = <Iterator<number>[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -93,7 +93,7 @@ export class HopcroftKarp {
         }
       }
     }
-    this.__inMinVertexCover = (s => {
+    this.__inMinVertexCover = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -109,7 +109,7 @@ export class HopcroftKarp {
   }
 
   private static toString(path: Iterable<number>): string {
-    const sb= new String();
+    const sb = new String();
     for (let index284 = path.iterator(); index284.hasNext(); ) {
       const v = index284.next();
       sb.append(`${v}-`);
@@ -132,12 +132,12 @@ export class HopcroftKarp {
   }
 
   private hasAugmentingPath(G: Graph): boolean {
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(this.V);
-    this.distTo = (s => {
+    this.distTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -182,9 +182,9 @@ export class HopcroftKarp {
    * the maximum matching computed by the algorithm.
    *
    * @param   v the vertex
-   * @return  the vertex to which vertex {@code v} is matched in the
-   * maximum matching; {@code -1} if the vertex is not matched
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the vertex to which vertex `v` is matched in the
+   * maximum matching; `-1` if the vertex is not matched
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public mate(v: number): number {
     this.validate(v);
@@ -196,9 +196,9 @@ export class HopcroftKarp {
    * computed by the algorithm.
    *
    * @param   v the vertex
-   * @return  {@code true} if vertex {@code v} is matched in maximum matching;
-   * {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if vertex `v` is matched in maximum matching;
+   * `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public isMatched(v: number): boolean {
     this.validate(v);
@@ -219,8 +219,8 @@ export class HopcroftKarp {
    * That is, the number of edges in a maximum matching is equal to one half
    * of the number of vertices in the graph (so that every vertex is matched).
    *
-   * @return  {@code true} if the graph contains a perfect matching;
-   * {@code false} otherwise
+   * @return  `true` if the graph contains a perfect matching;
+   * `false` otherwise
    */
   public isPerfect(): boolean {
     return this.cardinality * 2 === this.V;
@@ -231,9 +231,9 @@ export class HopcroftKarp {
    * computed by the algorithm.
    *
    * @param   v the vertex
-   * @return  {@code true} if vertex {@code v} is in the minimum vertex cover;
-   * {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if vertex `v` is in the minimum vertex cover;
+   * `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public inMinVertexCover(v: number): boolean {
     this.validate(v);
@@ -271,7 +271,7 @@ export class HopcroftKarp {
       if (this.inMinVertexCover(v)) sizeOfMinVertexCover++;
     }
     if (this.size() !== sizeOfMinVertexCover) return false;
-    const isMatched: boolean[] = (s => {
+    const isMatched: boolean[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -312,10 +312,10 @@ export class HopcroftKarp {
 
   /**
    *
-   * Unit tests the {@code HopcroftKarp} data type.
-   * Takes three command-line arguments {@code V1}, {@code V2}, and {@code E};
-   * creates a random bipartite graph with {@code V1} + {@code V2} vertices
-   * and {@code E} edges; computes a maximum matching and minimum vertex cover;
+   * Unit tests the `HopcroftKarp` data type.
+   * Takes three command-line arguments `V1`, `V2`, and `E`;
+   * creates a random bipartite graph with `V1` + `V2` vertices
+   * and `E` edges; computes a maximum matching and minimum vertex cover;
    * and prints the results.
    *
    * @param  args the command-line arguments

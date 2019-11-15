@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code Heap} class provides a static methods for heapsorting
+ * The `Heap` class provides a static methods for heapsorting
  * an array.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/24pq">Section 2.4</a> of
@@ -13,8 +13,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class Heap {
-
-
   /**
    * Rearranges the array in ascending order, using the natural order.
    * @param  pq the array to be sorted

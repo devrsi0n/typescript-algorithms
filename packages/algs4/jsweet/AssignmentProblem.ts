@@ -9,7 +9,7 @@ import { StdRandom } from './StdRandom';
  *
  * @param   weight the <em>n</em>-by-<em>n</em> matrix of weights
  * @throws IllegalArgumentException unless all weights are nonnegative
- * @throws IllegalArgumentException if {@code weight} is {@code null}
+ * @throws IllegalArgumentException if `weight` is `null`
  * @class
  * @author Robert Sedgewick
  */
@@ -67,22 +67,22 @@ export class AssignmentProblem {
         }
       }
     }
-    this.px = (s => {
+    this.px = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(this.n);
-    this.py = (s => {
+    this.py = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(this.n);
-    this.xy = (s => {
+    this.xy = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(this.n);
-    this.yx = (s => {
+    this.yx = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -169,8 +169,8 @@ export class AssignmentProblem {
    * Returns the dual optimal value for the specified row.
    *
    * @param   i the row index
-   * @return  the dual optimal value for row {@code i}
-   * @throws IllegalArgumentException unless {@code 0 <= i < n}
+   * @return  the dual optimal value for row `i`
+   * @throws IllegalArgumentException unless `0 <= i < n`
    */
   public dualRow(i: number): number {
     this.validate(i);
@@ -181,8 +181,8 @@ export class AssignmentProblem {
    * Returns the dual optimal value for the specified column.
    *
    * @param   j the column index
-   * @return  the dual optimal value for column {@code j}
-   * @throws IllegalArgumentException unless {@code 0 <= j < n}
+   * @return  the dual optimal value for column `j`
+   * @throws IllegalArgumentException unless `0 <= j < n`
    */
   public dualCol(j: number): number {
     this.validate(j);
@@ -193,8 +193,8 @@ export class AssignmentProblem {
    * Returns the column associated with the specified row in the optimal solution.
    *
    * @param   i the row index
-   * @return  the column matched to row {@code i} in the optimal solution
-   * @throws IllegalArgumentException unless {@code 0 <= i < n}
+   * @return  the column matched to row `i` in the optimal solution
+   * @throws IllegalArgumentException unless `0 <= i < n`
    */
   public sol(i: number): number {
     this.validate(i);
@@ -264,7 +264,7 @@ export class AssignmentProblem {
   }
 
   private isPerfectMatching(): boolean {
-    const perm: boolean[] = (s => {
+    const perm: boolean[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -306,7 +306,7 @@ export class AssignmentProblem {
   }
 
   /**
-   * Unit tests the {@code AssignmentProblem} data type.
+   * Unit tests the `AssignmentProblem` data type.
    * Takes a command-line argument n; creates a random n-by-n matrix;
    * solves the n-by-n assignment problem; and prints the optimal
    * solution.

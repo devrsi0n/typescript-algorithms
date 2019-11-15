@@ -21,8 +21,8 @@ export class Bag<Item> implements Iterable<Item> {
   /**
    * Returns true if this bag is empty.
    *
-   * @return  {@code true} if this bag is empty;
-   * {@code false} otherwise
+   * @return  `true` if this bag is empty;
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return this.first == null;
@@ -60,7 +60,7 @@ export class Bag<Item> implements Iterable<Item> {
   }
 
   /**
-   * Unit tests the {@code Bag} data type.
+   * Unit tests the `Bag` data type.
    *
    * @param  args the command-line arguments
    */

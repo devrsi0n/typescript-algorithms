@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code Merge} class provides static methods for sorting an
+ * The `Merge` class provides static methods for sorting an
  * array using mergesort.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/22mergesort">Section 2.2</a> of
@@ -14,8 +14,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class Merge {
-
-
   private static merge$java_lang_Comparable_A$java_lang_Comparable_A$int$int$int(
     a: java.lang.Comparable<any>[],
     aux: java.lang.Comparable<any>[],
@@ -70,7 +68,7 @@ export class Merge {
   }
 
   public static sort$java_lang_Comparable_A(a: java.lang.Comparable<any>[]) {
-    const aux: java.lang.Comparable<any>[] = (s => {
+    const aux: java.lang.Comparable<any>[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -282,24 +280,16 @@ export class Merge {
   /**
    * Returns a permutation that gives the elements in the array in ascending order.
    * @param  a the array
-   * @return  a permutation {@code p[]} such that {@code a[p[0]]}, {@code a[p[1]]},
-   * ..., {@code a[p[N-1]]} are in ascending order
+   * @return  a permutation `p[]` such that `a[p[0]]`, `a[p[1]]`,
+   * ..., `a[p[N-1]]` are in ascending order
    */
   public static indexSort(a: java.lang.Comparable<any>[]): number[] {
     const n: number = a.length;
-    const index: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const index: number[] = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       index[i] = i;
     }
-    const aux: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const aux: number[] = new Array(n).fill(0);
     Merge.sort$java_lang_Comparable_A$int_A$int_A$int$int(
       a,
       index,

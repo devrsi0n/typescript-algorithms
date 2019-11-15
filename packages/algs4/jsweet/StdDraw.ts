@@ -1,5 +1,5 @@
 /**
- * The {@code StdDraw} class provides a basic capability for
+ * The `StdDraw` class provides a basic capability for
  * creating drawings with your programs. It uses a simple graphics model that
  * allows you to create drawings consisting of points, lines, squares,
  * circles, and other geometric shapes in a window on your computer and
@@ -8,7 +8,7 @@
  * user interaction via the keyboard and mouse.
  * <p>
  * <b>Getting started.</b>
- * To use this class, you must have {@code StdDraw.class} in your
+ * To use this class, you must have `StdDraw.class` in your
  * Java classpath. If you used our autoinstaller, you should be all set.
  * Otherwise, either download
  * <a href = "https://introcs.cs.princeton.edu/java/code/stdlib.jar">stdlib.jar</a>
@@ -33,9 +33,9 @@
  * This program illustrates the two main types of methods in standard
  * drawing��methods that draw geometric shapes and methods that
  * control drawing parameters.
- * The methods {@code StdDraw.line()} and {@code StdDraw.point()}
- * draw lines and points; the methods {@code StdDraw.setPenRadius()}
- * and {@code StdDraw.setPenColor()} control the line thickness and color.
+ * The methods `StdDraw.line()} and `StdDraw.point()`
+ * draw lines and points; the methods `StdDraw.setPenRadius()`
+ * and `StdDraw.setPenColor()` control the line thickness and color.
  * <p>
  * <b>Points and lines.</b>
  * You can draw points and line segments with the following methods:
@@ -84,7 +84,7 @@
  * The arc is from the circle centered at (<em>x</em>, <em>y</em>) of the specified radius.
  * The arc extends from angle1 to angle2. By convention, the angles are
  * <em>polar</em> (counterclockwise angle from the <em>x</em>-axis)
- * and represented in degrees. For example, {@code StdDraw.arc(0.0, 0.0, 1.0, 0, 90)}
+ * and represented in degrees. For example, `StdDraw.arc(0.0, 0.0, 1.0, 0, 90)`
  * draws the arc of the unit circle from 3 o'clock (0 degrees) to 12 o'clock (90 degrees).
  * <p>
  * <b>Polygons.</b>
@@ -94,7 +94,7 @@
  * <li> {@link #filledPolygon(double[] x, double[] y)}
  * </ul>
  * <p>
- * The points in the polygon are ({@code x[i]}, {@code y[i]}).
+ * The points in the polygon are (`x[i]`, `y[i]`).
  * For example, the following code fragment draws a filled diamond
  * with vertices (0.1, 0.2), (0.2, 0.3), (0.3, 0.2), and (0.2, 0.1):
  * <pre>
@@ -116,7 +116,7 @@
  * <li> {@link #setPenRadius(double radius)}
  * </ul>
  * <p>
- * For example, {@code StdDraw.setPenRadius(0.025)} makes
+ * For example, `StdDraw.setPenRadius(0.025)` makes
  * the thickness of the lines and the size of the points to be five times
  * the 0.005 default.
  * To draw points with the minimum possible radius (one pixel on typical
@@ -142,7 +142,7 @@
  * {@link #PINK}, {@link #RED}, {@link #WHITE}, {@link #YELLOW},
  * {@link #BOOK_BLUE}, {@link #BOOK_LIGHT_BLUE}, {@link #BOOK_RED}, and
  * {@link #PRINCETON_ORANGE}.
- * For example, {@code StdDraw.setPenColor(StdDraw.MAGENTA)} sets the
+ * For example, `StdDraw.setPenColor(StdDraw.MAGENTA)` sets the
  * pen color to magenta.
  * <p>
  * <b>Canvas size.</b>
@@ -157,7 +157,7 @@
  * It also erases the current drawing and resets the coordinate system,
  * pen radius, pen color, and font back to their default values.
  * Ordinarly, this method is called once, at the very beginning of a program.
- * For example, {@code StdDraw.setCanvasSize(800, 800)}
+ * For example, `StdDraw.setCanvasSize(800, 800)`
  * sets the canvas size to be 800-by-800 pixels.
  * <p>
  * <b>Canvas scale and coordinate system.</b>
@@ -173,7 +173,7 @@
  * The arguments are the coordinates of the minimum and maximum
  * <em>x</em>- or <em>y</em>-coordinates that will appear in the canvas.
  * For example, if you  wish to use the default coordinate system but
- * leave a small margin, you can call {@code StdDraw.setScale(-.05, 1.05)}.
+ * leave a small margin, you can call `StdDraw.setScale(-.05, 1.05)`.
  * <p>
  * These methods change the coordinate system for subsequent drawing
  * commands; they do not affect previous drawings.
@@ -246,7 +246,7 @@
  * <p>
  * The first method clears the canvas to white; the second method
  * allows you to specify a color of your choice. For example,
- * {@code StdDraw.clear(StdDraw.LIGHT_GRAY)} clears the canvas to a shade
+ * `StdDraw.clear(StdDraw.LIGHT_GRAY)` clears the canvas to a shade
  * of gray.
  * <p>
  * <b>Computer animations and double buffering.</b>
@@ -262,7 +262,7 @@
  * <p>
  * By default, double buffering is disabled, which means that as soon as you
  * call a drawing
- * method��such as {@code point()} or {@code line()}��the
+ * method��such as `point()} or `line()`��the
  * results appear on the screen.
  * <p>
  * When double buffering is enabled by calling {@link #enableDoubleBuffering()},
@@ -351,7 +351,7 @@
  * <li> Drawing an object outside (or partly outside) the canvas is permitted.
  * However, only the part of the object that appears inside the canvas
  * will be visible.
- * <li> Any method that is passed a {@code null} argument will throw an
+ * <li> Any method that is passed a `null` argument will throw an
  * {@link IllegalArgumentException}.
  * <li> Any method that is passed a {@link Double#NaN},
  * {@link Double#POSITIVE_INFINITY}, or {@link Double#NEGATIVE_INFINITY}
@@ -372,16 +372,16 @@
  * the sequence of drawing commands and call {@link #show()} afterwards.
  * Incrementally displaying a complex drawing while it is being
  * created can be intolerably inefficient on many computer systems.
- * <li> When drawing computer animations, call {@code show()}
+ * <li> When drawing computer animations, call `show()`
  * only once per frame, not after drawing each individual object.
- * <li> If you call {@code picture()} multiple times with the same filename,
+ * <li> If you call `picture()` multiple times with the same filename,
  * Java will cache the image, so you do not incur the cost of reading
  * from a file each time.
  * </ul>
  * <p>
  * <b>Known bugs and issues.</b>
  * <ul>
- * <li> The {@code picture()} methods may not draw the portion of the image that is
+ * <li> The `picture()` methods may not draw the portion of the image that is
  * inside the canvas if the center point (<em>x</em>, <em>y</em>) is outside the
  * canvas.
  * This bug appears only on some systems.
@@ -751,8 +751,6 @@ export class StdDraw
     return StdDraw.keysDown;
   }
 
-
-
   static __static_initializer_0() {
     StdDraw.init();
   }
@@ -781,8 +779,8 @@ export class StdDraw
    *
    * @param   canvasWidth the width as a number of pixels
    * @param   canvasHeight the height as a number of pixels
-   * @throws IllegalArgumentException unless both {@code canvasWidth} and
-   * {@code canvasHeight} are positive
+   * @throws IllegalArgumentException unless both `canvasWidth` and
+   * `canvasHeight` are positive
    */
   public static setCanvasSize(canvasWidth?: any, canvasHeight?: any): any {
     if (
@@ -878,7 +876,7 @@ export class StdDraw
   static validate(x: number, name: string) {
     if (/* isNaN */ isNaN(x)) throw new Error(`${name} is NaN`);
     if (
-      /* isInfinite */ (value =>
+      /* isInfinite */ ((value) =>
         Number.NEGATIVE_INFINITY === value ||
         Number.POSITIVE_INFINITY === value)(x)
     )
@@ -922,8 +920,8 @@ export class StdDraw
    *
    * @param   min the minimum value of the <em>x</em>-scale
    * @param   max the maximum value of the <em>x</em>-scale
-   * @throws IllegalArgumentException if {@code (max == min)}
-   * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
+   * @throws IllegalArgumentException if `(max == min)`
+   * @throws IllegalArgumentException if either `min` or `max` is either NaN or infinite
    */
   public static setXscale(min?: any, max?: any): any {
     if (
@@ -954,8 +952,8 @@ export class StdDraw
    *
    * @param   min the minimum value of the <em>y</em>-scale
    * @param   max the maximum value of the <em>y</em>-scale
-   * @throws IllegalArgumentException if {@code (max == min)}
-   * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
+   * @throws IllegalArgumentException if `(max == min)`
+   * @throws IllegalArgumentException if either `min` or `max` is either NaN or infinite
    */
   public static setYscale(min?: any, max?: any): any {
     if (
@@ -988,8 +986,8 @@ export class StdDraw
    *
    * @param   min the minimum value of the <em>x</em>- and <em>y</em>-scales
    * @param   max the maximum value of the <em>x</em>- and <em>y</em>-scales
-   * @throws IllegalArgumentException if {@code (max == min)}
-   * @throws IllegalArgumentException if either {@code min} or {@code max} is either NaN or infinite
+   * @throws IllegalArgumentException if `(max == min)`
+   * @throws IllegalArgumentException if either `min` or `max` is either NaN or infinite
    */
   public static setScale(min?: any, max?: any): any {
     if (
@@ -1067,7 +1065,7 @@ export class StdDraw
    * Clears the screen to the specified color.
    *
    * @param {Color} color the color to make the background
-   * @throws IllegalArgumentException if {@code color} is {@code null}
+   * @throws IllegalArgumentException if `color` is `null`
    */
   public static clear(color?: any): any {
     if ((color != null && color instanceof <any>Color) || color === null) {
@@ -1114,7 +1112,7 @@ export class StdDraw
    * The pen radius is not affected by coordinate scaling.
    *
    * @param   radius the radius of the pen
-   * @throws IllegalArgumentException if {@code radius} is negative, NaN, or infinite
+   * @throws IllegalArgumentException if `radius` is negative, NaN, or infinite
    */
   public static setPenRadius(radius?: any): any {
     if (typeof radius === 'number' || radius === null) {
@@ -1164,8 +1162,8 @@ export class StdDraw
    * @param   red the amount of red (between 0 and 255)
    * @param   green the amount of green (between 0 and 255)
    * @param   blue the amount of blue (between 0 and 255)
-   * @throws IllegalArgumentException if {@code red}, {@code green},
-   * or {@code blue} is outside its prescribed range
+   * @throws IllegalArgumentException if `red`, `green`,
+   * or `blue` is outside its prescribed range
    */
   public static setPenColor(red?: any, green?: any, blue?: any): any {
     if (
@@ -1210,7 +1208,7 @@ export class StdDraw
    * Sets the font to the specified value.
    *
    * @param {Font} font the font
-   * @throws IllegalArgumentException if {@code font} is {@code null}
+   * @throws IllegalArgumentException if `font` is `null`
    */
   public static setFont(font?: any): any {
     if ((font != null && font instanceof <any>Font) || font === null) {
@@ -1251,11 +1249,11 @@ export class StdDraw
   /**
    * Draws one pixel at (<em>x</em>, <em>y</em>).
    * This method is private because pixels depend on the display.
-   * To achieve the same effect, set the pen radius to 0 and call {@code point()}.
+   * To achieve the same effect, set the pen radius to 0 and call `point()`.
    *
    * @param   x the <em>x</em>-coordinate of the pixel
    * @param   y the <em>y</em>-coordinate of the pixel
-   * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
+   * @throws IllegalArgumentException if `x` or `y` is either NaN or infinite
    * @private
    */
   static pixel(x: number, y: number) {
@@ -1276,7 +1274,7 @@ export class StdDraw
    *
    * @param  x the <em>x</em>-coordinate of the point
    * @param  y the <em>y</em>-coordinate of the point
-   * @throws IllegalArgumentException if either {@code x} or {@code y} is either NaN or infinite
+   * @throws IllegalArgumentException if either `x` or `y` is either NaN or infinite
    */
   public static point(x: number, y: number) {
     StdDraw.validate(x, 'x');
@@ -1306,7 +1304,7 @@ export class StdDraw
    * @param   x the <em>x</em>-coordinate of the center of the circle
    * @param   y the <em>y</em>-coordinate of the center of the circle
    * @param   radius the radius of the circle
-   * @throws IllegalArgumentException if {@code radius} is negative
+   * @throws IllegalArgumentException if `radius` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static circle(x: number, y: number, radius: number) {
@@ -1332,7 +1330,7 @@ export class StdDraw
    * @param   x the <em>x</em>-coordinate of the center of the circle
    * @param   y the <em>y</em>-coordinate of the center of the circle
    * @param   radius the radius of the circle
-   * @throws IllegalArgumentException if {@code radius} is negative
+   * @throws IllegalArgumentException if `radius` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static filledCircle(x: number, y: number, radius: number) {
@@ -1360,8 +1358,8 @@ export class StdDraw
    * @param   y the <em>y</em>-coordinate of the center of the ellipse
    * @param   semiMajorAxis is the semimajor axis of the ellipse
    * @param   semiMinorAxis is the semiminor axis of the ellipse
-   * @throws IllegalArgumentException if either {@code semiMajorAxis}
-   * or {@code semiMinorAxis} is negative
+   * @throws IllegalArgumentException if either `semiMajorAxis`
+   * or `semiMinorAxis` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static ellipse(
@@ -1396,8 +1394,8 @@ export class StdDraw
    * @param   y the <em>y</em>-coordinate of the center of the ellipse
    * @param   semiMajorAxis is the semimajor axis of the ellipse
    * @param   semiMinorAxis is the semiminor axis of the ellipse
-   * @throws IllegalArgumentException if either {@code semiMajorAxis}
-   * or {@code semiMinorAxis} is negative
+   * @throws IllegalArgumentException if either `semiMajorAxis`
+   * or `semiMinorAxis` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static filledEllipse(
@@ -1434,7 +1432,7 @@ export class StdDraw
    * @param   angle1 the starting angle. 0 would mean an arc beginning at 3 o'clock.
    * @param   angle2 the angle at the end of the arc. For example, if
    * you want a 90 degree arc, then angle2 should be angle1 + 90.
-   * @throws IllegalArgumentException if {@code radius} is negative
+   * @throws IllegalArgumentException if `radius` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static arc(
@@ -1479,7 +1477,7 @@ export class StdDraw
    * @param   x the <em>x</em>-coordinate of the center of the square
    * @param   y the <em>y</em>-coordinate of the center of the square
    * @param   halfLength one half the length of any side of the square
-   * @throws IllegalArgumentException if {@code halfLength} is negative
+   * @throws IllegalArgumentException if `halfLength` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static square(x: number, y: number, halfLength: number) {
@@ -1505,7 +1503,7 @@ export class StdDraw
    * @param   x the <em>x</em>-coordinate of the center of the square
    * @param   y the <em>y</em>-coordinate of the center of the square
    * @param   halfLength one half the length of any side of the square
-   * @throws IllegalArgumentException if {@code halfLength} is negative
+   * @throws IllegalArgumentException if `halfLength` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static filledSquare(x: number, y: number, halfLength: number) {
@@ -1532,7 +1530,7 @@ export class StdDraw
    * @param   y the <em>y</em>-coordinate of the center of the rectangle
    * @param   halfWidth one half the width of the rectangle
    * @param   halfHeight one half the height of the rectangle
-   * @throws IllegalArgumentException if either {@code halfWidth} or {@code halfHeight} is negative
+   * @throws IllegalArgumentException if either `halfWidth` or `halfHeight` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static rectangle(
@@ -1566,7 +1564,7 @@ export class StdDraw
    * @param   y the <em>y</em>-coordinate of the center of the rectangle
    * @param   halfWidth one half the width of the rectangle
    * @param   halfHeight one half the height of the rectangle
-   * @throws IllegalArgumentException if either {@code halfWidth} or {@code halfHeight} is negative
+   * @throws IllegalArgumentException if either `halfWidth` or `halfHeight` is negative
    * @throws IllegalArgumentException if any argument is either NaN or infinite
    */
   public static filledRectangle(
@@ -1601,10 +1599,10 @@ export class StdDraw
    *
    * @param   x an array of all the <em>x</em>-coordinates of the polygon
    * @param   y an array of all the <em>y</em>-coordinates of the polygon
-   * @throws IllegalArgumentException unless {@code x[]} and {@code y[]}
+   * @throws IllegalArgumentException unless `x[]` and `y[]`
    * are of the same length
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
-   * @throws IllegalArgumentException if either {@code x[]} or {@code y[]} is {@code null}
+   * @throws IllegalArgumentException if either `x[]` or `y[]` is `null`
    */
   public static polygon(x: number[], y: number[]) {
     StdDraw.validateNotNull(x, 'x-coordinate array');
@@ -1644,10 +1642,10 @@ export class StdDraw
    *
    * @param   x an array of all the <em>x</em>-coordinates of the polygon
    * @param   y an array of all the <em>y</em>-coordinates of the polygon
-   * @throws IllegalArgumentException unless {@code x[]} and {@code y[]}
+   * @throws IllegalArgumentException unless `x[]` and `y[]`
    * are of the same length
    * @throws IllegalArgumentException if any coordinate is either NaN or infinite
-   * @throws IllegalArgumentException if either {@code x[]} or {@code y[]} is {@code null}
+   * @throws IllegalArgumentException if either `x[]` or `y[]` is `null`
    */
   public static filledPolygon(x: number[], y: number[]) {
     StdDraw.validateNotNull(x, 'x-coordinate array');
@@ -1746,7 +1744,7 @@ export class StdDraw
     const hs: number = image.getHeight(null);
     if (ws < 0 || hs < 0) throw new Error(`image ${filename} is corrupt`);
     StdDraw.offscreen_$LI$().rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(-degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(-degrees),
       xs,
       ys
     );
@@ -1757,7 +1755,7 @@ export class StdDraw
       null
     );
     StdDraw.offscreen_$LI$().rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(+degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(+degrees),
       xs,
       ys
     );
@@ -1822,7 +1820,7 @@ export class StdDraw
     if (ws < 0 || hs < 0) throw new Error(`image ${filename} is corrupt`);
     if (ws <= 1 && hs <= 1) StdDraw.pixel(x, y);
     StdDraw.offscreen_$LI$().rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(-degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(-degrees),
       xs,
       ys
     );
@@ -1835,7 +1833,7 @@ export class StdDraw
       null
     );
     StdDraw.offscreen_$LI$().rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(+degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(+degrees),
       xs,
       ys
     );
@@ -1853,8 +1851,8 @@ export class StdDraw
    * @param   scaledWidth the width of the scaled image (in screen coordinates)
    * @param   scaledHeight the height of the scaled image (in screen coordinates)
    * @param   degrees is the number of degrees to rotate counterclockwise
-   * @throws IllegalArgumentException if either {@code scaledWidth}
-   * or {@code scaledHeight} is negative
+   * @throws IllegalArgumentException if either `scaledWidth`
+   * or `scaledHeight` is negative
    * @throws IllegalArgumentException if the image filename is invalid
    */
   public static picture(
@@ -1969,13 +1967,13 @@ export class StdDraw
     const xs: number = StdDraw.scaleX(x);
     const ys: number = StdDraw.scaleY(y);
     StdDraw.offscreen_$LI$().rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(-degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(-degrees),
       xs,
       ys
     );
     StdDraw.text$double$double$java_lang_String(x, y, text);
     StdDraw.offscreen_$LI$().rotate(
-      /* toRadians */ (x => (x * Math.PI) / 180)(+degrees),
+      /* toRadians */ ((x) => (x * Math.PI) / 180)(+degrees),
       xs,
       ys
     );
@@ -1988,8 +1986,8 @@ export class StdDraw
    * @param   y the center <em>y</em>-coordinate of the text
    * @param   text the text to write
    * @param   degrees is the number of degrees to rotate counterclockwise
-   * @throws IllegalArgumentException if {@code text} is {@code null}
-   * @throws IllegalArgumentException if {@code x}, {@code y}, or {@code degrees} is either NaN or infinite
+   * @throws IllegalArgumentException if `text` is `null`
+   * @throws IllegalArgumentException if `x`, `y`, or `degrees` is either NaN or infinite
    */
   public static text(x?: any, y?: any, text?: any, degrees?: any): any {
     if (
@@ -2018,8 +2016,8 @@ export class StdDraw
    * @param   x the <em>x</em>-coordinate of the text
    * @param   y the <em>y</em>-coordinate of the text
    * @param   text the text
-   * @throws IllegalArgumentException if {@code text} is {@code null}
-   * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
+   * @throws IllegalArgumentException if `text` is `null`
+   * @throws IllegalArgumentException if `x` or `y` is either NaN or infinite
    */
   public static textLeft(x: number, y: number, text: string) {
     StdDraw.validate(x, 'x');
@@ -2044,8 +2042,8 @@ export class StdDraw
    * @param   x the <em>x</em>-coordinate of the text
    * @param   y the <em>y</em>-coordinate of the text
    * @param   text the text to write
-   * @throws IllegalArgumentException if {@code text} is {@code null}
-   * @throws IllegalArgumentException if {@code x} or {@code y} is either NaN or infinite
+   * @throws IllegalArgumentException if `text` is `null`
+   * @throws IllegalArgumentException if `x` or `y` is either NaN or infinite
    */
   public static textRight(x: number, y: number, text: string) {
     StdDraw.validate(x, 'x');
@@ -2117,8 +2115,8 @@ export class StdDraw
 
   /**
    * Enables double buffering. All subsequent calls to
-   * drawing methods such as {@code line()}, {@code circle()},
-   * and {@code square()} will be deferred until the next call
+   * drawing methods such as `line()}, `circle()`,
+   * and `square()` will be deferred until the next call
    * to show(). Useful for animations.
    */
   public static enableDoubleBuffering() {
@@ -2127,8 +2125,8 @@ export class StdDraw
 
   /**
    * Disables double buffering. All subsequent calls to
-   * drawing methods such as {@code line()}, {@code circle()},
-   * and {@code square()} will be displayed on screen when called.
+   * drawing methods such as `line()}, `circle()`,
+   * and `square()` will be displayed on screen when called.
    * This is the default.
    */
   public static disableDoubleBuffering() {
@@ -2138,10 +2136,10 @@ export class StdDraw
   /**
    * Saves the drawing to using the specified filename.
    * The supported image formats are JPEG and PNG;
-   * the filename suffix must be {@code .jpg} or {@code .png}.
+   * the filename suffix must be `.jpg` or `.png`.
    *
    * @param   filename the name of the file with one of the required suffixes
-   * @throws IllegalArgumentException if {@code filename} is {@code null}
+   * @throws IllegalArgumentException if `filename` is `null`
    */
   public static save(filename: string) {
     StdDraw.validateNotNull(filename, 'filename');
@@ -2222,7 +2220,7 @@ export class StdDraw
   /**
    * Returns true if the mouse is being pressed.
    *
-   * @return  {@code true} if the mouse is being pressed; {@code false} otherwise
+   * @return  `true` if the mouse is being pressed; `false` otherwise
    */
   public static isMousePressed(): boolean {
     {
@@ -2233,7 +2231,7 @@ export class StdDraw
   /**
    * Returns true if the mouse is being pressed.
    *
-   * @return  {@code true} if the mouse is being pressed; {@code false} otherwise
+   * @return  `true` if the mouse is being pressed; `false` otherwise
    * @deprecated replaced by {@link #isMousePressed()}
    */
   public static mousePressed(): boolean {
@@ -2329,8 +2327,8 @@ export class StdDraw
   /**
    * Returns true if the user has typed a key (that has not yet been processed).
    *
-   * @return  {@code true} if the user has typed a key (that has not yet been processed
-   * by {@link #nextKeyTyped()}; {@code false} otherwise
+   * @return  `true` if the user has typed a key (that has not yet been processed
+   * by {@link #nextKeyTyped()}; `false` otherwise
    */
   public static hasNextKeyTyped(): boolean {
     {
@@ -2343,7 +2341,7 @@ export class StdDraw
    * This method should be preceded by a call to {@link #hasNextKeyTyped()} to ensure
    * that there is a next key to process.
    * This method returns a Unicode character corresponding to the key
-   * typed (such as {@code 'a'} or {@code 'A'}).
+   * typed (such as `'a'} or `'A'`).
    * It cannot identify action keys (such as F1 and arrow keys)
    * or modifier keys (such as control).
    *
@@ -2353,9 +2351,7 @@ export class StdDraw
   public static nextKeyTyped(): string {
     {
       if (StdDraw.keysTyped_$LI$().isEmpty()) {
-        throw new Error(
-          'your program has already processed all keystrokes'
-        );
+        throw new Error('your program has already processed all keystrokes');
       }
       return String.fromCharCode(
         StdDraw.keysTyped_$LI$().remove(StdDraw.keysTyped_$LI$().size() - 1)
@@ -2372,8 +2368,8 @@ export class StdDraw
    * See {@link KeyEvent} for a description of key codes.
    *
    * @param   keycode the key to check if it is being pressed
-   * @return  {@code true} if {@code keycode} is currently being pressed;
-   * {@code false} otherwise
+   * @return  `true` if `keycode` is currently being pressed;
+   * `false` otherwise
    */
   public static isKeyPressed(keycode: number): boolean {
     {

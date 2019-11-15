@@ -3,7 +3,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code BinarySearch} class provides a static method for binary
+ * The `BinarySearch` class provides a static method for binary
  * searching for an integer in a sorted array of integers.
  * <p>
  * The <em>indexOf</em> operations takes logarithmic time in the worst case.
@@ -16,14 +16,12 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class BinarySearch {
-
-
   /**
    * Returns the index of the specified key in the specified array.
    *
    * @param   a the array of integers, must be sorted in ascending order
    * @param   key the search key
-   * @return  index of key in array {@code a} if present; {@code -1} otherwise
+   * @return  index of key in array `a` if present; `-1` otherwise
    */
   public static indexOf(a: number[], key: number): number {
     let lo = 0;
@@ -46,7 +44,7 @@ export class BinarySearch {
    *
    * @param   key the search key
    * @param   a the array of integers, must be sorted in ascending order
-   * @return  index of key in array {@code a} if present; {@code -1} otherwise
+   * @return  index of key in array `a` if present; `-1` otherwise
    * @deprecated Replaced by {@link #indexOf(int[], int)}.
    */
   public static rank(key: number, a: number[]): number {

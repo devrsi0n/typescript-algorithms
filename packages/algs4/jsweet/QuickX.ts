@@ -3,7 +3,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code QuickX} class provides static methods for sorting an array
+ * The `QuickX` class provides static methods for sorting an array
  * using an optimized version of quicksort (using Hoare's 2-way partitioning
  * algorithm, median-of-3 to choose the partitioning element, and cutoff
  * to insertion sort).
@@ -18,8 +18,6 @@ import { StdIn } from './StdIn';
  */
 export class QuickX {
   static INSERTION_SORT_CUTOFF = 8;
-
-
 
   public static sort$java_lang_Comparable_A(a: java.lang.Comparable<any>[]) {
     QuickX.sort$java_lang_Comparable_A$int$int(a, 0, a.length - 1);

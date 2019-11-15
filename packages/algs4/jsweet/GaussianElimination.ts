@@ -9,7 +9,7 @@ import { StdRandom } from './StdRandom';
  * @param   A the <em>m</em>-by-<em>n</em> constraint matrix
  * @param   b the length <em>m</em> right-hand-side vector
  * @throws IllegalArgumentException if the dimensions disagree, i.e.,
- * the length of {@code b} does not equal {@code m}
+ * the length of `b` does not equal `m`
  * @class
  * @author Robert Sedgewick
  */
@@ -96,10 +96,10 @@ export class GaussianElimination {
    * Returns a solution to the linear system of equations <em>Ax</em> = <em>b</em>.
    *
    * @return  a solution <em>x</em> to the linear system of equations
-   * <em>Ax</em> = <em>b</em>; {@code null} if no such solution
+   * <em>Ax</em> = <em>b</em>; `null` if no such solution
    */
   public primal(): number[] {
-    const x: number[] = (s => {
+    const x: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -139,8 +139,8 @@ export class GaussianElimination {
    * Returns true if there exists a solution to the linear system of
    * equations <em>Ax</em> = <em>b</em>.
    *
-   * @return  {@code true} if there exists a solution to the linear system
-   * of equations <em>Ax</em> = <em>b</em>; {@code false} otherwise
+   * @return  `true` if there exists a solution to the linear system
+   * of equations <em>Ax</em> = <em>b</em>; `false` otherwise
    */
   public isFeasible(): boolean {
     return this.primal() != null;
@@ -168,7 +168,7 @@ export class GaussianElimination {
   }
 
   /**
-   * Unit tests the {@code GaussianElimination} data type.
+   * Unit tests the `GaussianElimination` data type.
    * @param  name
    * @param  A
    * @param  b
@@ -272,7 +272,7 @@ export class GaussianElimination {
   }
 
   /**
-   * Unit tests the {@code GaussianElimination} data type.
+   * Unit tests the `GaussianElimination` data type.
    *
    * @param  args the command-line arguments
    */
@@ -305,11 +305,7 @@ export class GaussianElimination {
         A[i][j] = StdRandom.uniform$int(1000);
       }
     }
-    const b: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const b: number[] = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       b[i] = StdRandom.uniform$int(1000);
     }

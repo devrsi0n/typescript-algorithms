@@ -40,7 +40,7 @@ export class RedBlackBST<Key extends java.lang.Comparable<Key>, Value> {
 
   /**
    * Is this symbol table empty?
-   * @return  {@code true} if this symbol table is empty and {@code false} otherwise
+   * @return  `true` if this symbol table is empty and `false` otherwise
    */
   public isEmpty(): boolean {
     return this.root == null;
@@ -87,9 +87,9 @@ export class RedBlackBST<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Does this symbol table contain the given key?
    * @param  key the key
-   * @return  {@code true} if this symbol table contains {@code key} and
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if this symbol table contains `key` and
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: Key): boolean {
     return this.get(key) != null;
@@ -363,8 +363,7 @@ export class RedBlackBST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   public min$(): Key {
-    if (this.isEmpty())
-      throw new Error('calls min() with empty symbol table');
+    if (this.isEmpty()) throw new Error('calls min() with empty symbol table');
     return this.min$edu_princeton_cs_algs4_RedBlackBST_Node(this.root).key;
   }
 
@@ -386,8 +385,7 @@ export class RedBlackBST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   public max$(): Key {
-    if (this.isEmpty())
-      throw new Error('calls max() with empty symbol table');
+    if (this.isEmpty()) throw new Error('calls max() with empty symbol table');
     return this.max$edu_princeton_cs_algs4_RedBlackBST_Node(this.root).key;
   }
 
@@ -451,9 +449,7 @@ export class RedBlackBST<Key extends java.lang.Comparable<Key>, Value> {
   public ceiling$java_lang_Comparable(key: Key): Key {
     if (key == null) throw new Error('argument to ceiling() is null');
     if (this.isEmpty())
-      throw new Error(
-        'calls ceiling() with empty symbol table'
-      );
+      throw new Error('calls ceiling() with empty symbol table');
     const x: RedBlackBST.Node = this.ceiling(this.root, key);
     if (x == null) return null;
     return x.key;
@@ -649,10 +645,10 @@ export class RedBlackBST<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param   lo minimum endpoint
    * @param   hi maximum endpoint
-   * @return  the number of keys in the symbol table between {@code lo}
-   * (inclusive) and {@code hi} (inclusive)
-   * @throws IllegalArgumentException if either {@code lo} or {@code hi}
-   * is {@code null}
+   * @return  the number of keys in the symbol table between `lo`
+   * (inclusive) and `hi` (inclusive)
+   * @throws IllegalArgumentException if either `lo` or `hi`
+   * is `null`
    */
   public size(lo?: any, hi?: any): any {
     if ((lo != null || lo === null) && (hi != null || hi === null)) {
@@ -849,7 +845,7 @@ export class RedBlackBST<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   /**
-   * Unit tests the {@code RedBlackBST} data type.
+   * Unit tests the `RedBlackBST` data type.
    *
    * @param  args the command-line arguments
    */

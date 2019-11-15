@@ -5,7 +5,7 @@ import { AcyclicLP } from './AcyclicLP';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code CPM} class provides a client that solves the
+ * The `CPM` class provides a client that solves the
  * parallel precedence-constrained job scheduling problem
  * via the <em>critical path method</em>. It reduces the problem
  * to the longest-paths problem in edge-weighted DAGs.
@@ -29,8 +29,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class CPM {
-
-
   /**
    * Reads the precedence constraints from standard input
    * and prints a feasible schedule to standard output.

@@ -29,7 +29,9 @@ export class EulerianPath {
     }
     if (oddDegreeVertices > 2) return;
     if (s === -1) s = 0;
-    const adj: Queue<EulerianPath.Edge>[] = <Queue<EulerianPath.Edge>[]>(s => {
+    const adj: Queue<EulerianPath.Edge>[] = <Queue<EulerianPath.Edge>[]>((
+      s
+    ) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -84,7 +86,7 @@ export class EulerianPath {
    * Returns the sequence of vertices on an Eulerian path.
    *
    * @return  the sequence of vertices on an Eulerian path;
-   * {@code null} if no such path
+   * `null` if no such path
    */
   public path(): Iterable<number> {
     return this.__path;
@@ -93,8 +95,8 @@ export class EulerianPath {
   /**
    * Returns true if the graph has an Eulerian path.
    *
-   * @return  {@code true} if the graph has an Eulerian path;
-   * {@code false} otherwise
+   * @return  `true` if the graph has an Eulerian path;
+   * `false` otherwise
    */
   public hasEulerianPath(): boolean {
     return this.__path != null;
@@ -162,7 +164,7 @@ export class EulerianPath {
   }
 
   /**
-   * Unit tests the {@code EulerianPath} data type.
+   * Unit tests the `EulerianPath` data type.
    *
    * @param  args the command-line arguments
    */

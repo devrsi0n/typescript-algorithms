@@ -14,7 +14,7 @@
     "test": "jest",
     "build": "tsc",
     "watch": "tsc --watch",
-    "run-main": "node ./script/run-main.js",
+    "run-main": "node ./scripts/run-main.js",
     "prepublishOnly": "yarn run build && yarn test"
   },
   "devDependencies": {

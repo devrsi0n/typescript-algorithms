@@ -2,7 +2,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code MergeX} class provides static methods for sorting an
+ * The `MergeX` class provides static methods for sorting an
  * array using an optimized version of mergesort.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/22mergesort">Section 2.2</a> of
@@ -14,8 +14,6 @@ import { StdIn } from './StdIn';
  */
 export class MergeX {
   static CUTOFF = 7;
-
-
 
   private static merge$java_lang_Comparable_A$java_lang_Comparable_A$int$int$int(
     src: java.lang.Comparable<any>[],

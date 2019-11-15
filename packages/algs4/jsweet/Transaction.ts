@@ -7,9 +7,9 @@ import { StdOut } from './StdOut';
  * @param   who the person involved in this transaction
  * @param  {Date} when the date of this transaction
  * @param   amount the amount of this transaction
- * @throws IllegalArgumentException if {@code amount}
- * is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY},
- * or {@code Double.NEGATIVE_INFINITY}
+ * @throws IllegalArgumentException if `amount`
+ * is `Double.NaN`, `Double.POSITIVE_INFINITY`,
+ * or `Double.NEGATIVE_INFINITY`
  * @class
  * @author Robert Sedgewick
  */
@@ -36,7 +36,7 @@ export class Transaction implements java.lang.Comparable<Transaction> {
       (() => {
         if (
           /* isNaN */ isNaN(amount) ||
-          /* isInfinite */ (value =>
+          /* isInfinite */ ((value) =>
             Number.NEGATIVE_INFINITY === value ||
             Number.POSITIVE_INFINITY === value)(amount)
         )
@@ -65,7 +65,7 @@ export class Transaction implements java.lang.Comparable<Transaction> {
         this.__amount = Number.parseFloat(a[2]);
         if (
           /* isNaN */ isNaN(this.__amount) ||
-          /* isInfinite */ (value =>
+          /* isInfinite */ ((value) =>
             Number.NEGATIVE_INFINITY === value ||
             Number.POSITIVE_INFINITY === value)(this.__amount)
         )
@@ -107,12 +107,7 @@ export class Transaction implements java.lang.Comparable<Transaction> {
    * @return  a string representation of this transaction
    */
   public toString(): string {
-    return printf(
-      '%-10s %10s %8.2f',
-      this.__who,
-      this.__when,
-      this.__amount
-    );
+    return printf('%-10s %10s %8.2f', this.__who, this.__when, this.__amount);
   }
 
   /**
@@ -131,7 +126,7 @@ export class Transaction implements java.lang.Comparable<Transaction> {
    * Compares this transaction to the specified object.
    *
    * @param   other the other transaction
-   * @return  true if this transaction is equal to {@code other}; false otherwise
+   * @return  true if this transaction is equal to `other`; false otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -199,7 +194,7 @@ export class Transaction implements java.lang.Comparable<Transaction> {
   }
 
   /**
-   * Unit tests the {@code Transaction} data type.
+   * Unit tests the `Transaction` data type.
    *
    * @param  args the command-line arguments
    */
@@ -258,8 +253,6 @@ export namespace Transaction {
     public compare(v: Transaction, w: Transaction): number {
       return /* compareTo */ v.__who.localeCompare(w.__who);
     }
-
-
   }
   WhoOrder.__class = 'edu.princeton.cs.algs4.Transaction.WhoOrder';
   WhoOrder.__interfaces = ['java.util.Comparator'];
@@ -278,8 +271,6 @@ export namespace Transaction {
     public compare(v: Transaction, w: Transaction): number {
       return v.__when.compareTo(w.__when);
     }
-
-
   }
   WhenOrder.__class = 'edu.princeton.cs.algs4.Transaction.WhenOrder';
   WhenOrder.__interfaces = ['java.util.Comparator'];
@@ -298,8 +289,6 @@ export namespace Transaction {
     public compare(v: Transaction, w: Transaction): number {
       return /* compare */ v.__amount - w.__amount;
     }
-
-
   }
   HowMuchOrder.__class = 'edu.princeton.cs.algs4.Transaction.HowMuchOrder';
   HowMuchOrder.__interfaces = ['java.util.Comparator'];

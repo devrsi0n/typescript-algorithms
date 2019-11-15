@@ -16,8 +16,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class StdArrayIO {
-
-
   /**
    * Reads a 1D array of doubles from standard input and returns it.
    *
@@ -25,11 +23,7 @@ export class StdArrayIO {
    */
   public static readDouble1D(): number[] {
     const n: number = StdIn.readInt();
-    const a: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const a: number[] = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       {
         a[i] = StdIn.readDouble();
@@ -162,11 +156,7 @@ export class StdArrayIO {
    */
   public static readInt1D(): number[] {
     const n: number = StdIn.readInt();
-    const a: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    const a: number[] = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       {
         a[i] = StdIn.readInt();
@@ -242,7 +232,7 @@ export class StdArrayIO {
    */
   public static readBoolean1D(): boolean[] {
     const n: number = StdIn.readInt();
-    const a: boolean[] = (s => {
+    const a: boolean[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -318,7 +308,7 @@ export class StdArrayIO {
   }
 
   /**
-   * Unit tests {@code StdArrayIO}.
+   * Unit tests `StdArrayIO`.
    *
    * @param  args the command-line arguments
    */

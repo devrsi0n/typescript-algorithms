@@ -4,7 +4,7 @@ import ThreeSum from '../ThreeSumFast';
 import StdOut from '../StdOut';
 
 /**
- * The {@code DoublingTest} class provides a client for measuring
+ * The `DoublingTest` class provides a client for measuring
  * the running time of a method using a doubling test.
  * <p>
  * For additional documentation, see <a href="https://algs4.cs.princeton.edu/14analysis">Section 1.4</a>
@@ -15,10 +15,10 @@ export default class DoublingTest {
   static MAXIMUM_INTEGER = 1000000;
 
   /**
-   * Returns the amount of time to call {@code ThreeSum.count()} with <em>n</em>
+   * Returns the amount of time to call `ThreeSum.count()` with <em>n</em>
    * random 6-digit integers.
    * @param  n the number of integers
-   * @return  amount of time (in seconds) to call {@code ThreeSum.count()}
+   * @return  amount of time (in seconds) to call `ThreeSum.count()`
    * with <em>n</em> random 6-digit integers
    */
   public static timeTrial(n: number): number {
@@ -37,7 +37,7 @@ export default class DoublingTest {
   }
 
   /**
-   * Prints table of running times to call {@code ThreeSum.count()}
+   * Prints table of running times to call `ThreeSum.count()`
    * for arrays of size 250, 500, 1000, 2000, and so forth.
    *
    * @param  args the command-line arguments

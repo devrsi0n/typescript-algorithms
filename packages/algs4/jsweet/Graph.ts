@@ -4,11 +4,11 @@ import { Stack } from './Stack';
 import { StdOut } from './StdOut';
 
 /**
- * Initializes an empty graph with {@code V} vertices and 0 edges.
+ * Initializes an empty graph with `V` vertices and 0 edges.
  * param V the number of vertices
  *
  * @param   V number of vertices
- * @throws IllegalArgumentException if {@code V < 0}
+ * @throws IllegalArgumentException if `V < 0`
  * @class
  * @author Robert Sedgewick
  */
@@ -42,7 +42,7 @@ export class Graph {
             throw new Error(
               'number of vertices in a Graph must be nonnegative'
             );
-          this.__adj = <Bag<number>[]>(s => {
+          this.__adj = <Bag<number>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -84,7 +84,7 @@ export class Graph {
           if (V < 0) throw new Error('Number of vertices must be nonnegative');
           this.__V = V;
           this.__E = 0;
-          this.__adj = <Bag<number>[]>(s => {
+          this.__adj = <Bag<number>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -129,7 +129,7 @@ export class Graph {
         if (V < 0) throw new Error('Number of vertices must be nonnegative');
         this.__V = V;
         this.__E = 0;
-        this.__adj = <Bag<number>[]>(s => {
+        this.__adj = <Bag<number>[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -171,7 +171,7 @@ export class Graph {
    *
    * @param   v one vertex in the edge
    * @param   w the other vertex in the edge
-   * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
+   * @throws IllegalArgumentException unless both `0 <= v < V` and `0 <= w < V`
    */
   public addEdge(v: number, w: number) {
     this.validateVertex(v);
@@ -182,11 +182,11 @@ export class Graph {
   }
 
   /**
-   * Returns the vertices adjacent to vertex {@code v}.
+   * Returns the vertices adjacent to vertex `v`.
    *
    * @param   v the vertex
-   * @return  the vertices adjacent to vertex {@code v}, as an iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the vertices adjacent to vertex `v`, as an iterable
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public adj(v: number): Iterable<number> {
     this.validateVertex(v);
@@ -194,11 +194,11 @@ export class Graph {
   }
 
   /**
-   * Returns the degree of vertex {@code v}.
+   * Returns the degree of vertex `v`.
    *
    * @param   v the vertex
-   * @return  the degree of vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the degree of vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public degree(v: number): number {
     this.validateVertex(v);
@@ -212,7 +212,7 @@ export class Graph {
    * followed by the <em>V</em> adjacency lists
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     s.append(`${this.__V} vertices, ${this.__E} edges ${Graph.NEWLINE_$LI$()}`);
     for (let v = 0; v < this.__V; v++) {
       {
@@ -230,7 +230,7 @@ export class Graph {
   }
 
   /**
-   * Unit tests the {@code Graph} data type.
+   * Unit tests the `Graph` data type.
    *
    * @param  args the command-line arguments
    */

@@ -43,7 +43,7 @@ export class ResizingArrayQueue<Item> implements Iterable<Item> {
   }
 
   resize(capacity: number) {
-    const temp: Item[] = <Item[]>(s => {
+    const temp: Item[] = <Item[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -105,7 +105,7 @@ export class ResizingArrayQueue<Item> implements Iterable<Item> {
   }
 
   /**
-   * Unit tests the {@code ResizingArrayQueue} data type.
+   * Unit tests the `ResizingArrayQueue` data type.
    *
    * @param  args the command-line arguments
    */

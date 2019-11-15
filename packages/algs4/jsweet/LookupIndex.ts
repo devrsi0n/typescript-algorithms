@@ -5,7 +5,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code LookupIndex} class provides a data-driven client for reading in a
+ * The `LookupIndex` class provides a data-driven client for reading in a
  * key-value pairs from a file; then, printing the values corresponding to the
  * keys found on standard input. Keys are strings; values are lists of strings.
  * The separating delimiter is taken as a command-line argument. This client
@@ -19,8 +19,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class LookupIndex {
-
-
   public static main(args: string[]) {
     const filename: string = args[0];
     const separator: string = args[1];

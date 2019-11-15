@@ -5,10 +5,10 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Computes the shortest path from {@code s} and every other vertex in graph {@code G}.
+ * Computes the shortest path from `s` and every other vertex in graph `G`.
  * @param {Digraph} G the digraph
  * @param  s the source vertex
- * @throws IllegalArgumentException unless {@code 0 <= v < V}
+ * @throws IllegalArgumentException unless `0 <= v < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -16,8 +16,7 @@ export class BreadthFirstDirectedPaths {
   static INFINITY: number;
   public static INFINITY_$LI$(): number {
     if (BreadthFirstDirectedPaths.INFINITY == null)
-      BreadthFirstDirectedPaths.INFINITY =
-        Number.MAX_VALUE;
+      BreadthFirstDirectedPaths.INFINITY = Number.MAX_VALUE;
     return BreadthFirstDirectedPaths.INFINITY;
   }
 
@@ -35,8 +34,7 @@ export class BreadthFirstDirectedPaths {
           sources.__interfaces.indexOf('Iterable') >= 0) ||
           (sources.constructor != null &&
             sources.constructor.__interfaces != null &&
-            sources.constructor.__interfaces.indexOf('Iterable') >=
-              0))) ||
+            sources.constructor.__interfaces.indexOf('Iterable') >= 0))) ||
         sources === null)
     ) {
       const __args = arguments;
@@ -47,17 +45,17 @@ export class BreadthFirstDirectedPaths {
       if (this.edgeTo === undefined) this.edgeTo = null;
       if (this.__distTo === undefined) this.__distTo = null;
       (() => {
-        this.marked = (s => {
+        this.marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
         })(G.V());
-        this.__distTo = (s => {
+        this.__distTo = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
-        this.edgeTo = (s => {
+        this.edgeTo = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -81,17 +79,17 @@ export class BreadthFirstDirectedPaths {
       if (this.edgeTo === undefined) this.edgeTo = null;
       if (this.__distTo === undefined) this.__distTo = null;
       (() => {
-        this.marked = (s => {
+        this.marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
         })(G.V());
-        this.__distTo = (s => {
+        this.__distTo = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
-        this.edgeTo = (s => {
+        this.edgeTo = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -167,8 +165,7 @@ export class BreadthFirstDirectedPaths {
           sources.__interfaces.indexOf('Iterable') >= 0) ||
           (sources.constructor != null &&
             sources.constructor.__interfaces != null &&
-            sources.constructor.__interfaces.indexOf('Iterable') >=
-              0))) ||
+            sources.constructor.__interfaces.indexOf('Iterable') >= 0))) ||
         sources === null)
     ) {
       return <any>(
@@ -185,10 +182,10 @@ export class BreadthFirstDirectedPaths {
   }
 
   /**
-   * Is there a directed path from the source {@code s} (or sources) to vertex {@code v}?
+   * Is there a directed path from the source `s` (or sources) to vertex `v`?
    * @param  v the vertex
-   * @return  {@code true} if there is a directed path, {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if there is a directed path, `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public hasPathTo(v: number): boolean {
     this.validateVertex(v);
@@ -196,11 +193,11 @@ export class BreadthFirstDirectedPaths {
   }
 
   /**
-   * Returns the number of edges in a shortest path from the source {@code s}
-   * (or sources) to vertex {@code v}?
+   * Returns the number of edges in a shortest path from the source `s`
+   * (or sources) to vertex `v`?
    * @param  v the vertex
    * @return  the number of edges in a shortest path
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public distTo(v: number): number {
     this.validateVertex(v);
@@ -208,11 +205,11 @@ export class BreadthFirstDirectedPaths {
   }
 
   /**
-   * Returns a shortest path from {@code s} (or sources) to {@code v}, or
-   * {@code null} if no such path.
+   * Returns a shortest path from `s` (or sources) to `v`, or
+   * `null` if no such path.
    * @param  v the vertex
    * @return  the sequence of vertices on a shortest path, as an Iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public pathTo(v: number): Iterable<number> {
     this.validateVertex(v);
@@ -248,7 +245,7 @@ export class BreadthFirstDirectedPaths {
   }
 
   /**
-   * Unit tests the {@code BreadthFirstDirectedPaths} data type.
+   * Unit tests the `BreadthFirstDirectedPaths` data type.
    *
    * @param  args the command-line arguments
    */

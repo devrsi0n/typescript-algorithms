@@ -28,12 +28,12 @@ export class TwoPersonZeroSumGame {
     if (this.constant === undefined) this.constant = 0;
     this.m = payoff.length;
     this.n = payoff[0].length;
-    const c: number[] = (s => {
+    const c: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(this.n);
-    const b: number[] = (s => {
+    const b: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -299,7 +299,7 @@ export class TwoPersonZeroSumGame {
   }
 
   /**
-   * Unit tests the {@code ZeroSumGameToLP} data type.
+   * Unit tests the `ZeroSumGameToLP` data type.
    *
    * @param  args the command-line arguments
    */

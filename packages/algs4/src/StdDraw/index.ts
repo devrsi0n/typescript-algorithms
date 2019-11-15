@@ -358,8 +358,8 @@ export default class StdDraw {
     ctx.beginPath();
     const [[firstX, firstY], ...points] = x.map((iX, index) => [iX, y[index]]);
     ctx.moveTo(firstX, firstY);
-    for (const [x, y] of points) {
-      ctx.lineTo(x, y);
+    for (const [_x, _y] of points) {
+      ctx.lineTo(_x, _y);
     }
     ctx.closePath();
   }

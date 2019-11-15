@@ -5,7 +5,7 @@ import { BreadthFirstPaths } from './BreadthFirstPaths';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code DegreesOfSeparation} class provides a client for finding
+ * The `DegreesOfSeparation` class provides a client for finding
  * the degree of separation between one distinguished individual and
  * every other individual in a social network.
  * As an example, if the social network consists of actors in which
@@ -29,8 +29,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class DegreesOfSeparation {
-
-
   /**
    * Reads in a social network from a file, and then repeatedly reads in
    * individuals from standard input and prints out their degrees of

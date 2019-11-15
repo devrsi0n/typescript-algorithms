@@ -99,10 +99,10 @@ export class GaussJordanElimination {
    * Returns a solution to the linear system of equations <em>Ax</em> = <em>b</em>.
    *
    * @return  a solution <em>x</em> to the linear system of equations
-   * <em>Ax</em> = <em>b</em>; {@code null} if no such solution
+   * <em>Ax</em> = <em>b</em>; `null` if no such solution
    */
   public primal(): number[] {
-    const x: number[] = (s => {
+    const x: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -125,10 +125,10 @@ export class GaussJordanElimination {
    * <em>yb</em> &ne; 0.
    *
    * @return  a solution <em>y</em> to the linear system of equations
-   * <em>yA</em> = 0, <em>yb</em> &ne; 0; {@code null} if no such solution
+   * <em>yA</em> = 0, <em>yb</em> &ne; 0; `null` if no such solution
    */
   public dual(): number[] {
-    const y: number[] = (s => {
+    const y: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -153,8 +153,8 @@ export class GaussJordanElimination {
    * Returns true if there exists a solution to the linear system of
    * equations <em>Ax</em> = <em>b</em>.
    *
-   * @return  {@code true} if there exists a solution to the linear system
-   * of equations <em>Ax</em> = <em>b</em>; {@code false} otherwise
+   * @return  `true` if there exists a solution to the linear system
+   * of equations <em>Ax</em> = <em>b</em>; `false` otherwise
    */
   public isFeasible(): boolean {
     return this.primal() != null;
@@ -311,7 +311,7 @@ export class GaussJordanElimination {
   }
 
   /**
-   * Unit tests the {@code GaussJordanElimination} data type.
+   * Unit tests the `GaussJordanElimination` data type.
    *
    * @param  args the command-line arguments
    */
@@ -341,11 +341,7 @@ export class GaussJordanElimination {
         A[i][j] = StdRandom.uniform$int(1000);
       }
     }
-    let b: number[] = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    let b: number[] = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       b[i] = StdRandom.uniform$int(1000);
     }
@@ -378,11 +374,7 @@ export class GaussJordanElimination {
         }
       }
     }
-    b = (s => {
-      const a = [];
-      while (s-- > 0) a.push(0);
-      return a;
-    })(n);
+    b = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       b[i] = StdRandom.uniform$int(1000);
     }

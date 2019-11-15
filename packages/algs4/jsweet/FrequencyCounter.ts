@@ -3,7 +3,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code FrequencyCounter} class provides a client for
+ * The `FrequencyCounter` class provides a client for
  * reading in a sequence of words and printing a word (exceeding
  * a given length) that occurs most frequently. It is useful as
  * a test client for various symbol table implementations.
@@ -16,8 +16,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class FrequencyCounter {
-
-
   /**
    * Reads in a command-line integer and sequence of words from
    * standard input and prints out a word (whose length exceeds

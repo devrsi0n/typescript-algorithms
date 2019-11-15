@@ -2,7 +2,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * Initializes a suffix array for the given {@code text} string.
+ * Initializes a suffix array for the given `text` string.
  * @param  text the input string
  * @class
  */
@@ -12,7 +12,7 @@ export class SuffixArray {
   public constructor(text: string) {
     if (this.suffixes === undefined) this.suffixes = null;
     const n: number = text.length;
-    this.suffixes = (s => {
+    this.suffixes = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -33,10 +33,10 @@ export class SuffixArray {
 
   /**
    * Returns the index into the original string of the <em>i</em>th smallest suffix.
-   * That is, {@code text.substring(sa.index(i))} is the <em>i</em>th smallest suffix.
+   * That is, `text.substring(sa.index(i))` is the <em>i</em>th smallest suffix.
    * @param  i an integer between 0 and <em>n</em>-1
    * @return  the index into the original string of the <em>i</em>th smallest suffix
-   * @throws Error unless {@code 0 <= i < n}
+   * @throws Error unless `0 <= i < n`
    */
   public index(i: number): number {
     if (i < 0 || i >= this.suffixes.length) throw new Error();
@@ -49,7 +49,7 @@ export class SuffixArray {
    * @param  i an integer between 1 and <em>n</em>-1
    * @return  the length of the longest common prefix of the <em>i</em>th
    * smallest suffix and the <em>i</em>-1st smallest suffix.
-   * @throws Error unless {@code 1 <= i < n}
+   * @throws Error unless `1 <= i < n`
    */
   public lcp(i: number): number {
     if (i < 1 || i >= this.suffixes.length) throw new Error();
@@ -61,10 +61,12 @@ export class SuffixArray {
     for (let i = 0; i < n; i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             s.charAt(i)
           ) !=
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(t.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            t.charAt(i)
+          )
         )
           return i;
       }
@@ -76,7 +78,7 @@ export class SuffixArray {
    * Returns the <em>i</em>th smallest suffix as a string.
    * @param  i the index
    * @return  the <em>i</em> smallest suffix as a string
-   * @throws Error unless {@code 0 <= i < n}
+   * @throws Error unless `0 <= i < n`
    */
   public select(i: number): string {
     if (i < 0 || i >= this.suffixes.length) throw new Error();
@@ -84,11 +86,11 @@ export class SuffixArray {
   }
 
   /**
-   * Returns the number of suffixes strictly less than the {@code query} string.
-   * We note that {@code rank(select(i))} equals {@code i} for each {@code i}
+   * Returns the number of suffixes strictly less than the `query` string.
+   * We note that `rank(select(i))` equals `i` for each `i`
    * between 0 and <em>n</em>-1.
    * @param  query the query string
-   * @return  the number of suffixes strictly less than {@code query}
+   * @return  the number of suffixes strictly less than `query`
    */
   public rank(query: string): number {
     let lo = 0;
@@ -110,19 +112,19 @@ export class SuffixArray {
     for (let i = 0; i < n; i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             query.charAt(i)
           ) <
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             suffix.charAt(i)
           )
         )
           return -1;
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             query.charAt(i)
           ) >
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             suffix.charAt(i)
           )
         )
@@ -133,7 +135,7 @@ export class SuffixArray {
   }
 
   /**
-   * Unit tests the {@code SuffixArray} data type.
+   * Unit tests the `SuffixArray` data type.
    *
    * @param  args the command-line arguments
    */
@@ -188,19 +190,19 @@ export namespace SuffixArray {
       for (let i = 0; i < n; i++) {
         {
           if (
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               this.charAt(i)
             ) <
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               that.charAt(i)
             )
           )
             return -1;
           if (
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               this.charAt(i)
             ) >
-            (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
               that.charAt(i)
             )
           )

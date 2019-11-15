@@ -3,11 +3,11 @@ import { StdRandom } from './StdRandom';
 import { StdOut } from './StdOut';
 
 /**
- * Initializes a random edge-weighted digraph with {@code V} vertices and <em>E</em> edges.
+ * Initializes a random edge-weighted digraph with `V` vertices and <em>E</em> edges.
  * @param  V the number of vertices
  * @param  E the number of edges
- * @throws IllegalArgumentException if {@code V < 0}
- * @throws IllegalArgumentException if {@code E < 0}
+ * @throws IllegalArgumentException if `V < 0`
+ * @throws IllegalArgumentException if `E < 0`
  * @class
  * @author Robert Sedgewick
  */
@@ -119,7 +119,7 @@ export class AdjMatrixEdgeWeightedDigraph {
   }
 
   /**
-   * Adds the directed edge {@code e} to the edge-weighted digraph (if there
+   * Adds the directed edge `e` to the edge-weighted digraph (if there
    * is not already an edge with the same endpoints).
    * @param {DirectedEdge} e the edge
    */
@@ -135,10 +135,10 @@ export class AdjMatrixEdgeWeightedDigraph {
   }
 
   /**
-   * Returns the directed edges incident from vertex {@code v}.
+   * Returns the directed edges incident from vertex `v`.
    * @param  v the vertex
-   * @return  the directed edges incident from vertex {@code v} as an Iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the directed edges incident from vertex `v` as an Iterable
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public adj(v: number): Iterable<DirectedEdge> {
     this.validateVertex(v);
@@ -177,7 +177,7 @@ export class AdjMatrixEdgeWeightedDigraph {
   }
 
   /**
-   * Unit tests the {@code AdjMatrixEdgeWeightedDigraph} data type.
+   * Unit tests the `AdjMatrixEdgeWeightedDigraph` data type.
    *
    * @param  args the command-line arguments
    */

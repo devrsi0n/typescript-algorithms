@@ -1,11 +1,11 @@
 /**
- * Creates a {@code width}-by-{@code height} picture, with {@code width} columns
- * and {@code height} rows, where each pixel is black.
+ * Creates a `width`-by-`height` picture, with `width` columns
+ * and `height` rows, where each pixel is black.
  *
  * @param  width the width of the picture
  * @param  height the height of the picture
- * @throws IllegalArgumentException if {@code width} is negative or zero
- * @throws IllegalArgumentException if {@code height} is negative or zero
+ * @throws IllegalArgumentException if `width` is negative or zero
+ * @throws IllegalArgumentException if `height` is negative or zero
  * @class
  * @author Robert Sedgewick
  */
@@ -165,7 +165,7 @@ export class Picture implements ActionListener {
    * Returns a {@link JLabel} containing this picture, for embedding in a {@link JPanel},
    * {@link JFrame} or other GUI widget.
    *
-   * @return {JLabel} the {@code JLabel}
+   * @return {JLabel} the `JLabel`
    */
   public getJLabel(): JLabel {
     if (this.image == null) return null;
@@ -251,12 +251,12 @@ export class Picture implements ActionListener {
   }
 
   /**
-   * Returns the color of pixel ({@code col}, {@code row}) as a {@link java.awt.Color}.
+   * Returns the color of pixel (`col`, `row`) as a {@link java.awt.Color}.
    *
    * @param  col the column index
    * @param  row the row index
-   * @return {Color} the color of pixel ({@code col}, {@code row})
-   * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+   * @return {Color} the color of pixel (`col`, `row`)
+   * @throws IllegalArgumentException unless both `0 <= col < width` and `0 <= row < height`
    */
   public get(col: number, row: number): Color {
     this.validateColumnIndex(col);
@@ -266,14 +266,14 @@ export class Picture implements ActionListener {
   }
 
   /**
-   * Returns the color of pixel ({@code col}, {@code row}) as an {@code int}.
+   * Returns the color of pixel (`col`, `row`) as an `int`.
    * Using this method can be more efficient than {@link #get(int, int)} because
-   * it does not create a {@code Color} object.
+   * it does not create a `Color` object.
    *
    * @param  col the column index
    * @param  row the row index
-   * @return  the integer representation of the color of pixel ({@code col}, {@code row})
-   * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+   * @return  the integer representation of the color of pixel (`col`, `row`)
+   * @throws IllegalArgumentException unless both `0 <= col < width` and `0 <= row < height`
    */
   public getRGB(col: number, row: number): number {
     this.validateColumnIndex(col);
@@ -283,13 +283,13 @@ export class Picture implements ActionListener {
   }
 
   /**
-   * Sets the color of pixel ({@code col}, {@code row}) to given color.
+   * Sets the color of pixel (`col`, `row`) to given color.
    *
    * @param  col the column index
    * @param  row the row index
    * @param {Color} color the color
-   * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
-   * @throws IllegalArgumentException if {@code color} is {@code null}
+   * @throws IllegalArgumentException unless both `0 <= col < width` and `0 <= row < height`
+   * @throws IllegalArgumentException if `color` is `null`
    */
   public set(col: number, row: number, color: Color) {
     this.validateColumnIndex(col);
@@ -300,12 +300,12 @@ export class Picture implements ActionListener {
   }
 
   /**
-   * Sets the color of pixel ({@code col}, {@code row}) to given color.
+   * Sets the color of pixel (`col`, `row`) to given color.
    *
    * @param  col the column index
    * @param  row the row index
    * @param  rgb the integer representation of the color
-   * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+   * @throws IllegalArgumentException unless both `0 <= col < width` and `0 <= row < height`
    */
   public setRGB(col: number, row: number, rgb: number) {
     this.validateColumnIndex(col);
@@ -318,8 +318,8 @@ export class Picture implements ActionListener {
    * Returns true if this picture is equal to the argument picture.
    *
    * @param  other the other picture
-   * @return  {@code true} if this picture is the same dimension as {@code other}
-   * and if all pixels have the same color; {@code false} otherwise
+   * @return  `true` if this picture is the same dimension as `other`
+   * and if all pixels have the same color; `false` otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -345,7 +345,7 @@ export class Picture implements ActionListener {
    * @return  a string representation of this picture
    */
   public toString(): string {
-    const sb= new String();
+    const sb = new String();
     sb.append(
       `${this.__width}-by-${this.__height} picture (RGB values given in hex)\n`
     );
@@ -356,9 +356,7 @@ export class Picture implements ActionListener {
             let rgb = 0;
             if (this.isOriginUpperLeft) rgb = this.image.getRGB(col, row);
             else rgb = this.image.getRGB(col, this.__height - row - 1);
-            sb.append(
-              printf('#%06X ', rgb & 16777215)
-            );
+            sb.append(printf('#%06X ', rgb & 16777215));
           }
         }
         sb.append('\n');
@@ -390,7 +388,7 @@ export class Picture implements ActionListener {
    * The filetype extension must be either .png or .jpg.
    *
    * @param  name the name of the file
-   * @throws IllegalArgumentException if {@code name} is {@code null}
+   * @throws IllegalArgumentException if `name` is `null`
    */
   public save(name?: any): any {
     if (typeof name === 'string' || name === null) {
@@ -450,7 +448,7 @@ export class Picture implements ActionListener {
   }
 
   /**
-   * Unit tests this {@code Picture} data type.
+   * Unit tests this `Picture` data type.
    * Reads a picture specified by the command-line argument,
    * and shows it in a window on the screen.
    *

@@ -238,7 +238,8 @@ function elementContainsSelection(el) {
       }
       return true;
     }
-  } else if ((sel = document.selection) && sel.type !== 'Control') {
+  } else if (document.selection && sel.type !== 'Control') {
+    sel = document.selection;
     return isOrContains(sel.createRange().parentElement(), el);
   }
   return false;

@@ -4,7 +4,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * Initializes an empty symbol table with {@code m} chains.
+ * Initializes an empty symbol table with `m` chains.
  * @param  m the initial number of chains
  * @class
  * @author Robert Sedgewick
@@ -29,7 +29,7 @@ export class SeparateChainingHashST<Key, Value> {
       if (this.st === undefined) this.st = null;
       (() => {
         this.m = m;
-        this.st = <SequentialSearchST<Key, Value>[]>(s => {
+        this.st = <SequentialSearchST<Key, Value>[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -51,7 +51,7 @@ export class SeparateChainingHashST<Key, Value> {
         if (this.st === undefined) this.st = null;
         (() => {
           this.m = m;
-          this.st = <SequentialSearchST<Key, Value>[]>(s => {
+          this.st = <SequentialSearchST<Key, Value>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -115,8 +115,8 @@ export class SeparateChainingHashST<Key, Value> {
   /**
    * Returns true if this symbol table is empty.
    *
-   * @return  {@code true} if this symbol table is empty;
-   * {@code false} otherwise
+   * @return  `true` if this symbol table is empty;
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return this.size() === 0;
@@ -126,9 +126,9 @@ export class SeparateChainingHashST<Key, Value> {
    * Returns true if this symbol table contains the specified key.
    *
    * @param   key the key
-   * @return  {@code true} if this symbol table contains {@code key};
-   * {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if this symbol table contains `key`;
+   * `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: Key): boolean {
     if (key == null) throw new Error('argument to contains() is null');
@@ -139,9 +139,9 @@ export class SeparateChainingHashST<Key, Value> {
    * Returns the value associated with the specified key in this symbol table.
    *
    * @param   key the key
-   * @return  the value associated with {@code key} in the symbol table;
-   * {@code null} if no such value
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  the value associated with `key` in the symbol table;
+   * `null` if no such value
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public get(key: Key): Value {
     if (key == null) throw new Error('argument to get() is null');
@@ -153,11 +153,11 @@ export class SeparateChainingHashST<Key, Value> {
    * Inserts the specified key-value pair into the symbol table, overwriting the old
    * value with the new value if the symbol table already contains the specified key.
    * Deletes the specified key (and its associated value) from this symbol table
-   * if the specified value is {@code null}.
+   * if the specified value is `null`.
    *
    * @param   key the key
    * @param   val the value
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public put(key: Key, val: Value) {
     if (key == null) throw new Error('first argument to put() is null');
@@ -176,7 +176,7 @@ export class SeparateChainingHashST<Key, Value> {
    * (if the key is in this symbol table).
    *
    * @param   key the key
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public delete(key: Key) {
     if (key == null) throw new Error('argument to delete() is null');
@@ -205,7 +205,7 @@ export class SeparateChainingHashST<Key, Value> {
   }
 
   /**
-   * Unit tests the {@code SeparateChainingHashST} data type.
+   * Unit tests the `SeparateChainingHashST` data type.
    *
    * @param  args the command-line arguments
    */

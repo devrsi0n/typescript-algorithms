@@ -3,7 +3,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code Quick3string} class provides static methods for sorting an
+ * The `Quick3string` class provides static methods for sorting an
  * array of strings using 3-way radix quicksort.
  * <p>
  * For additional documentation,
@@ -16,8 +16,6 @@ import { StdOut } from './StdOut';
  */
 export class Quick3string {
   static CUTOFF = 15;
-
-
 
   public static sort$java_lang_String_A(a: string[]) {
     StdRandom.shuffle$java_lang_Object_A(a);
@@ -107,17 +105,21 @@ export class Quick3string {
     for (let i: number = d; i < Math.min(v.length, w.length); i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) <
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return true;
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) >
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return false;
       }

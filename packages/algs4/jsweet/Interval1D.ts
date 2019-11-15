@@ -6,9 +6,9 @@ import { StdOut } from './StdOut';
  * @param   min the smaller endpoint
  * @param   max the larger endpoint
  * @throws IllegalArgumentException if the min endpoint is greater than the max endpoint
- * @throws IllegalArgumentException if either {@code min} or {@code max}
- * is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
- * {@code Double.NEGATIVE_INFINITY}
+ * @throws IllegalArgumentException if either `min` or `max`
+ * is `Double.NaN`, `Double.POSITIVE_INFINITY` or
+ * `Double.NEGATIVE_INFINITY`
  * @class
  * @author Robert Sedgewick
  */
@@ -57,10 +57,10 @@ export class Interval1D {
     if (this.__min === undefined) this.__min = 0;
     if (this.__max === undefined) this.__max = 0;
     if (
-      /* isInfinite */ (value =>
+      /* isInfinite */ ((value) =>
         Number.NEGATIVE_INFINITY === value ||
         Number.POSITIVE_INFINITY === value)(min) ||
-      /* isInfinite */ (value =>
+      /* isInfinite */ ((value) =>
         Number.NEGATIVE_INFINITY === value ||
         Number.POSITIVE_INFINITY === value)(max)
     )
@@ -116,8 +116,8 @@ export class Interval1D {
    * Returns true if this interval intersects the specified interval.
    *
    * @param  {Interval1D} that the other interval
-   * @return  {@code true} if this interval intersects the argument interval;
-   * {@code false} otherwise
+   * @return  `true` if this interval intersects the argument interval;
+   * `false` otherwise
    */
   public intersects(that: Interval1D): boolean {
     if (this.__max < that.__min) return false;
@@ -129,8 +129,8 @@ export class Interval1D {
    * Returns true if this interval contains the specified value.
    *
    * @param  x the value
-   * @return  {@code true} if this interval contains the value {@code x};
-   * {@code false} otherwise
+   * @return  `true` if this interval contains the value `x`;
+   * `false` otherwise
    */
   public contains(x: number): boolean {
     return this.__min <= x && x <= this.__max;
@@ -158,8 +158,8 @@ export class Interval1D {
    * Compares this transaction to the specified object.
    *
    * @param   other the other interval
-   * @return  {@code true} if this interval equals the other interval;
-   * {@code false} otherwise
+   * @return  `true` if this interval equals the other interval;
+   * `false` otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -205,7 +205,7 @@ export class Interval1D {
   }
 
   /**
-   * Unit tests the {@code Interval1D} data type.
+   * Unit tests the `Interval1D` data type.
    *
    * @param  args the command-line arguments
    */
@@ -251,8 +251,6 @@ export namespace Interval1D {
       if (a.__max > b.__max) return +1;
       return 0;
     }
-
-
   }
   MinEndpointComparator.__class =
     'edu.princeton.cs.algs4.Interval1D.MinEndpointComparator';
@@ -266,8 +264,6 @@ export namespace Interval1D {
       if (a.__min > b.__min) return +1;
       return 0;
     }
-
-
   }
   MaxEndpointComparator.__class =
     'edu.princeton.cs.algs4.Interval1D.MaxEndpointComparator';
@@ -281,8 +277,6 @@ export namespace Interval1D {
       if (alen > blen) return +1;
       return 0;
     }
-
-
   }
   LengthComparator.__class =
     'edu.princeton.cs.algs4.Interval1D.LengthComparator';

@@ -5,7 +5,7 @@ import { BellmanFordSP } from './BellmanFordSP';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code Arbitrage} class provides a client that finds an arbitrage
+ * The `Arbitrage` class provides a client that finds an arbitrage
  * opportunity in a currency exchange table by constructing a
  * complete-digraph representation of the exchange table and then finding
  * a negative cycle in the digraph.
@@ -24,8 +24,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class Arbitrage {
-
-
   /**
    * Reads the currency exchange table from standard input and
    * prints an arbitrage opportunity to standard output (if one exists).
@@ -34,7 +32,7 @@ export class Arbitrage {
    */
   public static main(args: string[]) {
     const V: number = StdIn.readInt();
-    const name: string[] = (s => {
+    const name: string[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

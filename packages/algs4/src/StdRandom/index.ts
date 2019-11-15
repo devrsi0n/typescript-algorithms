@@ -74,7 +74,7 @@ export default class StdRandom {
       x = StdRandom.uniform(-1.0, 1.0);
       y = StdRandom.uniform(-1.0, 1.0);
       r = x * x + y * y;
-    } while (r >= 1 || r == 0);
+    } while (r >= 1 || r === 0);
     const result = x * Math.sqrt((-2 * Math.log(r)) / r);
     if (typeof mu === 'number' && typeof sigma === 'number') {
       return mu + sigma * result;

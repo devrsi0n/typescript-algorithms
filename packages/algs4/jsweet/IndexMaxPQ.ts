@@ -2,11 +2,11 @@ import { StdOut } from './StdOut';
 import { StdRandom } from './StdRandom';
 
 /**
- * Initializes an empty indexed priority queue with indices between {@code 0}
- * and {@code maxN - 1}.
+ * Initializes an empty indexed priority queue with indices between `0`
+ * and `maxN - 1`.
  *
- * @param   maxN the keys on this priority queue are index from {@code 0} to {@code maxN - 1}
- * @throws IllegalArgumentException if {@code maxN < 0}
+ * @param   maxN the keys on this priority queue are index from `0` to `maxN - 1`
+ * @throws IllegalArgumentException if `maxN < 0`
  * @class
  * @author Robert Sedgewick
  */
@@ -27,17 +27,17 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
     if (this.keys === undefined) this.keys = null;
     if (maxN < 0) throw new Error();
     this.n = 0;
-    this.keys = <Key[]>(s => {
+    this.keys = <Key[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
     })(maxN + 1);
-    this.pq = (s => {
+    this.pq = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(maxN + 1);
-    this.qp = (s => {
+    this.qp = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -50,20 +50,20 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Returns true if this priority queue is empty.
    *
-   * @return  {@code true} if this priority queue is empty;
-   * {@code false} otherwise
+   * @return  `true` if this priority queue is empty;
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return this.n === 0;
   }
 
   /**
-   * Is {@code i} an index on this priority queue?
+   * Is `i` an index on this priority queue?
    *
    * @param   i an index
-   * @return  {@code true} if {@code i} is an index on this priority queue;
-   * {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+   * @return  `true` if `i` is an index on this priority queue;
+   * `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= i < maxN`
    */
   public contains(i: number): boolean {
     return this.qp[i] !== -1;
@@ -82,10 +82,10 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
    * Associate key with index i.
    *
    * @param   i an index
-   * @param   key the key to associate with index {@code i}
-   * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+   * @param   key the key to associate with index `i`
+   * @throws IllegalArgumentException unless `0 <= i < maxN`
    * @throws IllegalArgumentException if there already is an item
-   * associated with index {@code i}
+   * associated with index `i`
    */
   public insert(i: number, key: Key) {
     if (this.contains(i))
@@ -104,8 +104,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
    * @throws Error if this priority queue is empty
    */
   public maxIndex(): number {
-    if (this.n === 0)
-      throw new Error('Priority queue underflow');
+    if (this.n === 0) throw new Error('Priority queue underflow');
     return this.pq[1];
   }
 
@@ -116,8 +115,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
    * @throws Error if this priority queue is empty
    */
   public maxKey(): Key {
-    if (this.n === 0)
-      throw new Error('Priority queue underflow');
+    if (this.n === 0) throw new Error('Priority queue underflow');
     return this.keys[this.pq[1]];
   }
 
@@ -128,8 +126,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
    * @throws Error if this priority queue is empty
    */
   public delMax(): number {
-    if (this.n === 0)
-      throw new Error('Priority queue underflow');
+    if (this.n === 0) throw new Error('Priority queue underflow');
     const max: number = this.pq[1];
     this.exch(1, this.n--);
     this.sink(1);
@@ -140,12 +137,12 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   }
 
   /**
-   * Returns the key associated with index {@code i}.
+   * Returns the key associated with index `i`.
    *
    * @param   i the index of the key to return
-   * @return  the key associated with index {@code i}
-   * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-   * @throws Error no key is associated with index {@code i}
+   * @return  the key associated with index `i`
+   * @throws IllegalArgumentException unless `0 <= i < maxN`
+   * @throws Error no key is associated with index `i`
    */
   public keyOf(i: number): Key {
     if (!this.contains(i))
@@ -154,11 +151,11 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   }
 
   /**
-   * Change the key associated with index {@code i} to the specified value.
+   * Change the key associated with index `i` to the specified value.
    *
    * @param   i the index of the key to change
-   * @param   key change the key associated with index {@code i} to this key
-   * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+   * @param   key change the key associated with index `i` to this key
+   * @throws IllegalArgumentException unless `0 <= i < maxN`
    */
   public changeKey(i: number, key: Key) {
     if (!this.contains(i))
@@ -169,25 +166,25 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   }
 
   /**
-   * Change the key associated with index {@code i} to the specified value.
+   * Change the key associated with index `i` to the specified value.
    *
    * @param   i the index of the key to change
-   * @param   key change the key associated with index {@code i} to this key
-   * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-   * @deprecated Replaced by {@code changeKey(int, Key)}.
+   * @param   key change the key associated with index `i` to this key
+   * @throws IllegalArgumentException unless `0 <= i < maxN`
+   * @deprecated Replaced by `changeKey(int, Key)`.
    */
   public change(i: number, key: Key) {
     this.changeKey(i, key);
   }
 
   /**
-   * Increase the key associated with index {@code i} to the specified value.
+   * Increase the key associated with index `i` to the specified value.
    *
    * @param   i the index of the key to increase
-   * @param   key increase the key associated with index {@code i} to this key
-   * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-   * @throws IllegalArgumentException if {@code key <= keyOf(i)}
-   * @throws Error no key is associated with index {@code i}
+   * @param   key increase the key associated with index `i` to this key
+   * @throws IllegalArgumentException unless `0 <= i < maxN`
+   * @throws IllegalArgumentException if `key <= keyOf(i)`
+   * @throws Error no key is associated with index `i`
    */
   public increaseKey(i: number, key: Key) {
     if (!this.contains(i))
@@ -201,13 +198,13 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   }
 
   /**
-   * Decrease the key associated with index {@code i} to the specified value.
+   * Decrease the key associated with index `i` to the specified value.
    *
    * @param   i the index of the key to decrease
-   * @param   key decrease the key associated with index {@code i} to this key
-   * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-   * @throws IllegalArgumentException if {@code key >= keyOf(i)}
-   * @throws Error no key is associated with index {@code i}
+   * @param   key decrease the key associated with index `i` to this key
+   * @throws IllegalArgumentException unless `0 <= i < maxN`
+   * @throws IllegalArgumentException if `key >= keyOf(i)`
+   * @throws Error no key is associated with index `i`
    */
   public decreaseKey(i: number, key: Key) {
     if (!this.contains(i))
@@ -221,11 +218,11 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   }
 
   /**
-   * Remove the key on the priority queue associated with index {@code i}.
+   * Remove the key on the priority queue associated with index `i`.
    *
    * @param   i the index of the key to remove
-   * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-   * @throws Error no key is associated with index {@code i}
+   * @throws IllegalArgumentException unless `0 <= i < maxN`
+   * @throws Error no key is associated with index `i`
    */
   public delete(i: number) {
     if (!this.contains(i))
@@ -286,7 +283,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   /**
    * Returns an iterator that iterates over the keys on the
    * priority queue in descending order.
-   * The iterator doesn't implement {@code remove()} since it's optional.
+   * The iterator doesn't implement `remove()` since it's optional.
    *
    * @return  an iterator that iterates over the keys in descending order
    */
@@ -295,7 +292,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
   }
 
   /**
-   * Unit tests the {@code IndexMaxPQ} data type.
+   * Unit tests the `IndexMaxPQ` data type.
    *
    * @param  args the command-line arguments
    */
@@ -345,7 +342,7 @@ export class IndexMaxPQ<Key extends java.lang.Comparable<Key>>
         pq.insert(i, strings[i]);
       }
     }
-    const perm: number[] = (s => {
+    const perm: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

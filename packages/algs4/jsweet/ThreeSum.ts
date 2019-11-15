@@ -3,7 +3,7 @@ import { In } from './In';
 import { Stopwatch } from './Stopwatch';
 
 /**
- * The {@code ThreeSum} class provides static methods for counting
+ * The `ThreeSum` class provides static methods for counting
  * and printing the number of triples in an array of integers that sum to 0
  * (ignoring integer overflow).
  * <p>
@@ -18,11 +18,9 @@ import { Stopwatch } from './Stopwatch';
  * @class
  */
 export class ThreeSum {
-
-
   /**
-   * Prints to standard output the (i, j, k) with {@code i < j < k}
-   * such that {@code a[i] + a[j] + a[k] == 0}.
+   * Prints to standard output the (i, j, k) with `i < j < k`
+   * such that `a[i] + a[j] + a[k] == 0`.
    *
    * @param  a the array of integers
    */
@@ -46,12 +44,12 @@ export class ThreeSum {
   }
 
   /**
-   * Returns the number of triples (i, j, k) with {@code i < j < k}
-   * such that {@code a[i] + a[j] + a[k] == 0}.
+   * Returns the number of triples (i, j, k) with `i < j < k`
+   * such that `a[i] + a[j] + a[k] == 0`.
    *
    * @param   a the array of integers
-   * @return  the number of triples (i, j, k) with {@code i < j < k}
-   * such that {@code a[i] + a[j] + a[k] == 0}
+   * @return  the number of triples (i, j, k) with `i < j < k`
+   * such that `a[i] + a[j] + a[k] == 0`
    */
   public static count(a: number[]): number {
     const n: number = a.length;

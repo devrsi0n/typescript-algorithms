@@ -4,10 +4,10 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Computes the vertices reachable from the source vertex {@code s} in the digraph {@code G}.
+ * Computes the vertices reachable from the source vertex `s` in the digraph `G`.
  * @param  {Digraph} G the digraph
  * @param   s the source vertex
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -16,13 +16,13 @@ export class NonrecursiveDirectedDFS {
 
   public constructor(G: Digraph, s: number) {
     if (this.__marked === undefined) this.__marked = null;
-    this.__marked = (s => {
+    this.__marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
     })(G.V());
     this.validateVertex(s);
-    const adj: Iterator<number>[] = <Iterator<number>[]>(s => {
+    const adj: Iterator<number>[] = <Iterator<number>[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -50,11 +50,11 @@ export class NonrecursiveDirectedDFS {
   }
 
   /**
-   * Is vertex {@code v} reachable from the source vertex {@code s}?
+   * Is vertex `v` reachable from the source vertex `s`?
    * @param   v the vertex
-   * @return  {@code true} if vertex {@code v} is reachable from the source vertex {@code s},
-   * and {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if vertex `v` is reachable from the source vertex `s`,
+   * and `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public marked(v: number): boolean {
     this.validateVertex(v);
@@ -68,7 +68,7 @@ export class NonrecursiveDirectedDFS {
   }
 
   /**
-   * Unit tests the {@code NonrecursiveDirectedDFS} data type.
+   * Unit tests the `NonrecursiveDirectedDFS` data type.
    *
    * @param  args the command-line arguments
    */

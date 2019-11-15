@@ -5,12 +5,12 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Initializes a random flow network with {@code V} vertices and <em>E</em> edges.
+ * Initializes a random flow network with `V` vertices and <em>E</em> edges.
  * The capacities are integers between 0 and 99 and the flow values are zero.
  * @param  V the number of vertices
  * @param  E the number of edges
- * @throws IllegalArgumentException if {@code V < 0}
- * @throws IllegalArgumentException if {@code E < 0}
+ * @throws IllegalArgumentException if `V < 0`
+ * @throws IllegalArgumentException if `E < 0`
  * @class
  * @author Robert Sedgewick
  */
@@ -49,7 +49,7 @@ export class FlowNetwork {
             );
           this.__V = V;
           this.__E = 0;
-          this.__adj = <Bag<FlowEdge>[]>(s => {
+          this.__adj = <Bag<FlowEdge>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -92,7 +92,7 @@ export class FlowNetwork {
             );
           this.__V = V;
           this.__E = 0;
-          this.__adj = <Bag<FlowEdge>[]>(s => {
+          this.__adj = <Bag<FlowEdge>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -129,7 +129,7 @@ export class FlowNetwork {
           throw new Error('Number of vertices in a Graph must be nonnegative');
         this.__V = V;
         this.__E = 0;
-        this.__adj = <Bag<FlowEdge>[]>(s => {
+        this.__adj = <Bag<FlowEdge>[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -163,10 +163,10 @@ export class FlowNetwork {
   }
 
   /**
-   * Adds the edge {@code e} to the network.
+   * Adds the edge `e` to the network.
    * @param {FlowEdge} e the edge
    * @throws IllegalArgumentException unless endpoints of edge are between
-   * {@code 0} and {@code V-1}
+   * `0` and `V-1`
    */
   public addEdge(e: FlowEdge) {
     const v: number = e.from();
@@ -179,11 +179,11 @@ export class FlowNetwork {
   }
 
   /**
-   * Returns the edges incident on vertex {@code v} (includes both edges pointing to
-   * and from {@code v}).
+   * Returns the edges incident on vertex `v` (includes both edges pointing to
+   * and from `v`).
    * @param  v the vertex
-   * @return  the edges incident on vertex {@code v} as an Iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the edges incident on vertex `v` as an Iterable
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public adj(v: number): Iterable<FlowEdge> {
     this.validateVertex(v);
@@ -210,7 +210,7 @@ export class FlowNetwork {
    * followed by the <em>V</em> adjacency lists
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     s.append(`${this.__V} ${this.__E}${FlowNetwork.NEWLINE_$LI$()}`);
     for (let v = 0; v < this.__V; v++) {
       {
@@ -228,7 +228,7 @@ export class FlowNetwork {
   }
 
   /**
-   * Unit tests the {@code FlowNetwork} data type.
+   * Unit tests the `FlowNetwork` data type.
    *
    * @param  args the command-line arguments
    */

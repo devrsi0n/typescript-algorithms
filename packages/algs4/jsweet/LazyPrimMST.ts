@@ -30,7 +30,7 @@ export class LazyPrimMST {
     if (this.pq === undefined) this.pq = null;
     this.mst = <any>new Queue<Edge>();
     this.pq = <any>new MinPQ<Edge>();
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -150,7 +150,7 @@ export class LazyPrimMST {
   }
 
   /**
-   * Unit tests the {@code LazyPrimMST} data type.
+   * Unit tests the `LazyPrimMST` data type.
    *
    * @param  args the command-line arguments
    */

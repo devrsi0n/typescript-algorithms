@@ -2,7 +2,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code InplaceMSD} class provides static methods for sorting an
+ * The `InplaceMSD` class provides static methods for sorting an
  * array of extended ASCII strings using in-place MSD radix sort.
  * <p>
  * For additional documentation,
@@ -16,8 +16,6 @@ export class InplaceMSD {
   static R = 256;
 
   static CUTOFF = 15;
-
-
 
   public static sort$java_lang_String_A(a: string[]) {
     const n: number = a.length;
@@ -39,12 +37,12 @@ export class InplaceMSD {
       InplaceMSD.insertion(a, lo, hi, d);
       return;
     }
-    const heads: number[] = (s => {
+    const heads: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(InplaceMSD.R + 2);
-    const tails: number[] = (s => {
+    const tails: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -136,17 +134,21 @@ export class InplaceMSD {
     for (let i: number = d; i < Math.min(v.length, w.length); i++) {
       {
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) <
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return true;
         if (
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
             v.charAt(i)
           ) >
-          (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(w.charAt(i))
+          ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(
+            w.charAt(i)
+          )
         )
           return false;
       }

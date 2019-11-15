@@ -28,7 +28,7 @@ export class SegmentTree {
             Math.floor(Math.log(<number>array.length) / Math.log(2.0) + 1)
           ))
       )) | 0;
-    this.heap = (s => {
+    this.heap = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -270,7 +270,7 @@ export class SegmentTree {
             }
             return o1 === o2;
           })(line[0], 'set')) {
-          array = (s => {
+          array = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;
@@ -287,7 +287,7 @@ export class SegmentTree {
             }
             return o1 === o2;
           })(line[0], 'init')) {
-          array = (s => {
+          array = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;

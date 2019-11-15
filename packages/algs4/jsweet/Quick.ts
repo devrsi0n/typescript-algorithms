@@ -3,7 +3,7 @@ import { StdOut } from './StdOut';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code Quick} class provides static methods for sorting an
+ * The `Quick` class provides static methods for sorting an
  * array and selecting the ith smallest element in an array using quicksort.
  * <p>
  * For additional documentation,
@@ -15,8 +15,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class Quick {
-
-
   public static sort$java_lang_Comparable_A(a: java.lang.Comparable<any>[]) {
     StdRandom.shuffle$java_lang_Object_A(a);
     Quick.sort$java_lang_Comparable_A$int$int(a, 0, a.length - 1);
@@ -102,14 +100,14 @@ export class Quick {
   }
 
   /**
-   * Rearranges the array so that {@code a[k]} contains the kth smallest key;
-   * {@code a[0]} through {@code a[k-1]} are less than (or equal to) {@code a[k]}; and
-   * {@code a[k+1]} through {@code a[n-1]} are greater than (or equal to) {@code a[k]}.
+   * Rearranges the array so that `a[k]` contains the kth smallest key;
+   * `a[0]` through `a[k-1]` are less than (or equal to) `a[k]`; and
+   * `a[k+1]` through `a[n-1]` are greater than (or equal to) `a[k]`.
    *
    * @param   a the array
    * @param   k the rank of the key
-   * @return  the key of rank {@code k}
-   * @throws IllegalArgumentException unless {@code 0 <= k < a.length}
+   * @return  the key of rank `k`
+   * @throws IllegalArgumentException unless `0 <= k < a.length`
    */
   public static select(
     a: java.lang.Comparable<any>[],

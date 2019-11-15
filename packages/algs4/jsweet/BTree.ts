@@ -22,7 +22,7 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
 
   /**
    * Returns true if this symbol table is empty.
-   * @return  {@code true} if this symbol table is empty; {@code false} otherwise
+   * @return  `true` if this symbol table is empty; `false` otherwise
    */
   public isEmpty(): boolean {
     return this.size() === 0;
@@ -50,8 +50,8 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param   key the key
    * @return  the value associated with the given key if the key is in the symbol table
-   * and {@code null} if the key is not in the symbol table
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * and `null` if the key is not in the symbol table
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public get(key: Key): Value {
     if (key == null) throw new Error('argument to get() is null');
@@ -81,11 +81,11 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
   /**
    * Inserts the key-value pair into the symbol table, overwriting the old value
    * with the new value if the key is already in the symbol table.
-   * If the value is {@code null}, this effectively deletes the key from the symbol table.
+   * If the value is `null`, this effectively deletes the key from the symbol table.
    *
    * @param   key the key
    * @param   val the value
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public put(key: Key, val: Value) {
     if (key == null) throw new Error('argument key to put() is null');
@@ -157,7 +157,7 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
     ht: number,
     indent: string
   ): string {
-    const s= new String();
+    const s = new String();
     const { children } = h;
     if (ht === 0) {
       for (let j = 0; j < h.m; j++) {
@@ -211,7 +211,7 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
   }
 
   /**
-   * Unit tests the {@code BTree} data type.
+   * Unit tests the `BTree` data type.
    *
    * @param  args the command-line arguments
    */
@@ -265,7 +265,7 @@ export namespace BTree {
   export class Node {
     m: number;
 
-    children: BTree.Entry[] = (s => {
+    children: BTree.Entry[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

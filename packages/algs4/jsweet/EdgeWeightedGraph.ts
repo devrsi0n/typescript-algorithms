@@ -6,12 +6,12 @@ import { Stack } from './Stack';
 import { StdOut } from './StdOut';
 
 /**
- * Initializes a random edge-weighted graph with {@code V} vertices and <em>E</em> edges.
+ * Initializes a random edge-weighted graph with `V` vertices and <em>E</em> edges.
  *
  * @param   V the number of vertices
  * @param   E the number of edges
- * @throws IllegalArgumentException if {@code V < 0}
- * @throws IllegalArgumentException if {@code E < 0}
+ * @throws IllegalArgumentException if `V < 0`
+ * @throws IllegalArgumentException if `E < 0`
  * @class
  * @author Robert Sedgewick
  */
@@ -49,7 +49,7 @@ export class EdgeWeightedGraph {
           if (V < 0) throw new Error('Number of vertices must be nonnegative');
           this.__V = V;
           this.__E = 0;
-          this.__adj = <Bag<Edge>[]>(s => {
+          this.__adj = <Bag<Edge>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -93,7 +93,7 @@ export class EdgeWeightedGraph {
           if (V < 0) throw new Error('Number of vertices must be nonnegative');
           this.__V = V;
           this.__E = 0;
-          this.__adj = <Bag<Edge>[]>(s => {
+          this.__adj = <Bag<Edge>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -139,7 +139,7 @@ export class EdgeWeightedGraph {
           if (V < 0) throw new Error('Number of vertices must be nonnegative');
           this.__V = V;
           this.__E = 0;
-          this.__adj = <Bag<Edge>[]>(s => {
+          this.__adj = <Bag<Edge>[]>((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
@@ -183,7 +183,7 @@ export class EdgeWeightedGraph {
         if (V < 0) throw new Error('Number of vertices must be nonnegative');
         this.__V = V;
         this.__E = 0;
-        this.__adj = <Bag<Edge>[]>(s => {
+        this.__adj = <Bag<Edge>[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -221,10 +221,10 @@ export class EdgeWeightedGraph {
   }
 
   /**
-   * Adds the undirected edge {@code e} to this edge-weighted graph.
+   * Adds the undirected edge `e` to this edge-weighted graph.
    *
    * @param  {Edge} e the edge
-   * @throws IllegalArgumentException unless both endpoints are between {@code 0} and {@code V-1}
+   * @throws IllegalArgumentException unless both endpoints are between `0` and `V-1`
    */
   public addEdge(e: Edge) {
     const v: number = e.either();
@@ -237,11 +237,11 @@ export class EdgeWeightedGraph {
   }
 
   /**
-   * Returns the edges incident on vertex {@code v}.
+   * Returns the edges incident on vertex `v`.
    *
    * @param   v the vertex
-   * @return  the edges incident on vertex {@code v} as an Iterable
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the edges incident on vertex `v` as an Iterable
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public adj(v: number): Iterable<Edge> {
     this.validateVertex(v);
@@ -249,11 +249,11 @@ export class EdgeWeightedGraph {
   }
 
   /**
-   * Returns the degree of vertex {@code v}.
+   * Returns the degree of vertex `v`.
    *
    * @param   v the vertex
-   * @return  the degree of vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the degree of vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public degree(v: number): number {
     this.validateVertex(v);
@@ -263,7 +263,7 @@ export class EdgeWeightedGraph {
   /**
    * Returns all edges in this edge-weighted graph.
    * To iterate over the edges in this edge-weighted graph, use foreach notation:
-   * {@code for (Edge e : G.edges())}.
+   * `for (Edge e : G.edges())`.
    *
    * @return  all edges in this edge-weighted graph, as an iterable
    */
@@ -296,7 +296,7 @@ export class EdgeWeightedGraph {
    * followed by the <em>V</em> adjacency lists of edges
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     s.append(`${this.__V} ${this.__E}${EdgeWeightedGraph.NEWLINE_$LI$()}`);
     for (let v = 0; v < this.__V; v++) {
       {
@@ -314,7 +314,7 @@ export class EdgeWeightedGraph {
   }
 
   /**
-   * Unit tests the {@code EdgeWeightedGraph} data type.
+   * Unit tests the `EdgeWeightedGraph` data type.
    *
    * @param  args the command-line arguments
    */

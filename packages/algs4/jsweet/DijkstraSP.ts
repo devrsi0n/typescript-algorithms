@@ -6,13 +6,13 @@ import { In } from './In';
 import { StdOut } from './StdOut';
 
 /**
- * Computes a shortest-paths tree from the source vertex {@code s} to every other
- * vertex in the edge-weighted digraph {@code G}.
+ * Computes a shortest-paths tree from the source vertex `s` to every other
+ * vertex in the edge-weighted digraph `G`.
  *
  * @param  {EdgeWeightedDigraph} G the edge-weighted digraph
  * @param   s the source vertex
  * @throws IllegalArgumentException if an edge weight is negative
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
+ * @throws IllegalArgumentException unless `0 <= s < V`
  * @class
  * @author Robert Sedgewick
  */
@@ -33,12 +33,12 @@ export class DijkstraSP {
         if (e.weight() < 0) throw new Error(`edge ${e} has negative weight`);
       }
     }
-    this.__distTo = (s => {
+    this.__distTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(G.V());
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -73,11 +73,11 @@ export class DijkstraSP {
   }
 
   /**
-   * Returns the length of a shortest path from the source vertex {@code s} to vertex {@code v}.
+   * Returns the length of a shortest path from the source vertex `s` to vertex `v`.
    * @param   v the destination vertex
-   * @return  the length of a shortest path from the source vertex {@code s} to vertex {@code v};
-   * {@code Double.POSITIVE_INFINITY} if no such path
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the length of a shortest path from the source vertex `s` to vertex `v`;
+   * `Double.POSITIVE_INFINITY` if no such path
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public distTo(v: number): number {
     this.validateVertex(v);
@@ -85,12 +85,12 @@ export class DijkstraSP {
   }
 
   /**
-   * Returns true if there is a path from the source vertex {@code s} to vertex {@code v}.
+   * Returns true if there is a path from the source vertex `s` to vertex `v`.
    *
    * @param   v the destination vertex
-   * @return  {@code true} if there is a path from the source vertex
-   * {@code s} to vertex {@code v}; {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if there is a path from the source vertex
+   * `s` to vertex `v`; `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public hasPathTo(v: number): boolean {
     this.validateVertex(v);
@@ -98,12 +98,12 @@ export class DijkstraSP {
   }
 
   /**
-   * Returns a shortest path from the source vertex {@code s} to vertex {@code v}.
+   * Returns a shortest path from the source vertex `s` to vertex `v`.
    *
    * @param   v the destination vertex
-   * @return  a shortest path from the source vertex {@code s} to vertex {@code v}
-   * as an iterable of edges, and {@code null} if no such path
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  a shortest path from the source vertex `s` to vertex `v`
+   * as an iterable of edges, and `null` if no such path
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public pathTo(v: number): Iterable<DirectedEdge> {
     this.validateVertex(v);
@@ -183,7 +183,7 @@ export class DijkstraSP {
   }
 
   /**
-   * Unit tests the {@code DijkstraSP} data type.
+   * Unit tests the `DijkstraSP` data type.
    *
    * @param  args the command-line arguments
    */

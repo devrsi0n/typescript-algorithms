@@ -3,7 +3,7 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code GREP} class provides a client for reading in a sequence of
+ * The `GREP` class provides a client for reading in a sequence of
  * lines from standard input and printing to standard output those lines
  * that contain a substring matching a specified regular expression.
  * <p>
@@ -15,8 +15,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class GREP {
-
-
   /**
    * Interprets the command-line argument as a regular expression
    * (supporting closure, binary or, parentheses, and wildcard)

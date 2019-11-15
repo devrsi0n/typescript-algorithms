@@ -74,7 +74,7 @@ export class LinkedStack<Item> implements Iterable<Item> {
    * @return  the sequence of items in the stack in LIFO order, separated by spaces
    */
   public toString(): string {
-    const s= new String();
+    const s = new String();
     for (let index314 = this.iterator(); index314.hasNext(); ) {
       const item = index314.next();
       s.append(`${item} `);
@@ -118,7 +118,7 @@ export class LinkedStack<Item> implements Iterable<Item> {
   }
 
   /**
-   * Unit tests the {@code LinkedStack} data type.
+   * Unit tests the `LinkedStack` data type.
    *
    * @param  args the command-line arguments
    */

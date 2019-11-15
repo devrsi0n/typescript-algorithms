@@ -20,7 +20,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   /**
    * Checks if the symbol table is empty.
    *
-   * @return  {@code true} if the symbol table is empty.
+   * @return  `true` if the symbol table is empty.
    */
   public isEmpty(): boolean {
     return this.root == null;
@@ -84,12 +84,12 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
 
   /**
    * Returns value associated with the given key in the subtree or
-   * {@code null} if no such key.
+   * `null` if no such key.
    *
    * @param {AVLTreeST.Node} x the subtree
    * @param  key the key
    * @return {AVLTreeST.Node} value associated with the given key in the subtree or
-   * {@code null} if no such key
+   * `null` if no such key
    * @private
    */
   public get(x?: any, key?: any): any {
@@ -114,9 +114,9 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * Checks if the symbol table contains the given key.
    *
    * @param  key the key
-   * @return  {@code true} if the symbol table contains {@code key}
-   * and {@code false} otherwise
-   * @throws IllegalArgumentException if {@code key} is {@code null}
+   * @return  `true` if the symbol table contains `key`
+   * and `false` otherwise
+   * @throws IllegalArgumentException if `key` is `null`
    */
   public contains(key: Key): boolean {
     return this.get(key) != null;
@@ -163,7 +163,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * Inserts the key-value pair in the subtree. It overrides the old value
    * with the new value if the symbol table already contains the specified key
    * and deletes the specified key (and its associated value) from this symbol
-   * table if the specified value is {@code null}.
+   * table if the specified value is `null`.
    *
    * @param {AVLTreeST.Node} x the subtree
    * @param  key the key
@@ -364,9 +364,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
 
   public deleteMin$() {
     if (this.isEmpty())
-      throw new Error(
-        'called deleteMin() with empty symbol table'
-      );
+      throw new Error('called deleteMin() with empty symbol table');
     this.root = this.deleteMin$edu_princeton_cs_algs4_AVLTreeST_Node(this.root);
   }
 
@@ -407,9 +405,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
 
   public deleteMax$() {
     if (this.isEmpty())
-      throw new Error(
-        'called deleteMax() with empty symbol table'
-      );
+      throw new Error('called deleteMax() with empty symbol table');
     this.root = this.deleteMax$edu_princeton_cs_algs4_AVLTreeST_Node(this.root);
   }
 
@@ -449,8 +445,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   }
 
   public min$(): Key {
-    if (this.isEmpty())
-      throw new Error('called min() with empty symbol table');
+    if (this.isEmpty()) throw new Error('called min() with empty symbol table');
     return this.min$edu_princeton_cs_algs4_AVLTreeST_Node(this.root).key;
   }
 
@@ -479,8 +474,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   }
 
   public max$(): Key {
-    if (this.isEmpty())
-      throw new Error('called max() with empty symbol table');
+    if (this.isEmpty()) throw new Error('called max() with empty symbol table');
     return this.max$edu_princeton_cs_algs4_AVLTreeST_Node(this.root).key;
   }
 
@@ -511,9 +505,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   public floor$java_lang_Comparable(key: Key): Key {
     if (key == null) throw new Error('argument to floor() is null');
     if (this.isEmpty())
-      throw new Error(
-        'called floor() with empty symbol table'
-      );
+      throw new Error('called floor() with empty symbol table');
     const x: AVLTreeST.Node = this.floor(this.root, key);
     if (x == null) return null;
     return x.key;
@@ -563,9 +555,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   public ceiling$java_lang_Comparable(key: Key): Key {
     if (key == null) throw new Error('argument to ceiling() is null');
     if (this.isEmpty())
-      throw new Error(
-        'called ceiling() with empty symbol table'
-      );
+      throw new Error('called ceiling() with empty symbol table');
     const x: AVLTreeST.Node = this.ceiling(this.root, key);
     if (x == null) return null;
     return x.key;
@@ -812,8 +802,8 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   }
 
   /**
-   * Adds the keys between {@code lo} and {@code hi} in the subtree
-   * to the {@code queue}.
+   * Adds the keys between `lo` and `hi` in the subtree
+   * to the `queue`.
    *
    * @param {AVLTreeST.Node} x the subtree
    * @param {Queue} queue the queue
@@ -872,10 +862,10 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    *
    * @param  lo minimum endpoint
    * @param  hi maximum endpoint
-   * @return  the number of keys in the symbol table between {@code lo}
-   * (inclusive) and {@code hi} (exclusive)
-   * @throws IllegalArgumentException if either {@code lo} or {@code hi}
-   * is {@code null}
+   * @return  the number of keys in the symbol table between `lo`
+   * (inclusive) and `hi` (exclusive)
+   * @throws IllegalArgumentException if either `lo` or `hi`
+   * is `null`
    */
   public size(lo?: any, hi?: any): any {
     if ((lo != null || lo === null) && (hi != null || hi === null)) {
@@ -896,7 +886,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   /**
    * Checks if the AVL tree invariants are fine.
    *
-   * @return  {@code true} if the AVL tree invariants are fine
+   * @return  `true` if the AVL tree invariants are fine
    * @private
    */
   check(): boolean {
@@ -936,7 +926,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * Checks if AVL property is consistent in the subtree.
    *
    * @param {AVLTreeST.Node} x the subtree
-   * @return  {@code true} if AVL property is consistent in the subtree
+   * @return  `true` if AVL property is consistent in the subtree
    * @private
    */
   public isAVL(x?: any): any {
@@ -972,7 +962,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    * @param {AVLTreeST.Node} x the subtree
    * @param  min the minimum key in subtree
    * @param  max the maximum key in subtree
-   * @return  {@code true} if if the symmetric order is consistent
+   * @return  `true` if if the symmetric order is consistent
    * @private
    */
   public isBST(x?: any, min?: any, max?: any): any {
@@ -1021,7 +1011,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   /**
    * Checks if the size of the subtree is consistent.
    *
-   * @return  {@code true} if the size of the subtree is consistent
+   * @return  `true` if the size of the subtree is consistent
    * @param {AVLTreeST.Node} x
    * @private
    */
@@ -1040,7 +1030,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   /**
    * Checks if rank is consistent.
    *
-   * @return  {@code true} if rank is consistent
+   * @return  `true` if rank is consistent
    * @private
    */
   isRankConsistent(): boolean {
@@ -1055,7 +1045,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
   }
 
   /**
-   * Unit tests the {@code AVLTreeST} data type.
+   * Unit tests the `AVLTreeST` data type.
    *
    * @param  args the command-line arguments
    */

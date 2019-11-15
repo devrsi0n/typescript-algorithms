@@ -30,7 +30,7 @@ export default class BinarySearch {
    *
    * @param  key the search key
    * @param  a the array of integers, must be sorted in ascending order
-   * @return index of key in array {@code a} if present; {@code -1} otherwise
+   * @return index of key in array `a` if present; `-1` otherwise
    */
   public static rank(key: number, a: number[]) {
     return BinarySearch.indexOf(a, key);

@@ -5,7 +5,7 @@ import { In } from './In';
 import { StdIn } from './StdIn';
 
 /**
- * The {@code FileIndex} class provides a client for indexing a set of files,
+ * The `FileIndex` class provides a client for indexing a set of files,
  * specified as command-line arguments. It takes queries from standard input
  * and prints each file that contains the given query.
  * <p>
@@ -17,8 +17,6 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class FileIndex {
-
-
   public static main(args: string[]) {
     const st: ST<string, SET<File>> = <any>new ST<string, SET<File>>();
     StdOut.println$java_lang_Object('Indexing files');

@@ -2,8 +2,8 @@
  * Initializes an input stream from a socket.
  *
  * @param  {Socket} socket the socket
- * @throws IllegalArgumentException if cannot open {@code socket}
- * @throws IllegalArgumentException if {@code socket} is {@code null}
+ * @throws IllegalArgumentException if cannot open `socket`
+ * @throws IllegalArgumentException if `socket` is `null`
  * @class
  * @author David Pritchard
  */
@@ -164,7 +164,7 @@ export class In {
   /**
    * Returns true if this input stream exists.
    *
-   * @return  {@code true} if this input stream exists; {@code false} otherwise
+   * @return  `true` if this input stream exists; `false` otherwise
    */
   public exists(): boolean {
     return this.scanner != null;
@@ -175,8 +175,8 @@ export class In {
    * Use this to know whether the next call to {@link #readString()},
    * {@link #readDouble()}, etc will succeed.
    *
-   * @return  {@code true} if this input stream is empty (except possibly whitespace);
-   * {@code false} otherwise
+   * @return  `true` if this input stream is empty (except possibly whitespace);
+   * `false` otherwise
    */
   public isEmpty(): boolean {
     return !this.scanner.hasNext();
@@ -189,8 +189,8 @@ export class In {
    * next call to {@link #readLine()} will succeed.
    * This method is functionally equivalent to {@link #hasNextChar()}.
    *
-   * @return  {@code true} if this input stream has more input (including whitespace);
-   * {@code false} otherwise
+   * @return  `true` if this input stream has more input (including whitespace);
+   * `false` otherwise
    */
   public hasNextLine(): boolean {
     return this.scanner.hasNextLine();
@@ -201,8 +201,8 @@ export class In {
    * Use this method to know whether the next call to {@link #readChar()} will succeed.
    * This method is functionally equivalent to {@link #hasNextLine()}.
    *
-   * @return  {@code true} if this input stream has more input (including whitespace);
-   * {@code false} otherwise
+   * @return  `true` if this input stream has more input (including whitespace);
+   * `false` otherwise
    */
   public hasNextChar(): boolean {
     this.scanner.useDelimiter(In.EMPTY_PATTERN_$LI$());
@@ -214,7 +214,7 @@ export class In {
   /**
    * Reads and returns the next line in this input stream.
    *
-   * @return  the next line in this input stream; {@code null} if no such line
+   * @return  the next line in this input stream; `null` if no such line
    */
   public readLine(): string {
     let line: string;
@@ -229,7 +229,7 @@ export class In {
   /**
    * Reads and returns the next character in this input stream.
    *
-   * @return  the next {@code char} in this input stream
+   * @return  the next `char` in this input stream
    * @throws Error if the input stream is empty
    */
   public readChar(): string {
@@ -260,9 +260,9 @@ export class In {
   }
 
   /**
-   * Reads the next token from this input stream and returns it as a {@code String}.
+   * Reads the next token from this input stream and returns it as a `String`.
    *
-   * @return  the next {@code String} in this input stream
+   * @return  the next `String` in this input stream
    * @throws Error if the input stream is empty
    */
   public readString(): string {
@@ -276,12 +276,12 @@ export class In {
   }
 
   /**
-   * Reads the next token from this input stream, parses it as a {@code int},
-   * and returns the {@code int}.
+   * Reads the next token from this input stream, parses it as a `int`,
+   * and returns the `int`.
    *
-   * @return  the next {@code int} in this input stream
+   * @return  the next `int` in this input stream
    * @throws Error if the input stream is empty
-   * @throws InputMismatchException if the next token cannot be parsed as an {@code int}
+   * @throws InputMismatchException if the next token cannot be parsed as an `int`
    */
   public readInt(): number {
     try {
@@ -304,12 +304,12 @@ export class In {
   }
 
   /**
-   * Reads the next token from this input stream, parses it as a {@code double},
-   * and returns the {@code double}.
+   * Reads the next token from this input stream, parses it as a `double`,
+   * and returns the `double`.
    *
-   * @return  the next {@code double} in this input stream
+   * @return  the next `double` in this input stream
    * @throws Error if the input stream is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code double}
+   * @throws InputMismatchException if the next token cannot be parsed as a `double`
    */
   public readDouble(): number {
     try {
@@ -332,12 +332,12 @@ export class In {
   }
 
   /**
-   * Reads the next token from this input stream, parses it as a {@code float},
-   * and returns the {@code float}.
+   * Reads the next token from this input stream, parses it as a `float`,
+   * and returns the `float`.
    *
-   * @return  the next {@code float} in this input stream
+   * @return  the next `float` in this input stream
    * @throws Error if the input stream is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code float}
+   * @throws InputMismatchException if the next token cannot be parsed as a `float`
    */
   public readFloat(): number {
     try {
@@ -360,12 +360,12 @@ export class In {
   }
 
   /**
-   * Reads the next token from this input stream, parses it as a {@code long},
-   * and returns the {@code long}.
+   * Reads the next token from this input stream, parses it as a `long`,
+   * and returns the `long`.
    *
-   * @return  the next {@code long} in this input stream
+   * @return  the next `long` in this input stream
    * @throws Error if the input stream is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code long}
+   * @throws InputMismatchException if the next token cannot be parsed as a `long`
    */
   public readLong(): number {
     try {
@@ -388,12 +388,12 @@ export class In {
   }
 
   /**
-   * Reads the next token from this input stream, parses it as a {@code short},
-   * and returns the {@code short}.
+   * Reads the next token from this input stream, parses it as a `short`,
+   * and returns the `short`.
    *
-   * @return  the next {@code short} in this input stream
+   * @return  the next `short` in this input stream
    * @throws Error if the input stream is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code short}
+   * @throws InputMismatchException if the next token cannot be parsed as a `short`
    */
   public readShort(): number {
     try {
@@ -416,14 +416,14 @@ export class In {
   }
 
   /**
-   * Reads the next token from this input stream, parses it as a {@code byte},
-   * and returns the {@code byte}.
+   * Reads the next token from this input stream, parses it as a `byte`,
+   * and returns the `byte`.
    * <p>
    * To read binary data, use {@link BinaryIn}.
    *
-   * @return  the next {@code byte} in this input stream
+   * @return  the next `byte` in this input stream
    * @throws Error if the input stream is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code byte}
+   * @throws InputMismatchException if the next token cannot be parsed as a `byte`
    */
   public readByte(): number {
     try {
@@ -446,13 +446,13 @@ export class In {
   }
 
   /**
-   * Reads the next token from this input stream, parses it as a {@code boolean}
-   * (interpreting either {@code "true"} or {@code "1"} as {@code true},
-   * and either {@code "false"} or {@code "0"} as {@code false}).
+   * Reads the next token from this input stream, parses it as a `boolean`
+   * (interpreting either `"true"} or `"1"` as `true`,
+   * and either `"false"} or `"0"` as `false`).
    *
-   * @return  the next {@code boolean} in this input stream
+   * @return  the next `boolean` in this input stream
    * @throws Error if the input stream is empty
-   * @throws InputMismatchException if the next token cannot be parsed as a {@code boolean}
+   * @throws InputMismatchException if the next token cannot be parsed as a `boolean`
    */
   public readBoolean(): boolean {
     try {
@@ -504,7 +504,7 @@ export class In {
   public readAllStrings(): string[] {
     const tokens: string[] = In.WHITESPACE_PATTERN_$LI$().split(this.readAll());
     if (tokens.length === 0 || tokens[0].length > 0) return tokens;
-    const decapitokens: string[] = (s => {
+    const decapitokens: string[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
@@ -529,7 +529,7 @@ export class In {
       }
     }
     return lines.toArray<any>(
-      (s => {
+      ((s) => {
         const a = [];
         while (s-- > 0) a.push(null);
         return a;
@@ -545,7 +545,7 @@ export class In {
    */
   public readAllInts(): number[] {
     const fields: string[] = this.readAllStrings();
-    const vals: number[] = (s => {
+    const vals: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -564,7 +564,7 @@ export class In {
    */
   public readAllLongs(): number[] {
     const fields: string[] = this.readAllStrings();
-    const vals: number[] = (s => {
+    const vals: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -583,7 +583,7 @@ export class In {
    */
   public readAllDoubles(): number[] {
     const fields: string[] = this.readAllStrings();
-    const vals: number[] = (s => {
+    const vals: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -611,7 +611,7 @@ export class In {
    *
    * @param       filename the name of the file
    * @return      the integers in the file
-   * @deprecated Replaced by {@code new In(filename)}.{@link #readAllInts()}.
+   * @deprecated Replaced by `new In(filename)}.{@link #readAllInts()`.
    */
   public static readInts(filename?: any): any {
     if (typeof filename === 'string' || filename === null) {
@@ -633,7 +633,7 @@ export class In {
    *
    * @param       filename the name of the file
    * @return      the doubles in the file
-   * @deprecated Replaced by {@code new In(filename)}.{@link #readAllDoubles()}.
+   * @deprecated Replaced by `new In(filename)}.{@link #readAllDoubles()`.
    */
   public static readDoubles(filename?: any): any {
     if (typeof filename === 'string' || filename === null) {
@@ -655,7 +655,7 @@ export class In {
    *
    * @param       filename the name of the file
    * @return      the strings in the file
-   * @deprecated Replaced by {@code new In(filename)}.{@link #readAllStrings()}.
+   * @deprecated Replaced by `new In(filename)}.{@link #readAllStrings()`.
    */
   public static readStrings(filename?: any): any {
     if (typeof filename === 'string' || filename === null) {
@@ -680,7 +680,7 @@ export class In {
   }
 
   /**
-   * Unit tests the {@code In} data type.
+   * Unit tests the `In` data type.
    *
    * @param  args the command-line arguments
    */

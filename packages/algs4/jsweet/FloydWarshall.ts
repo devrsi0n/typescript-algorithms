@@ -8,7 +8,7 @@ import { StdOut } from './StdOut';
 
 /**
  * Computes a shortest paths tree from each vertex to to every other vertex in
- * the edge-weighted digraph {@code G}. If no such shortest path exists for
+ * the edge-weighted digraph `G`. If no such shortest path exists for
  * some pair of vertices, it computes a negative cycle.
  * @param {AdjMatrixEdgeWeightedDigraph} G the edge-weighted digraph
  * @class
@@ -56,8 +56,7 @@ export class FloydWarshall {
       {
         for (let w = 0; w < V; w++) {
           {
-            this.distTo[v][w] =
-              Number.POSITIVE_INFINITY;
+            this.distTo[v][w] = Number.POSITIVE_INFINITY;
           }
         }
       }
@@ -102,16 +101,16 @@ export class FloydWarshall {
 
   /**
    * Is there a negative cycle?
-   * @return  {@code true} if there is a negative cycle, and {@code false} otherwise
+   * @return  `true` if there is a negative cycle, and `false` otherwise
    */
   public hasNegativeCycle(): boolean {
     return this.__hasNegativeCycle;
   }
 
   /**
-   * Returns a negative cycle, or {@code null} if there is no such cycle.
+   * Returns a negative cycle, or `null` if there is no such cycle.
    * @return  a negative cycle as an iterable of edges,
-   * or {@code null} if there is no such cycle
+   * or `null` if there is no such cycle
    */
   public negativeCycle(): Iterable<DirectedEdge> {
     for (let v = 0; v < this.distTo.length; v++) {
@@ -133,13 +132,13 @@ export class FloydWarshall {
   }
 
   /**
-   * Is there a path from the vertex {@code s} to vertex {@code t}?
+   * Is there a path from the vertex `s` to vertex `t`?
    * @param   s the source vertex
    * @param   t the destination vertex
-   * @return  {@code true} if there is a path from vertex {@code s}
-   * to vertex {@code t}, and {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= s < V}
-   * @throws IllegalArgumentException unless {@code 0 <= t < V}
+   * @return  `true` if there is a path from vertex `s`
+   * to vertex `t`, and `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= s < V`
+   * @throws IllegalArgumentException unless `0 <= t < V`
    */
   public hasPath(s: number, t: number): boolean {
     this.validateVertex(s);
@@ -148,40 +147,34 @@ export class FloydWarshall {
   }
 
   /**
-   * Returns the length of a shortest path from vertex {@code s} to vertex {@code t}.
+   * Returns the length of a shortest path from vertex `s` to vertex `t`.
    * @param   s the source vertex
    * @param   t the destination vertex
-   * @return  the length of a shortest path from vertex {@code s} to vertex {@code t};
-   * {@code Double.POSITIVE_INFINITY} if no such path
+   * @return  the length of a shortest path from vertex `s` to vertex `t`;
+   * `Double.POSITIVE_INFINITY` if no such path
    * @throws UnsupportedOperationException if there is a negative cost cycle
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public dist(s: number, t: number): number {
     this.validateVertex(s);
     this.validateVertex(t);
-    if (this.hasNegativeCycle())
-      throw new Error(
-        'Negative cost cycle exists'
-      );
+    if (this.hasNegativeCycle()) throw new Error('Negative cost cycle exists');
     return this.distTo[s][t];
   }
 
   /**
-   * Returns a shortest path from vertex {@code s} to vertex {@code t}.
+   * Returns a shortest path from vertex `s` to vertex `t`.
    * @param   s the source vertex
    * @param   t the destination vertex
-   * @return  a shortest path from vertex {@code s} to vertex {@code t}
-   * as an iterable of edges, and {@code null} if no such path
+   * @return  a shortest path from vertex `s` to vertex `t`
+   * as an iterable of edges, and `null` if no such path
    * @throws UnsupportedOperationException if there is a negative cost cycle
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public path(s: number, t: number): Iterable<DirectedEdge> {
     this.validateVertex(s);
     this.validateVertex(t);
-    if (this.hasNegativeCycle())
-      throw new Error(
-        'Negative cost cycle exists'
-      );
+    if (this.hasNegativeCycle()) throw new Error('Negative cost cycle exists');
     if (!this.hasPath(s, t)) return null;
     const path: Stack<DirectedEdge> = <any>new Stack<DirectedEdge>();
     for (
@@ -227,7 +220,7 @@ export class FloydWarshall {
   }
 
   /**
-   * Unit tests the {@code FloydWarshall} data type.
+   * Unit tests the `FloydWarshall` data type.
    *
    * @param  args the command-line arguments
    */

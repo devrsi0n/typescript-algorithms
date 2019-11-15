@@ -1,11 +1,11 @@
 /**
- * Initializes an empty indexed priority queue with indices between {@code 0} to {@code N-1}
+ * Initializes an empty indexed priority queue with indices between `0` to `N-1`
  * Worst case is O(n)
- * @param  N number of keys in the priority queue, index from {@code 0} to {@code N-1}
+ * @param  N number of keys in the priority queue, index from `0` to `N-1`
  * @param  D dimension of the heap
  * @param  C a Comparator over the keys
- * @throws Error if {@code N < 0}
- * @throws Error if {@code D < 2}
+ * @throws Error if `N < 0`
+ * @throws Error if `D < 2`
  * @class
  * @author Tristan Claverie
  */
@@ -51,17 +51,17 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
         if (D < 2) throw new Error('Dimension should be 2 or over');
         this.d = D;
         this.nmax = N;
-        this.pq = (s => {
+        this.pq = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(this.nmax + D);
-        this.qp = (s => {
+        this.qp = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(this.nmax + D);
-        this.keys = <Key[]>(s => {
+        this.keys = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -96,17 +96,17 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
         if (D < 2) throw new Error('Dimension should be 2 or over');
         this.d = D;
         this.nmax = N;
-        this.pq = (s => {
+        this.pq = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(this.nmax + D);
-        this.qp = (s => {
+        this.qp = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(this.nmax + D);
-        this.keys = <Key[]>(s => {
+        this.keys = <Key[]>((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
@@ -173,8 +173,7 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
    * @return  the index associated with the minimum key
    */
   public minIndex(): number {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     return this.pq[this.d];
   }
 
@@ -185,8 +184,7 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
    * @return  the minimum key currently in the priority queue
    */
   public minKey(): Key {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     return this.keys[this.pq[this.d] + this.d];
   }
 
@@ -197,8 +195,7 @@ export class IndexMultiwayMinPQ<Key> implements Iterable<number> {
    * @return  the index associated with the minimum key
    */
   public delMin(): number {
-    if (this.isEmpty())
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
     const min: number = this.pq[this.d];
     this.exch(0, --this.n);
     this.sink(0);

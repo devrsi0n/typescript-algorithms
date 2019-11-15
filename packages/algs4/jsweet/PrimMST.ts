@@ -28,17 +28,17 @@ export class PrimMST {
     if (this.distTo === undefined) this.distTo = null;
     if (this.marked === undefined) this.marked = null;
     if (this.pq === undefined) this.pq = null;
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
     })(G.V());
-    this.distTo = (s => {
+    this.distTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(G.V());
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -180,7 +180,7 @@ export class PrimMST {
   }
 
   /**
-   * Unit tests the {@code PrimMST} data type.
+   * Unit tests the `PrimMST` data type.
    *
    * @param  args the command-line arguments
    */

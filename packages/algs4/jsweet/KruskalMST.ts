@@ -127,7 +127,7 @@ export class KruskalMST {
   }
 
   /**
-   * Unit tests the {@code KruskalMST} data type.
+   * Unit tests the `KruskalMST` data type.
    *
    * @param  args the command-line arguments
    */

@@ -2,10 +2,10 @@ import { StdIn } from './StdIn';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code Inversions} class provides static methods to count the
+ * The `Inversions` class provides static methods to count the
  * number of <em>inversions</em> in either an array of integers or comparables.
- * An inversion in an array {@code a[]} is a pair of indicies {@code i} and
- * {@code j} such that {@code i < j} and {@code a[i] > a[j]}.
+ * An inversion in an array `a[]` is a pair of indicies `i` and
+ * `j` such that `i < j` and `a[i] > a[j]`.
  * <p>
  * This implementation uses a generalization of mergesort. The <em>count</em>
  * operation takes time proportional to <em>n</em> log <em>n</em>,
@@ -19,8 +19,6 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class Inversions {
-
-
   public static merge$int_A$int_A$int$int$int(
     a: number[],
     aux: number[],
@@ -192,12 +190,12 @@ export class Inversions {
   }
 
   public static count$int_A(a: number[]): number {
-    const b: number[] = (s => {
+    const b: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
     })(a.length);
-    const aux: number[] = (s => {
+    const aux: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -372,7 +370,7 @@ export class Inversions {
   public static main(args: string[]) {
     const a: number[] = StdIn.readAllInts();
     const n: number = a.length;
-    const b: number[] = (s => {
+    const b: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

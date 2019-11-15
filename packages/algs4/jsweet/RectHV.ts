@@ -9,10 +9,10 @@ import { StdDraw } from './StdDraw';
  * @param   xmax the <em>x</em>-coordinate of the upper-right endpoint
  * @param   ymin the <em>y</em>-coordinate of the lower-left endpoint
  * @param   ymax the <em>y</em>-coordinate of the upper-right endpoint
- * @throws IllegalArgumentException if any of {@code xmin},
- * {@code xmax}, {@code ymin}, or {@code ymax}
- * is {@code Double.NaN}.
- * @throws IllegalArgumentException if {@code xmax < xmin} or {@code ymax < ymin}.
+ * @throws IllegalArgumentException if any of `xmin`,
+ * `xmax`, `ymin`, or `ymax`
+ * is `Double.NaN`.
+ * @throws IllegalArgumentException if `xmax < xmin` or `ymax < ymin`.
  * @class
  * @author Robert Sedgewick
  */
@@ -87,7 +87,7 @@ export class RectHV {
   /**
    * Returns the width of this rectangle.
    *
-   * @return  the width of this rectangle {@code xmax - xmin}
+   * @return  the width of this rectangle `xmax - xmin`
    */
   public width(): number {
     return this.__xmax - this.__xmin;
@@ -96,7 +96,7 @@ export class RectHV {
   /**
    * Returns the height of this rectangle.
    *
-   * @return  the height of this rectangle {@code ymax - ymin}
+   * @return  the height of this rectangle `ymax - ymin`
    */
   public height(): number {
     return this.__ymax - this.__ymin;
@@ -109,7 +109,7 @@ export class RectHV {
    * (when one rectangle is contained inside the other)
    *
    * @param  {RectHV} that the other rectangle
-   * @return  {@code true} if this rectangle intersect the argument
+   * @return  `true` if this rectangle intersect the argument
    * rectangle at one or more points
    */
   public intersects(that: RectHV): boolean {
@@ -124,8 +124,8 @@ export class RectHV {
   /**
    * Returns true if this rectangle contain the point.
    * @param  {Point2D} p the point
-   * @return  {@code true} if this rectangle contain the point {@code p},
-   * possibly at the boundary; {@code false} otherwise
+   * @return  `true` if this rectangle contain the point `p`,
+   * possibly at the boundary; `false` otherwise
    */
   public contains(p: Point2D): boolean {
     return (
@@ -137,10 +137,10 @@ export class RectHV {
   }
 
   /**
-   * Returns the Euclidean distance between this rectangle and the point {@code p}.
+   * Returns the Euclidean distance between this rectangle and the point `p`.
    *
    * @param  {Point2D} p the point
-   * @return  the Euclidean distance between the point {@code p} and the closest point
+   * @return  the Euclidean distance between the point `p` and the closest point
    * on this rectangle; 0 if the point is contained in this rectangle
    */
   public distanceTo(p: Point2D): number {
@@ -148,10 +148,10 @@ export class RectHV {
   }
 
   /**
-   * Returns the square of the Euclidean distance between this rectangle and the point {@code p}.
+   * Returns the square of the Euclidean distance between this rectangle and the point `p`.
    *
    * @param  {Point2D} p the point
-   * @return  the square of the Euclidean distance between the point {@code p} and
+   * @return  the square of the Euclidean distance between the point `p` and
    * the closest point on this rectangle; 0 if the point is contained
    * in this rectangle
    */
@@ -169,8 +169,8 @@ export class RectHV {
    * Compares this rectangle to the specified rectangle.
    *
    * @param   other the other rectangle
-   * @return  {@code true} if this rectangle equals {@code other};
-   * {@code false} otherwise
+   * @return  `true` if this rectangle equals `other`;
+   * `false` otherwise
    */
   public equals(other: any): boolean {
     if (other === this) return true;
@@ -248,7 +248,7 @@ export class RectHV {
    * Returns a string representation of this rectangle.
    *
    * @return  a string representation of this rectangle, using the format
-   * {@code [xmin, xmax] x [ymin, ymax]}
+   * `[xmin, xmax] x [ymin, ymax]`
    */
   public toString(): string {
     return `[${this.__xmin}, ${this.__xmax}] x [${this.__ymin}, ${this.__ymax}]`;

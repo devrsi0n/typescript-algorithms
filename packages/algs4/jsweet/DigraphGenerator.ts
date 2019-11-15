@@ -4,7 +4,7 @@ import { StdRandom } from './StdRandom';
 import { StdOut } from './StdOut';
 
 /**
- * The {@code DigraphGenerator} class provides static methods for creating
+ * The `DigraphGenerator` class provides static methods for creating
  * various digraphs, including Erdos-Renyi random digraphs, random DAGs,
  * random rooted trees, random rooted DAGs, random tournaments, path digraphs,
  * cycle digraphs, and the complete digraph.
@@ -17,10 +17,11 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class DigraphGenerator {
-
-
   public static simple$int$int(V: number, E: number): Digraph {
-    if (E > (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1))
+    if (
+      E >
+      ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)
+    )
       throw new Error('Too many edges');
     if (E < 0) throw new Error('Too few edges');
     const G: Digraph = new Digraph(V);
@@ -42,11 +43,11 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a random simple digraph containing {@code V} vertices and {@code E} edges.
+   * Returns a random simple digraph containing `V` vertices and `E` edges.
    * @param  V the number of vertices
    * @param  E the number of vertices
-   * @return {Digraph} a random simple digraph on {@code V} vertices, containing a total
-   * of {@code E} edges
+   * @return {Digraph} a random simple digraph on `V` vertices, containing a total
+   * of `E` edges
    * @throws IllegalArgumentException if no such simple digraph exists
    */
   public static simple(V?: any, E?: any): any {
@@ -78,11 +79,11 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns the complete digraph on {@code V} vertices.
+   * Returns the complete digraph on `V` vertices.
    * In a complete digraph, every pair of distinct vertices is connected
-   * by two antiparallel edges. There are {@code V*(V-1)} edges.
+   * by two antiparallel edges. There are `V*(V-1)` edges.
    * @param  V the number of vertices
-   * @return {Digraph} the complete digraph on {@code V} vertices
+   * @return {Digraph} the complete digraph on `V` vertices
    */
   public static complete(V: number): Digraph {
     const G: Digraph = new Digraph(V);
@@ -95,19 +96,20 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a random simple DAG containing {@code V} vertices and {@code E} edges.
+   * Returns a random simple DAG containing `V` vertices and `E` edges.
    * Note: it is not uniformly selected at random among all such DAGs.
    * @param  V the number of vertices
    * @param  E the number of vertices
-   * @return {Digraph} a random simple DAG on {@code V} vertices, containing a total
-   * of {@code E} edges
+   * @return {Digraph} a random simple DAG on `V` vertices, containing a total
+   * of `E` edges
    * @throws IllegalArgumentException if no such simple DAG exists
    */
   public static dag(V: number, E: number): Digraph {
     if (
       E >
-      (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
-        ((n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) / 2
+      ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
+        (((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) /
+          2
       )
     )
       throw new Error('Too many edges');
@@ -116,7 +118,7 @@ export class DigraphGenerator {
     const set: SET<DigraphGenerator.Edge> = <any>(
       new SET<DigraphGenerator.Edge>()
     );
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -140,11 +142,11 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a random tournament digraph on {@code V} vertices. A tournament digraph
+   * Returns a random tournament digraph on `V` vertices. A tournament digraph
    * is a digraph in which, for every pair of vertices, there is one and only one
    * directed edge connecting them. A tournament is an oriented complete graph.
    * @param  V the number of vertices
-   * @return {Digraph} a random tournament digraph on {@code V} vertices
+   * @return {Digraph} a random tournament digraph on `V` vertices
    */
   public static tournament(V: number): Digraph {
     const G: Digraph = new Digraph(V);
@@ -162,16 +164,16 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a complete rooted-in DAG on {@code V} vertices.
+   * Returns a complete rooted-in DAG on `V` vertices.
    * A rooted in-tree is a DAG in which there is a single vertex
    * reachable from every other vertex. A complete rooted in-DAG
    * has V*(V-1)/2 edges.
    * @param  V the number of vertices
-   * @return {Digraph} a complete rooted-in DAG on {@code V} vertices
+   * @return {Digraph} a complete rooted-in DAG on `V` vertices
    */
   public static completeRootedInDAG(V: number): Digraph {
     const G: Digraph = new Digraph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -189,19 +191,20 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a random rooted-in DAG on {@code V} vertices and {@code E} edges.
+   * Returns a random rooted-in DAG on `V` vertices and `E` edges.
    * A rooted in-tree is a DAG in which there is a single vertex
    * reachable from every other vertex.
    * The DAG returned is not chosen uniformly at random among all such DAGs.
    * @param  V the number of vertices
    * @param  E the number of edges
-   * @return {Digraph} a random rooted-in DAG on {@code V} vertices and {@code E} edges
+   * @return {Digraph} a random rooted-in DAG on `V` vertices and `E` edges
    */
   public static rootedInDAG(V: number, E: number): Digraph {
     if (
       E >
-      (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
-        ((n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) / 2
+      ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
+        (((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) /
+          2
       )
     )
       throw new Error('Too many edges');
@@ -210,7 +213,7 @@ export class DigraphGenerator {
     const set: SET<DigraphGenerator.Edge> = <any>(
       new SET<DigraphGenerator.Edge>()
     );
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -242,15 +245,15 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a complete rooted-out DAG on {@code V} vertices.
+   * Returns a complete rooted-out DAG on `V` vertices.
    * A rooted out-tree is a DAG in which every vertex is reachable
    * from a single vertex. A complete rooted in-DAG has V*(V-1)/2 edges.
    * @param  V the number of vertices
-   * @return {Digraph} a complete rooted-out DAG on {@code V} vertices
+   * @return {Digraph} a complete rooted-out DAG on `V` vertices
    */
   public static completeRootedOutDAG(V: number): Digraph {
     const G: Digraph = new Digraph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -268,19 +271,20 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a random rooted-out DAG on {@code V} vertices and {@code E} edges.
+   * Returns a random rooted-out DAG on `V` vertices and `E` edges.
    * A rooted out-tree is a DAG in which every vertex is reachable from a
    * single vertex.
    * The DAG returned is not chosen uniformly at random among all such DAGs.
    * @param  V the number of vertices
    * @param  E the number of edges
-   * @return {Digraph} a random rooted-out DAG on {@code V} vertices and {@code E} edges
+   * @return {Digraph} a random rooted-out DAG on `V` vertices and `E` edges
    */
   public static rootedOutDAG(V: number, E: number): Digraph {
     if (
       E >
-      (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
-        ((n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) / 2
+      ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
+        (((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) /
+          2
       )
     )
       throw new Error('Too many edges');
@@ -289,7 +293,7 @@ export class DigraphGenerator {
     const set: SET<DigraphGenerator.Edge> = <any>(
       new SET<DigraphGenerator.Edge>()
     );
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -321,37 +325,37 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a random rooted-in tree on {@code V} vertices.
+   * Returns a random rooted-in tree on `V` vertices.
    * A rooted in-tree is an oriented tree in which there is a single vertex
    * reachable from every other vertex.
    * The tree returned is not chosen uniformly at random among all such trees.
    * @param  V the number of vertices
-   * @return {Digraph} a random rooted-in tree on {@code V} vertices
+   * @return {Digraph} a random rooted-in tree on `V` vertices
    */
   public static rootedInTree(V: number): Digraph {
     return DigraphGenerator.rootedInDAG(V, V - 1);
   }
 
   /**
-   * Returns a random rooted-out tree on {@code V} vertices. A rooted out-tree
+   * Returns a random rooted-out tree on `V` vertices. A rooted out-tree
    * is an oriented tree in which each vertex is reachable from a single vertex.
    * It is also known as a <em>arborescence</em> or <em>branching</em>.
    * The tree returned is not chosen uniformly at random among all such trees.
    * @param  V the number of vertices
-   * @return {Digraph} a random rooted-out tree on {@code V} vertices
+   * @return {Digraph} a random rooted-out tree on `V` vertices
    */
   public static rootedOutTree(V: number): Digraph {
     return DigraphGenerator.rootedOutDAG(V, V - 1);
   }
 
   /**
-   * Returns a path digraph on {@code V} vertices.
+   * Returns a path digraph on `V` vertices.
    * @param  V the number of vertices in the path
-   * @return {Digraph} a digraph that is a directed path on {@code V} vertices
+   * @return {Digraph} a digraph that is a directed path on `V` vertices
    */
   public static path(V: number): Digraph {
     const G: Digraph = new Digraph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -369,13 +373,13 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a complete binary tree digraph on {@code V} vertices.
+   * Returns a complete binary tree digraph on `V` vertices.
    * @param  V the number of vertices in the binary tree
-   * @return {Digraph} a digraph that is a complete binary tree on {@code V} vertices
+   * @return {Digraph} a digraph that is a complete binary tree on `V` vertices
    */
   public static binaryTree(V: number): Digraph {
     const G: Digraph = new Digraph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -393,13 +397,13 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a cycle digraph on {@code V} vertices.
+   * Returns a cycle digraph on `V` vertices.
    * @param  V the number of vertices in the cycle
-   * @return {Digraph} a digraph that is a directed cycle on {@code V} vertices
+   * @return {Digraph} a digraph that is a directed cycle on `V` vertices
    */
   public static cycle(V: number): Digraph {
     const G: Digraph = new Digraph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -418,13 +422,13 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns an Eulerian cycle digraph on {@code V} vertices.
+   * Returns an Eulerian cycle digraph on `V` vertices.
    *
    * @param   V the number of vertices in the cycle
    * @param   E the number of edges in the cycle
-   * @return {Digraph} a digraph that is a directed Eulerian cycle on {@code V} vertices
-   * and {@code E} edges
-   * @throws IllegalArgumentException if either {@code V <= 0} or {@code E <= 0}
+   * @return {Digraph} a digraph that is a directed Eulerian cycle on `V` vertices
+   * and `E` edges
+   * @throws IllegalArgumentException if either `V <= 0` or `E <= 0`
    */
   public static eulerianCycle(V: number, E: number): Digraph {
     if (E <= 0)
@@ -432,7 +436,7 @@ export class DigraphGenerator {
     if (V <= 0)
       throw new Error('An Eulerian cycle must have at least one vertex');
     const G: Digraph = new Digraph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -450,20 +454,20 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns an Eulerian path digraph on {@code V} vertices.
+   * Returns an Eulerian path digraph on `V` vertices.
    *
    * @param   V the number of vertices in the path
    * @param   E the number of edges in the path
-   * @return {Digraph} a digraph that is a directed Eulerian path on {@code V} vertices
-   * and {@code E} edges
-   * @throws IllegalArgumentException if either {@code V <= 0} or {@code E < 0}
+   * @return {Digraph} a digraph that is a directed Eulerian path on `V` vertices
+   * and `E` edges
+   * @throws IllegalArgumentException if either `V <= 0` or `E < 0`
    */
   public static eulerianPath(V: number, E: number): Digraph {
     if (E < 0) throw new Error('negative number of edges');
     if (V <= 0)
       throw new Error('An Eulerian path must have at least one vertex');
     const G: Digraph = new Digraph(V);
-    const vertices: number[] = (s => {
+    const vertices: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -480,9 +484,9 @@ export class DigraphGenerator {
   }
 
   /**
-   * Returns a random simple digraph on {@code V} vertices, {@code E}
-   * edges and (at least) {@code c} strong components. The vertices are randomly
-   * assigned integer labels between {@code 0} and {@code c-1} (corresponding to
+   * Returns a random simple digraph on `V` vertices, `E`
+   * edges and (at least) `c` strong components. The vertices are randomly
+   * assigned integer labels between `0` and `c-1` (corresponding to
    * strong components). Then, a strong component is creates among the vertices
    * with the same label. Next, random edges (either between two vertices with
    * the same labels or from a vetex with a smaller label to a vertex with a
@@ -492,9 +496,9 @@ export class DigraphGenerator {
    * @param  V the number of vertices
    * @param  E the number of edges
    * @param  c the (maximum) number of strong components
-   * @return {Digraph} a random simple digraph on {@code V} vertices and
-   * {@code E} edges, with (at most) {@code c} strong components
-   * @throws IllegalArgumentException if {@code c} is larger than {@code V}
+   * @return {Digraph} a random simple digraph on `V` vertices and
+   * `E` edges, with (at most) `c` strong components
+   * @throws IllegalArgumentException if `c` is larger than `V`
    */
   public static strong(V: number, E: number, c: number): Digraph {
     if (c >= V || c <= 0)
@@ -503,8 +507,9 @@ export class DigraphGenerator {
       throw new Error('Number of edges must be at least 2(V-c)');
     if (
       E >
-      (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
-        ((n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) / 2
+      ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(
+        (((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(<number>V) * (V - 1)) /
+          2
       )
     )
       throw new Error('Too many edges');
@@ -512,7 +517,7 @@ export class DigraphGenerator {
     const set: SET<DigraphGenerator.Edge> = <any>(
       new SET<DigraphGenerator.Edge>()
     );
-    const label: number[] = (s => {
+    const label: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -528,7 +533,7 @@ export class DigraphGenerator {
             if (label[v] === i) count++;
           }
         }
-        const vertices: number[] = (s => {
+        const vertices: number[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -573,7 +578,7 @@ export class DigraphGenerator {
   }
 
   /**
-   * Unit tests the {@code DigraphGenerator} library.
+   * Unit tests the `DigraphGenerator` library.
    *
    * @param  args the command-line arguments
    */

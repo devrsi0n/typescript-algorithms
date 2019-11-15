@@ -21,13 +21,13 @@ export class EulerianCycle {
     for (let v = 0; v < G.V(); v++) {
       if (G.degree(v) % 2 !== 0) return;
     }
-    const adj: Queue<EulerianCycle.Edge>[] = <Queue<EulerianCycle.Edge>[]>(
-      (s => {
-        const a = [];
-        while (s-- > 0) a.push(null);
-        return a;
-      })(G.V())
-    );
+    const adj: Queue<EulerianCycle.Edge>[] = <Queue<EulerianCycle.Edge>[]>((
+      s
+    ) => {
+      const a = [];
+      while (s-- > 0) a.push(null);
+      return a;
+    })(G.V());
     for (let v = 0; v < G.V(); v++) {
       adj[v] = <any>new Queue<EulerianCycle.Edge>();
     }
@@ -79,7 +79,7 @@ export class EulerianCycle {
    * Returns the sequence of vertices on an Eulerian cycle.
    *
    * @return  the sequence of vertices on an Eulerian cycle;
-   * {@code null} if no such cycle
+   * `null` if no such cycle
    */
   public cycle(): Iterable<number> {
     return this.__cycle;
@@ -88,8 +88,8 @@ export class EulerianCycle {
   /**
    * Returns true if the graph has an Eulerian cycle.
    *
-   * @return  {@code true} if the graph has an Eulerian cycle;
-   * {@code false} otherwise
+   * @return  `true` if the graph has an Eulerian cycle;
+   * `false` otherwise
    */
   public hasEulerianCycle(): boolean {
     return this.__cycle != null;
@@ -165,7 +165,7 @@ export class EulerianCycle {
   }
 
   /**
-   * Unit tests the {@code EulerianCycle} data type.
+   * Unit tests the `EulerianCycle` data type.
    *
    * @param  args the command-line arguments
    */
@@ -187,7 +187,7 @@ export class EulerianCycle {
       V - ((V / 2) | 0),
       E - ((E / 2) | 0)
     );
-    const perm: number[] = (s => {
+    const perm: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;

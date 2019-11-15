@@ -6,7 +6,7 @@ import { StdOut } from './StdOut';
 import { Queue } from './Queue';
 
 /**
- * Computes the connected components of the undirected graph {@code G}.
+ * Computes the connected components of the undirected graph `G`.
  *
  * @param {Graph} G the undirected graph
  * @class
@@ -33,17 +33,17 @@ export class CC {
       if (this.__size === undefined) this.__size = null;
       if (this.__count === undefined) this.__count = 0;
       (() => {
-        this.marked = (s => {
+        this.marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
         })(G.V());
-        this.__id = (s => {
+        this.__id = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
-        this.__size = (s => {
+        this.__size = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -71,17 +71,17 @@ export class CC {
       if (this.__size === undefined) this.__size = null;
       if (this.__count === undefined) this.__count = 0;
       (() => {
-        this.marked = (s => {
+        this.marked = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
         })(G.V());
-        this.__id = (s => {
+        this.__id = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
         })(G.V());
-        this.__size = (s => {
+        this.__size = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -147,11 +147,11 @@ export class CC {
   }
 
   /**
-   * Returns the component id of the connected component containing vertex {@code v}.
+   * Returns the component id of the connected component containing vertex `v`.
    *
    * @param   v the vertex
-   * @return  the component id of the connected component containing vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the component id of the connected component containing vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public id(v: number): number {
     this.validateVertex(v);
@@ -159,11 +159,11 @@ export class CC {
   }
 
   /**
-   * Returns the number of vertices in the connected component containing vertex {@code v}.
+   * Returns the number of vertices in the connected component containing vertex `v`.
    *
    * @param   v the vertex
-   * @return  the number of vertices in the connected component containing vertex {@code v}
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  the number of vertices in the connected component containing vertex `v`
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public size(v: number): number {
     this.validateVertex(v);
@@ -171,24 +171,24 @@ export class CC {
   }
 
   /**
-   * Returns the number of connected components in the graph {@code G}.
+   * Returns the number of connected components in the graph `G`.
    *
-   * @return  the number of connected components in the graph {@code G}
+   * @return  the number of connected components in the graph `G`
    */
   public count(): number {
     return this.__count;
   }
 
   /**
-   * Returns true if vertices {@code v} and {@code w} are in the same
+   * Returns true if vertices `v` and `w` are in the same
    * connected component.
    *
    * @param   v one vertex
    * @param   w the other vertex
-   * @return  {@code true} if vertices {@code v} and {@code w} are in the same
-   * connected component; {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
-   * @throws IllegalArgumentException unless {@code 0 <= w < V}
+   * @return  `true` if vertices `v` and `w` are in the same
+   * connected component; `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
+   * @throws IllegalArgumentException unless `0 <= w < V`
    */
   public connected(v: number, w: number): boolean {
     this.validateVertex(v);
@@ -197,15 +197,15 @@ export class CC {
   }
 
   /**
-   * Returns true if vertices {@code v} and {@code w} are in the same
+   * Returns true if vertices `v` and `w` are in the same
    * connected component.
    *
    * @param   v one vertex
    * @param   w the other vertex
-   * @return  {@code true} if vertices {@code v} and {@code w} are in the same
-   * connected component; {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
-   * @throws IllegalArgumentException unless {@code 0 <= w < V}
+   * @return  `true` if vertices `v` and `w` are in the same
+   * connected component; `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
+   * @throws IllegalArgumentException unless `0 <= w < V`
    * @deprecated Replaced by {@link #connected(int, int)}.
    */
   public areConnected(v: number, w: number): boolean {
@@ -221,7 +221,7 @@ export class CC {
   }
 
   /**
-   * Unit tests the {@code CC} data type.
+   * Unit tests the `CC` data type.
    *
    * @param  args the command-line arguments
    */
@@ -231,7 +231,7 @@ export class CC {
     const cc: CC = new CC(G);
     const m: number = cc.count();
     StdOut.println$java_lang_Object(`${m} components`);
-    const components: Queue<number>[] = <Queue<number>[]>(s => {
+    const components: Queue<number>[] = <Queue<number>[]>((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;

@@ -4,15 +4,15 @@ import { Queue } from './Queue';
 import { StdOut } from './StdOut';
 
 /**
- * Compute a maximum flow and minimum cut in the network {@code G}
- * from vertex {@code s} to vertex {@code t}.
+ * Compute a maximum flow and minimum cut in the network `G`
+ * from vertex `s` to vertex `t`.
  *
  * @param  {FlowNetwork} G the flow network
  * @param   s the source vertex
  * @param   t the sink vertex
- * @throws IllegalArgumentException unless {@code 0 <= s < V}
- * @throws IllegalArgumentException unless {@code 0 <= t < V}
- * @throws IllegalArgumentException if {@code s == t}
+ * @throws IllegalArgumentException unless `0 <= s < V`
+ * @throws IllegalArgumentException unless `0 <= t < V`
+ * @throws IllegalArgumentException if `s == t`
  * @throws IllegalArgumentException if initial flow is infeasible
  * @class
  * @author Robert Sedgewick
@@ -68,12 +68,12 @@ export class FordFulkerson {
   }
 
   /**
-   * Returns true if the specified vertex is on the {@code s} side of the mincut.
+   * Returns true if the specified vertex is on the `s` side of the mincut.
    *
    * @param   v vertex
-   * @return  {@code true} if vertex {@code v} is on the {@code s} side of the micut;
-   * {@code false} otherwise
-   * @throws IllegalArgumentException unless {@code 0 <= v < V}
+   * @return  `true` if vertex `v` is on the `s` side of the micut;
+   * `false` otherwise
+   * @throws IllegalArgumentException unless `0 <= v < V`
    */
   public inCut(v: number): boolean {
     this.validate(v);
@@ -86,12 +86,12 @@ export class FordFulkerson {
   }
 
   private hasAugmentingPath(G: FlowNetwork, s: number, t: number): boolean {
-    this.edgeTo = (s => {
+    this.edgeTo = ((s) => {
       const a = [];
       while (s-- > 0) a.push(null);
       return a;
     })(G.V());
-    this.marked = (s => {
+    this.marked = ((s) => {
       const a = [];
       while (s-- > 0) a.push(false);
       return a;
@@ -217,7 +217,7 @@ export class FordFulkerson {
   }
 
   /**
-   * Unit tests the {@code FordFulkerson} data type.
+   * Unit tests the `FordFulkerson` data type.
    *
    * @param  args the command-line arguments
    */

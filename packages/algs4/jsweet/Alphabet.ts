@@ -139,7 +139,7 @@ export class Alphabet {
       if (this.inverse === undefined) this.inverse = null;
       if (this.__R === undefined) this.__R = 0;
       (() => {
-        const unicode: boolean[] = (s => {
+        const unicode: boolean[] = ((s) => {
           const a = [];
           while (s-- > 0) a.push(false);
           return a;
@@ -154,7 +154,7 @@ export class Alphabet {
         }
         this.alphabet = /* toCharArray */ alpha.split('');
         this.__R = alpha.length;
-        this.inverse = (s => {
+        this.inverse = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -177,12 +177,12 @@ export class Alphabet {
       if (this.__R === undefined) this.__R = 0;
       (() => {
         this.__R = radix;
-        this.alphabet = (s => {
+        this.alphabet = ((s) => {
           const a = [];
           while (s-- > 0) a.push(null);
           return a;
         })(this.__R);
-        this.inverse = (s => {
+        this.inverse = ((s) => {
           const a = [];
           while (s-- > 0) a.push(0);
           return a;
@@ -207,12 +207,12 @@ export class Alphabet {
         if (this.__R === undefined) this.__R = 0;
         (() => {
           this.__R = radix;
-          this.alphabet = (s => {
+          this.alphabet = ((s) => {
             const a = [];
             while (s-- > 0) a.push(null);
             return a;
           })(this.__R);
-          this.inverse = (s => {
+          this.inverse = ((s) => {
             const a = [];
             while (s-- > 0) a.push(0);
             return a;
@@ -232,8 +232,8 @@ export class Alphabet {
    * Returns true if the argument is a character in this alphabet.
    *
    * @param   c the character
-   * @return  {@code true} if {@code c} is a character in this alphabet;
-   * {@code false} otherwise
+   * @return  `true` if `c` is a character in this alphabet;
+   * `false` otherwise
    */
   public contains(c: string): boolean {
     return this.inverse[c.charCodeAt(0)] !== -1;
@@ -268,7 +268,7 @@ export class Alphabet {
     for (
       let t: number = this.__R - 1;
       t >= 1;
-      t = (n => (n < 0 ? Math.ceil(n) : Math.floor(n)))(t / 2)
+      t = ((n) => (n < 0 ? Math.ceil(n) : Math.floor(n)))(t / 2)
     ) {
       lgR++;
     }
@@ -279,12 +279,12 @@ export class Alphabet {
    * Returns the index corresponding to the argument character.
    *
    * @param   c the character
-   * @return  the index corresponding to the character {@code c}
-   * @throws IllegalArgumentException unless {@code c} is a character in this alphabet
+   * @return  the index corresponding to the character `c`
+   * @throws IllegalArgumentException unless `c` is a character in this alphabet
    */
   public toIndex(c: string): number {
     if (
-      (c => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >=
+      ((c) => (c.charCodeAt == null ? <any>c : c.charCodeAt(0)))(c) >=
         this.inverse.length ||
       this.inverse[c.charCodeAt(0)] === -1
     ) {
@@ -297,13 +297,13 @@ export class Alphabet {
    * Returns the indices corresponding to the argument characters.
    *
    * @param   s the characters
-   * @return  the indices corresponding to the characters {@code s}
-   * @throws IllegalArgumentException unless every character in {@code s}
+   * @return  the indices corresponding to the characters `s`
+   * @throws IllegalArgumentException unless every character in `s`
    * is a character in this alphabet
    */
   public toIndices(s: string): number[] {
     const source: string[] = /* toCharArray */ s.split('');
-    const target: number[] = (s => {
+    const target: number[] = ((s) => {
       const a = [];
       while (s-- > 0) a.push(0);
       return a;
@@ -318,8 +318,8 @@ export class Alphabet {
    * Returns the character corresponding to the argument index.
    *
    * @param   index the index
-   * @return  the character corresponding to the index {@code index}
-   * @throws IllegalArgumentException unless {@code 0 <= index < R}
+   * @return  the character corresponding to the index `index`
+   * @throws IllegalArgumentException unless `0 <= index < R`
    */
   public toChar(index: number): string {
     if (index < 0 || index >= this.__R) {
@@ -332,14 +332,12 @@ export class Alphabet {
    * Returns the characters corresponding to the argument indices.
    *
    * @param   indices the indices
-   * @return  the characters corresponding to the indices {@code indices}
-   * @throws IllegalArgumentException unless {@code 0 < indices[i] < R}
-   * for every {@code i}
+   * @return  the characters corresponding to the indices `indices`
+   * @throws IllegalArgumentException unless `0 < indices[i] < R`
+   * for every `i`
    */
   public toChars(indices: number[]): string {
-    const s= new java.lang.StringBuilder(
-      indices.length
-    );
+    const s = new java.lang.StringBuilder(indices.length);
     for (let i = 0; i < indices.length; i++) {
       s.append(this.toChar(indices[i]));
     }
@@ -347,7 +345,7 @@ export class Alphabet {
   }
 
   /**
-   * Unit tests the {@code Alphabet} data type.
+   * Unit tests the `Alphabet` data type.
    *
    * @param  args the command-line arguments
    */
