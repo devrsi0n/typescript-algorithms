@@ -1,3 +1,4 @@
+import fs from 'fs';
 import readline from 'readline';
 
 // import StdOut from '../StdOut';
@@ -196,17 +197,31 @@ import readline from 'readline';
 export default class StdIn {
   private static rl = readline.createInterface({
     input: process.stdin,
+    crlfDelay: Infinity,
   });
+
+  private static doesStreamEnd = false;
 
   private static inputLines: Array<string> = [];
 
   private static nextIndex = 0;
 
-  private static _initialize = (() => {
+  private static _initialize = StdIn.init();
+
+  public static init(fileName?: string) {
+    if (fileName) {
+      StdIn.rl = readline.createInterface({
+        input: fs.createReadStream(fileName),
+        crlfDelay: Infinity,
+      });
+    }
+    StdIn.doesStreamEnd = false;
+    StdIn.inputLines = [];
+    StdIn.nextIndex = 0;
     StdIn.rl.on('line', (line) => {
-      StdIn.inputLines.push(line);
+      StdIn.inputLines.push(...line.split(/\s/));
     });
-  })();
+  }
 
   /**
    * Returns true if standard input is empty (except possibly for whitespace).
@@ -250,9 +265,15 @@ export default class StdIn {
    * @return the next line, excluding the line separator if present;
    * `null` if no such line
    */
-  public static readLine(): string {
-    if (StdIn.isEmpty()) {
-      return null;
+  public static async readLine() {
+    // if (StdIn.isEmpty()) {
+    //   return null;
+    // }
+    if (StdIn.doesStreamEnd) {
+      console.warn('Input stream ended!');
+    } else if (StdIn.isEmpty()) {
+      // Wait a short time to read lines
+      await new Promise((resolve) => setTimeout(resolve, 50));
     }
     const line = StdIn.inputLines[StdIn.nextIndex];
     StdIn.nextIndex++;
@@ -285,7 +306,7 @@ export default class StdIn {
    * @return the next `String`
    * @throws Error if standard input is empty
    */
-  public static readString(): string {
+  public static async readString() {
     return StdIn.readLine();
   }
 
@@ -295,8 +316,8 @@ export default class StdIn {
    * @throws Error if standard input is empty
    * @throws InputMismatchException if the next token cannot be parsed as an `int`
    */
-  public static readInt(): number {
-    return parseInt(StdIn.readLine(), 10);
+  public static async readInt() {
+    return parseInt(await StdIn.readLine(), 10);
   }
 
   /**
@@ -306,7 +327,7 @@ export default class StdIn {
    * @throws Error if standard input is empty
    * @throws InputMismatchException if the next token cannot be parsed as a `double`
    */
-  public static readDouble(): number {
+  public static async readDouble() {
     return StdIn.readInt();
   }
 
@@ -317,7 +338,7 @@ export default class StdIn {
    * @throws Error if standard input is empty
    * @throws InputMismatchException if the next token cannot be parsed as a `float`
    */
-  public static readFloat(): number {
+  public static async readFloat() {
     return StdIn.readInt();
   }
 
@@ -328,7 +349,7 @@ export default class StdIn {
    * @throws Error if standard input is empty
    * @throws InputMismatchException if the next token cannot be parsed as a `long`
    */
-  public static readLong(): number {
+  public static async readLong() {
     return StdIn.readInt();
   }
 
@@ -339,7 +360,7 @@ export default class StdIn {
    * @throws Error if standard input is empty
    * @throws InputMismatchException if the next token cannot be parsed as a `short`
    */
-  public static readShort(): number {
+  public static async readShort() {
     return StdIn.readInt();
   }
 
@@ -350,7 +371,7 @@ export default class StdIn {
    * @throws Error if standard input is empty
    * @throws InputMismatchException if the next token cannot be parsed as a `byte`
    */
-  public static readByte(): number {
+  public static async readByte() {
     return StdIn.readInt();
   }
 

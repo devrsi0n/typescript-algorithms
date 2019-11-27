@@ -73,16 +73,13 @@ export default class UF {
 
   private rank: number[];
 
-  private __count: number;
+  private _count: number;
 
   public constructor(n: number) {
-    this.parent = null;
-    this.rank = null;
-    this.__count = 0;
-    if (n < 0) {
-      throw new Error('IllegalArgumentException');
+    if (!n || typeof n !== 'number' || n < 0) {
+      throw new Error(`IllegalArgumentException: ${n}`);
     }
-    this.__count = n;
+    this._count = n;
     this.parent = new Array(n).fill(0);
     this.rank = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
@@ -113,7 +110,7 @@ export default class UF {
    * @return  the number of components (between `1` and `n`)
    */
   public count(): number {
-    return this.__count;
+    return this._count;
   }
 
   /**
@@ -149,7 +146,7 @@ export default class UF {
       this.parent[rootQ] = rootP;
       this.rank[rootP]++;
     }
-    this.__count--;
+    this._count--;
   }
 
   private validate(p: number) {
@@ -168,12 +165,13 @@ export default class UF {
    *
    * @param  args the command-line arguments
    */
-  public static main(/* args: string[] */) {
-    const n: number = StdIn.readInt();
+  public static async main(/* args: string[] */) {
+    const n: number = await StdIn.readInt();
     const uf: UF = new UF(n);
     while (!StdIn.isEmpty()) {
-      const p: number = StdIn.readInt();
-      const q: number = StdIn.readInt();
+      /* eslint-disable no-await-in-loop */
+      const p: number = await StdIn.readInt();
+      const q: number = await StdIn.readInt();
       if (uf.connected(p, q)) {
         continue;
       }

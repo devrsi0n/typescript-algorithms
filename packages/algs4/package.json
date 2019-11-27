@@ -35,7 +35,9 @@
     "@types/seedrandom": "^2.4.28",
     "ms": "^2.1.2",
     "printf": "^0.5.2",
-    "seedrandom": "^3.0.5"
+    "seedrandom": "^3.0.5",
+    "shelljs": "^0.8.3",
+    "ts-node": "^8.5.2"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
