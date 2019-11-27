@@ -86,11 +86,11 @@ export default ArticlesList;
 
 const ListItem = ({ article, narrow }: ArticlesListItemProps) => {
   const { gridLayout } = useContext(GridLayoutContext);
+  if (!article) return null;
   const hasOverflow = narrow && article.title.length > 35;
   const imageSource = narrow ? article.hero.narrow : article.hero.regular;
   const hasHeroImage =
     Object.keys(imageSource).length !== 0 && imageSource.constructor === Object;
-  if (!article) return null;
 
   return (
     <ArticleLink to={article.slug} data-a11y="false">
