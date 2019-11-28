@@ -97,7 +97,7 @@ export class Shell {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     Shell.sort(a);
     Shell.show(a);

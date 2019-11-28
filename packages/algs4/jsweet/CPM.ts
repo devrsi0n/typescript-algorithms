@@ -35,7 +35,7 @@ export class CPM {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = StdIn.readInt();
     const source: number = 2 * n;
     const sink: number = 2 * n + 1;

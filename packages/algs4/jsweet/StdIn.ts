@@ -723,7 +723,7 @@ export class StdIn {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     StdOut.print$java_lang_Object('Type a string: ');
     const s: string = StdIn.readString();
     StdOut.println$java_lang_Object(`Your string was: ${s}`);

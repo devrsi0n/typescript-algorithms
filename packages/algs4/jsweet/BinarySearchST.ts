@@ -403,7 +403,7 @@ export class BinarySearchST<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: BinarySearchST<string, number> = <any>(
       new BinarySearchST<string, number>()
     );

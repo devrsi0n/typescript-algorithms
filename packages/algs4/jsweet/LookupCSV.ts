@@ -17,7 +17,7 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class LookupCSV {
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const keyField: number = parseInt(args[1]);
     const valField: number = parseInt(args[2]);
     const st: ST<string, string> = <any>new ST<string, string>();

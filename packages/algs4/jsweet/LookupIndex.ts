@@ -19,7 +19,7 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class LookupIndex {
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const filename: string = args[0];
     const separator: string = args[1];
     const __in: In = new In(filename);

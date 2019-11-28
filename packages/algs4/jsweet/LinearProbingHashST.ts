@@ -281,7 +281,7 @@ export class LinearProbingHashST<Key, Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: LinearProbingHashST<string, number> = <any>(
       new LinearProbingHashST<string, number>()
     );

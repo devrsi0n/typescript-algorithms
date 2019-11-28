@@ -221,7 +221,7 @@ export class FordFulkerson {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const V: number = parseInt(args[0]);
     const E: number = parseInt(args[1]);
     const s = 0;

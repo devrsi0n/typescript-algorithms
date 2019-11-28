@@ -146,7 +146,7 @@ export class SymbolGraph {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const filename: string = args[0];
     const delimiter: string = args[1];
     const sg: SymbolGraph = new SymbolGraph(filename, delimiter);

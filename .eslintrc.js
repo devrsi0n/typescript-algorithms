@@ -10,6 +10,7 @@ module.exports = {
     'no-continue': 'off',
     'no-param-reassign': 'off',
     'no-unused-vars': 'off',
+    'no-await-in-loop': 'off',
 
     '@typescript-eslint/no-this-alias': 'off',
     '@typescript-eslint/no-empty-function': 'off',

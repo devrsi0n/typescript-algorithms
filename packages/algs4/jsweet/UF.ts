@@ -113,7 +113,7 @@ export class UF {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = StdIn.readInt();
     const uf: UF = new UF(n);
     while (!StdIn.isEmpty()) {

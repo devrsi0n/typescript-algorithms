@@ -28,7 +28,7 @@ export class BinaryDump {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     let bitsPerLine = 16;
     if (args.length === 1) {
       bitsPerLine = parseInt(args[0]);

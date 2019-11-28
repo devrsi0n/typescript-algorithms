@@ -46,7 +46,7 @@ export class LongestRepeatedSubstring {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const text: string = /* replaceAll */ StdIn.readAll().replace(
       new RegExp('\\s+', 'g'),
       ' '

@@ -849,7 +849,7 @@ export class RedBlackBST<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: RedBlackBST<string, number> = <any>(
       new RedBlackBST<string, number>()
     );

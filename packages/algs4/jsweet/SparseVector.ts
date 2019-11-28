@@ -198,7 +198,7 @@ export class SparseVector {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: SparseVector = new SparseVector(10);
     const b: SparseVector = new SparseVector(10);
     a.put(3, 0.5);

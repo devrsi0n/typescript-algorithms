@@ -350,7 +350,7 @@ export class LinearProgramming {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     StdOut.println$java_lang_Object('----- test 1 --------------------');
     LinearProgramming.test1();
     StdOut.println();

@@ -99,7 +99,7 @@ export class QuickFindUF {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = StdIn.readInt();
     const uf: QuickFindUF = new QuickFindUF(n);
     while (!StdIn.isEmpty()) {

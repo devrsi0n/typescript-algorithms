@@ -457,7 +457,7 @@ export class GrayscalePicture implements ActionListener {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const picture: GrayscalePicture = new GrayscalePicture(args[0]);
     StdOut.printf('%d-by-%d\n', picture.width(), picture.height());
     const copy: GrayscalePicture = new GrayscalePicture(picture);

@@ -28,7 +28,7 @@ export class HexDump {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     let bytesPerLine = 16;
     if (args.length === 1) {
       bytesPerLine = parseInt(args[0]);

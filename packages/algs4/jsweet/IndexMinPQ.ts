@@ -306,7 +306,7 @@ export class IndexMinPQ<Key extends java.lang.Comparable<Key>>
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const strings: string[] = [
       'it',
       'was',

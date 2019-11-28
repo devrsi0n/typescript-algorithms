@@ -337,7 +337,7 @@ export class MSD {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     const n: number = a.length;
     MSD.sort$java_lang_String_A(a);

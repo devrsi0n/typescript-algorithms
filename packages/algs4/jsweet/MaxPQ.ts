@@ -297,7 +297,7 @@ export class MaxPQ<Key> implements Iterable<Key> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const pq: MaxPQ<string> = <any>new MaxPQ<string>();
     while (!StdIn.isEmpty()) {
       {

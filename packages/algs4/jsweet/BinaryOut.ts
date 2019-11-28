@@ -299,7 +299,7 @@ export class BinaryOut {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const filename: string = args[0];
     const out: BinaryOut = new BinaryOut(filename);
     const __in: BinaryIn = new BinaryIn();

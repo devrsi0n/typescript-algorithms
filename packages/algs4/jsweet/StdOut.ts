@@ -315,7 +315,7 @@ export class StdOut {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     StdOut.println$java_lang_Object('Test');
     StdOut.println$int(17);
     StdOut.println$boolean(true);

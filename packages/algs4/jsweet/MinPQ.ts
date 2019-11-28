@@ -298,7 +298,7 @@ export class MinPQ<Key> implements Iterable<Key> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const pq: MinPQ<string> = <any>new MinPQ<string>();
     while (!StdIn.isEmpty()) {
       {

@@ -15,7 +15,7 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class DeDup {
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const set: SET<string> = <any>new SET<string>();
     while (!StdIn.isEmpty()) {
       {

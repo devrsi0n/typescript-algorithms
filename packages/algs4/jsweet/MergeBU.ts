@@ -102,7 +102,7 @@ export class MergeBU {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     MergeBU.sort(a);
     MergeBU.show(a);

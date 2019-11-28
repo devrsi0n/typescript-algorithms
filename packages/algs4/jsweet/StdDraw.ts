@@ -2412,7 +2412,7 @@ export class StdDraw
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     StdDraw.square(0.2, 0.8, 0.1);
     StdDraw.filledSquare(0.8, 0.8, 0.2);
     StdDraw.circle(0.8, 0.2, 0.2);

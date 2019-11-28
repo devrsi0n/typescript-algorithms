@@ -30,7 +30,7 @@ export class Arbitrage {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const V: number = StdIn.readInt();
     const name: string[] = ((s) => {
       const a = [];

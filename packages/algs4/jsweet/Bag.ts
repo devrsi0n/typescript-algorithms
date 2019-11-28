@@ -64,7 +64,7 @@ export class Bag<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const bag: Bag<string> = <any>new Bag<string>();
     while (!StdIn.isEmpty()) {
       {

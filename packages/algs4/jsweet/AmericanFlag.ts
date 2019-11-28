@@ -409,7 +409,7 @@ export class AmericanFlag {
    *
    * @param  args the command-line arguments: "int" to read input as non-negative integers
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     if (args.length > 0 && /* equals */ <any>((o1: any, o2: any) => {
         if (o1 && o1.equals) {
           return o1.equals(o2);

@@ -209,7 +209,7 @@ export class Interval1D {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const intervals: Interval1D[] = [null, null, null, null];
     intervals[0] = new Interval1D(15.0, 33.0);
     intervals[1] = new Interval1D(45.0, 60.0);

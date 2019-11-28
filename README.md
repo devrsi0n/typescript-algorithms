@@ -6,7 +6,14 @@
 
 The book Algorithms(Fourth Edition)'s source code(implemented in TypeScript) and documents.
 
-![](./assets/cover.jpg)
+<div align="left">
+  <a href="https://www.ituring.com.cn/book/875">
+    <img src="./assets/cover.jpg" width="350px" style="margin-right:50px;" alt="Chinese version">
+  </a>
+  <a href="https://algs4.cs.princeton.edu/">
+    <img src="./assets/cover.png" height="350px" alt="Original version">
+  </a>
+</div>
 
 ## Quick Start
 

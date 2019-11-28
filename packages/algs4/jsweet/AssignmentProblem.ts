@@ -313,7 +313,7 @@ export class AssignmentProblem {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = parseInt(args[0]);
     const weight: number[][] = <any>(function(dims) {
       const allocate = function(dims) {

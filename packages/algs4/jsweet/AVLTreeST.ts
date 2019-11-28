@@ -1049,7 +1049,7 @@ export class AVLTreeST<Key extends Comparable<Key>, Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: AVLTreeST<string, number> = <any>new AVLTreeST<string, number>();
     for (let i = 0; !StdIn.isEmpty(); i++) {
       {

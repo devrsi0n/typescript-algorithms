@@ -690,7 +690,7 @@ export class StdStats {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: number[] = StdArrayIO.readDouble1D();
     StdOut.printf('       min %10.3f\n', StdStats.min$double_A(a));
     StdOut.printf('      mean %10.3f\n', StdStats.mean$double_A(a));

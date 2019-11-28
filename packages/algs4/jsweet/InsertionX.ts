@@ -92,7 +92,7 @@ export class InsertionX {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     InsertionX.sort(a);
     InsertionX.show(a);

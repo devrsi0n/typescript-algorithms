@@ -462,7 +462,7 @@ export class Insertion {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     Insertion.sort$java_lang_Comparable_A(a);
     Insertion.show(a);

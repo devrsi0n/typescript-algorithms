@@ -24,7 +24,7 @@ export class Count {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const alphabet: Alphabet = new Alphabet(args[0]);
     const R: number = alphabet.radix();
     const count: number[] = ((s) => {

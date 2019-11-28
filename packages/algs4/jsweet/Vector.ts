@@ -212,7 +212,7 @@ export class Vector {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const xdata: number[] = [1.0, 2.0, 3.0, 4.0];
     const ydata: number[] = [5.0, 2.0, 4.0, 1.0];
     const x: Vector = <any>(

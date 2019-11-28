@@ -184,7 +184,7 @@ export class PrimMST {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const __in: In = new In(args[0]);
     const G: EdgeWeightedGraph = new EdgeWeightedGraph(__in);
     const mst: PrimMST = new PrimMST(G);

@@ -67,7 +67,7 @@ export class ResizingArrayBag<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const bag: ResizingArrayBag<string> = <any>new ResizingArrayBag<string>();
     bag.add('Hello');
     bag.add('World');

@@ -320,7 +320,7 @@ export class HopcroftKarp {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const V1: number = parseInt(args[0]);
     const V2: number = parseInt(args[1]);
     const E: number = parseInt(args[2]);

@@ -103,7 +103,7 @@ export class LongestCommonSubstring {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const in1: In = new In(args[0]);
     const in2: In = new In(args[1]);
     const s: string = /* replaceAll */ in1

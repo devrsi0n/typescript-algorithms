@@ -215,7 +215,7 @@ export class BTree<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: BTree<string, string> = <any>new BTree<string, string>();
     st.put('www.cs.princeton.edu', '128.112.136.12');
     st.put('www.cs.princeton.edu', '128.112.136.11');

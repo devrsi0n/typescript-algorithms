@@ -139,7 +139,7 @@ export class BinaryInsertion {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     BinaryInsertion.sort(a);
     BinaryInsertion.show(a);

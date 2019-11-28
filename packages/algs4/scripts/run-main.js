@@ -26,13 +26,13 @@ const { exec } = require('shelljs');
     ]).entry;
   }
   const filePath = path.resolve(__dirname, `../src/${entry}`);
-  try {
-    await fs.promises.access(filePath, fs.constants.R_OK);
-  } catch (error) {
-    console.error(error);
-    console.log(`Unknown lib name(${entry}), please double check lib's name.`);
-    process.exit(-1);
-  }
+  // try {
+  //   await fs.promises.access(filePath, fs.constants.R_OK);
+  // } catch (error) {
+  //   console.error(error);
+  //   console.log(`Unknown lib name(${entry}), please double check lib's name.`);
+  //   process.exit(-1);
+  // }
   const args = process.argv.slice(3);
   // const execCommand = `node -r ts-node/register --inspect-brk -e 'import mod from "${filePath}"; mod.main()' < ${fileName}`;
   let execCommand = `node -r ts-node/register -e 'require("${filePath}").default.main()' ${args.join(

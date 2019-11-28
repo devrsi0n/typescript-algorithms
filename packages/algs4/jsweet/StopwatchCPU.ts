@@ -40,7 +40,7 @@ export class StopwatchCPU {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = parseInt(args[0]);
     const timer1: StopwatchCPU = new StopwatchCPU();
     let sum1 = 0.0;

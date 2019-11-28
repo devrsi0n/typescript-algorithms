@@ -177,7 +177,7 @@ export class Quick3way {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     Quick3way.sort$java_lang_Comparable_A(a);
     Quick3way.show(a);

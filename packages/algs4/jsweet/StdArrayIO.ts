@@ -312,7 +312,7 @@ export class StdArrayIO {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: number[] = StdArrayIO.readDouble1D();
     StdArrayIO.print$double_A(a);
     StdOut.println();

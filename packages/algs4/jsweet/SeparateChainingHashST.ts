@@ -209,7 +209,7 @@ export class SeparateChainingHashST<Key, Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: SeparateChainingHashST<string, number> = <any>(
       new SeparateChainingHashST<string, number>()
     );

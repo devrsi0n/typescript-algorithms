@@ -110,7 +110,7 @@ export class DirectedCycle {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const __in: In = new In(args[0]);
     const G: Digraph = new Digraph(__in);
     const finder: DirectedCycle = new DirectedCycle(G);

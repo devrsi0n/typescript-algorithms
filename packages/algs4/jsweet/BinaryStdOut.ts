@@ -262,7 +262,7 @@ export class BinaryStdOut {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const m: number = parseInt(args[0]);
     for (let i = 0; i < m; i++) {
       {

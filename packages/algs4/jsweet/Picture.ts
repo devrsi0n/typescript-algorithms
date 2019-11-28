@@ -454,7 +454,7 @@ export class Picture implements ActionListener {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const picture: Picture = new Picture(args[0]);
     console.info('%d-by-%d\n');
     picture.show();

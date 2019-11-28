@@ -303,7 +303,7 @@ export class TwoPersonZeroSumGame {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     TwoPersonZeroSumGame.test1();
     TwoPersonZeroSumGame.test2();
     TwoPersonZeroSumGame.test3();

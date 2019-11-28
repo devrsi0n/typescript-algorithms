@@ -17,7 +17,7 @@ import { StdIn } from './StdIn';
  * @class
  */
 export class FileIndex {
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: ST<string, SET<File>> = <any>new ST<string, SET<File>>();
     StdOut.println$java_lang_Object('Indexing files');
     for (let index257 = 0; index257 < args.length; index257++) {

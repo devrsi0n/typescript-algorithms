@@ -484,7 +484,7 @@ export class StdAudio {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const freq = 440.0;
     for (let i = 0; i <= StdAudio.SAMPLE_RATE; i++) {
       {

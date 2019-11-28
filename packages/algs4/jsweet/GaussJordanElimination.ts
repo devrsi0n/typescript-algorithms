@@ -315,7 +315,7 @@ export class GaussJordanElimination {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     GaussJordanElimination.test1();
     GaussJordanElimination.test2();
     GaussJordanElimination.test3();

@@ -98,7 +98,7 @@ export class QuickUnionUF {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = StdIn.readInt();
     const uf: QuickUnionUF = new QuickUnionUF(n);
     while (!StdIn.isEmpty()) {

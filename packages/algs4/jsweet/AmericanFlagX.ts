@@ -174,7 +174,7 @@ export class AmericanFlagX {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     AmericanFlagX.sort$java_lang_String_A(a);
     for (let i = 0; i < a.length; i++) {

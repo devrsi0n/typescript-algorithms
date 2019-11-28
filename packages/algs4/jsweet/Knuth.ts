@@ -62,7 +62,7 @@ export class Knuth {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     Knuth.shuffle(a);
     for (let i = 0; i < a.length; i++) {

@@ -26,7 +26,7 @@ export class TopM {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const m: number = parseInt(args[0]);
     const pq: MinPQ<Transaction> = <any>new MinPQ<Transaction>(m + 1);
     while (StdIn.hasNextLine()) {

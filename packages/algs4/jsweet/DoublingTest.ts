@@ -45,7 +45,7 @@ export class DoublingTest {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     for (let n = 250; true; n += n) {
       {
         const time: number = DoublingTest.timeTrial(n);

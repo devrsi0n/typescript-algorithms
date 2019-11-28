@@ -174,7 +174,7 @@ export class KMP {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const pat: string = args[0];
     const txt: string = args[1];
     const pattern: string[] = /* toCharArray */ pat.split('');

@@ -251,7 +251,7 @@ export class PatriciaSET implements Iterable<string> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const set: PatriciaSET = new PatriciaSET();
     let limitItem = 1000000;
     let limitPass = 1;

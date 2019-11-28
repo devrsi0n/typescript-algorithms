@@ -105,7 +105,7 @@ export class Stack<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const stack: Stack<string> = <any>new Stack<string>();
     while (!StdIn.isEmpty()) {
       {

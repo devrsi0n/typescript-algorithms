@@ -123,7 +123,7 @@ export class Interval2D {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const xmin: number = Number.parseFloat(args[0]);
     const xmax: number = Number.parseFloat(args[1]);
     const ymin: number = Number.parseFloat(args[2]);

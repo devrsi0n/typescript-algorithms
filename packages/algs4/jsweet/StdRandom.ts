@@ -677,7 +677,7 @@ export class StdRandom {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = parseInt(args[0]);
     if (args.length === 2) StdRandom.setSeed(Number.parseInt(args[1]));
     const probabilities: number[] = [0.5, 0.3, 0.1, 0.1];

@@ -124,7 +124,7 @@ export class FenwickTree {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     let ft: FenwickTree = null;
     const cmd = 'cmp';
     while (true) {

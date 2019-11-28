@@ -225,7 +225,7 @@ export class SegmentTree {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     let st: SegmentTree = null;
     const cmd = 'cmp';
     while (true) {

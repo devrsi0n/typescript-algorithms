@@ -139,7 +139,7 @@ export class SuffixArray {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const s: string = /* replaceAll */ StdIn.readAll()
       .replace(new RegExp('\\s+', 'g'), ' ')
       .trim();

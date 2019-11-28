@@ -292,7 +292,7 @@ export class PatriciaST<Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: PatriciaST<number> = <any>new PatriciaST<number>();
     let limitItem = 1000000;
     let limitPass = 1;

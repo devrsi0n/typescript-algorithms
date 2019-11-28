@@ -297,7 +297,7 @@ export class Point2D implements java.lang.Comparable<Point2D> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const x0: number = parseInt(args[0]);
     const y0: number = parseInt(args[1]);
     const n: number = parseInt(args[2]);

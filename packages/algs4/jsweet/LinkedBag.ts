@@ -59,7 +59,7 @@ export class LinkedBag<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const bag: LinkedBag<string> = <any>new LinkedBag<string>();
     while (!StdIn.isEmpty()) {
       {

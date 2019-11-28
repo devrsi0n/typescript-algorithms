@@ -86,7 +86,7 @@ export class Heap {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     Heap.sort(a);
     Heap.show(a);

@@ -84,7 +84,7 @@ export class DijkstraAllPairsSP {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const __in: In = new In(args[0]);
     const G: EdgeWeightedDigraph = new EdgeWeightedDigraph(__in);
     const spt: DijkstraAllPairsSP = new DijkstraAllPairsSP(G);

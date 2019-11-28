@@ -677,7 +677,7 @@ export class MergeX {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     MergeX.sort$java_lang_Comparable_A(a);
     MergeX.show(a);

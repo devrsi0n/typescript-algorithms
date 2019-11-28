@@ -232,7 +232,7 @@ export class FlowNetwork {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const __in: In = new In(args[0]);
     const G: FlowNetwork = new FlowNetwork(__in);
     StdOut.println$java_lang_Object(G);

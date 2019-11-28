@@ -684,7 +684,7 @@ export class In {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     let __in: In;
     const urlName = 'https://introcs.cs.princeton.edu/java/stdlib/InTest.txt';
     console.info(`readAll() from URL ${urlName}`);

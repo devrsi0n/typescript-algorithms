@@ -109,7 +109,7 @@ export class ResizingArrayQueue<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const queue: ResizingArrayQueue<string> = <any>(
       new ResizingArrayQueue<string>()
     );

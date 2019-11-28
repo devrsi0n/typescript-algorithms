@@ -92,7 +92,7 @@ export class Edge implements java.lang.Comparable<Edge> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const e: Edge = new Edge(12, 34, 5.67);
     StdOut.println$java_lang_Object(e);
   }

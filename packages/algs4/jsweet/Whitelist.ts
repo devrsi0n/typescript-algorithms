@@ -24,7 +24,7 @@ export class Whitelist {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const __in: In = new In(args[0]);
     const white: number[] = __in.readAllInts();
     const set: StaticSETofInts = new StaticSETofInts(white);

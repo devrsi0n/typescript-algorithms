@@ -349,7 +349,7 @@ export class Alphabet {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const encoded1: number[] = Alphabet.BASE64_$LI$().toIndices(
       'NowIsTheTimeForAllGoodMen'
     );

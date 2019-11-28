@@ -25,7 +25,7 @@ export class FrequencyCounter {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     let distinct = 0;
     let words = 0;
     const minlen: number = parseInt(args[0]);

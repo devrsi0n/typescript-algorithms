@@ -17,7 +17,7 @@ import { StdOut } from './StdOut';
  * @class
  */
 export class BlackFilter {
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const set: SET<string> = <any>new SET<string>();
     const __in: In = new In(args[0]);
     while (!__in.isEmpty()) {

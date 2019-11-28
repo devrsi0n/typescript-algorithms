@@ -140,7 +140,7 @@ export class LinkedQueue<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const queue: LinkedQueue<string> = <any>new LinkedQueue<string>();
     while (!StdIn.isEmpty()) {
       {

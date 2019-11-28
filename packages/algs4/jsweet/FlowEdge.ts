@@ -212,7 +212,7 @@ export class FlowEdge {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const e: FlowEdge = new FlowEdge(12, 23, 4.56);
     StdOut.println$java_lang_Object(e);
   }

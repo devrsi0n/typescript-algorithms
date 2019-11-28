@@ -404,7 +404,7 @@ export class TST<Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: TST<number> = <any>new TST<number>();
     for (let i = 0; !StdIn.isEmpty(); i++) {
       {

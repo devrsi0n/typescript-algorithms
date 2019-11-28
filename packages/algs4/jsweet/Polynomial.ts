@@ -228,7 +228,7 @@ export class Polynomial {
    *
    * @param  args the command-line arguments (none)
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const zero: Polynomial = new Polynomial(0, 0);
     const p1: Polynomial = new Polynomial(4, 3);
     const p2: Polynomial = new Polynomial(3, 2);

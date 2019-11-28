@@ -181,7 +181,7 @@ export class QuickX {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     QuickX.sort$java_lang_Comparable_A(a);
     QuickX.show(a);

@@ -1963,7 +1963,7 @@ export class Draw
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const draw1: Draw = new Draw('Test client 1');
     draw1.square(0.2, 0.8, 0.1);
     draw1.filledSquare(0.8, 0.8, 0.2);

@@ -198,7 +198,7 @@ export class Transaction implements java.lang.Comparable<Transaction> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: Transaction[] = [null, null, null, null];
     a[0] = new Transaction('Turing   6/17/1990  644.08');
     a[1] = new Transaction('Tarjan   3/26/2002 4121.85');

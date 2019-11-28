@@ -247,7 +247,7 @@ export class SuffixArrayX {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const s: string = /* replaceAll */ StdIn.readAll()
       .replace(new RegExp('\n', 'g'), ' ')
       .trim();

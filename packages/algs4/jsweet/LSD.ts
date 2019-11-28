@@ -133,7 +133,7 @@ export class LSD {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: string[] = StdIn.readAllStrings();
     const n: number = a.length;
     const w: number = a[0].length;

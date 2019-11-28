@@ -180,7 +180,7 @@ export class ClosestPair {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = StdIn.readInt();
     const points: Point2D[] = ((s) => {
       const a = [];

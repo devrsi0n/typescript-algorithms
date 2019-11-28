@@ -24,7 +24,7 @@ export class GREP {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const regexp = `(.*${args[0]}.*)`;
     const nfa: NFA = new NFA(regexp);
     while (StdIn.hasNextLine()) {

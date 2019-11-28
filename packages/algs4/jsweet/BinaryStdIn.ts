@@ -281,7 +281,7 @@ export class BinaryStdIn {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     while (!BinaryStdIn.isEmpty()) {
       {
         const c: string = BinaryStdIn.readChar();

@@ -171,7 +171,7 @@ export class ST<Key extends java.lang.Comparable<Key>, Value>
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: ST<string, number> = <any>new ST<string, number>();
     for (let i = 0; !StdIn.isEmpty(); i++) {
       {

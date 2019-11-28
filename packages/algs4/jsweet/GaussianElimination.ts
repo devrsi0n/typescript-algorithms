@@ -276,7 +276,7 @@ export class GaussianElimination {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     GaussianElimination.test1();
     GaussianElimination.test2();
     GaussianElimination.test3();

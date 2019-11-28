@@ -95,7 +95,7 @@ export class ResizingArrayStack<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const stack: ResizingArrayStack<string> = <any>(
       new ResizingArrayStack<string>()
     );

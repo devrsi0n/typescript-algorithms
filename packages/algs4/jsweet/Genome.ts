@@ -57,7 +57,7 @@ export class Genome {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     if (/* equals */ <any>((o1: any, o2: any) => {
         if (o1 && o1.equals) {
           return o1.equals(o2);

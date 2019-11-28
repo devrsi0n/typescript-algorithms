@@ -84,7 +84,6 @@ export default class UF {
     this.rank = new Array(n).fill(0);
     for (let i = 0; i < n; i++) {
       this.parent[i] = i;
-      this.rank[i] = 0;
     }
   }
 

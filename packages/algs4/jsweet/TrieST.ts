@@ -426,7 +426,7 @@ export class TrieST<Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: TrieST<number> = <any>new TrieST<number>();
     for (let i = 0; !StdIn.isEmpty(); i++) {
       {

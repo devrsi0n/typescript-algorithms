@@ -167,7 +167,7 @@ export class SequentialSearchST<Key, Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: SequentialSearchST<string, number> = <any>(
       new SequentialSearchST<string, number>()
     );

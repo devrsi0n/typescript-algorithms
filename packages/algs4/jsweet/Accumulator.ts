@@ -74,7 +74,7 @@ export class Accumulator {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const stats: Accumulator = new Accumulator();
     while (!StdIn.isEmpty()) {
       {

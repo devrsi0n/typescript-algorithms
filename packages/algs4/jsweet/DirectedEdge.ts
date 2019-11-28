@@ -68,7 +68,7 @@ export class DirectedEdge {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const e: DirectedEdge = new DirectedEdge(12, 34, 5.67);
     StdOut.println$java_lang_Object(e);
   }

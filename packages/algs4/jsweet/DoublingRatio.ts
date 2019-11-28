@@ -46,7 +46,7 @@ export class DoublingRatio {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     let prev: number = DoublingRatio.timeTrial(125);
     for (let n = 250; true; n += n) {
       {

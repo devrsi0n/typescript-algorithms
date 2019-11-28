@@ -111,7 +111,7 @@ export class CollisionSystem {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     StdDraw.setCanvasSize$int$int(600, 600);
     StdDraw.enableDoubleBuffering();
     let particles: Particle[];

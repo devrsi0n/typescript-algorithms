@@ -249,7 +249,7 @@ export class SET<Key extends java.lang.Comparable<Key>>
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const set: SET<string> = <any>new SET<string>();
     StdOut.println$java_lang_Object(`set = ${set}`);
     set.add('www.cs.princeton.edu');

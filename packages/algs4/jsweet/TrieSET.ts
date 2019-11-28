@@ -382,7 +382,7 @@ export class TrieSET implements Iterable<string> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const set: TrieSET = new TrieSET();
     while (!StdIn.isEmpty()) {
       {

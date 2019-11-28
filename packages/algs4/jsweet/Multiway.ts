@@ -41,7 +41,7 @@ export class Multiway {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const n: number = args.length;
     const streams: In[] = ((s) => {
       const a = [];

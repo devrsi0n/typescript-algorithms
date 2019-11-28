@@ -367,7 +367,7 @@ export class Inversions {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: number[] = StdIn.readAllInts();
     const n: number = a.length;
     const b: number[] = ((s) => {

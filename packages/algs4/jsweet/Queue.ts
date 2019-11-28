@@ -112,7 +112,7 @@ export class Queue<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const queue: Queue<string> = <any>new Queue<string>();
     while (!StdIn.isEmpty()) {
       {

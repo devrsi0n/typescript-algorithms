@@ -122,7 +122,7 @@ export class LinkedStack<Item> implements Iterable<Item> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const stack: LinkedStack<string> = <any>new LinkedStack<string>();
     while (!StdIn.isEmpty()) {
       {

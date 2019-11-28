@@ -203,7 +203,7 @@ export class Date implements java.lang.Comparable<Date> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     let today: Date = new Date(2, 25, 2004);
     StdOut.println$java_lang_Object(today);
     for (let i = 0; i < 10; i++) {

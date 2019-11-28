@@ -694,7 +694,7 @@ export class BST<Key extends java.lang.Comparable<Key>, Value> {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const st: BST<string, number> = <any>new BST<string, number>();
     for (let i = 0; !StdIn.isEmpty(); i++) {
       {

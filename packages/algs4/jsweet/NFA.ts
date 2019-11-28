@@ -155,7 +155,7 @@ export class NFA {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const regexp = `(${args[0]})`;
     const txt: string = args[1];
     const nfa: NFA = new NFA(regexp);

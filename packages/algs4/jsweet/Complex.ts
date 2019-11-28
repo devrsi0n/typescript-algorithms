@@ -216,7 +216,7 @@ export class Complex {
    *
    * @param  args the command-line arguments
    */
-  public static main(args: string[]) {
+  public static main(/* args: string[] */) {
     const a: Complex = new Complex(5.0, 6.0);
     const b: Complex = new Complex(-3.0, 4.0);
     StdOut.println$java_lang_Object(`a            = ${a}`);
