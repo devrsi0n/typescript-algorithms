@@ -9,6 +9,7 @@ export { default as Interval1D } from './Interval1D';
 export { default as Interval2D } from './Interval2D';
 export { default as Point2D } from './Point2D';
 export { default as Queue } from './Queue';
+export { default as UF } from './UF';
 export { default as Stack } from './Stack';
 export { default as StdDraw } from './StdDraw';
 export { default as StdOut } from './StdOut';
