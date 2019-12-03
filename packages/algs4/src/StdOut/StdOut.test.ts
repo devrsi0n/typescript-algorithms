@@ -1,3 +1,4 @@
+import * as mockProcess from 'jest-mock-process';
 import StdOut from './index';
 
 let originalLog: any;
@@ -20,13 +21,25 @@ afterAll(() => {
   global.console.error = originalError;
 });
 
+const mockStdout = mockProcess.mockProcessStdout();
+
+test('println', () => {
+  StdOut.println('123');
+  expect(global.console.log).toHaveBeenCalledWith('123');
+});
+
+test('print', () => {
+  StdOut.print('123');
+  expect(mockStdout).toHaveBeenCalledWith('123');
+});
+
 test('printf', () => {
   StdOut.printf('%10d', 123);
-  expect(global.console.log).toHaveBeenCalledWith('       123');
+  expect(mockStdout).toHaveBeenCalledWith('       123');
   StdOut.printf('%*s', 'foo', 4);
-  expect(global.console.log).toHaveBeenCalledWith(' foo');
+  expect(mockStdout).toHaveBeenCalledWith(' foo');
   StdOut.printf('%*.*f', 3.14159265, 10, 2);
-  expect(global.console.log).toHaveBeenCalledWith('      3.14');
+  expect(mockStdout).toHaveBeenCalledWith('      3.14');
   StdOut.printf('%0*.*f', 3.14159265, 10, 3);
-  expect(global.console.log).toHaveBeenCalledWith('000003.142');
+  expect(mockStdout).toHaveBeenCalledWith('000003.142');
 });

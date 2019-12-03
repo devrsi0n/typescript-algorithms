@@ -1,7 +1,10 @@
 import fs from 'fs';
 import readline from 'readline';
+import debug from 'debug';
 
 // import StdOut from '../StdOut';
+
+const d = debug('algs4:StdIn');
 
 /**
  * The `StdIn` class provides static methods for reading strings
@@ -219,7 +222,16 @@ export default class StdIn {
     StdIn.inputLines = [];
     StdIn.nextIndex = 0;
     StdIn.rl.on('line', (line) => {
+      d('line: %s', line);
       StdIn.inputLines.push(...line.split(/\s/));
+    });
+    StdIn.rl.on('close', () => {
+      d('input stream closed normally');
+      StdIn.doesStreamEnd = true;
+    });
+    StdIn.rl.on('SIGINT', () => {
+      d('input stream closed by SIGINT');
+      StdIn.doesStreamEnd = true;
     });
   }
 
@@ -269,9 +281,7 @@ export default class StdIn {
     // if (StdIn.isEmpty()) {
     //   return null;
     // }
-    if (StdIn.doesStreamEnd) {
-      console.warn('Input stream ended!');
-    } else if (StdIn.isEmpty()) {
+    if (StdIn.isEmpty()) {
       // Wait a short time to read lines
       await new Promise((resolve) => setTimeout(resolve, 50));
     }
@@ -297,8 +307,9 @@ export default class StdIn {
    * @return the remainder of the input, as a string
    * @throws Error if standard input is empty
    */
-  public static readAll(): string {
-    return StdIn.readAllStrings().join('');
+  public static async readAll(): Promise<string> {
+    const s = await StdIn.readAllStrings();
+    return s.join('');
   }
 
   /**
@@ -394,10 +405,14 @@ export default class StdIn {
    *
    * @return  all remaining tokens on standard input, as an array of strings
    */
-  public static readAllStrings(): string[] {
-    if (StdIn.isEmpty()) {
-      throw new Error('input is empty');
+  public static async readAllStrings(): Promise<string[]> {
+    if (!StdIn.doesStreamEnd) {
+      // Wait a short time to read lines
+      await new Promise((resolve) => setTimeout(resolve, 250));
+      d('sleep');
+      return StdIn.readAllStrings();
     }
+    d('>>> Input stream ended!');
     const { inputLines, nextIndex } = StdIn;
     const val = inputLines.slice(nextIndex);
     StdIn.nextIndex = StdIn.inputLines.length - 1;
@@ -408,7 +423,7 @@ export default class StdIn {
    * Reads all remaining lines from standard input and returns them as an array of strings.
    * @return  all remaining lines on standard input, as an array of strings
    */
-  public static readAllLines(): string[] {
+  public static readAllLines() {
     return StdIn.readAllStrings();
   }
 
@@ -418,8 +433,8 @@ export default class StdIn {
    * @return  all remaining integers on standard input, as an array
    * @throws InputMismatchException if any token cannot be parsed as an `int`
    */
-  public static readAllInts(): number[] {
-    const fields: string[] = StdIn.readAllStrings();
+  public static async readAllInts(): Promise<number[]> {
+    const fields: string[] = await StdIn.readAllStrings();
     return fields.map((field) => parseInt(field, 10));
   }
 
@@ -429,7 +444,7 @@ export default class StdIn {
    * @return  all remaining longs on standard input, as an array
    * @throws InputMismatchException if any token cannot be parsed as a `long`
    */
-  public static readAllLongs(): number[] {
+  public static readAllLongs(): Promise<number[]> {
     return StdIn.readAllInts();
   }
 
@@ -439,7 +454,7 @@ export default class StdIn {
    * @return  all remaining doubles on standard input, as an array
    * @throws InputMismatchException if any token cannot be parsed as a `double`
    */
-  public static readAllDoubles(): number[] {
+  public static readAllDoubles(): Promise<number[]> {
     return StdIn.readAllInts();
   }
 
@@ -450,7 +465,7 @@ export default class StdIn {
    * @throws InputMismatchException if any token cannot be parsed as an `int`
    * @deprecated Replaced by {@link #readAllInts()}.
    */
-  public static readInts(): number[] {
+  public static readInts(): Promise<number[]> {
     return StdIn.readAllInts();
   }
 
@@ -461,7 +476,7 @@ export default class StdIn {
    * @throws InputMismatchException if any token cannot be parsed as a `double`
    * @deprecated Replaced by {@link #readAllDoubles()}.
    */
-  public static readDoubles(): number[] {
+  public static readDoubles(): Promise<number[]> {
     return StdIn.readAllDoubles();
   }
 
@@ -470,7 +485,7 @@ export default class StdIn {
    * @return  all remaining tokens, as an array of strings
    * @deprecated Replaced by {@link #readAllStrings()}.
    */
-  public static readStrings(): string[] {
+  public static readStrings(): Promise<string[]> {
     return StdIn.readAllStrings();
   }
 }

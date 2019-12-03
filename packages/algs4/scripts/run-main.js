@@ -3,12 +3,12 @@
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable import/no-extraneous-dependencies */
 
-const fs = require('fs');
+// const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
 // const util = require('util');
 
-const { exec } = require('shelljs');
+const shell = require('shelljs');
 
 (async () => {
   let entry = process.argv[2];
@@ -39,13 +39,13 @@ const { exec } = require('shelljs');
     ' '
   )}`;
   if (process.argv.includes('-d')) {
-    execCommand = `node -r ts-node/register --inspect-brk -e 'require("${filePath}").default.main()' ${args
+    execCommand = `DEBUG=algs4:* node -r ts-node/register --inspect-brk -e 'require("${filePath}").default.main()' ${args
       .filter((a) => a !== '-d')
       .join(' ')}`;
   }
   console.log(`debug execCommand: ${execCommand}\n`);
   try {
-    exec(execCommand);
+    shell.exec(execCommand);
   } catch (error) {
     console.log({ error });
   }
