@@ -1,6 +1,6 @@
 {
   "name": "algs4",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "The book Algorithms's implementation, written with TypeScript",
   "main": "lib/index.js",
   "files": [

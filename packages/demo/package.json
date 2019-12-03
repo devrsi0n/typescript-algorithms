@@ -2,7 +2,7 @@
   "name": "demo",
   "private": true,
   "description": "Algorithms demo",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "author": "devrsi0n <devrsi0n@gmail.com>",
   "homepage": "https://devrsi0n.com",
   "keywords": [
@@ -40,7 +40,7 @@
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "adm-zip": "^0.4.13",
-    "algs4": "^0.2.2",
+    "algs4": "^0.3.0",
     "babel-plugin-emotion": "^10.0.23",
     "classnames": "^2.2.6",
     "contentful-cli": "^0.36.0",
