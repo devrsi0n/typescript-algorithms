@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import styled from '@emotion/styled';
 
 class StdDrawCase {
-  module = typeof window !== `undefined` ? require('algs4') : null;
+  StdDraw =
+    typeof window !== `undefined` ? require('algs4/lib/StdDraw').default : null;
+  StdRandom =
+    typeof window !== `undefined`
+      ? require('algs4/lib/StdRandom').default
+      : null;
 
   functionValue(n: number): void {
-    const { StdDraw } = this.module;
+    const { StdDraw } = this;
     // StdDraw.setCanvasSize(sideLength, sideLength);
     StdDraw.setScale(10, -0.3164);
     // StdDraw.setTranslate(0, -3164);
@@ -21,7 +26,7 @@ class StdDrawCase {
     newContainer = 'CanvasContainer1',
     newCanvas = 'canvas1'
   ) {
-    const { StdDraw, StdRandom } = this.module;
+    const { StdDraw, StdRandom } = this;
     StdDraw.createNewCanvas(newContainer, newCanvas);
     // StdDraw.setCanvasSize(440, 240);
     // StdDraw.setTranslate(0, -2048);
@@ -44,7 +49,7 @@ class StdDrawCase {
     newContainer = 'CanvasContainer2',
     newCanvas = 'canvas2'
   ) {
-    const { StdDraw, StdRandom } = this.module;
+    const { StdDraw, StdRandom } = this;
     StdDraw.createNewCanvas(newContainer, newCanvas);
     // StdDraw.setCanvasSize(440, 240);
     // StdDraw.setTranslate(0, -2048);
