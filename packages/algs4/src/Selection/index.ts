@@ -1,14 +1,10 @@
 import assert from 'assert';
-import StdOut from '../StdOut';
+// import StdOut from '../StdOut';
 // import StdIn from '../StdIn';
 import StdRandom from '../StdRandom';
+import SortBase from '../SortBase';
 
-import {
-  Comparator,
-  Comparable,
-  StringComparator,
-  NumberComparator,
-} from '../types';
+import { Comparator, StringComparator, NumberComparator } from '../types';
 
 /**
  *  The `Selection` class provides static methods for sorting an
@@ -24,7 +20,7 @@ import {
  *  <a href="https://algs4.cs.princeton.edu/21elementary">Section 2.1</a>
  *  of <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  */
-export default class Selection<T> {
+export default class Selection extends SortBase {
   // This class should not be instantiated.
   // private constructor() { }
 
@@ -62,51 +58,6 @@ export default class Selection<T> {
    */
   public static sortNumber(a: any[]) {
     return Selection.sort(a, new NumberComparator());
-  }
-
-  // is v < w ?
-  private static less(
-    v: Comparable<any>,
-    w: Comparable<any>,
-    comparator?: Comparator<any>
-  ): boolean {
-    if (comparator && typeof comparator.compare === 'function') {
-      return comparator.compare(v, w) < 0;
-    }
-    return v.compareTo(w) < 0;
-  }
-
-  // exchange a[i] and a[j]
-  private static exch(a: any[], i: number, j: number): void {
-    const swap = a[i];
-    a[i] = a[j];
-    a[j] = swap;
-  }
-
-  /**
-   * Check if array is sorted - useful for debugging.
-   * Is the array sorted from a[lo] to a[hi]
-   */
-  private static isSorted(
-    a: Comparable<any>[],
-    comparator?: Comparator<any>,
-    lo = 0,
-    hi = a.length - 1
-  ): boolean {
-    for (let i = lo + 1; i <= hi; i++) {
-      if (Selection.less(a[i], a[i - 1], comparator)) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  // print array to standard output
-  private static show(a: Comparable<any>[]): void {
-    for (let i = 0; i < a.length; i++) {
-      StdOut.printf('%-2s', `${a[i]} `);
-    }
-    StdOut.println();
   }
 
   /**
