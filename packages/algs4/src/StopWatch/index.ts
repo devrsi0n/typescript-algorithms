@@ -1,10 +1,25 @@
+import { performance } from 'perf_hooks';
 import ms from 'ms';
 
 export default class StopWatch {
-  private start: number = Date.now();
+  private start: number;
 
+  constructor() {
+    this.start = this.getCurrentMs();
+  }
+
+  /**
+   * Returns the elapsed CPU time (in seconds) since the stopwatch was created.
+   *
+   * @return elapsed CPU time (in seconds) since the stopwatch was created
+   */
   elapsedTime() {
-    return Date.now() - this.start;
+    return (this.getCurrentMs() - this.start) / 1000;
+  }
+
+  private getCurrentMs() {
+    return performance.now();
+    // return Date.now();
   }
 
   toString() {

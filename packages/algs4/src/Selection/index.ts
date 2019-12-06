@@ -30,18 +30,19 @@ export default class Selection extends SortBase {
    * @param comparator the comparator specifying the order
    */
   public static sort<T>(a: any[], comparator?: Comparator<any>): void {
+    const { exch, less } = Selection;
     const n = a.length;
     for (let i = 0; i < n; i++) {
       let min = i;
       for (let j = i + 1; j < n; j++) {
-        if (Selection.less(a[j], a[min], comparator)) {
+        if (less(a[j], a[min], comparator)) {
           min = j;
         }
       }
-      Selection.exch(a, i, min);
-      assert(Selection.isSorted(a, comparator, 0, i));
+      exch(a, i, min);
+      // assert(Selection.isSorted(a, comparator, 0, i));
     }
-    assert(Selection.isSorted(a, comparator));
+    // assert(Selection.isSorted(a, comparator));
   }
 
   /**
@@ -68,10 +69,10 @@ export default class Selection extends SortBase {
    */
   public static main(/* String[] args */) {
     const a = [];
-    for (let index = 0; index < 20; index++) {
+    for (let index = 0; index < 10000; index++) {
       a.push(
-        StdRandom.uniform(1, 100)
-          .toFixed(0)
+        StdRandom.uniform(10, 100)
+          .toFixed(2)
           .toString()
       );
     }

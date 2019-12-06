@@ -57,7 +57,7 @@ export default class SortBase {
    */
   public static show(a: Comparable<any>[]): void {
     for (let i = 0; i < a.length; i++) {
-      StdOut.printf('%-2s', `${a[i]} `);
+      StdOut.printf('%-6s', `${a[i]} `);
     }
     StdOut.println();
   }

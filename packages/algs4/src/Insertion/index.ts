@@ -42,7 +42,7 @@ export default class Insertion extends SortBase {
     lo = 0,
     hi = a.length
   ): void {
-    const { exch, less, isSorted } = Insertion;
+    const { exch, less } = Insertion;
 
     for (let i = lo + 1; i < hi; i++) {
       for (let j = i; j > lo; j--) {
@@ -51,7 +51,7 @@ export default class Insertion extends SortBase {
         }
       }
     }
-    assert(isSorted(a, comparator, lo, hi));
+    // assert(Insertion.isSorted(a, comparator, lo, hi));
   }
 
   // return a permutation that gives the elements in a[] in ascending order
@@ -101,15 +101,15 @@ export default class Insertion extends SortBase {
    * @param args the command-line arguments
    */
   public static main(/* String[] args */) {
-    // const a = [];
-    // for (let index = 0; index < 20; index++) {
-    //   a.push(
-    //     StdRandom.uniform(10, 100)
-    //       .toFixed(0)
-    //       .toString()
-    //   );
-    // }
-    const a = 'EXAMPLE'.split('');
+    const a = [];
+    for (let index = 0; index < 10000; index++) {
+      a.push(
+        StdRandom.uniform(10, 100)
+          .toFixed(2)
+          .toString()
+      );
+    }
+    // const a = 'EXAMPLE'.split('');
     console.log('Input:');
     console.log(`${a.join(' ')}\n`);
     Insertion.sort(a, new StringComparator());

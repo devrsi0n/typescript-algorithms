@@ -42,6 +42,10 @@ const shell = require('shelljs');
     execCommand = `DEBUG=algs4:* node -r ts-node/register --inspect-brk -e 'require("${filePath}").default.main()' ${args
       .filter((a) => a !== '-d')
       .join(' ')}`;
+  } else if (process.argv.includes('-p')) {
+    execCommand = `NODE_ENV=production node --prof -r ts-node/register -e 'require("${filePath}").default.main()' ${args.join(
+      ' '
+    )}`;
   }
   console.log(`debug execCommand: ${execCommand}\n`);
   try {
